@@ -1,0 +1,84 @@
+@import url("https://fonts.googleapis.com/css?family=Muli");
+body {
+  font-family: 'Muli', sans-serif;
+  font-size: 18px; }
+
+.container {
+  max-width: none;
+  width: 100%;
+  overflow-x: hidden;
+  padding: 0; }
+
+.vertical-center {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%); }
+
+.vertical-center-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; }
+
+@media (min-width: 800px) {
+  .vertical-center-container-mobile {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; } }
+
+.bold-text {
+  font-weight: 900 !important; }
+
+.text-white {
+  color: #FFFFFF !important; }
+
+.gradient-background .foreground-image, .gradient-background .midground-image, .gradient-background .midground-2-image, .gradient-background .background-image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-size: contain;
+  background-repeat: no-repeat; }
+  @media (min-width: 800px) {
+    .gradient-background .foreground-image, .gradient-background .midground-image, .gradient-background .midground-2-image, .gradient-background .background-image {
+      background-size: 50%; } }
+  @media (min-width: 1250px) {
+    .gradient-background .foreground-image, .gradient-background .midground-image, .gradient-background .midground-2-image, .gradient-background .background-image {
+      background-size: 40%; } }
+  @media (min-width: 1600px) {
+    .gradient-background .foreground-image, .gradient-background .midground-image, .gradient-background .midground-2-image, .gradient-background .background-image {
+      background-size: 30%; } }
+.gradient-background .foreground-image {
+  z-index: 13; }
+.gradient-background .midground-image {
+  z-index: 12; }
+.gradient-background .midground-2-image {
+  z-index: 11; }
+.gradient-background .background-image {
+  z-index: 10; }
+
+.insight.left-content .gradient-background .foreground-image, .insight.left-content .gradient-background .midground-image, .insight.left-content .gradient-background .midground-2-image, .insight.left-content .gradient-background .background-image {
+  background-position: 50% 50%; }
+  @media (min-width: 800px) {
+    .insight.left-content .gradient-background .foreground-image, .insight.left-content .gradient-background .midground-image, .insight.left-content .gradient-background .midground-2-image, .insight.left-content .gradient-background .background-image {
+      background-position: 100% 50%; } }
+  @media (min-width: 1250px) {
+    .insight.left-content .gradient-background .foreground-image, .insight.left-content .gradient-background .midground-image, .insight.left-content .gradient-background .midground-2-image, .insight.left-content .gradient-background .background-image {
+      background-position: 95% 50%; } }
+  @media (min-width: 1600px) {
+    .insight.left-content .gradient-background .foreground-image, .insight.left-content .gradient-background .midground-image, .insight.left-content .gradient-background .midground-2-image, .insight.left-content .gradient-background .background-image {
+      background-position: 85% 50%; } }
+
+.insight.right-content .gradient-background .foreground-image, .insight.right-content .gradient-background .midground-image, .insight.right-content .gradient-background .midground-2-image, .insight.right-content .gradient-background .background-image {
+  background-position: 50% 50%; }
+  @media (min-width: 800px) {
+    .insight.right-content .gradient-background .foreground-image, .insight.right-content .gradient-background .midground-image, .insight.right-content .gradient-background .midground-2-image, .insight.right-content .gradient-background .background-image {
+      background-position: 0% 50%; } }
+  @media (min-width: 1250px) {
+    .insight.right-content .gradient-background .foreground-image, .insight.right-content .gradient-background .midground-image, .insight.right-content .gradient-background .midground-2-image, .insight.right-content .gradient-background .background-image {
+      background-position: 5% 50%; } }
+  @media (min-width: 1600px) {
+    .insight.right-content .gradient-background .foreground-image, .insight.right-content .gradient-background .midground-image, .insight.right-content .gradient-background .midground-2-image, .insight.right-content .gradient-background .background-image {
+      background-position: 15% 50%; } }
+
+/*# sourceMappingURL=main.css.map */

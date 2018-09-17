@@ -1,0 +1,26 @@
+$black: #000000;
+$white: #FFFFFF;
+$brand-primary: #5C5CFF;
+$brand-primary-hover: #3923B7;
+$label-header: #242A35;
+$label-desc: #576784;
+$bg-gray: #F5F7FA;
+
+
+
+
+
+$body-font-size: 18px;
+
+//Font//
+@import url('https://fonts.googleapis.com/css?family=Muli');
+
+body {
+    font-family: 'Muli', sans-serif;
+    font-size: $body-font-size;
+}
+
+//Breakpoints//
+$breakpoint-desktop: 800px;
+$breakpoint-large: 1250px;
+$breakpoint-xlarge: 1600px;
