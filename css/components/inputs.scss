@@ -1,3 +1,5 @@
+$input-gray: #576784;
+
 #planner-inputs {
 	max-width: 1000px;
 	margin: -100px auto 20px auto;
@@ -8,12 +10,83 @@
 
 	form {
 		.form-row {
+			margin: 20px 10px 50px 10px;
 			.form-group {
 				label {
 					padding-left: 0;
 					display: block;
+					font-size: 22px;
+					color: #242A35;
+				}
+
+				small {
+					font-size: 14px;
+					color: $input-gray;
+				}
+
+				input {
+					border-right: none;
+					border-left: none;
+					border-top: none;
+				}
+
+				input, button {
+					font-size: 16px;
+				}
+
+				.btn-input {
+					background: $white;
+					color: $input-gray;
+					border: 1px solid $input-gray;
+				}
+
+				.btn-input.selected {
+					background: $primary;
+					color: $white;
+					border-color: $brand-primary-dark;
+				}
+
+				@include media-breakpoint-up(md) {
+					label {
+						font-size: 22px;
+					}
+
+					small {
+						font-size: 14px;
+
+					}
+
+					input, button {
+						font-size: 16px;
+					}
+
 				}
 			}
+		}
+
+		#release-importance {
+			margin-top: 15px;
+			margin-bottom: 15px;
+		
+			.btn {
+				width: 40px;
+				height: 40px;
+			}
+		}
+
+		#input-employee-number, #input-sales-team {
+
+			.btn {
+				width: 100px;
+				height: 40px;
+				margin: 15px 20px;
+				text-transform: none;
+
+				&:first-child {
+					margin-left: 0;
+				}
+			}
+			
 		}
 
 	}	

@@ -4135,8 +4135,49 @@ a.text-dark:focus, a.text-dark:hover {
   padding: 50px 20px;
   border-radius: 15px;
   box-shadow: 1px 18px 38px 11.27px rgba(42, 40, 55, 0.05); }
-  #planner-inputs form .form-row .form-group label {
-    padding-left: 0;
-    display: block; }
+  #planner-inputs form .form-row {
+    margin: 20px 10px 50px 10px; }
+    #planner-inputs form .form-row .form-group label {
+      padding-left: 0;
+      display: block;
+      font-size: 22px;
+      color: #242A35; }
+    #planner-inputs form .form-row .form-group small {
+      font-size: 14px;
+      color: #576784; }
+    #planner-inputs form .form-row .form-group input {
+      border-right: none;
+      border-left: none;
+      border-top: none; }
+    #planner-inputs form .form-row .form-group input, #planner-inputs form .form-row .form-group button {
+      font-size: 16px; }
+    #planner-inputs form .form-row .form-group .btn-input {
+      background: #FFFFFF;
+      color: #576784;
+      border: 1px solid #576784; }
+    #planner-inputs form .form-row .form-group .btn-input.selected {
+      background: #5C5CFF;
+      color: #FFFFFF;
+      border-color: #3923B7; }
+    @media (min-width: 768px) {
+      #planner-inputs form .form-row .form-group label {
+        font-size: 22px; }
+      #planner-inputs form .form-row .form-group small {
+        font-size: 14px; }
+      #planner-inputs form .form-row .form-group input, #planner-inputs form .form-row .form-group button {
+        font-size: 16px; } }
+  #planner-inputs form #release-importance {
+    margin-top: 15px;
+    margin-bottom: 15px; }
+    #planner-inputs form #release-importance .btn {
+      width: 40px;
+      height: 40px; }
+  #planner-inputs form #input-employee-number .btn, #planner-inputs form #input-sales-team .btn {
+    width: 100px;
+    height: 40px;
+    margin: 15px 20px;
+    text-transform: none; }
+    #planner-inputs form #input-employee-number .btn:first-child, #planner-inputs form #input-sales-team .btn:first-child {
+      margin-left: 0; }
 
 /*# sourceMappingURL=main.css.map */
