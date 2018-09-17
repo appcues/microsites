@@ -1,8 +1,7 @@
-.container {
+.container-fluid {
   max-width: none;
-  width: 100%;
   overflow-x: hidden;
-  padding: 0;
+  background: $bg-gray;
 }
 
 
@@ -21,7 +20,7 @@
 }
 
 .vertical-center-container-mobile {
-  @media (min-width: $breakpoint-desktop) {
+  @include media-breakpoint-up(md) {
     display: flex; 
     flex-direction: column; 
     justify-content: center;

@@ -1,0 +1,47 @@
+#background {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	background: $bg-gray;
+	
+	.foreground-clouds, .midground-clouds, .background-clouds, .foreground-stars, .background-stars, .blue-sky {
+		position: absolute;
+		width: 100%;
+		background-size: cover;
+		background-repeat: no-repeat;
+		top: 0;
+		left: 0;
+	}
+
+	.blue-sky {
+		background: #0B1A38;
+		min-height: 600px;
+		z-index: 8;
+	}
+
+	.foreground-stars {
+		z-index: 9;
+		background-image: url('../img/landing/stars-front.svg');
+	}
+
+	.background-stars {
+		z-index: 10;
+		background-image: url('../img/landing/stars-back.svg');
+	}
+
+	.foreground-clouds {
+		z-index: 13;
+		background-image: url('../img/landing/clouds-front.svg');
+	}
+
+	.midground-clouds {
+		z-index: 12;
+		background-image: url('../img/landing/clouds-mid.svg');
+	}
+
+	.background-clouds {
+		z-index: 11;
+		background-image: url('../img/landing/clouds-back.svg');
+	}
+}

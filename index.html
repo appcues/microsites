@@ -16,7 +16,7 @@
 
     <!-- CSS
     ================================================== -->
-    <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Muli:400,600" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="./css/normalize.css">
     <link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css"> 
     <link rel="stylesheet" type="text/css" href="./css/main.css" >
@@ -24,6 +24,123 @@
   </head>
 
   <body>
+
+    <div class="container-fluid">
+        <div id="background" class="row">
+            <div class="blue-sky"></div>
+            <img src="./img/landing/stars-front.svg" data-depth="0.3" class="foreground-stars" />
+            <img src="./img/landing/stars-back.svg" data-depth="0.18" class="background-stars" />
+            <img src="./img/landing/clouds-front.svg" data-depth="0.3" class="foreground-clouds" />
+            <img src="./img/landing/clouds-mid.svg" data-depth="0.18" class="midground-clouds" />
+            <img src="./img/landing/clouds-back.svg" data-depth="0.1" class="background-clouds" />
+        </div>
+        <div id="landing" class="row">
+            <div id="short-nav" class="col-12">
+                <div class="row">
+                    <div class="col-6 text-left">
+                        <a href="https://www.appcues.com/">
+                            <img class="logo" src="./img/logo.svg" alt="Appcues Logo"/>
+                        </a>
+                    </div>
+                    <div class="col-6 text-right">
+                        <h4>Product Launch Planner</h4>
+                    </div>
+                </div>
+            </div>
+            <div id="title" class="col-12">
+                <div class="text-center">
+                    <h1>Product Launch Plan Template</h1>
+                    <h5>Use this free template to learn how to market a product. <br> Get your customized plan for your next product launch!</h5>
+                </div>
+            </div>
+        </div>
+        <div id="planner" class="row">
+            <div  class="col-12">
+                <div id="planner-inputs">
+                    <div class="form-container">
+                        <form class="needs-validation" novalidate>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="input-release-name">What is the name of the release</label>
+                                    <input type="text" class="form-control" id="input-release-name" placeholder="The iPhone XS">
+                                </div>
+                            </div>
+                            <div class="form-row">    
+                                <div class="form-group">
+                                    <label for="release-importance">How significant is your release?</label>
+                                    <small id="importance-help" class="form-text text-muted">0 means no one cares, 10 means it's the next iPhone</small>
+                                    <div class="btn-toolbar">
+                                        <div class="btn-group" id="release-importance">
+                                            <button type="button" class="btn btn-primary">1</button>
+                                            <button type="button" class="btn btn-primary">2</button>
+                                            <button type="button" class="btn btn-primary">3</button>
+                                            <button type="button" class="btn btn-primary">4</button>
+                                            <button type="button" class="btn btn-primary">5</button>
+                                            <button type="button" class="btn btn-primary">6</button>
+                                            <button type="button" class="btn btn-primary">7</button>
+                                            <button type="button" class="btn btn-primary">8</button>
+                                            <button type="button" class="btn btn-primary">9</button>
+                                            <button type="button" class="btn btn-primary">10</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="input-release-date" class="col-2 col-form-label">Date</label>
+                                    <input class="form-control" type="date" value="2018-08-19" id="input-release-date">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="input-employee-number">Approximate number fo employees at your company?</label>
+                                    <small id="importanceHelp" class="form-text text-muted">This will help us determine the volume of content you can probably produce</small>
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <button type="button" class="btn btn-primary">1-9</button>
+                                            <button type="button" class="btn btn-primary">10-24</button>
+                                            <button type="button" class="btn btn-primary">25-99</button>
+                                            <button type="button" class="btn btn-primary">100+</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="input-email">Work email</label>
+                                    <small id="email-help" class="form-text text-muted">So we can email you the results</small>
+                                    <input type="text" class="form-control" id="input-email" aria-describedby="emailHelp" placeholder="www.appcues.com">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="input-website">First name</label>
+                                    <small id="importanceHelp" class="form-text text-muted">Bacon ipsum dolor amet pig sirloin capicola tail bresaola</small>
+                                    <input type="text" class="form-control" id="input-website" aria-describedby="emailHelp" placeholder="www.appcues.com">
+                                </div>
+                            </div>
+                            <div class="form-row">    
+                                <label for="input-website">Your company website</label>
+                                <small id="importanceHelp" class="form-text text-muted">Bacon ipsum dolor amet pig sirloin capicola tail bresaola</small>
+                                <div class="form-group">
+                                    <input type="email" class="form-control" id="input-website" aria-describedby="emailHelp" placeholder="www.appcues.com">
+                                </div>
+                            </div>
+                          <button type="submit" class="btn btn-primary">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div id="results" class="row">
+                <div class="col-12">
+                    <div id="timeline">
+                        <div class="milestone">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
     <!-- Javascript
@@ -33,6 +150,7 @@
     <script src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.5/jquery-ui.min.js'></script>
     <script src="./libraries/js/scrollmagic/minified/ScrollMagic.min.js"></script>
     <script src="./libraries/js/scrollmagic/uncompressed/plugins/debug.addIndicators.js"></script>
+    <!-- <script src="./libraries/js/parallax/parallax.js"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.velocity.min.js"></script>

@@ -1,0 +1,20 @@
+#planner-inputs {
+	max-width: 1000px;
+	margin: -100px auto 20px auto;
+	background: $white;
+	padding: 50px 20px;
+	border-radius: 15px;
+	box-shadow: 1px 18px 38px 11.27px rgba(42, 40, 55, 0.05); 
+
+	form {
+		.form-row {
+			.form-group {
+				label {
+					padding-left: 0;
+					display: block;
+				}
+			}
+		}
+
+	}	
+}

@@ -18,6 +18,7 @@ var appcuesProductLaunchPlanner = {
 
 $(function() {
   appcuesProductLaunchPlanner.startSite();
+  appcuesProductLaunchPlanner.setParallaxScene('#background')
 });
 
 
