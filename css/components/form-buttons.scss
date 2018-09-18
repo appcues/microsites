@@ -1,0 +1,41 @@
+.form-buttons {
+	margin-top: 25px;
+	
+}
+
+.moving-button {
+	padding: 10px 20px;
+	position: relative;
+
+	span {
+		font-size: 16px;
+		line-height: 1;
+		vertical-align: middle;
+	}
+
+	.button-arrow {
+		width: 20px;
+		vertical-align: middle;
+	}
+}
+
+
+.moving-button.next-button {
+	span {
+		margin-right: 5px;
+	}
+}
+
+.moving-button.back-button {
+	span {
+		margin-left: 5px;
+	}
+
+	.button-arrow {
+		-webkit-transform: rotate(180deg);     /* Chrome and other webkit browsers */
+		-moz-transform: rotate(180deg);        /* FF */
+		-o-transform: rotate(180deg);          /* Opera */
+		-ms-transform: rotate(180deg);         /* IE9 */
+		transform: rotate(180deg);             /* W3C compliant browsers */
+	}
+}

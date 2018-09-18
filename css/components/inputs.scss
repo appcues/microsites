@@ -1,16 +1,25 @@
 $input-gray: #576784;
+$input-gray-light: #c0c6d9;
 
-#planner-inputs {
-	max-width: 1000px;
-	margin: -100px auto 20px auto;
-	background: $white;
-	padding: 50px 20px;
-	border-radius: 15px;
-	box-shadow: 1px 18px 38px 11.27px rgba(42, 40, 55, 0.05); 
+#form-content {
+	position: absolute;
+	display: none;
+	top: 250px;
+	z-index: 100;
 
-	form {
+	#content-container {
+		width: 80%;
+		margin: 0 auto;
+		max-width: 1000px;
+		background: $bg-gray;
+		color: $black;
+		border-radius: 15px;
+		padding: 75px 60px;
+		box-shadow: 1px 18px 38px 11.27px rgba(42, 40, 55, 0.05); 
+
+
 		.form-row {
-			margin: 20px 10px 50px 10px;
+
 			.form-group {
 				label {
 					padding-left: 0;
@@ -24,10 +33,19 @@ $input-gray: #576784;
 					color: $input-gray;
 				}
 
+
 				input {
 					border-right: none;
 					border-left: none;
 					border-top: none;
+					background: $bg-gray;
+					color: $input-gray;
+					min-width: 300px;
+					border-bottom: 2px solid $input-gray-light;
+
+					&:focus {
+						outline-color: $bg-gray !important;
+					}
 				}
 
 				input, button {
@@ -63,6 +81,7 @@ $input-gray: #576784;
 				}
 			}
 		}
+
 
 		#release-importance {
 			margin-top: 15px;

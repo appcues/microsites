@@ -26,15 +26,16 @@
   <body>
 
     <div class="container-fluid">
-        <div id="background" class="row">
-            <div class="blue-sky"></div>
-            <img src="./img/landing/stars-front.svg" data-depth="0.3" class="foreground-stars" />
-            <img src="./img/landing/stars-back.svg" data-depth="0.18" class="background-stars" />
-            <img src="./img/landing/clouds-front.svg" data-depth="0.3" class="foreground-clouds" />
-            <img src="./img/landing/clouds-mid.svg" data-depth="0.18" class="midground-clouds" />
-            <img src="./img/landing/clouds-back.svg" data-depth="0.1" class="background-clouds" />
-        </div>
         <div id="landing" class="row">
+            <div class="stars">
+                <img src="./img/landing/stars-front.svg" data-depth="0.3" class="foreground-stars" />
+                <img src="./img/landing/stars-back.svg" data-depth="0.18" class="background-stars" />
+            </div>
+            <div class="clouds">
+                <img src="./img/clouds/front.svg" data-depth="0.3" id="foreground-clouds" class="clouds" />
+                <img src="./img/clouds/middle.svg" data-depth="0.18" id="midground-clouds" class="clouds" />
+                <img src="./img/clouds/back.svg" data-depth="0.1" id="background-clouds" class="clouds" />
+            </div>
             <div id="short-nav" class="col-12">
                 <div class="row">
                     <div class="col-6 text-left">
@@ -47,18 +48,44 @@
                     </div>
                 </div>
             </div>
-            <div id="title" class="col-12">
+            <div id="title-content" class="col-12">
                 <div class="text-center">
                     <h1>Product Launch Plan Template</h1>
                     <h5>Use this free template to learn how to market a product. <br> Get your customized plan for your next product launch!</h5>
+                    <div id="get-started-button" class="btn next-button btn-primary moving-button">
+                        <span>Get Started</span>
+                        <img src="./img/arrows/white.svg" class="button-arrow"/>
+                    </div>
+                </div>
+            </div>
+            <div id="form-content" class="col-12">
+                <div id="content-container">
+                    <div class="form-row" id="question-01">
+                         <div class="form-group">
+                            <label for="input-release-name">What is the name of the release?</label>
+                            <input type="text" class="form-control" id="input-release-name" placeholder="The iPhone XS">
+                        </div>
+                    </div>
+                    <div class="form-buttons row">
+                        <div class="col-6 text-left">
+                            <div id="back-button" class="moving-button back-button btn btn-danger">
+                                <img src="./img/arrows/white.svg" class="button-arrow" />
+                                <span>Back</span>
+                            </div>
+                        </div>
+                        <div class="col-6 text-right">
+                            <div id="next-button" class="moving-button next-button btn btn-primary">
+                                <span>Next</span>
+                                <img src="./img/arrows/white.svg" class="button-arrow" />
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-        <div id="planner" class="row">
+        <!-- <div id="planner" class="row">
             <div  class="col-12">
                 <div id="planner-inputs">
-                    <div class="form-container">
-                        <form class="needs-validation" novalidate>
                             <div class="form-row">
                                 <div class="form-group">
                                     <label for="input-release-name">What is the name of the release</label>
@@ -142,15 +169,15 @@
                         </form>
                     </div>
                 </div>
-            </div>
-            <div id="results" class="row">
+            </div> -->
+           <!--  <div id="results" class="row">
                 <div class="col-12">
                     <div id="timeline">
                         <div class="milestone">
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div>
     </div>
 
