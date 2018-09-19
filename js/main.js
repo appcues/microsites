@@ -1,9 +1,13 @@
 var appcuesProductLaunchPlanner = {
 
+	formData: [],
+	counter: 0,
+
 	startSite: function() {
 
 		// appcuesProductLaunchPlanner.setParallaxScene('landing');
 		appcuesProductLaunchPlanner.getStarted();
+		appcuesProductLaunchPlanner.setButtonClicks();
 
 	},				
 
@@ -19,19 +23,22 @@ var appcuesProductLaunchPlanner = {
 		// $("#rocket-ship")
 	},
 
-	formData: [],
+	
 
 	getStarted: function() {
 		$("#get-started-button").click(function(){
 			$('#title-content').fadeOut( "slow" );
-			$('#form-content').fadeIn( "slow" );
+			$('#form-content').fadeIn("slow");
+			$('#question-' + (appcuesProductLaunchPlanner.formData.length + 1)).fadeIn("slow");
 		});
 	},
 
 	setButtonClicks: function() {
 		$("#next-button").click(function(){
-			debugger;
-
+			
+			appcuesProductLaunchPlanner.formData.push($('#question-' + (appcuesProductLaunchPlanner.formData.length + 1) + '-input').val());
+			$('#question-' + appcuesProductLaunchPlanner.formData.length).hide();
+			$('#question-' + (appcuesProductLaunchPlanner.formData.length + 1)).fadeIn("slow");
 		});
 	},
 

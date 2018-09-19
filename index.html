@@ -60,12 +60,88 @@
             </div>
             <div id="form-content" class="col-12">
                 <div id="content-container">
-                    <div class="form-row" id="question-01">
-                         <div class="form-group">
-                            <label for="input-release-name">What is the name of the release?</label>
-                            <input type="text" class="form-control" id="input-release-name" placeholder="The iPhone XS">
+                    <form id="planner-form">
+                        <div class="form-row" id="question-1">
+                             <div class="form-group">
+                                <label for="input-release-name">What is the name of the release?</label>
+                                <input id="question-1-input" type="text" class="form-control" id="input-release-name" placeholder="The iPhone XS">
+                            </div>
                         </div>
-                    </div>
+                        <div class="form-row" id="question-2">    
+                            <div class="form-group">
+                                <label for="release-importance">How significant is your release?</label>
+                                <small id="importance-help" class="form-text text-muted">0 means no one cares, 10 means it's the next iPhone</small>
+                                <div class="btn-toolbar">
+                                    <div class="btn-group" id="release-importance">
+                                        <button type="button" class="btn btn-input">1</button>
+                                        <button type="button" class="btn btn-input">2</button>
+                                        <button type="button" class="btn btn-input">3</button>
+                                        <button type="button" class="btn btn-input">4</button>
+                                        <button type="button" class="btn btn-input">5</button>
+                                        <button type="button" class="btn btn-input">6</button>
+                                        <button type="button" class="btn btn-input">7</button>
+                                        <button type="button" class="btn btn-input">8</button>
+                                        <button type="button" class="btn btn-input">9</button>
+                                        <button type="button" class="btn btn-input">10</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row" id="question-3">    
+                            <div class="form-group">
+                                <label for="input-release-date" class="col-2 col-form-label">Date</label>
+                                <input class="form-control" type="date" value="2018-08-19" id="input-release-date">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="input-employee-number">Do you have a sales team?</label>
+                                <small id="employee-number-help" class="form-text text-muted">Bacon ipsum dolor amet pig sirloin capicola tail bresaola</small>
+                                <div class="row">
+                                    <div class="col-12" id="input-sales-team">
+                                        <button type="button" class="btn btn-input">Yes</button>
+                                        <button type="button" class="btn btn-input">No</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="input-employee-number">Approximate number fo employees at your company?</label>
+                                <small id="employee-number-help" class="form-text text-muted">This will help us determine the volume of content you can probably produce</small>
+                                <div class="row">
+                                    <div class="col-12" id="input-employee-number">
+                                        <button type="button" class="btn btn-input">1-9</button>
+                                        <button type="button" class="btn btn-input">10-24</button>
+                                        <button type="button" class="btn btn-input">25-99</button>
+                                        <button type="button" class="btn btn-input">100+</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="input-email">Work email</label>
+                                <small id="email-help" class="form-text text-muted">So we can email you the results</small>
+                                <input type="text" class="form-control" id="input-email" aria-describedby="emailHelp" placeholder="www.appcues.com">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="input-website">First name</label>
+                                <small id="importanceHelp" class="form-text text-muted">Bacon ipsum dolor amet pig sirloin capicola tail bresaola</small>
+                                <input type="text" class="form-control" id="input-website" aria-describedby="emailHelp" placeholder="www.appcues.com">
+                            </div>
+                        </div>
+                        <div class="form-row">    
+                            <label for="input-website">Your company website</label>
+                            <small id="importanceHelp" class="form-text text-muted">Bacon ipsum dolor amet pig sirloin capicola tail bresaola</small>
+                            <div class="form-group">
+                                <input type="email" class="form-control" id="input-website" aria-describedby="emailHelp" placeholder="www.appcues.com">
+                            </div>
+                        </div>
+                        
+                    </form>                    
                     <div class="form-buttons row">
                         <div class="col-6 text-left">
                             <div id="back-button" class="moving-button back-button btn btn-danger">
@@ -78,6 +154,7 @@
                                 <span>Next</span>
                                 <img src="./img/arrows/white.svg" class="button-arrow" />
                             </div>
+                            <button id="submit" type="submit" class="btn btn-primary">Submit</button>
                         </div>
                     </div>
                 </div>
@@ -86,87 +163,7 @@
         <!-- <div id="planner" class="row">
             <div  class="col-12">
                 <div id="planner-inputs">
-                            <div class="form-row">
-                                <div class="form-group">
-                                    <label for="input-release-name">What is the name of the release</label>
-                                    <input type="text" class="form-control" id="input-release-name" placeholder="The iPhone XS">
-                                </div>
-                            </div>
-                            <div class="form-row">    
-                                <div class="form-group">
-                                    <label for="release-importance">How significant is your release?</label>
-                                    <small id="importance-help" class="form-text text-muted">0 means no one cares, 10 means it's the next iPhone</small>
-                                    <div class="btn-toolbar">
-                                        <div class="btn-group" id="release-importance">
-                                            <button type="button" class="btn btn-input">1</button>
-                                            <button type="button" class="btn btn-input">2</button>
-                                            <button type="button" class="btn btn-input">3</button>
-                                            <button type="button" class="btn btn-input">4</button>
-                                            <button type="button" class="btn btn-input">5</button>
-                                            <button type="button" class="btn btn-input">6</button>
-                                            <button type="button" class="btn btn-input">7</button>
-                                            <button type="button" class="btn btn-input">8</button>
-                                            <button type="button" class="btn btn-input">9</button>
-                                            <button type="button" class="btn btn-input">10</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-row">
-                                <div class="form-group">
-                                    <label for="input-release-date" class="col-2 col-form-label">Date</label>
-                                    <input class="form-control" type="date" value="2018-08-19" id="input-release-date">
-                                </div>
-                            </div>
-                            <div class="form-row">
-                                <div class="form-group">
-                                    <label for="input-employee-number">Do you have a sales team?</label>
-                                    <small id="employee-number-help" class="form-text text-muted">Bacon ipsum dolor amet pig sirloin capicola tail bresaola</small>
-                                    <div class="row">
-                                        <div class="col-12" id="input-sales-team">
-                                            <button type="button" class="btn btn-input">Yes</button>
-                                            <button type="button" class="btn btn-input">No</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-row">
-                                <div class="form-group">
-                                    <label for="input-employee-number">Approximate number fo employees at your company?</label>
-                                    <small id="employee-number-help" class="form-text text-muted">This will help us determine the volume of content you can probably produce</small>
-                                    <div class="row">
-                                        <div class="col-12" id="input-employee-number">
-                                            <button type="button" class="btn btn-input">1-9</button>
-                                            <button type="button" class="btn btn-input">10-24</button>
-                                            <button type="button" class="btn btn-input">25-99</button>
-                                            <button type="button" class="btn btn-input">100+</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-row">
-                                <div class="form-group">
-                                    <label for="input-email">Work email</label>
-                                    <small id="email-help" class="form-text text-muted">So we can email you the results</small>
-                                    <input type="text" class="form-control" id="input-email" aria-describedby="emailHelp" placeholder="www.appcues.com">
-                                </div>
-                            </div>
-                            <div class="form-row">
-                                <div class="form-group">
-                                    <label for="input-website">First name</label>
-                                    <small id="importanceHelp" class="form-text text-muted">Bacon ipsum dolor amet pig sirloin capicola tail bresaola</small>
-                                    <input type="text" class="form-control" id="input-website" aria-describedby="emailHelp" placeholder="www.appcues.com">
-                                </div>
-                            </div>
-                            <div class="form-row">    
-                                <label for="input-website">Your company website</label>
-                                <small id="importanceHelp" class="form-text text-muted">Bacon ipsum dolor amet pig sirloin capicola tail bresaola</small>
-                                <div class="form-group">
-                                    <input type="email" class="form-control" id="input-website" aria-describedby="emailHelp" placeholder="www.appcues.com">
-                                </div>
-                            </div>
-                          <button type="submit" class="btn btn-primary">Submit</button>
-                        </form>
+                            
                     </div>
                 </div>
             </div> -->

@@ -4135,41 +4135,43 @@ a.text-dark:focus, a.text-dark:hover {
     border-radius: 15px;
     padding: 75px 60px;
     box-shadow: 1px 18px 38px 11.27px rgba(42, 40, 55, 0.05); }
-    #form-content #content-container .form-row .form-group label {
-      padding-left: 0;
-      display: block;
-      font-size: 22px;
-      color: #242A35; }
-    #form-content #content-container .form-row .form-group small {
-      font-size: 14px;
-      color: #576784; }
-    #form-content #content-container .form-row .form-group input {
-      border-right: none;
-      border-left: none;
-      border-top: none;
-      background: #F5F7FA;
-      color: #576784;
-      min-width: 300px;
-      border-bottom: 2px solid #c0c6d9; }
-      #form-content #content-container .form-row .form-group input:focus {
-        outline-color: #F5F7FA !important; }
-    #form-content #content-container .form-row .form-group input, #form-content #content-container .form-row .form-group button {
-      font-size: 16px; }
-    #form-content #content-container .form-row .form-group .btn-input {
-      background: #FFFFFF;
-      color: #576784;
-      border: 1px solid #576784; }
-    #form-content #content-container .form-row .form-group .btn-input.selected {
-      background: #5C5CFF;
-      color: #FFFFFF;
-      border-color: #3923B7; }
-    @media (min-width: 768px) {
+    #form-content #content-container .form-row {
+      display: none; }
       #form-content #content-container .form-row .form-group label {
-        font-size: 22px; }
+        padding-left: 0;
+        display: block;
+        font-size: 22px;
+        color: #242A35; }
       #form-content #content-container .form-row .form-group small {
-        font-size: 14px; }
+        font-size: 14px;
+        color: #576784; }
+      #form-content #content-container .form-row .form-group input {
+        border-right: none;
+        border-left: none;
+        border-top: none;
+        background: #F5F7FA;
+        color: #576784;
+        min-width: 300px;
+        border-bottom: 2px solid #c0c6d9; }
+        #form-content #content-container .form-row .form-group input:focus {
+          outline-color: #F5F7FA !important; }
       #form-content #content-container .form-row .form-group input, #form-content #content-container .form-row .form-group button {
-        font-size: 16px; } }
+        font-size: 16px; }
+      #form-content #content-container .form-row .form-group .btn-input {
+        background: #FFFFFF;
+        color: #576784;
+        border: 1px solid #576784; }
+      #form-content #content-container .form-row .form-group .btn-input.selected {
+        background: #5C5CFF;
+        color: #FFFFFF;
+        border-color: #3923B7; }
+      @media (min-width: 768px) {
+        #form-content #content-container .form-row .form-group label {
+          font-size: 22px; }
+        #form-content #content-container .form-row .form-group small {
+          font-size: 14px; }
+        #form-content #content-container .form-row .form-group input, #form-content #content-container .form-row .form-group button {
+          font-size: 16px; } }
     #form-content #content-container #release-importance {
       margin-top: 15px;
       margin-bottom: 15px; }
