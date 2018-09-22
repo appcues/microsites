@@ -8,6 +8,7 @@ var appcuesProductLaunchPlanner = {
 		// appcuesProductLaunchPlanner.setParallaxScene('landing');
 		appcuesProductLaunchPlanner.getStarted();
 		appcuesProductLaunchPlanner.setButtonClicks();
+		appcuesProductLaunchPlanner.setInputButtonClick();
 
 	},				
 
@@ -23,36 +24,94 @@ var appcuesProductLaunchPlanner = {
 		// $("#rocket-ship")
 	},
 
+	updateProgressBar: function() {
+
+	},
 	
 
 	getStarted: function() {
 		$("#get-started-button").click(function(){
-			$('#title-content').fadeOut( "slow" );
+			console.log(appcuesProductLaunchPlanner.formData);
+			$('#template-title-content').fadeOut( "slow" );
 			$('#form-content').fadeIn("slow");
 			$('#question-' + (appcuesProductLaunchPlanner.formData.length + 1)).fadeIn("slow");
 		});
 	},
 
 	setButtonClicks: function() {
-		$("#next-button").click(function(){
+		appcuesProductLaunchPlanner.setNextButton();
+		appcuesProductLaunchPlanner.setBackButton();
+		appcuesProductLaunchPlanner.setSubmitButton();
+	},
+
+	setInputButtonClick: function() {
+		$('.btn-input').click(function() {
+			$('.btn-input.selected').removeClass('selected');
+			$(this).toggleClass('selected');
+		});
+
+	},
+
+	setBackButton: function() {
+		$("#back-button").click(function(){
+
+			//make the length formula dynamic off of number of children with form row class
+			if (appcuesProductLaunchPlanner.formData.length === ($('.form-row').length) - 1) {
+				$("#submit-button").toggleClass("show-btn");
+				$("#next-button").toggleClass("show-btn");
+			}
+
+			if (appcuesProductLaunchPlanner.formData.length === 0) {
+				$('#template-title-content').fadeIn( "slow" );
+				$('#form-content').fadeOut("slow");
+				$('#question-' + (appcuesProductLaunchPlanner.formData.length + 1)).fadeOut("slow");
+			} else {
+				$('#question-' + (appcuesProductLaunchPlanner.formData.length + 1)).hide();
+				$('#question-' + (appcuesProductLaunchPlanner.formData.length)).fadeIn("slow");	
+				appcuesProductLaunchPlanner.formData.pop();
+				console.log(appcuesProductLaunchPlanner.formData);
+			}
 			
-			appcuesProductLaunchPlanner.formData.push($('#question-' + (appcuesProductLaunchPlanner.formData.length + 1) + '-input').val());
-			$('#question-' + appcuesProductLaunchPlanner.formData.length).hide();
-			$('#question-' + (appcuesProductLaunchPlanner.formData.length + 1)).fadeIn("slow");
+		});
+	},
+	
+	setSubmitButton: function() {
+		$("#submit-button").click(function(){
+
 		});
 	},
 
-	nextStep: function(value) {
-		//appcuesProductLaunchPlanner.formData.push(value);
+	addData: function(element) {
+		if(element.hasClass('input-form-row')){
+			appcuesProductLaunchPlanner.formData.push(element.find('input').val());
+		} else {
+			appcuesProductLaunchPlanner.formData.push(element.find('.btn-input.selected').text());
+		}
+		
+	},
 
-		debugger;
+	setNextButton: function() {
+		$("#next-button").click(function(){
+			appcuesProductLaunchPlanner.addData($('#question-' + (appcuesProductLaunchPlanner.formData.length + 1)));
+			console.log(appcuesProductLaunchPlanner.formData);
+			$('#question-' + appcuesProductLaunchPlanner.formData.length).hide();
+			$('#question-' + (appcuesProductLaunchPlanner.formData.length + 1)).fadeIn("slow");
 
+			//make the length formula dynamic off of number of children with form row class
+			if (appcuesProductLaunchPlanner.formData.length === ($('.form-row').length) - 1) {
+				$("#submit-button").toggleClass("show-btn");
+				$("#next-button").toggleClass("show-btn");
+			}
+		});
+	},
 
-		//hide previous
-		//store value
-		//show next
-
-	}, 
+	submitForm: function() {
+		//send email to hubspot
+		//process data
+		//set date
+		//send to PDF processor
+		//show results
+	}
 
 
 

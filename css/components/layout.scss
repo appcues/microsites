@@ -35,3 +35,14 @@
 .text-white {
   color: $white !important;
 }
+
+%gray-container {
+    width: 80%;
+    margin: 0 auto;
+    max-width: 1000px;
+    background: $bg-gray;
+    color: $black;
+    border-radius: 15px;
+    padding: 75px 60px;
+    box-shadow: 1px 18px 38px 11.27px rgba(42, 40, 55, 0.05); 
+}

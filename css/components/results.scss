@@ -1,0 +1,9 @@
+#results-content {
+	position: relative;
+	margin-top: 100px;
+	z-index: 100;
+
+	#content-container {
+		@extend %gray-container;
+	}
+}

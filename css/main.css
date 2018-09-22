@@ -4061,6 +4061,16 @@ a.text-dark:focus, a.text-dark:hover {
 .text-white {
   color: #FFFFFF !important; }
 
+#form-content #content-container, #results-content #content-container {
+  width: 80%;
+  margin: 0 auto;
+  max-width: 1000px;
+  background: #F5F7FA;
+  color: #000000;
+  border-radius: 15px;
+  padding: 75px 60px;
+  box-shadow: 1px 18px 38px 11.27px rgba(42, 40, 55, 0.05); }
+
 #landing {
   position: relative;
   background: #0B1A38;
@@ -4095,117 +4105,116 @@ a.text-dark:focus, a.text-dark:hover {
     left: 0; }
     #landing #short-nav .logo {
       height: 32px; }
-    #landing #short-nav h4 {
+    #landing #short-nav h1 {
       font-size: 12px;
       text-transform: uppercase;
       font-weight: 600; }
-  #landing #title-content {
+  #landing .title-content {
     position: absolute;
     top: 250px;
     z-index: 50; }
-    #landing #title-content h1 {
+    #landing .title-content h2 {
       font-size: 30px;
       margin-bottom: 15px; }
-    #landing #title-content h5 {
+    #landing .title-content h5 {
       font-size: 12px;
       line-height: 1.4; }
     @media (min-width: 768px) {
-      #landing #title-content h1 {
+      #landing .title-content h2 {
         font-size: 42px; }
-      #landing #title-content h5 {
+      #landing .title-content h5 {
         font-size: 16px; } }
-
-#planner {
-  background: #F5F7FA;
-  padding: 0 20px 100px 20px;
-  z-index: 100;
-  position: relative; }
 
 #form-content {
   position: absolute;
   display: none;
   top: 250px;
   z-index: 100; }
-  #form-content #content-container {
-    width: 80%;
-    margin: 0 auto;
-    max-width: 1000px;
-    background: #F5F7FA;
-    color: #000000;
-    border-radius: 15px;
-    padding: 75px 60px;
-    box-shadow: 1px 18px 38px 11.27px rgba(42, 40, 55, 0.05); }
-    #form-content #content-container .form-row {
-      display: none; }
-      #form-content #content-container .form-row .form-group label {
-        padding-left: 0;
-        display: block;
-        font-size: 22px;
-        color: #242A35; }
-      #form-content #content-container .form-row .form-group small {
-        font-size: 14px;
-        color: #576784; }
-      #form-content #content-container .form-row .form-group input {
-        border-right: none;
-        border-left: none;
-        border-top: none;
-        background: #F5F7FA;
-        color: #576784;
-        min-width: 300px;
-        border-bottom: 2px solid #c0c6d9; }
-        #form-content #content-container .form-row .form-group input:focus {
-          outline-color: #F5F7FA !important; }
-      #form-content #content-container .form-row .form-group input, #form-content #content-container .form-row .form-group button {
-        font-size: 16px; }
-      #form-content #content-container .form-row .form-group .btn-input {
-        background: #FFFFFF;
-        color: #576784;
-        border: 1px solid #576784; }
-      #form-content #content-container .form-row .form-group .btn-input.selected {
-        background: #5C5CFF;
-        color: #FFFFFF;
-        border-color: #3923B7; }
-      @media (min-width: 768px) {
-        #form-content #content-container .form-row .form-group label {
-          font-size: 22px; }
-        #form-content #content-container .form-row .form-group small {
-          font-size: 14px; }
-        #form-content #content-container .form-row .form-group input, #form-content #content-container .form-row .form-group button {
-          font-size: 16px; } }
-    #form-content #content-container #release-importance {
+  #form-content #content-container .form-row {
+    display: none;
+    height: 200px; }
+    #form-content #content-container .form-row .form-group label {
+      padding-left: 0;
+      display: block;
+      font-size: 22px;
+      color: #242A35; }
+    #form-content #content-container .form-row .form-group small {
+      font-size: 14px;
+      display: block;
+      color: #576784; }
+    #form-content #content-container .form-row .form-group input {
+      border-right: none;
+      border-left: none;
+      border-top: none;
+      background: #F5F7FA;
+      color: #576784;
+      min-width: 300px;
       margin-top: 15px;
-      margin-bottom: 15px; }
-      #form-content #content-container #release-importance .btn {
-        width: 40px;
-        height: 40px; }
-    #form-content #content-container #input-employee-number .btn, #form-content #content-container #input-sales-team .btn {
-      width: 100px;
-      height: 40px;
-      margin: 15px 20px;
-      text-transform: none; }
-      #form-content #content-container #input-employee-number .btn:first-child, #form-content #content-container #input-sales-team .btn:first-child {
-        margin-left: 0; }
+      border-bottom: 2px solid #c0c6d9; }
+      #form-content #content-container .form-row .form-group input:focus {
+        outline-color: #F5F7FA !important; }
+    #form-content #content-container .form-row .form-group input, #form-content #content-container .form-row .form-group button {
+      font-size: 16px; }
+    #form-content #content-container .form-row .form-group .btn-input {
+      background: #FFFFFF;
+      color: #576784;
+      border: 1px solid #576784; }
+    #form-content #content-container .form-row .form-group .btn-input.selected {
+      background: #5C5CFF !important;
+      color: #FFFFFF !important;
+      border-color: #3923B7 !important; }
+    @media (min-width: 768px) {
+      #form-content #content-container .form-row .form-group label {
+        font-size: 22px; }
+      #form-content #content-container .form-row .form-group small {
+        font-size: 14px; }
+      #form-content #content-container .form-row .form-group input, #form-content #content-container .form-row .form-group button {
+        font-size: 16px; } }
+  #form-content #content-container #release-importance {
+    margin-top: 15px;
+    margin-bottom: 15px; }
+    #form-content #content-container #release-importance .btn {
+      width: 40px;
+      height: 40px; }
+  #form-content #content-container #input-employee-number .btn, #form-content #content-container #input-sales-team .btn {
+    width: 100px;
+    height: 40px;
+    margin: 15px 20px;
+    text-transform: none; }
+    #form-content #content-container #input-employee-number .btn:first-child, #form-content #content-container #input-sales-team .btn:first-child {
+      margin-left: 0; }
 
 .form-buttons {
   margin-top: 25px; }
 
-.moving-button {
+.moving-button, #submit-button, #download-button {
   padding: 10px 20px;
   position: relative; }
-  .moving-button span {
+  .moving-button span, #submit-button span, #download-button span {
     font-size: 16px;
     line-height: 1;
     vertical-align: middle; }
-  .moving-button .button-arrow {
+  .moving-button .button-icon, #submit-button .button-icon, #download-button .button-icon {
     width: 20px;
     vertical-align: middle; }
 
-.moving-button.next-button span {
+#submit-button {
+  display: none; }
+  #submit-button span {
+    margin-left: 5px; }
+
+#next-button {
+  display: none; }
+
+#submit-button.show-btn, #next-button.show-btn {
+  display: inline-block !important; }
+
+#next-button span, #get-started-button span {
   margin-right: 5px; }
 
-.moving-button.back-button span {
+#back-button span {
   margin-left: 5px; }
-.moving-button.back-button .button-arrow {
+#back-button .button-icon {
   -webkit-transform: rotate(180deg);
   /* Chrome and other webkit browsers */
   -moz-transform: rotate(180deg);
@@ -4216,5 +4225,10 @@ a.text-dark:focus, a.text-dark:hover {
   /* IE9 */
   transform: rotate(180deg);
   /* W3C compliant browsers */ }
+
+#results-content {
+  position: relative;
+  margin-top: 100px;
+  z-index: 100; }
 
 /*# sourceMappingURL=main.css.map */

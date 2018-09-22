@@ -44,33 +44,34 @@
                         </a>
                     </div>
                     <div class="col-6 text-right">
-                        <h4>Product Launch Planner</h4>
+                        <h1>Product Launch Planner</h1>
                     </div>
                 </div>
             </div>
-            <div id="title-content" class="col-12">
+            <img id="rocket-ship" src="./img/landing/rocket.svg" alt="image of rocket ship"/>
+            <!-- <div id="template-title-content" class="col-12 title-content">
                 <div class="text-center">
-                    <h1>Product Launch Plan Template</h1>
+                    <h2>Product Launch Plan Template</h2>
                     <h5>Use this free template to learn how to market a product. <br> Get your customized plan for your next product launch!</h5>
-                    <div id="get-started-button" class="btn next-button btn-primary moving-button">
+                    <div id="get-started-button" class="btn btn-primary moving-button">
                         <span>Get Started</span>
-                        <img src="./img/arrows/white.svg" class="button-arrow"/>
+                        <img src="./img/arrows/white.svg" class="button-icon"/>
                     </div>
                 </div>
             </div>
             <div id="form-content" class="col-12">
                 <div id="content-container">
                     <form id="planner-form">
-                        <div class="form-row" id="question-1">
+                        <div class="form-row input-form-row selected" id="question-1" data-next-input="question-2">
                              <div class="form-group">
                                 <label for="input-release-name">What is the name of the release?</label>
-                                <input id="question-1-input" type="text" class="form-control" id="input-release-name" placeholder="The iPhone XS">
+                                <input type="text" class="form-control" id="input-release-name" placeholder="The iPhone XS">
                             </div>
                         </div>
-                        <div class="form-row" id="question-2">    
+                        <div class="form-row btn-form-row" id="question-2" data-next-input="question-3">    
                             <div class="form-group">
                                 <label for="release-importance">How significant is your release?</label>
-                                <small id="importance-help" class="form-text text-muted">0 means no one cares, 10 means it's the next iPhone</small>
+                                <small id="importance-help">0 means no one cares, 10 means it's the next iPhone</small>
                                 <div class="btn-toolbar">
                                     <div class="btn-group" id="release-importance">
                                         <button type="button" class="btn btn-input">1</button>
@@ -87,16 +88,16 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="form-row" id="question-3">    
+                        <div class="form-row input-form-row" id="question-3">    
                             <div class="form-group">
-                                <label for="input-release-date" class="col-2 col-form-label">Date</label>
+                                <label for="input-release-date">When is the estimated release date?</label>
                                 <input class="form-control" type="date" value="2018-08-19" id="input-release-date">
                             </div>
                         </div>
-                        <div class="form-row">
+                        <div class="form-row btn-form-row" id="question-4">
                             <div class="form-group">
                                 <label for="input-employee-number">Do you have a sales team?</label>
-                                <small id="employee-number-help" class="form-text text-muted">Bacon ipsum dolor amet pig sirloin capicola tail bresaola</small>
+                                <small id="employee-number-help">Bacon ipsum dolor amet pig sirloin capicola tail bresaola</small>
                                 <div class="row">
                                     <div class="col-12" id="input-sales-team">
                                         <button type="button" class="btn btn-input">Yes</button>
@@ -105,76 +106,85 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="form-row">
+                        <div class="form-row btn-form-row" id="question-5">
                             <div class="form-group">
                                 <label for="input-employee-number">Approximate number fo employees at your company?</label>
-                                <small id="employee-number-help" class="form-text text-muted">This will help us determine the volume of content you can probably produce</small>
+                                <small id="employee-number-help">This will help us determine the volume of content you can probably produce</small>
                                 <div class="row">
                                     <div class="col-12" id="input-employee-number">
                                         <button type="button" class="btn btn-input">1-9</button>
                                         <button type="button" class="btn btn-input">10-24</button>
                                         <button type="button" class="btn btn-input">25-99</button>
-                                        <button type="button" class="btn btn-input">100+</button>
+                                        <button type="button" class="btn btn-input">100-499</button>
+                                        <button type="button" class="btn btn-input">500+</button>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="form-row">
+                        <div class="form-row input-form-row" id="question-6">
                             <div class="form-group">
-                                <label for="input-email">Work email</label>
-                                <small id="email-help" class="form-text text-muted">So we can email you the results</small>
-                                <input type="text" class="form-control" id="input-email" aria-describedby="emailHelp" placeholder="www.appcues.com">
+                                <label for="input-email">Your work email</label>
+                                <small id="emailHelp">So we can email you the results</small>
+                                <input type="email" class="form-control" id="input-email" aria-describedby="emailHelp" placeholder="www.appcues.com">
                             </div>
                         </div>
-                        <div class="form-row">
+                        <div class="form-row input-form-row" id="question-7">
                             <div class="form-group">
-                                <label for="input-website">First name</label>
-                                <small id="importanceHelp" class="form-text text-muted">Bacon ipsum dolor amet pig sirloin capicola tail bresaola</small>
-                                <input type="text" class="form-control" id="input-website" aria-describedby="emailHelp" placeholder="www.appcues.com">
+                                <label for="input-first-name">Your first name</label>
+                                <small id="firstNameHelp">We’re Appcues! Nice to meet you.</small>
+                                <input type="text" class="form-control" id="input-first-name" aria-describedby="firstNameHelp" placeholder="www.appcues.com">
                             </div>
                         </div>
-                        <div class="form-row">    
-                            <label for="input-website">Your company website</label>
-                            <small id="importanceHelp" class="form-text text-muted">Bacon ipsum dolor amet pig sirloin capicola tail bresaola</small>
+                        <div class="form-row input-form-row" id="question-8">    
                             <div class="form-group">
+                                <label for="input-website">Your company website</label>
+                                <small id="importanceHelp">Bacon ipsum dolor amet pig sirloin capicola tail bresaola</small>
                                 <input type="email" class="form-control" id="input-website" aria-describedby="emailHelp" placeholder="www.appcues.com">
                             </div>
                         </div>
-                        
                     </form>                    
                     <div class="form-buttons row">
                         <div class="col-6 text-left">
-                            <div id="back-button" class="moving-button back-button btn btn-danger">
-                                <img src="./img/arrows/white.svg" class="button-arrow" />
+                            <div id="back-button" class="moving-button btn btn-danger">
+                                <img src="./img/arrows/white.svg" class="button-icon" />
                                 <span>Back</span>
                             </div>
                         </div>
                         <div class="col-6 text-right">
-                            <div id="next-button" class="moving-button next-button btn btn-primary">
+                            <div id="next-button" class="moving-button btn btn-primary show-btn">
                                 <span>Next</span>
-                                <img src="./img/arrows/white.svg" class="button-arrow" />
+                                <img src="./img/arrows/white.svg" class="button-icon" />
                             </div>
-                            <button id="submit" type="submit" class="btn btn-primary">Submit</button>
+                            <div id="submit-button" class="btn btn-primary">
+                                <img src="./img/icons/rocket.svg" class="button-icon" />
+                                <span>Get Your Launch Plan</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+            <div id="results" class="row">
+                <div class="col-12 title-content">
+                    <div class="text-center">
+                        <h2>Product Launch Plan Results</h2>
+                        <h5>Use this free template to learn how to market a product. <br> Get your customized plan for your next product launch!</h5>
+                        <div id="download-button" class="btn btn-primary">
+                            <span>Download PDF</span>
+                            <img src="./img/icons/email.svg" class="button-icon"/>
+                        </div>
+                    </div>
+                </div>
+                <div id="results-content" class="col-12">
+                    <div id="content-container">
+                        <div class="col-12">
+                            <div id="timeline-content">
+                                <div class="milestone col-12 col-md-6">
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <!-- <div id="planner" class="row">
-            <div  class="col-12">
-                <div id="planner-inputs">
-                            
-                    </div>
-                </div>
-            </div> -->
-           <!--  <div id="results" class="row">
-                <div class="col-12">
-                    <div id="timeline">
-                        <div class="milestone">
-                        </div>
-                    </div>
-                </div>
-            </div> -->
         </div>
     </div>
 

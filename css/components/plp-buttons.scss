@@ -1,9 +1,8 @@
 .form-buttons {
 	margin-top: 25px;
-	
 }
 
-.moving-button {
+.moving-button, #submit-button, #download-button {
 	padding: 10px 20px;
 	position: relative;
 
@@ -13,25 +12,40 @@
 		vertical-align: middle;
 	}
 
-	.button-arrow {
+	.button-icon {
 		width: 20px;
 		vertical-align: middle;
 	}
 }
 
+#submit-button {
+	display: none;
+	span {
+		margin-left: 5px;
+	}
+}
 
-.moving-button.next-button {
+#next-button {
+	display: none;
+}
+
+
+#submit-button.show-btn, #next-button.show-btn {
+	display: inline-block !important;
+}
+
+#next-button, #get-started-button {
 	span {
 		margin-right: 5px;
 	}
 }
 
-.moving-button.back-button {
+#back-button {
 	span {
 		margin-left: 5px;
 	}
 
-	.button-arrow {
+	.button-icon {
 		-webkit-transform: rotate(180deg);     /* Chrome and other webkit browsers */
 		-moz-transform: rotate(180deg);        /* FF */
 		-o-transform: rotate(180deg);          /* Opera */
