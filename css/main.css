@@ -4151,6 +4151,7 @@ a.text-dark:focus, a.text-dark:hover {
 
 #short-nav {
   height: 60px;
+  padding: 10px;
   color: #FFFFFF;
   width: 100%;
   background: transparent;
@@ -4159,11 +4160,18 @@ a.text-dark:focus, a.text-dark:hover {
   left: 0;
   z-index: 100; }
   #short-nav .logo {
-    height: 32px; }
+    height: 32px;
+    position: absolute;
+    top: 19px;
+    left: 10px; }
   #short-nav h1 {
-    font-size: 12px;
+    font-size: 14px;
     text-transform: uppercase;
-    font-weight: 600; }
+    font-weight: 600;
+    position: absolute;
+    line-height: 1;
+    top: 28px;
+    right: 10px; }
 
 #form-content {
   position: absolute;
