@@ -4063,7 +4063,6 @@ a.text-dark:focus, a.text-dark:hover {
 
 #form-content #content-container, #results-content #content-container {
   width: 90%;
-  max-width: 800px;
   margin: 0 auto;
   background: #F5F7FA;
   color: #000000;
@@ -4179,6 +4178,7 @@ a.text-dark:focus, a.text-dark:hover {
   top: 250px;
   z-index: 100; }
   #form-content #content-container {
+    max-width: 800px;
     position: relative; }
     #form-content #content-container #error-message {
       color: #FF3B4E;
@@ -4310,6 +4310,8 @@ a.text-dark:focus, a.text-dark:hover {
   position: relative;
   margin-top: 100px;
   z-index: 100; }
+  #results-content #content-container {
+    max-width: 1400px; }
   #results-content #timeline-content #line {
     width: 1px;
     background: #c0c6d9;
@@ -4373,12 +4375,12 @@ a.text-dark:focus, a.text-dark:hover {
           text-align: left; }
           #results-content #timeline-content .milestone .content .body-content .due-date .icon {
             display: inline-block;
-            width: 25px;
-            margin-left: 5px; }
+            width: 18px;
+            margin-right: 5px; }
           #results-content #timeline-content .milestone .content .body-content .due-date h6 {
-            font-size: 16px;
+            font-size: 12px;
             color: #576784;
-            display: inline-block;
+            display: inline;
             vertical-align: middle; }
         #results-content #timeline-content .milestone .content .body-content .body {
           margin-top: 20px;

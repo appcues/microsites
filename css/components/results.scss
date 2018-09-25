@@ -9,6 +9,7 @@
 
 	#content-container {
 		@extend %gray-container;
+		max-width: 1400px;
 	}
 
 	#timeline-content {
@@ -95,16 +96,17 @@
 
 					.due-date {
 						text-align: left;
+
 						.icon {
 							display: inline-block;
-							width: 25px;
-							margin-left: 5px;
+							width: 18px;
+							margin-right: 5px;
 						}
 
 						h6 {
-							font-size: 16px;
+							font-size: 12px;
 							color: $dark-gray;
-							display: inline-block;
+							display: inline;
 							vertical-align: middle;
 						}
 					}

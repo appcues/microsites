@@ -7,6 +7,7 @@
 
 	#content-container {
 		@extend %gray-container;
+		max-width: 800px;
 		position: relative;
 
 		#error-message {
