@@ -40,13 +40,28 @@
 	}
 }
 
-#rocket-ship {
+#rocketship {
 	position: fixed;
-	top: 300px;
+	bottom: 50px;
+	height: 25vh;
+	width: 250px;
 	z-index: 100;
-	width: 75px;
-	left: 5%;
-	transition: transform 1s;
+	left: 50px;
+	max-height: 500px;
+
+	.rocketship-part {
+		position: absolute;
+		width: 100%;
+		bottom: 0;
+		left: 0;
+		opacity: 0;
+		transition: opacity 1s ease;
+	}
+
+	.rocketship-part.shown {
+		opacity: 1;
+	}
+
 }
 
 #rocket-ship.rotate {

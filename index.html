@@ -37,7 +37,10 @@
                 <h1>Product Launch Planner</h1>
             </div>
         </div>
-        <img id="rocket-ship" src="./img/landing/rocket.svg" alt="image of rocket ship"/>
+        <div id="rocketship">
+            <img class="rocketship-part" src="./img/landing/rocket.svg" alt="image of rocket ship"/>
+            <img class="rocketship-part" src="./img/landing/rocket.svg" alt="image of rocket ship"/>
+        </div>
         <div id="landing">
             <img data-depth="0.3" src="./img/landing/stars-front.svg" data-depth="0.3" class="stars" />
             <img data-depth="0.5" src="./img/landing/stars-back.svg" data-depth="0.18" class="stars" />
@@ -60,14 +63,19 @@
             </div>
             <div id="form-content" class="col-12">
                 <div id="content-container">
+                    <div class="progress-bar">
+                        <div id="progress-bar-line"></div>
+                        <h6>Question <span id="question-step">1</span> of 8</h6>
+                    </div>
                     <form id="planner-form">
-                        <div class="form-row input-form-row selected" id="question-1" data-next-input="question-2">
+                        <p id="error-message">Please provide a valid input</p>
+                        <div class="form-row input-form-row selected" id="question-1">
                              <div class="form-group">
                                 <label for="input-release-name">What is the name of the release?</label>
                                 <input type="text" class="form-control" id="input-release-name" placeholder="The iPhone XS">
                             </div>
                         </div>
-                        <div class="form-row btn-form-row" id="question-2" data-next-input="question-3">    
+                        <div class="form-row btn-form-row" id="question-2">    
                             <div class="form-group">
                                 <label for="release-importance">How significant is your release?</label>
                                 <small id="importance-help">0 means no one cares, 10 means it's the next iPhone</small>

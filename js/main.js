@@ -20,38 +20,23 @@ var appcuesProductLaunchPlanner = {
   		});
 	},
 
-	moveRocketShip: function() {
-		if (appcuesProductLaunchPlanner.formData.length < 2) {
-			$("#rocket-ship").animate({
-				top: "-=75",
-				left: "+=1%"
-			});
-		} else if (appcuesProductLaunchPlanner.formData.length < 5) {
-			$("#rocket-ship").animate({
-				left: "+=25%"
-			});
-		} else {
-			$("#rocket-ship").animate({
-				top: "+=75",
-				left: "+=1%"
-			});
-		}
-
-		
+	buildRocketShip: function() {
+		$("#rocketship .rocketship-part:not(.shown):first").toggleClass('shown');
 	},
 
-	updateProgressBar: function() {
-
+	updateProgressBar: function(questionNumber) {
+		$('#question-step').text(questionNumber);
+		$('#progress-bar-line').width(((questionNumber/8) * 100) + '%');
 	},
 	
 
 	getStarted: function() {
 		$("#get-started-button").click(function(){
+			appcuesProductLaunchPlanner.buildRocketShip();
 			console.log(appcuesProductLaunchPlanner.formData);
 			$('#template-title-content').fadeOut( "slow" );
 			$('#form-content').fadeIn("slow");
 			$('#question-' + (appcuesProductLaunchPlanner.formData.length + 1)).fadeIn("slow");
-			$("#rocket-ship").rotate({angle:45});
 		});
 
 		
@@ -86,7 +71,9 @@ var appcuesProductLaunchPlanner = {
 				$('#question-' + (appcuesProductLaunchPlanner.formData.length + 1)).fadeOut("slow");
 			} else {
 				$('#question-' + (appcuesProductLaunchPlanner.formData.length + 1)).hide();
+				appcuesProductLaunchPlanner.updateProgressBar((appcuesProductLaunchPlanner.formData.length));
 				$('#question-' + (appcuesProductLaunchPlanner.formData.length)).fadeIn("slow");	
+				appcuesProductLaunchPlanner.updateProgressBar(appcuesProductLaunchPlanner.formData.length);
 				appcuesProductLaunchPlanner.formData.pop();
 				console.log(appcuesProductLaunchPlanner.formData);
 			}
@@ -100,6 +87,21 @@ var appcuesProductLaunchPlanner = {
 		});
 	},
 
+	checkInput: function(element) {
+		if(element.hasClass('input-form-row')){
+			var inputValue = element.find('input').val();
+		} else {
+			var inputValue = element.find('.btn-input.selected').text();
+		}
+
+		if (inputValue.length < 1) {
+			return false;
+		} else {
+			return true;
+		}
+
+	},
+
 	addData: function(element) {
 		if(element.hasClass('input-form-row')){
 			appcuesProductLaunchPlanner.formData.push(element.find('input').val());
@@ -109,18 +111,28 @@ var appcuesProductLaunchPlanner = {
 		
 	},
 
+
 	setNextButton: function() {
 		$("#next-button").click(function(){
-			appcuesProductLaunchPlanner.moveRocketShip();
-			appcuesProductLaunchPlanner.addData($('#question-' + (appcuesProductLaunchPlanner.formData.length + 1)));
-			console.log(appcuesProductLaunchPlanner.formData);
-			$('#question-' + appcuesProductLaunchPlanner.formData.length).hide();
-			$('#question-' + (appcuesProductLaunchPlanner.formData.length + 1)).fadeIn("slow");
+			var targetInput = $('#question-' + (appcuesProductLaunchPlanner.formData.length + 1));
 
-			//make the length formula dynamic off of number of children with form row class
-			if (appcuesProductLaunchPlanner.formData.length === ($('.form-row').length) - 1) {
-				$("#submit-button").toggleClass("show-btn");
-				$("#next-button").toggleClass("show-btn");
+			if (appcuesProductLaunchPlanner.checkInput(targetInput)) {
+				appcuesProductLaunchPlanner.buildRocketShip();
+				appcuesProductLaunchPlanner.addData(targetInput);
+				console.log(appcuesProductLaunchPlanner.formData);
+				$('#question-' + appcuesProductLaunchPlanner.formData.length).hide();
+				$('#question-' + (appcuesProductLaunchPlanner.formData.length + 1)).fadeIn("slow");
+				appcuesProductLaunchPlanner.updateProgressBar(appcuesProductLaunchPlanner.formData.length + 1);
+				$('#error-message').hide();
+
+				//make the length formula dynamic off of number of children with form row class
+				if (appcuesProductLaunchPlanner.formData.length === ($('.form-row').length) - 1) {
+					$("#submit-button").toggleClass("show-btn");
+					$("#next-button").toggleClass("show-btn");
+				}
+				
+			} else {
+				$('#error-message').show();
 			}
 		});
 	},
