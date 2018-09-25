@@ -37,12 +37,45 @@
 }
 
 %gray-container {
-    width: 80%;
+    width: 90%;
+    max-width: 800px;
     margin: 0 auto;
-    max-width: 1000px;
     background: $bg-gray;
     color: $black;
     border-radius: 15px;
-    padding: 75px 60px;
+    padding: 25px;
     box-shadow: 1px 18px 38px 11.27px rgba(42, 40, 55, 0.05); 
+
+    @include media-breakpoint-up(md) {
+      padding: 75px 60px;
+    }
+
+}
+
+.title-content {
+  position: absolute;
+  top: 250px;
+  z-index: 50;
+  color: $white;
+
+  h2 {
+    font-size: 30px;
+    margin-bottom: 15px;
+  }
+
+  h5 {
+    font-size: 12px;
+    line-height: 1.4;
+  } 
+
+  @include media-breakpoint-up(md) {
+    h2 {
+      font-size: 42px;
+    }
+
+    h5 {
+      font-size: 16px;
+    }
+  }
+
 }

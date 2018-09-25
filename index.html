@@ -14,6 +14,7 @@
 
     <title>[Title]</title>
 
+
     <!-- CSS
     ================================================== -->
     <link href="https://fonts.googleapis.com/css?family=Muli:400,600" rel="stylesheet">
@@ -26,30 +27,28 @@
   <body>
 
     <div class="container-fluid">
-        <div id="landing" class="row">
-            <div class="stars">
-                <img src="./img/landing/stars-front.svg" data-depth="0.3" class="foreground-stars" />
-                <img src="./img/landing/stars-back.svg" data-depth="0.18" class="background-stars" />
+        <div id="short-nav" class="row">
+            <div class="col-6 text-left">
+                <a href="https://www.appcues.com/">
+                    <img class="logo" src="./img/logo.svg" alt="Appcues Logo"/>
+                </a>
             </div>
+            <div class="col-6 text-right">
+                <h1>Product Launch Planner</h1>
+            </div>
+        </div>
+        <img id="rocket-ship" src="./img/landing/rocket.svg" alt="image of rocket ship"/>
+        <div id="landing">
+            <img data-depth="0.3" src="./img/landing/stars-front.svg" data-depth="0.3" class="stars" />
+            <img data-depth="0.5" src="./img/landing/stars-back.svg" data-depth="0.18" class="stars" />
             <div class="clouds">
-                <img src="./img/clouds/front.svg" data-depth="0.3" id="foreground-clouds" class="clouds" />
-                <img src="./img/clouds/middle.svg" data-depth="0.18" id="midground-clouds" class="clouds" />
-                <img src="./img/clouds/back.svg" data-depth="0.1" id="background-clouds" class="clouds" />
+                <img data-depth="0.3" src="./img/clouds/front.svg" data-depth="0.3" id="foreground-clouds" class="clouds" />
+                <img data-depth="0.15" src="./img/clouds/middle.svg" data-depth="0.18" id="midground-clouds" class="clouds" />
+                <img data-depth="0.1" src="./img/clouds/back.svg" data-depth="0.1" id="background-clouds" class="clouds" />
             </div>
-            <div id="short-nav" class="col-12">
-                <div class="row">
-                    <div class="col-6 text-left">
-                        <a href="https://www.appcues.com/">
-                            <img class="logo" src="./img/logo.svg" alt="Appcues Logo"/>
-                        </a>
-                    </div>
-                    <div class="col-6 text-right">
-                        <h1>Product Launch Planner</h1>
-                    </div>
-                </div>
-            </div>
-            <img id="rocket-ship" src="./img/landing/rocket.svg" alt="image of rocket ship"/>
-            <!-- <div id="template-title-content" class="col-12 title-content">
+        </div>
+        <div class="row">
+            <div id="template-title-content" class="col-12 title-content">
                 <div class="text-center">
                     <h2>Product Launch Plan Template</h2>
                     <h5>Use this free template to learn how to market a product. <br> Get your customized plan for your next product launch!</h5>
@@ -162,23 +161,308 @@
                         </div>
                     </div>
                 </div>
-            </div> -->
-            <div id="results" class="row">
-                <div class="col-12 title-content">
-                    <div class="text-center">
-                        <h2>Product Launch Plan Results</h2>
-                        <h5>Use this free template to learn how to market a product. <br> Get your customized plan for your next product launch!</h5>
-                        <div id="download-button" class="btn btn-primary">
-                            <span>Download PDF</span>
-                            <img src="./img/icons/email.svg" class="button-icon"/>
-                        </div>
+            </div>
+            <div id="results" class="col-12 title-content">
+                <div class="text-center">
+                    <h2>Product Launch Plan Results</h2>
+                    <h5>Bacon ipsum dolor amet pig sirloin capicola tail bresaola <br>Bacon ipsum dolor amet pig sirloin capicola tail bresaola</h5>
+                    <div id="download-button" class="btn btn-primary">
+                        <span>Download PDF</span>
+                        <img src="./img/icons/email.svg" class="button-icon"/>
                     </div>
-                </div>
-                <div id="results-content" class="col-12">
-                    <div id="content-container">
-                        <div class="col-12">
-                            <div id="timeline-content">
-                                <div class="milestone col-12 col-md-6">
+                    <div id="results-content" class="row">
+                        <div id="content-container">
+                            <div class="col-12">
+                                <div id="timeline-content">
+                                    <div id="line"></div>
+                                    <div class="milestone">
+                                        <div class="date">Sep <br><span class="number">25</span></div>
+                                        <div class="content">
+                                            <div class="header">
+                                                <h5>Identify objectives and key results</h5>
+                                                <img class="icon" src="./img/icons/rocket.svg" alt=
+                                                    "icon of clock"/>
+                                            </div>
+                                            <div class="body-content">
+                                                <div class="due-date">
+                                                    <img class="icon" src="./img/icons/rocket.svg" alt=
+                                                    "icon of clock"/>
+                                                    <h6>Finalize by (Release -30 days)</h6>
+                                                </div>
+                                                <p class="body">What is the rationale/intention behind the project? Why this is needed, and what do we hope to accomplish? How is it aligned with company and department targets? What is/are the goal(s) of the campaign? (ie. # of MQLs, # of trials started, # of units sold) How will success be measured?</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="milestone">
+                                        <div class="date">Oct<br><span class="number">1</span></div>
+                                        <div class="content">
+                                            <div class="header">
+                                                <h5>Define messaging</h5>
+                                                <img class="icon" src="./img/icons/rocket.svg" alt=
+                                                    "icon of clock"/>
+                                            </div>
+                                            <div class="body-content">
+                                                <div class="due-date">
+                                                    <img class="icon" src="./img/icons/rocket.svg" alt=
+                                                    "icon of clock"/>
+                                                    <h6>Finalize by (Release -15 days)</h6>
+                                                </div>
+                                                <p class="body">What pain will this campaign/project solve for the chosen audience? Try using their own words. What will the thing we’re marketing allow them to do, that they couldn’t before?</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="milestone">
+                                        <div class="date">Oct<br><span class="number">10</span></div>
+                                        <div class="content">
+                                            <div class="header">
+                                                <h5>Plan and host event or keynote</h5>
+                                                <img class="icon" src="./img/icons/rocket.svg" alt=
+                                                    "icon of clock"/>
+                                            </div>
+                                            <div class="body-content">
+                                                <div class="due-date">
+                                                    <img class="icon" src="./img/icons/rocket.svg" alt=
+                                                    "icon of clock"/>
+                                                    <h6>Start writing your keynote by (Release -90 days)</h6>
+                                                </div>
+                                                <p class="body">If you have a user conference, save the product launch announcement for then. If you don't yet, try shooting a video of your founder/co-founders presenting your new product or throwing a party and giving a short talk on the release.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="milestone">
+                                        <div class="date">Oct<br><span class="number">10</span></div>
+                                        <div class="content">
+                                            <div class="header">
+                                                <h5>Reach out to press</h5>
+                                                <img class="icon" src="./img/icons/rocket.svg" alt=
+                                                    "icon of clock"/>
+                                            </div>
+                                            <div class="body-content">
+                                                <div class="due-date">
+                                                    <img class="icon" src="./img/icons/rocket.svg" alt=
+                                                    "icon of clock"/>
+                                                    <h6>Contact press by (Release -7 days)</h6>
+                                                </div>
+                                                <p class="body">Work with industry press to get your executive's vision out there. Have quotes and customer stories at the ready.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="milestone">
+                                        <div class="date">Sep <br><span class="number">25</span></div>
+                                        <div class="content">
+                                            <div class="header">
+                                                <h5>Write blog post</h5>
+                                                <img class="icon" src="./img/icons/rocket.svg" alt=
+                                                    "icon of clock"/>
+                                            </div>
+                                            <div class="body-content">
+                                                <div class="due-date">
+                                                    <img class="icon" src="./img/icons/rocket.svg" alt=
+                                                    "icon of clock"/>
+                                                    <h6>Draft blog post by (Release -8 days)</h6>
+                                                </div>
+                                                <p class="body">Founder/CEO/or product lead Publish a post on your public blog from your CEO or an executive. Let them lay the vision for where the company is headed and how this product launch fits into that vision. Have a director-level team member or founder (if more towards 1 employee than 9 employees) write a blog post that's relevant to your industry. Make this post a mix of vision and tactics so your readers can learn what opportunity lives inside your product.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="milestone">
+                                        <div class="date">Oct<br><span class="number">1</span></div>
+                                        <div class="content">
+                                            <div class="header">
+                                                <h5>Promote on social media</h5>
+                                                <img class="icon" src="./img/icons/rocket.svg" alt=
+                                                    "icon of clock"/>
+                                            </div>
+                                            <div class="body-content">
+                                                <div class="due-date">
+                                                    <img class="icon" src="./img/icons/rocket.svg" alt=
+                                                    "icon of clock"/>
+                                                    <h6>Queue up on (Release day)</h6>
+                                                </div>
+                                                <p class="body">(try a gif or native video) Post a link to your blog article on your social outlets. Include a rich image and an interesting hook.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="milestone">
+                                        <div class="date">Oct<br><span class="number">10</span></div>
+                                        <div class="content">
+                                            <div class="header">
+                                                <h5>Launch on Product Hunt </h5>
+                                                <img class="icon" src="./img/icons/rocket.svg" alt=
+                                                    "icon of clock"/>
+                                            </div>
+                                            <div class="body-content">
+                                                <div class="due-date">
+                                                    <img class="icon" src="./img/icons/rocket.svg" alt=
+                                                    "icon of clock"/>
+                                                    <h6>Plan before (Release -15 days)</h6>
+                                                </div>
+                                                <p class="body">Put your standalone feature page as its own product on Product Hunt. For maximum amplification, try getting a top Hunter on Product Hunt to post the feature page for you. Push to the Product Hunt page through social and by including a link to it as a PS on the end of your emails.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="milestone">
+                                        <div class="date">Oct<br><span class="number">10</span></div>
+                                        <div class="content">
+                                            <div class="header">
+                                                <h5>Boost using paid ads</h5>
+                                                <img class="icon" src="./img/icons/rocket.svg" alt=
+                                                    "icon of clock"/>
+                                            </div>
+                                            <div class="body-content">
+                                                <div class="due-date">
+                                                    <img class="icon" src="./img/icons/rocket.svg" alt=
+                                                    "icon of clock"/>
+                                                    <h6>Set up before (Release -3 days)</h6>
+                                                </div>
+                                                <p class="body">Retargeting ads, Adwords. Have these ads redirect to the feature page you made for the release.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="milestone">
+                                        <div class="date">Sep <br><span class="number">25</span></div>
+                                        <div class="content">
+                                            <div class="header">
+                                                <h5>Create a feature page</h5>
+                                                <img class="icon" src="./img/icons/rocket.svg" alt=
+                                                    "icon of clock"/>
+                                            </div>
+                                            <div class="body-content">
+                                                <div class="due-date">
+                                                    <img class="icon" src="./img/icons/rocket.svg" alt=
+                                                    "icon of clock"/>
+                                                    <h6>Complete by (Release day -5)</h6>
+                                                </div>
+                                                <p class="body">Build a standalone feature page. You can drive blog and press traffic here to help inspire and convert. If you want a particular action done on this page (ex. Signup for a new product) then structure your feature page as a landing page that only pushes to that one action. Include minimum linking to other pages, as that will pull people away.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="milestone">
+                                        <div class="date">Oct<br><span class="number">1</span></div>
+                                        <div class="content">
+                                            <div class="header">
+                                                <h5>Develop sales collateral</h5>
+                                                <img class="icon" src="./img/icons/rocket.svg" alt=
+                                                    "icon of clock"/>
+                                            </div>
+                                            <div class="body-content">
+                                                <div class="due-date">
+                                                    <img class="icon" src="./img/icons/rocket.svg" alt=
+                                                    "icon of clock"/>
+                                                    <h6>Distribute to sales by (Release day -7)</h6>
+                                                </div>
+                                                <p class="body">Create a single page of collateral on your new product that your sales team can attach—or link to—from emails to prospects. Keep it simple- focus on messaging they should be using, and how they should answer the most common questions they will get: How this feature provides value, and what differentiates it from the competition.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="milestone">
+                                        <div class="date">Oct<br><span class="number">10</span></div>
+                                        <div class="content">
+                                            <div class="header">
+                                                <h5>Send emails from sales</h5>
+                                                <img class="icon" src="./img/icons/rocket.svg" alt=
+                                                    "icon of clock"/>
+                                            </div>
+                                            <div class="body-content">
+                                                <div class="due-date">
+                                                    <img class="icon" src="./img/icons/rocket.svg" alt=
+                                                    "icon of clock"/>
+                                                    <h6>Send by (Release date +2)</h6>
+                                                </div>
+                                                <p class="body">Have your sales team reach out to their hot leads. Have them explain to each prospect how it can help them in their unique goals. Offer to show them a private demo of the new product.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="milestone">
+                                        <div class="date">Oct<br><span class="number">10</span></div>
+                                        <div class="content">
+                                            <div class="header">
+                                                <h5>Send announcement emails</h5>
+                                                <img class="icon" src="./img/icons/rocket.svg" alt=
+                                                    "icon of clock"/>
+                                            </div>
+                                            <div class="body-content">
+                                                <div class="due-date">
+                                                    <img class="icon" src="./img/icons/rocket.svg" alt=
+                                                    "icon of clock"/>
+                                                    <h6></h6>
+                                                </div>
+                                                <p class="body">Email an identified segment of users of the change, linking them to your customer-facing blog post. You can define this segment of users by usage or as having requested this feature or by persona.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="milestone">
+                                        <div class="date">Sep <br><span class="number">25</span></div>
+                                        <div class="content">
+                                            <div class="header">
+                                                <h5>Send announcement emails</h5>
+                                                <img class="icon" src="./img/icons/rocket.svg" alt=
+                                                    "icon of clock"/>
+                                            </div>
+                                            <div class="body-content">
+                                                <div class="due-date">
+                                                    <img class="icon" src="./img/icons/rocket.svg" alt=
+                                                    "icon of clock"/>
+                                                    <h6>Draft by (Release day -2)</h6>
+                                                </div>
+                                                <p class="body">Summarize the above blog post in an email to your blog subscribers. Link them to the post to learn more about the new product.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="milestone">
+                                        <div class="date">Oct<br><span class="number">1</span></div>
+                                        <div class="content">
+                                            <div class="header">
+                                                <h5>Write customer-facing blog or help center</h5>
+                                                <img class="icon" src="./img/icons/rocket.svg" alt=
+                                                    "icon of clock"/>
+                                            </div>
+                                            <div class="body-content">
+                                                <div class="due-date">
+                                                    <img class="icon" src="./img/icons/rocket.svg" alt=
+                                                    "icon of clock"/>
+                                                    <h6>Draft by (Release day -2)</h6>
+                                                </div>
+                                                <p class="body">A customer-facing blog post. If you do not have a customer-facing blog, this kind of how-to content goes well in your help center. The post should be a longer rendition of the email outlined above.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="milestone">
+                                        <div class="date">Oct<br><span class="number">10</span></div>
+                                        <div class="content">
+                                            <div class="header">
+                                                <h5>Host webinar</h5>
+                                                <img class="icon" src="./img/icons/rocket.svg" alt=
+                                                    "icon of clock"/>
+                                            </div>
+                                            <div class="body-content">
+                                                <div class="due-date">
+                                                    <img class="icon" src="./img/icons/rocket.svg" alt=
+                                                    "icon of clock"/>
+                                                    <h6>Perform on (Release day +3)</h6>
+                                                </div>
+                                                <p class="body">A 15-30m webinar to demonstrate your new tool to your customers. Start with a few slides of vision before getting into the nitty gritty. End with answering questions.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="milestone">
+                                        <div class="date">Oct<br><span class="number">10</span></div>
+                                        <div class="content">
+                                            <div class="header">
+                                                <h5>Build in-product tutorial</h5>
+                                                <img class="icon" src="./img/icons/rocket.svg" alt=
+                                                    "icon of clock"/>
+                                            </div>
+                                            <div class="body-content">
+                                                <div class="due-date">
+                                                    <img class="icon" src="./img/icons/rocket.svg" alt=
+                                                    "icon of clock"/>
+                                                    <h6>Queue up by (Release day -7)</h6>
+                                                </div>
+                                                <p class="body">You'll want to have 1-5 steps that walk your user through your new product. If you'd rather go the subtle route, try a user-activated hotspot instead of a tooltip walkthrough. Solutions exist at <a href="https://www.appcues.com/" target="_blank">appcues.com.</a></p>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -196,6 +480,9 @@
     <script src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.5/jquery-ui.min.js'></script>
     <script src="./libraries/js/scrollmagic/minified/ScrollMagic.min.js"></script>
     <script src="./libraries/js/scrollmagic/uncompressed/plugins/debug.addIndicators.js"></script>
+    <script src="http://cdn.sobekrepository.org/includes/jquery-rotate/2.2/jquery-rotate.js"></script>
+
+    
     <!-- <script src="./libraries/js/parallax/parallax.js"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.min.js"></script>
@@ -204,7 +491,6 @@
     <script src="./js/main.js"></script>
     <script src="./js/scroll.js"></script>
     <script src="./js/chrome-mobile.js"></script>
-    <script src="./js/anchor-scroll.js"></script>
     <!-- /Javascript
     ================================================== -->
   </body>
@@ -222,7 +508,22 @@
   
   
   
-  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   
   
   

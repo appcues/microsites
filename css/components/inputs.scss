@@ -1,5 +1,3 @@
-$input-gray: #576784;
-$input-gray-light: #c0c6d9;
 
 #form-content {
 	position: absolute;
@@ -26,7 +24,7 @@ $input-gray-light: #c0c6d9;
 				small {
 					font-size: 14px;
 					display: block;
-					color: $input-gray;
+					color: $dark-gray;
 				}
 
 
@@ -35,10 +33,16 @@ $input-gray-light: #c0c6d9;
 					border-left: none;
 					border-top: none;
 					background: $bg-gray;
-					color: $input-gray;
-					min-width: 300px;
+					color: $dark-gray;
+					width: 100%;
 					margin-top: 15px;
-					border-bottom: 2px solid $input-gray-light;
+					border-bottom: 2px solid $light-gray;
+					max-width: 500px;
+
+					@include media-breakpoint-up(md) {
+						min-width: 300px;
+
+					}
 
 					&:focus {
 						outline-color: $bg-gray !important;
@@ -51,8 +55,8 @@ $input-gray-light: #c0c6d9;
 
 				.btn-input {
 					background: $white;
-					color: $input-gray;
-					border: 1px solid $input-gray;
+					color: $dark-gray;
+					border: 1px solid $dark-gray;
 				}
 
 				.btn-input.selected {

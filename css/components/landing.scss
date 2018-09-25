@@ -1,11 +1,13 @@
 #landing {
-	position: relative;
+	position: fixed;
+	left: 0;
+	top: 0;
 	background: #0B1A38;
-	color: $white;
 	z-index: 20;
 	height: 100vh;
 	width: 100vw;
-	overflow: hidden;
+	overflow-x: hidden;
+	min-height: 800px;
 
 
 	.clouds {
@@ -27,6 +29,8 @@
 		}
 	}
 
+	
+
 	.stars {
 		position: absolute;
 		width: 100%;
@@ -34,53 +38,44 @@
 		left: 0;
 		z-index: 9;
 	}
+}
 
-	#short-nav {
-		height: 60px;
-		padding: 10px;
-		background: transparent;
-		position: absolute;
-		top: 0;
-		left: 0;
+#rocket-ship {
+	position: fixed;
+	top: 300px;
+	z-index: 100;
+	width: 75px;
+	left: 5%;
+	transition: transform 1s;
+}
 
-		.logo {
-			height: 32px;
-		}
+#rocket-ship.rotate {
+	-webkit-transform: rotate(90deg);     /* Chrome and other webkit browsers */
+	-moz-transform: rotate(90deg);        /* FF */
+	-o-transform: rotate(90deg);          /* Opera */
+	-ms-transform: rotate(90deg);         /* IE9 */
+	transform: rotate(90deg);             /* W3C compliant browsers */
+}
 
-		h1 {
-			font-size: 12px;
-			text-transform: uppercase;
-			font-weight: 600;
-		}
+#short-nav {
+	height: 60px;
+	color: $white;
+	width: 100%;
+	background: transparent;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 100;
+
+	.logo {
+		height: 32px;
 	}
 
-	.title-content {
-		position: absolute;
-		top: 250px;
-		z-index: 50;
-
-		h2 {
-			font-size: 30px;
-			margin-bottom: 15px;
-		}
-
-		h5 {
-			font-size: 12px;
-			line-height: 1.4;
-		} 
-
-		@include media-breakpoint-up(md) {
-			h2 {
-				font-size: 42px;
-			}
-
-			h5 {
-				font-size: 16px;
-			}
-		}
-
+	h1 {
+		font-size: 12px;
+		text-transform: uppercase;
+		font-weight: 600;
 	}
-
 }
 
 
