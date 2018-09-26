@@ -4197,9 +4197,10 @@ a.text-dark:focus, a.text-dark:hover {
         height: 10px;
         margin-bottom: 10px;
         border-top-left-radius: 15px;
-        border-top-right-radius: 15px;
         width: 12.5%;
         background: #5C5CFF; }
+      #form-content #content-container .progress-bar #progress-bar-line.complete {
+        border-top-right-radius: 15px; }
       #form-content #content-container .progress-bar h6 {
         font-size: 12px;
         color: #5C5CFF;

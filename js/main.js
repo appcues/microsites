@@ -145,7 +145,9 @@ var appcuesProductLaunchPlanner = {
 				//make the length formula dynamic off of number of children with form row class
 				if (appcuesProductLaunchPlanner.formData.length === ($('.form-row').length) - 1) {
 					$("#submit-button").toggleClass("show-btn");
+					$("#progress-bar-line").toggleClass("complete");
 					$("#next-button").toggleClass("show-btn");
+
 				}
 				
 			// } else {
@@ -210,7 +212,6 @@ var appcuesProductLaunchPlanner = {
 			}
 		} else if ('salesTeam' in milestone.conditions && 'importanceLevel' in milestone.conditions) {
 			if ((salesTeam === milestone.conditions.salesTeam) && (importanceLevel >= milestone.conditions.importanceLevel)) {
-				debugger;
 				console.log(salesTeam);
 				console.log(importanceLevel);
 				appcuesProductLaunchPlanner.renderMilestoneHTML(milestone, milestoneDate, milestoneDateString);
