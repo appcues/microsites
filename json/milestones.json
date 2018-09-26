@@ -1,0 +1,119 @@
+[
+	{
+		"conditions": {"employeeCount": 100, "importanceLevel": 10},
+		"icon": "event-keynote.svg",
+		"title": "Plan and host event or keynote",
+		"finalizeByDays": -90, 
+		"finalizeByText": "Start writing your keynote by ",
+		"body": "If you have a user conference, save the product launch announcement for then. If you don't yet, try shooting a video of your founder/co-founders presenting your new product or throwing a party and giving a short talk on the release."
+	}, {
+		"conditions": {},
+		"icon": "objective-results.svg",
+		"title": "Identify objectives and key results",
+		"finalizeByDays": -30, 
+		"finalizeByText": "Finalize by ",
+		"body": "What is the rationale/intention behind the project? Why this is needed, and what do we hope to accomplish? How is it aligned with company and department targets? What is/are the goal(s) of the campaign? (ie. # of MQLs, # of trials started, # of units sold) How will success be measured?"
+	}, {
+		"conditions": {},
+		"icon": "messaging.svg",
+		"title": "Define messaging",
+		"finalizeByDays": -15, 
+		"finalizeByText": "Finalize by ",
+		"body": "What pain will this campaign/project solve for the chosen audience? Try using their own words. What will the thing we’re marketing allow them to do, that they couldn’t before?"
+	}, {
+		"conditions": {"importanceLevel": 8},
+		"icon": "product-hunt.svg",
+		"title": "Launch on Product Hunt ",
+		"finalizeByDays": -15, 
+		"finalizeByText": "Plan before ",
+		"body": "Put your standalone feature page as its own product on Product Hunt. For maximum amplification, try getting a top Hunter on Product Hunt to post the feature page for you. Push to the Product Hunt page through social and by including a link to it as a PS on the end of your emails."
+	}, {
+		"conditions": {"importanceLevel": 5},
+		"icon": "blog.svg",
+		"title": "Write blog post",
+		"finalizeByDays": -8, 
+		"finalizeByText": "Draft blog post by ",
+		"body": "Founder/CEO/or product lead Publish a post on your public blog from your CEO or an executive. Let them lay the vision for where the company is headed and how this product launch fits into that vision. Have a director-level team member or founder (if more towards 1 employee than 9 employees) write a blog post that's relevant to your industry. Make this post a mix of vision and tactics so your readers can learn what opportunity lives inside your product."
+	}, {
+		"conditions": {"importanceLevel": 7, "salesTeam": true},
+		"icon": "sales-collateral.svg",
+		"title": "Develop sales collateral",
+		"finalizeByDays": -7, 
+		"finalizeByText": "Distribute to sales by ",
+		"body": "Create a single page of collateral on your new product that your sales team can attach—or link to—from emails to prospects. Keep it simple- focus on messaging they should be using, and how they should answer the most common questions they will get: How this feature provides value, and what differentiates it from the competition."
+	}, {
+		"conditions": {"importanceLevel": 9},
+		"icon": "press.svg",
+		"title": "Reach out to press",
+		"finalizeByDays": -7, 
+		"finalizeByText": "Contact press by ",
+		"body": "Work with industry press to get your executive's vision out there. Have quotes and customer stories at the ready."
+	}, {
+		"conditions": {},
+		"icon": "in-product-tutorial.svg",
+		"title": "Build in-product tutorial",
+		"finalizeByDays": -7, 
+		"finalizeByText": "Queue up by ",
+		"body": "You'll want to have 1-5 steps that walk your user through your new product. If you'd rather go the subtle route, try a user-activated hotspot instead of a tooltip walkthrough. Solutions exist at <a href="https://www.appcues.com/" target="_blank">appcues.com.</a>"
+	}, {
+		"conditions": {"importanceLevel": 7},
+		"icon": "feature.svg",
+		"title": "Create a feature page",
+		"finalizeByDays": -5, 
+		"finalizeByText": "Complete by ",
+		"body": "Build a standalone feature page. You can drive blog and press traffic here to help inspire and convert. If you want a particular action done on this page (ex. Signup for a new product) then structure your feature page as a landing page that only pushes to that one action. Include minimum linking to other pages, as that will pull people away."
+	}, {
+		"conditions": {"importanceLevel": 7},
+		"icon": "paid.svg",
+		"title": "Boost using paid ads",
+		"finalizeByDays": -3, 
+		"finalizeByText": "Set up before ",
+		"body": "Retargeting ads, Adwords. Have these ads redirect to the feature page you made for the release."
+	}, {
+		"conditions": {"importanceLevel": 4, "salesTeam": false},
+		"icon": "email.svg",
+		"title": "Send announcement emails",
+		"finalizeByDays": -2, 
+		"finalizeByText": "Draft by ",
+		"body": "Email an identified segment of users of the change, linking them to your customer-facing blog post. You can define this segment of users by usage or as having requested this feature or by persona."
+	}, {
+		"conditions": {"importanceLevel": 9, "salesTeam": false},
+		"icon": "email.svg",
+		"title": "Send announcement emails",
+		"finalizeByDays": -2, 
+		"finalizeByText": "Draft by ",
+		"body": "Summarize the above blog post in an email to your blog subscribers. Link them to the post to learn more about the new product."
+	}, {
+		"conditions": {"importanceLevel": 2},
+		"icon": "blog.svg",
+		"title": "Write customer-facing blog or help center",
+		"finalizeByDays": -2, 
+		"finalizeByText": "Draft by ",
+		"body": "A customer-facing blog post. If you do not have a customer-facing blog, this kind of how-to content goes well in your help center. The post should be a longer rendition of the email outlined above."
+	}, {
+		"conditions": {"importanceLevel": 5},
+		"icon": "social.svg",
+		"title": "Promote on social media",
+		"finalizeByDays": 0, 
+		"finalizeByText": "Queue up on ",
+		"body": "(try a gif or native video) Post a link to your blog article on your social outlets. Include a rich image and an interesting hook."
+	}, {
+		"conditions": {"importanceLevel": 4, "salesTeam": true},
+		"icon": "email.svg",
+		"title": "Send emails from sales",
+		"finalizeByDays": 2, 
+		"finalizeByText": "Send by ",
+		"body": "Have your sales team reach out to their hot leads. Have them explain to each prospect how it can help them in their unique goals. Offer to show them a private demo of the new product."
+	}, {
+		"conditions": {"importanceLevel": 5},
+		"icon": "webinar.svg",
+		"title": "Host webinar",
+		"finalizeByDays": 3, 
+		"finalizeByText": "Perform on ",
+		"body": "A 15-30m webinar to demonstrate your new tool to your customers. Start with a few slides of vision before getting into the nitty gritty. End with answering questions."
+	}
+
+]
+
+
+			
