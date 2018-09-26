@@ -4120,6 +4120,7 @@ a.text-dark:focus, a.text-dark:hover {
 
 #rocketship {
   position: fixed;
+  display: none;
   bottom: 50px;
   height: 25vh;
   width: 250px;
@@ -4196,6 +4197,7 @@ a.text-dark:focus, a.text-dark:hover {
         height: 10px;
         margin-bottom: 10px;
         border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
         width: 12.5%;
         background: #5C5CFF; }
       #form-content #content-container .progress-bar h6 {
@@ -4304,7 +4306,8 @@ a.text-dark:focus, a.text-dark:hover {
   /* W3C compliant browsers */ }
 
 #results {
-  display: none; }
+  display: none;
+  margin-bottom: 200px; }
 
 #results-content {
   position: relative;

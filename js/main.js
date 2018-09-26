@@ -2,6 +2,11 @@ var appcuesProductLaunchPlanner = {
 
 	formData: [],
 	counter: 0,
+	shortMonthsArray: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+
+	shortMonths: function(dt) { 
+	    return appcuesProductLaunchPlanner.shortMonthsArray[dt.getMonth()]; 
+	},
 
 
 	startSite: function() {
@@ -84,7 +89,18 @@ var appcuesProductLaunchPlanner = {
 	
 	setSubmitButton: function() {
 		$("#submit-button").click(function(){
-			appcuesProductLaunchPlanner.submitForm();
+			var targetInput = $('#question-' + (appcuesProductLaunchPlanner.formData.length + 1));
+
+			if (appcuesProductLaunchPlanner.checkInput(targetInput)) {
+				appcuesProductLaunchPlanner.buildRocketShip();
+				appcuesProductLaunchPlanner.addData(targetInput);
+				appcuesProductLaunchPlanner.submitForm();
+				$('#error-message').hide();	
+			} else {
+				$('#error-message').show();
+			}
+
+			
 		});
 	},
 
@@ -117,7 +133,7 @@ var appcuesProductLaunchPlanner = {
 		$("#next-button").click(function(){
 			var targetInput = $('#question-' + (appcuesProductLaunchPlanner.formData.length + 1));
 
-			if (appcuesProductLaunchPlanner.checkInput(targetInput)) {
+			// if (appcuesProductLaunchPlanner.checkInput(targetInput)) {
 				appcuesProductLaunchPlanner.buildRocketShip();
 				appcuesProductLaunchPlanner.addData(targetInput);
 				console.log(appcuesProductLaunchPlanner.formData);
@@ -132,21 +148,86 @@ var appcuesProductLaunchPlanner = {
 					$("#next-button").toggleClass("show-btn");
 				}
 				
-			} else {
-				$('#error-message').show();
-			}
+			// } else {
+			// 	$('#error-message').show();
+			// }
 		});
+	},
+
+	getEmployeeCount: function(value) {
+		if(value === "100-499" || value === "500+") {
+			return 101;
+		} else {
+			return 1;
+		}
+	},
+
+	getSalesTeamValue: function(value) {
+		if (value === "Yes") {
+			return true;
+		} else {
+			return false;
+		}
+	},
+
+	getLaunchDate: function(dateString) {
+		var dateArray = dateString.split("-");
+		return new Date(dateArray[0], dateArray[1]-1, dateArray[2]);
 	},
 
 	submitForm: function() {
 		//send email to hubspot
+
 		//process data
-		//set date
-		//send to PDF processor
-		//show results
+		var testData = ["Ben's Testing Release", "5", "2018-09-23", "No", "100-499", "ben@appcues.com", "Ben", "www.appcues.com"];
+		appcuesProductLaunchPlanner.formData = testData;
+		var launchDate = appcuesProductLaunchPlanner.getLaunchDate(appcuesProductLaunchPlanner.formData[2]), employeeCount = appcuesProductLaunchPlanner.getEmployeeCount(appcuesProductLaunchPlanner.formData[4]), importanceLevel = parseInt(appcuesProductLaunchPlanner.formData[1]), salesTeam =  appcuesProductLaunchPlanner.getSalesTeamValue(appcuesProductLaunchPlanner.formData[3]);
+
+
+		var i;
+		for (i = 0; i < appcuesProductLaunchPlanner.milestoneData.length; i++) { 
+		    appcuesProductLaunchPlanner.addMilestone(appcuesProductLaunchPlanner.milestoneData[i], launchDate, employeeCount, importanceLevel, salesTeam);
+		}
+
+		//send to PDF processors
 		$('#results').fadeIn( "slow" );
 		$('#template-title-content').fadeOut("slow");
 		$('#form-content').fadeOut("slow");
+	},
+
+	addMilestone: function(milestone, launchDate, employeeCount, importanceLevel, salesTeam) {
+		var launchDateRecycled = new Date(launchDate)
+		var milestoneDate = new Date(launchDateRecycled.setDate(launchDateRecycled.getDate() + milestone.finalizeByDays))
+		var milestoneDateString =  appcuesProductLaunchPlanner.shortMonths(milestoneDate) + " " + milestoneDate.getDate() + ", " + milestoneDate.getFullYear();
+
+		if (milestone.conditions === {}) {
+			appcuesProductLaunchPlanner.renderMilestoneHTML(milestone, milestoneDate, milestoneDateString);
+		} else if ('employeeCount' in milestone.conditions && 'importanceLevel' in milestone.conditions) {
+			if ((employeeCount >= milestone.conditions.employeeCount) && (importanceLevel >= milestone.conditions.importanceLevel)) {
+				console.log(employeeCount);
+				console.log(importanceLevel);
+				appcuesProductLaunchPlanner.renderMilestoneHTML(milestone, milestoneDate, milestoneDateString);	
+			}
+		} else if ('salesTeam' in milestone.conditions && 'importanceLevel' in milestone.conditions) {
+			if ((salesTeam === milestone.conditions.salesTeam) && (importanceLevel >= milestone.conditions.importanceLevel)) {
+				debugger;
+				console.log(salesTeam);
+				console.log(importanceLevel);
+				appcuesProductLaunchPlanner.renderMilestoneHTML(milestone, milestoneDate, milestoneDateString);
+			}
+			
+		} else if ('importanceLevel' in milestone.conditions) {
+			if (importanceLevel >= milestone.conditions.importanceLevel) {
+				console.log(importanceLevel);
+				appcuesProductLaunchPlanner.renderMilestoneHTML(milestone, milestoneDate, milestoneDateString);
+			}
+		} else {
+		}
+	},
+
+	renderMilestoneHTML: function(milestone, milestoneDate, milestoneDateString) {
+		var milestoneHTML = "<div class='milestone'><div class='date'>"+ appcuesProductLaunchPlanner.shortMonths(milestoneDate) + "<br><span class='number'>" + milestoneDate.getDate() + "</span></div><div class='content'><div class='header'><h5>" + milestone.title +"</h5><img class='icon' src='./img/icons/" + milestone.icon + "'alt='milestone icon'/></div><div class='body-content'><div class='due-date'><img class='icon' src='./img/icons/clock.svg' alt='icon of clock'/><h6>" + milestone.finalizeByText + milestoneDateString + "</h6></div><p class='body'>" + milestone.body +"</p></div></div></div>";
+		$("#milestones").append(milestoneHTML);
 	},
 
 
