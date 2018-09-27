@@ -33,17 +33,19 @@
             </a>
             <h1>Product Launch Planner</h1>
         </div>
-        <div id="rocketship">
+<!--         <div id="rocketship">
             <img class="rocketship-part" src="./img/landing/rocket.svg" alt="image of rocket ship"/>
             <img class="rocketship-part" src="./img/landing/rocket.svg" alt="image of rocket ship"/>
-        </div>
+        </div> -->
         <div id="landing">
-            <img data-depth="0.3" src="./img/landing/stars-front.svg" data-depth="0.3" class="stars" />
-            <img data-depth="0.5" src="./img/landing/stars-back.svg" data-depth="0.18" class="stars" />
-            <div class="clouds">
-                <img data-depth="0.3" src="./img/clouds/front.svg" data-depth="0.3" id="foreground-clouds" class="clouds" />
-                <img data-depth="0.15" src="./img/clouds/middle.svg" data-depth="0.18" id="midground-clouds" class="clouds" />
-                <img data-depth="0.1" src="./img/clouds/back.svg" data-depth="0.1" id="background-clouds" class="clouds" />
+            <div id="landing-parallax">
+                <img data-depth="0.3" src="./img/landing/stars-front.svg" data-depth="0.3" class="stars" />
+                <img data-depth="0.5" src="./img/landing/stars-back.svg" data-depth="0.18" class="stars" />
+            </div>
+            <div class="background-elements">
+                <img src="./img/landing/rocketbase.svg" id="rocketbase" class="background-element" />
+                <img src="./img/landing/sat.svg" id="sat" class="background-element" />
+                <img src="./img/landing/cityscape-foreground.svg" id="cityscape-foreground" class="background-element" />
             </div>
         </div>
         <div class="row">
@@ -61,9 +63,9 @@
                 <div id="content-container">
                     <div class="progress-bar">
                         <div id="progress-bar-line"></div>
-                        <h6>Question <span id="question-step">1</span> of 8</h6>
                     </div>
                     <form id="planner-form">
+                        <h6 id="progress-question">Question <span id="question-step">1</span> of 8</h6>
                         <p id="error-message">Please provide a valid input</p>
                         <div class="form-row input-form-row selected" id="question-1">
                              <div class="form-group">
@@ -148,7 +150,7 @@
                     </form>                    
                     <div class="form-buttons row">
                         <div class="col-6 text-left">
-                            <div id="back-button" class="moving-button btn btn-danger">
+                            <div id="back-button" class="moving-button btn btn-transparent">
                                 <img src="./img/arrows/white.svg" class="button-icon" />
                                 <span>Back</span>
                             </div>

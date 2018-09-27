@@ -11,7 +11,7 @@ var appcuesProductLaunchPlanner = {
 
 	startSite: function() {
 
-		appcuesProductLaunchPlanner.setParallaxScene('landing');
+		appcuesProductLaunchPlanner.setParallaxScene('landing-parallax');
 		appcuesProductLaunchPlanner.getStarted();
 		appcuesProductLaunchPlanner.setButtonClicks();
 		appcuesProductLaunchPlanner.setInputButtonClick();
@@ -69,6 +69,7 @@ var appcuesProductLaunchPlanner = {
 			if (appcuesProductLaunchPlanner.formData.length === ($('.form-row').length) - 1) {
 				$("#submit-button").toggleClass("show-btn");
 				$("#next-button").toggleClass("show-btn");
+				$("#progress-bar-line").toggleClass("complete");
 			}
 
 			if (appcuesProductLaunchPlanner.formData.length === 0) {
@@ -90,6 +91,15 @@ var appcuesProductLaunchPlanner = {
 	setSubmitButton: function() {
 		$("#submit-button").click(function(){
 			var targetInput = $('#question-' + (appcuesProductLaunchPlanner.formData.length + 1));
+
+			// var data = {"email": "ben@appcues.com"};
+			// var postRequestUrl = "https://hooks.zapier.com/hooks/catch/118654/l4ahnh/?" + jquery.param(data);
+
+			// $.post(postRequestUrl, function(data, status){
+
+			// });
+
+			// 
 
 			if (appcuesProductLaunchPlanner.checkInput(targetInput)) {
 				appcuesProductLaunchPlanner.buildRocketShip();
@@ -149,6 +159,7 @@ var appcuesProductLaunchPlanner = {
 					$("#next-button").toggleClass("show-btn");
 
 				}
+
 				
 			// } else {
 			// 	$('#error-message').show();
@@ -181,7 +192,7 @@ var appcuesProductLaunchPlanner = {
 		//send email to hubspot
 
 		//process data
-		var testData = ["Ben's Testing Release", "5", "2018-09-23", "No", "100-499", "ben@appcues.com", "Ben", "www.appcues.com"];
+		var testData = ["Ben's Testing Release", "5", "2018-12-23", "No", "100-499", "ben@appcues.com", "Ben", "www.appcues.com"];
 		appcuesProductLaunchPlanner.formData = testData;
 		var launchDate = appcuesProductLaunchPlanner.getLaunchDate(appcuesProductLaunchPlanner.formData[2]), employeeCount = appcuesProductLaunchPlanner.getEmployeeCount(appcuesProductLaunchPlanner.formData[4]), importanceLevel = parseInt(appcuesProductLaunchPlanner.formData[1]), salesTeam =  appcuesProductLaunchPlanner.getSalesTeamValue(appcuesProductLaunchPlanner.formData[3]);
 

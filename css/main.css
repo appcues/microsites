@@ -4094,60 +4094,61 @@ a.text-dark:focus, a.text-dark:hover {
   position: fixed;
   left: 0;
   top: 0;
-  background: #0B1A38;
+  background: #0f2043;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #0f2043 0%, #08152b 100%);
+  background: -webkit-linear-gradient(top, #0f2043 0%, #08152b 100%);
+  background: linear-gradient(to bottom, #0f2043 0%, #08152b 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0f2043', endColorstr='#08152b',GradientType=0 );
   z-index: 20;
   height: 100vh;
   width: 100vw;
   overflow-x: hidden;
   min-height: 800px; }
-  #landing .clouds {
+  #landing .background-elements {
     position: absolute;
     width: 100%;
     bottom: 0;
     left: 0; }
-    #landing .clouds #foreground-clouds {
-      z-index: 13; }
-    #landing .clouds #midground-clouds {
-      z-index: 12; }
-    #landing .clouds #background-clouds {
-      z-index: 11; }
+    #landing .background-elements .background-element {
+      position: absolute;
+      bottom: 0; }
+    #landing .background-elements #rocketbase {
+      z-index: 13;
+      width: 400px;
+      left: 0; }
+    #landing .background-elements #sat {
+      z-index: 12;
+      width: 400px;
+      right: 0; }
+    #landing .background-elements #cityscape-foreground {
+      z-index: 11;
+      height: 600px; }
+    #landing .background-elements #rocketship {
+      position: fixed;
+      display: none;
+      bottom: 50px;
+      height: 25vh;
+      width: 250px;
+      z-index: 100;
+      left: 50px;
+      max-height: 500px; }
+      #landing .background-elements #rocketship .rocketship-part {
+        position: absolute;
+        width: 100%;
+        bottom: 0;
+        left: 0;
+        opacity: 0;
+        transition: opacity 1s ease; }
+      #landing .background-elements #rocketship .rocketship-part.shown {
+        opacity: 1; }
   #landing .stars {
     position: absolute;
-    width: 100%;
+    width: 100vw;
+    height: 100vh;
     top: 0;
     left: 0;
     z-index: 9; }
-
-#rocketship {
-  position: fixed;
-  display: none;
-  bottom: 50px;
-  height: 25vh;
-  width: 250px;
-  z-index: 100;
-  left: 50px;
-  max-height: 500px; }
-  #rocketship .rocketship-part {
-    position: absolute;
-    width: 100%;
-    bottom: 0;
-    left: 0;
-    opacity: 0;
-    transition: opacity 1s ease; }
-  #rocketship .rocketship-part.shown {
-    opacity: 1; }
-
-#rocket-ship.rotate {
-  -webkit-transform: rotate(90deg);
-  /* Chrome and other webkit browsers */
-  -moz-transform: rotate(90deg);
-  /* FF */
-  -o-transform: rotate(90deg);
-  /* Opera */
-  -ms-transform: rotate(90deg);
-  /* IE9 */
-  transform: rotate(90deg);
-  /* W3C compliant browsers */ }
 
 #short-nav {
   height: 60px;
@@ -4163,7 +4164,7 @@ a.text-dark:focus, a.text-dark:hover {
     height: 32px;
     position: absolute;
     top: 19px;
-    left: 10px; }
+    left: 20px; }
   #short-nav h1 {
     font-size: 14px;
     text-transform: uppercase;
@@ -4171,7 +4172,7 @@ a.text-dark:focus, a.text-dark:hover {
     position: absolute;
     line-height: 1;
     top: 28px;
-    right: 10px; }
+    right: 20px; }
 
 #form-content {
   position: absolute;
@@ -4180,12 +4181,18 @@ a.text-dark:focus, a.text-dark:hover {
   z-index: 100; }
   #form-content #content-container {
     max-width: 800px;
-    position: relative; }
+    position: relative;
+    padding: 60px 20px 20px 20px; }
+    @media (min-width: 768px) {
+      #form-content #content-container {
+        padding: 60px 20px 20px 20px; } }
     #form-content #content-container #error-message {
       color: #FF3B4E;
       font-size: 14px;
       font-style: italic;
-      display: none; }
+      display: none;
+      top: 80px;
+      position: absolute; }
     #form-content #content-container .progress-bar {
       position: absolute;
       top: 0;
@@ -4201,11 +4208,14 @@ a.text-dark:focus, a.text-dark:hover {
         background: #5C5CFF; }
       #form-content #content-container .progress-bar #progress-bar-line.complete {
         border-top-right-radius: 15px; }
-      #form-content #content-container .progress-bar h6 {
-        font-size: 12px;
-        color: #5C5CFF;
-        line-height: 1;
-        margin-left: 10px; }
+    #form-content #content-container #progress-question {
+      font-size: 12px;
+      color: #c0c6d9;
+      line-height: 1;
+      text-transform: uppercase;
+      margin: 0 0 30px 0; }
+    #form-content #content-container #planner-form {
+      padding-left: 20px; }
     #form-content #content-container .form-row {
       display: none;
       height: 200px; }
@@ -4269,11 +4279,13 @@ a.text-dark:focus, a.text-dark:hover {
 
 .moving-button, #submit-button, #download-button {
   padding: 10px 20px;
-  position: relative; }
+  position: relative;
+  text-transform: capitalize; }
   .moving-button span, #submit-button span, #download-button span {
     font-size: 16px;
     line-height: 1;
-    vertical-align: middle; }
+    vertical-align: middle;
+    text-transform: capitalize; }
   .moving-button .button-icon, #submit-button .button-icon, #download-button .button-icon {
     width: 20px;
     vertical-align: middle; }
@@ -4292,19 +4304,22 @@ a.text-dark:focus, a.text-dark:hover {
 #next-button span, #get-started-button span {
   margin-right: 5px; }
 
-#back-button span {
-  margin-left: 5px; }
-#back-button .button-icon {
-  -webkit-transform: rotate(180deg);
-  /* Chrome and other webkit browsers */
-  -moz-transform: rotate(180deg);
-  /* FF */
-  -o-transform: rotate(180deg);
-  /* Opera */
-  -ms-transform: rotate(180deg);
-  /* IE9 */
-  transform: rotate(180deg);
-  /* W3C compliant browsers */ }
+#back-button {
+  border-color: #c0c6d9;
+  color: #576784; }
+  #back-button span {
+    margin-left: 5px; }
+  #back-button .button-icon {
+    -webkit-transform: rotate(180deg);
+    /* Chrome and other webkit browsers */
+    -moz-transform: rotate(180deg);
+    /* FF */
+    -o-transform: rotate(180deg);
+    /* Opera */
+    -ms-transform: rotate(180deg);
+    /* IE9 */
+    transform: rotate(180deg);
+    /* W3C compliant browsers */ }
 
 #results {
   display: none;

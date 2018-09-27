@@ -5,11 +5,13 @@
 .moving-button, #submit-button, #download-button {
 	padding: 10px 20px;
 	position: relative;
+	text-transform: capitalize;
 
 	span {
 		font-size: 16px;
 		line-height: 1;
 		vertical-align: middle;
+		text-transform: capitalize;
 	}
 
 	.button-icon {
@@ -41,6 +43,9 @@
 }
 
 #back-button {
+	border-color: $light-gray;
+	color: $dark-gray;
+	
 	span {
 		margin-left: 5px;
 	}

@@ -2,7 +2,11 @@
 	position: fixed;
 	left: 0;
 	top: 0;
-	background: #0B1A38;
+	background: rgb(15,32,67); /* Old browsers */
+	background: -moz-linear-gradient(top, rgba(15,32,67,1) 0%, rgba(8,21,43,1) 100%);
+	background: -webkit-linear-gradient(top, rgba(15,32,67,1) 0%,rgba(8,21,43,1) 100%);
+	background: linear-gradient(to bottom, rgba(15,32,67,1) 0%,rgba(8,21,43,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0f2043', endColorstr='#08152b',GradientType=0 );
 	z-index: 20;
 	height: 100vh;
 	width: 100vw;
@@ -10,22 +14,61 @@
 	min-height: 800px;
 
 
-	.clouds {
+	.background-elements {
 		position: absolute;
 		width: 100%;
 		bottom: 0;
 		left: 0;
 
-		#foreground-clouds {
+		.background-element {
+			position: absolute;
+			bottom: 0;
+		}
+
+		#rocketbase {
 			z-index: 13;
+			width: 400px;
+			left: 0;
+
 		}
 
-		#midground-clouds {
+		#sat {
 			z-index: 12;
+			width: 400px;
+			right: 0;
 		}
 
-		#background-clouds {
+		#cityscape-foreground {
 			z-index: 11;
+			height: 600px;
+		}
+
+		#rocketship {
+			position: fixed;
+			display: none;
+			bottom: 50px;
+			height: 25vh;
+			width: 250px;
+			z-index: 100;
+			left: 50px;
+			max-height: 500px;
+
+			.rocketship-part {
+				position: absolute;
+				width: 100%;
+				bottom: 0;
+				left: 0;
+				opacity: 0;
+				transition: opacity 1s ease;
+			}
+
+			.rocketship-part.shown {
+				opacity: 1;
+			}
+
+			@include media-breakpoint-up(md) {
+			}
+
 		}
 	}
 
@@ -33,45 +76,15 @@
 
 	.stars {
 		position: absolute;
-		width: 100%;
+		width: 100vw;
+		height: 100vh;
 		top: 0;
 		left: 0;
 		z-index: 9;
 	}
 }
 
-#rocketship {
-	position: fixed;
-	display: none;
-	bottom: 50px;
-	height: 25vh;
-	width: 250px;
-	z-index: 100;
-	left: 50px;
-	max-height: 500px;
 
-	.rocketship-part {
-		position: absolute;
-		width: 100%;
-		bottom: 0;
-		left: 0;
-		opacity: 0;
-		transition: opacity 1s ease;
-	}
-
-	.rocketship-part.shown {
-		opacity: 1;
-	}
-
-}
-
-#rocket-ship.rotate {
-	-webkit-transform: rotate(90deg);     /* Chrome and other webkit browsers */
-	-moz-transform: rotate(90deg);        /* FF */
-	-o-transform: rotate(90deg);          /* Opera */
-	-ms-transform: rotate(90deg);         /* IE9 */
-	transform: rotate(90deg);             /* W3C compliant browsers */
-}
 
 #short-nav {
 	height: 60px;
@@ -88,7 +101,7 @@
 		height: 32px;
 		position: absolute;
 		top: 19px;
-		left: 10px;
+		left: 20px;
 	}
 
 	h1 {
@@ -98,7 +111,7 @@
 		position: absolute;
 		line-height: 1;
 		top: 28px;
-		right: 10px;
+		right: 20px;
 
 	}
 }
