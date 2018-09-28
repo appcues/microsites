@@ -1,8 +1,17 @@
-
+	
 #form-content {
 	position: absolute;
 	display: none;
-	top: 250px;
+	top: 50px;
+
+	@media screen and (min-height: 700px) {
+		top: 150px;
+	}
+
+	@media screen and (min-height: 1000px) {
+		top: 250px;	
+	}
+	
 	z-index: 100;
 
 	#content-container {

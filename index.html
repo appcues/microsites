@@ -33,19 +33,27 @@
             </a>
             <h1>Product Launch Planner</h1>
         </div>
-<!--         <div id="rocketship">
-            <img class="rocketship-part" src="./img/landing/rocket.svg" alt="image of rocket ship"/>
-            <img class="rocketship-part" src="./img/landing/rocket.svg" alt="image of rocket ship"/>
-        </div> -->
+
         <div id="landing">
             <div id="landing-parallax">
-                <img data-depth="0.3" src="./img/landing/stars-front.svg" data-depth="0.3" class="stars" />
-                <img data-depth="0.5" src="./img/landing/stars-back.svg" data-depth="0.18" class="stars" />
+                <img data-depth="0.3" src="./img/landing/stars-front.svg" data-depth="0.3" class="stars" alt="image of stars"/>
+                <img data-depth="0.5" src="./img/landing/stars-back.svg" data-depth="0.18" class="stars" alt="image of stars"/>
+            </div>
+            <div id="rocketship">
+                <img class="rocketship-stage" src="./img/landing/rocket/simple.svg" alt="image of rocketship"/>
+                <img class="rocketship-stage" src="./img/landing/rocket/spaceman.svg" alt="image of rocketship"/>
+                <img class="rocketship-stage smoke" src="./img/landing/smoke/smoke1.svg" alt="image of rocketship smoke"/>
+                <img class="rocketship-stage smoke" src="./img/landing/smoke/smoke2.svg" alt="image of rocketship smoke"/>
+                <img class="rocketship-stage smoke" src="./img/landing/smoke/smoke3.svg" alt="image of rocketship smoke"/>
+                <img class="rocketship-stage smoke" src="./img/landing/smoke/smoke4.svg" alt="image of rocketship smoke"/>
+                <img class="rocketship-stage smoke" src="./img/landing/smoke/smoke6.svg" alt="image of rocketship smoke"/>
+                <img class="rocketship-stage" src="./img/landing/rocket/fire.svg" alt="image of rocketship"/>
             </div>
             <div class="background-elements">
-                <img src="./img/landing/rocketbase.svg" id="rocketbase" class="background-element" />
-                <img src="./img/landing/sat.svg" id="sat" class="background-element" />
-                <img src="./img/landing/cityscape-foreground.svg" id="cityscape-foreground" class="background-element" />
+                <img id="moon" src="./img/landing/moon.svg" alt="image of moon"/>
+                <img src="./img/landing/rocketbase.svg" id="rocketbase" alt="image of rocketbase" />
+                <img src="./img/landing/sat.svg" id="sat" alt="image of satellite" />
+                <img src="./img/landing/cityscape-foreground.svg" id="cityscape-foreground" alt="image of city landscape" />
             </div>
         </div>
         <div class="row">
@@ -66,7 +74,7 @@
                     </div>
                     <form id="planner-form">
                         <h6 id="progress-question">Question <span id="question-step">1</span> of 8</h6>
-                        <p id="error-message">Please provide a valid input</p>
+                        <p id="error-message">Please provide a valid response</p>
                         <div class="form-row input-form-row selected" id="question-1">
                              <div class="form-group">
                                 <label for="input-release-name">What is the name of the release?</label>
@@ -96,7 +104,7 @@
                         <div class="form-row input-form-row" id="question-3">    
                             <div class="form-group">
                                 <label for="input-release-date">When is the estimated release date?</label>
-                                <input class="form-control" type="date" value="2018-08-19" id="input-release-date">
+                                <input class="form-control" type="date" id="input-release-date">
                             </div>
                         </div>
                         <div class="form-row btn-form-row" id="question-4">
@@ -151,7 +159,7 @@
                     <div class="form-buttons row">
                         <div class="col-6 text-left">
                             <div id="back-button" class="moving-button btn btn-transparent">
-                                <img src="./img/arrows/white.svg" class="button-icon" />
+                                <img src="./img/arrows/gray.svg" class="button-icon" />
                                 <span>Back</span>
                             </div>
                         </div>
@@ -172,16 +180,22 @@
                 <div class="text-center">
                     <h2>Product Launch Plan Results</h2>
                     <h5>Bacon ipsum dolor amet pig sirloin capicola tail bresaola <br>Bacon ipsum dolor amet pig sirloin capicola tail bresaola</h5>
-                    <div id="download-button" class="btn btn-primary">
-                        <span>Download PDF</span>
-                        <img src="./img/icons/pdf.svg" class="button-icon"/>
-                    </div>
                     <div id="results-content" class="row">
                         <div id="content-container">
+                            <h5 id="results-title"></h5>
                             <div class="col-12">
                                 <div id="timeline-content">
                                     <div id="line"></div>
                                     <div id="milestones"></div>
+                                </div>
+                            </div>
+                            <div class="buttons">
+                                <a href='https://my.appcues.com/register' target="_blank" id="appcues-button" class="btn btn-primary">
+                                    <span>Sign Up For Appcues</span>
+                                </a>
+                                <div id="download-button" class="btn btn-success">
+                                    <span>Download PDF</span>
+                                    <img src="./img/icons/pdf.svg" class="button-icon"/>
                                 </div>
                             </div>
                         </div>
@@ -200,6 +214,9 @@
     <script src="./libraries/js/scrollmagic/minified/ScrollMagic.min.js"></script>
     <script src="./libraries/js/scrollmagic/uncompressed/plugins/debug.addIndicators.js"></script>
     <script src="http://cdn.sobekrepository.org/includes/jquery-rotate/2.2/jquery-rotate.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
+
 
     
     <!-- <script src="./libraries/js/parallax/parallax.js"></script> -->

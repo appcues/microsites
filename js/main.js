@@ -26,8 +26,35 @@ var appcuesProductLaunchPlanner = {
   		});
 	},
 
-	buildRocketShip: function() {
-		$("#rocketship .rocketship-part:not(.shown):first").toggleClass('shown');
+	changeRocketShip: function(direction) {
+		if(direction === "forward") {
+			$("#rocketship .rocketship-stage:not(.shown):first").toggleClass('shown');	
+		} else {
+			$("#rocketship .rocketship-stage.shown:last").toggleClass('shown');
+		}
+
+	},
+
+	flyRocketShip: function() {
+		$("#rocketship .smoke").fadeOut("slow");
+		$("#rocketship").css("bottom", "auto").animate({
+			    top: "-800px",
+			    zoom: "50%"
+		  	}, 2500, function() {
+		});
+		 
+		setTimeout(function() {
+			$("#rocketship").addClass('rotated');
+		}, 3000);
+		
+		setTimeout(function() {
+	  		$("#rocketship").css("left", "auto").animate({
+			    right: "500px",
+			    top: "500px",
+			    zoom: "25%"
+			}, 2500, function() {}), 4000
+	  	});	
+
 	},
 
 	updateProgressBar: function(questionNumber) {
@@ -38,11 +65,11 @@ var appcuesProductLaunchPlanner = {
 
 	getStarted: function() {
 		$("#get-started-button").click(function(){
-			appcuesProductLaunchPlanner.buildRocketShip();
 			console.log(appcuesProductLaunchPlanner.formData);
 			$('#template-title-content').fadeOut( "slow" );
 			$('#form-content').fadeIn("slow");
 			$('#question-' + (appcuesProductLaunchPlanner.formData.length + 1)).fadeIn("slow");
+			appcuesProductLaunchPlanner.changeRocketShip("forward");
 		});
 
 		
@@ -52,6 +79,7 @@ var appcuesProductLaunchPlanner = {
 		appcuesProductLaunchPlanner.setNextButton();
 		appcuesProductLaunchPlanner.setBackButton();
 		appcuesProductLaunchPlanner.setSubmitButton();
+		appcuesProductLaunchPlanner.setEnterClick();
 	},
 
 	setInputButtonClick: function() {
@@ -71,6 +99,8 @@ var appcuesProductLaunchPlanner = {
 				$("#next-button").toggleClass("show-btn");
 				$("#progress-bar-line").toggleClass("complete");
 			}
+
+			appcuesProductLaunchPlanner.changeRocketShip("backward");
 
 			if (appcuesProductLaunchPlanner.formData.length === 0) {
 				$('#template-title-content').fadeIn( "slow" );
@@ -92,19 +122,15 @@ var appcuesProductLaunchPlanner = {
 		$("#submit-button").click(function(){
 			var targetInput = $('#question-' + (appcuesProductLaunchPlanner.formData.length + 1));
 
-			// var data = {"email": "ben@appcues.com"};
-			// var postRequestUrl = "https://hooks.zapier.com/hooks/catch/118654/l4ahnh/?" + jquery.param(data);
-
-			// $.post(postRequestUrl, function(data, status){
-
-			// });
-
-			// 
-
 			if (appcuesProductLaunchPlanner.checkInput(targetInput)) {
-				appcuesProductLaunchPlanner.buildRocketShip();
 				appcuesProductLaunchPlanner.addData(targetInput);
-				appcuesProductLaunchPlanner.submitForm();
+				$('#template-title-content').fadeOut("slow");
+				$('#form-content').fadeOut("slow");
+				appcuesProductLaunchPlanner.flyRocketShip();
+				setTimeout(function() {
+					appcuesProductLaunchPlanner.submitForm();
+				}, 5000);
+				
 				$('#error-message').hide();	
 			} else {
 				$('#error-message').show();
@@ -129,6 +155,15 @@ var appcuesProductLaunchPlanner = {
 
 	},
 
+	setEnterClick: function() {
+		// $('.form-control').keypress(function(e) {
+		// 	e.preventDefault();
+		// 	if(e.keyCode === 13) {
+		// 		appcuesProductLaunchPlanner.setNextButton();
+		// 	}
+		// })
+	},
+
 	addData: function(element) {
 		if(element.hasClass('input-form-row')){
 			appcuesProductLaunchPlanner.formData.push(element.find('input').val());
@@ -138,32 +173,66 @@ var appcuesProductLaunchPlanner = {
 		
 	},
 
+	validateEmail: function(email) {
+	    var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+	    return re.test(String(email).toLowerCase());
+	},
+
+	sendEmailInput: function(emailValue) {
+		var postRequestUrl = "https://hooks.zapier.com/hooks/catch/118654/l4ahnh/?" + $.param(emailValue);
+
+		$.post(postRequestUrl, function(data, status){
+
+		});
+	},
+
+	moveNext: function(targetInput) {
+		if (appcuesProductLaunchPlanner.checkInput(targetInput)) {
+					
+			appcuesProductLaunchPlanner.addData(targetInput);
+			console.log(appcuesProductLaunchPlanner.formData);
+			$('#question-' + appcuesProductLaunchPlanner.formData.length).hide();
+			$('#question-' + (appcuesProductLaunchPlanner.formData.length + 1)).fadeIn("slow");
+			appcuesProductLaunchPlanner.updateProgressBar(appcuesProductLaunchPlanner.formData.length + 1);
+			appcuesProductLaunchPlanner.changeRocketShip("forward");
+			$('#error-message').hide();
+
+
+			//make the length formula dynamic off of number of children with form row class
+			if (appcuesProductLaunchPlanner.formData.length === ($('.form-row').length) - 1) {
+				$("#submit-button").toggleClass("show-btn");
+				$("#progress-bar-line").toggleClass("complete");
+				$("#next-button").toggleClass("show-btn");
+
+			}
+
+			
+		} else {
+			$('#error-message').show();
+		}
+	},
+
 
 	setNextButton: function() {
 		$("#next-button").click(function(){
 			var targetInput = $('#question-' + (appcuesProductLaunchPlanner.formData.length + 1));
 
-			// if (appcuesProductLaunchPlanner.checkInput(targetInput)) {
-				appcuesProductLaunchPlanner.buildRocketShip();
-				appcuesProductLaunchPlanner.addData(targetInput);
-				console.log(appcuesProductLaunchPlanner.formData);
-				$('#question-' + appcuesProductLaunchPlanner.formData.length).hide();
-				$('#question-' + (appcuesProductLaunchPlanner.formData.length + 1)).fadeIn("slow");
-				appcuesProductLaunchPlanner.updateProgressBar(appcuesProductLaunchPlanner.formData.length + 1);
-				$('#error-message').hide();
-
-				//make the length formula dynamic off of number of children with form row class
-				if (appcuesProductLaunchPlanner.formData.length === ($('.form-row').length) - 1) {
-					$("#submit-button").toggleClass("show-btn");
-					$("#progress-bar-line").toggleClass("complete");
-					$("#next-button").toggleClass("show-btn");
-
+			if (targetInput.find('input').attr('id') === "input-email"){
+				var targetEmail = targetInput.find('input').val();
+				if(appcuesProductLaunchPlanner.validateEmail(targetEmail)) {
+					appcuesProductLaunchPlanner.moveNext(targetInput);
+				} else {
+					$('#error-message').show();
 				}
+			} else {
+				appcuesProductLaunchPlanner.moveNext(targetInput);
+			}
+			
+			
+			//if email input, send emai;
 
-				
-			// } else {
-			// 	$('#error-message').show();
-			// }
+
+			
 		});
 	},
 
@@ -189,13 +258,7 @@ var appcuesProductLaunchPlanner = {
 	},
 
 	submitForm: function() {
-		//send email to hubspot
-
-		//process data
-		var testData = ["Ben's Testing Release", "5", "2018-12-23", "No", "100-499", "ben@appcues.com", "Ben", "www.appcues.com"];
-		appcuesProductLaunchPlanner.formData = testData;
 		var launchDate = appcuesProductLaunchPlanner.getLaunchDate(appcuesProductLaunchPlanner.formData[2]), employeeCount = appcuesProductLaunchPlanner.getEmployeeCount(appcuesProductLaunchPlanner.formData[4]), importanceLevel = parseInt(appcuesProductLaunchPlanner.formData[1]), salesTeam =  appcuesProductLaunchPlanner.getSalesTeamValue(appcuesProductLaunchPlanner.formData[3]);
-
 
 		var i;
 		for (i = 0; i < appcuesProductLaunchPlanner.milestoneData.length; i++) { 
@@ -204,8 +267,7 @@ var appcuesProductLaunchPlanner = {
 
 		//send to PDF processors
 		$('#results').fadeIn( "slow" );
-		$('#template-title-content').fadeOut("slow");
-		$('#form-content').fadeOut("slow");
+		$('#results-title').text(appcuesProductLaunchPlanner.formData[0]);
 	},
 
 	addMilestone: function(milestone, launchDate, employeeCount, importanceLevel, salesTeam) {
