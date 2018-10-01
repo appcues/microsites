@@ -16,6 +16,7 @@
 
 	#content-container {
 		@extend %gray-container;
+		background: $white;
 		max-width: 800px;
 		position: relative;
 		padding: 60px 20px 20px 20px;
@@ -57,6 +58,7 @@
 		#progress-question {
 			font-size: 12px;
 			color: $light-gray;
+			font-weight: 600;
 			line-height: 1;
 			text-transform: uppercase;
 			margin: 0 0 30px 0;
@@ -75,6 +77,7 @@
 				label {
 					padding-left: 0;
 					display: block;
+					font-weight: 500;
 					font-size: 22px;
 					color: #242A35;
 				}
@@ -90,7 +93,7 @@
 					border-right: none;
 					border-left: none;
 					border-top: none;
-					background: $bg-gray;
+					background: $white;
 					color: $dark-gray;
 					width: 100%;
 					margin-top: 15px;

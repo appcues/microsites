@@ -10,6 +10,7 @@
 
 	#content-container {
 		@extend %gray-container;
+		background: $bg-gray;
 		max-width: 1400px;
 
 		#results-title {

@@ -3,14 +3,14 @@
 	left: 0;
 	top: 0;
 	background: rgb(15,32,67); /* Old browsers */
-	background: -moz-linear-gradient(top, rgba(15,32,67,1) 0%, rgba(8,21,43,1) 100%);
-	background: -webkit-linear-gradient(top, rgba(15,32,67,1) 0%,rgba(8,21,43,1) 100%);
-	background: linear-gradient(to bottom, rgba(15,32,67,1) 0%,rgba(8,21,43,1) 100%);
+	background: -moz-linear-gradient(top,  rgba(8,21,43,1) 0%, rgba(15,32,67,1) 100%);
+	background: -webkit-linear-gradient(top, rgba(8,21,43,1) 0%, rgba(15,32,67,1) 100%);
+	background: linear-gradient(to bottom, rgba(8,21,43,1) 0%, rgba(15,32,67,1) 100%);
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0f2043', endColorstr='#08152b',GradientType=0 );
 	z-index: 20;
 	height: 100vh;
 	width: 100vw;
-	overflow-x: hidden;
+	overflow: hidden;
 	min-height: 800px;
 
 	#rocketship {
@@ -112,13 +112,15 @@
 
 		#sat {
 			z-index: 12;
-			width: 400px;
+			width: 250px;
 			right: 0;
 		}
 
 		#cityscape-foreground {
 			z-index: 11;
-			height: 600px;
+			height: 450px;
+			left: 50%;
+    		transform: translateX(-50%);
 		}
 
 	}
@@ -155,9 +157,10 @@
 	}
 
 	h1 {
-		font-size: 14px;
+		font-size: 13px;
 		text-transform: uppercase;
-		font-weight: 600;
+		font-weight: 700;
+		letter-spacing: 2.5px;
 		position: absolute;
 		line-height: 1;
 		top: 28px;

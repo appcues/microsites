@@ -39,7 +39,6 @@
 %gray-container {
     width: 90%;
     margin: 0 auto;
-    background: $bg-gray;
     color: $black;
     border-radius: 15px;
     padding: 25px;
@@ -60,16 +59,17 @@
   h2 {
     font-size: 30px;
     margin-bottom: 15px;
+    font-weight: 300;
   }
 
   h5 {
     font-size: 12px;
-    line-height: 1.4;
+    line-height: 1.6;
   } 
 
   @include media-breakpoint-up(md) {
     h2 {
-      font-size: 42px;
+      font-size: 46px;
     }
 
     h5 {
