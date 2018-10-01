@@ -9,7 +9,7 @@
 	z-index: 300;
 
 	#content-container {
-		@extend %gray-container;
+		@extend %white-container;
 		background: $bg-gray;
 		max-width: 1400px;
 
@@ -20,6 +20,10 @@
 
 		.buttons {
 			margin-top: 75px;
+			.btn {
+				margin-left: 10px;
+				margin-right: 10px;
+			}
 		}
 	}
 
@@ -27,7 +31,6 @@
 
 		#line {
 			width: 1px;
-			background: $light-gray;
 			position: absolute;
 			top: 0;
 			bottom: 0;
@@ -48,15 +51,15 @@
 
 			.date {
 				text-transform: uppercase;
-				font-size: 8px;
+				font-size: 4px;
 				color: $light-gray;
 				background: $white;
 				border: 1px solid $light-gray;
-				width: 40px;
-				height: 40px;
-				border-radius: 40px;
+				width: 45px;
+				height: 45px;
+				border-radius: 45px;
 				line-height: 1;
-				padding-top: 5px;
+				padding-top: 8px;
 				position: absolute;
 				top: 0;
 				z-index: 10;
@@ -64,7 +67,8 @@
 
 				span {
 					display: block;
-					font-size: 18px;
+					font-size: 13px;
+
 					line-height: 1;
 					color: $primary;
 					margin-top: 2.5px;
@@ -115,8 +119,9 @@
 						}
 
 						h6 {
-							font-size: 12px;
-							color: $dark-gray;
+							font-size: 13px;
+							font-weight: 300;
+							color: #242a35;
 							display: inline;
 							vertical-align: middle;
 						}
@@ -124,8 +129,8 @@
 
 					.body {
 						margin-top: 20px;
-						font-size: 16px;
-						color: $light-gray;
+						font-size: 15px;
+						color: #576784;
 						text-align: left;
 						margin-bottom: 0;
 						font-weight: 300;

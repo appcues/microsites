@@ -36,8 +36,9 @@
   color: $white !important;
 }
 
-%gray-container {
+%white-container {
     width: 90%;
+    background: $white;
     margin: 0 auto;
     color: $black;
     border-radius: 15px;

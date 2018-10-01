@@ -16,8 +16,8 @@
 	#rocketship {
 		position: absolute;
 		left: 95px;
-		width: 200px;
-		bottom: 125px;
+		width: 150px;
+		bottom: 107.5px;;
 		z-index: 250;
 
 		.rocketship-stage {
@@ -87,15 +87,11 @@
 		left: 0;
 
 
-
-
-
-
 		#moon {
 			position: absolute;
 			width: 75px;
-			top: 150px;
-			right: 100px;
+			top: 125px;
+    		right: 50px;
 			z-index: 200;
 		}
 
@@ -106,7 +102,7 @@
 
 		#rocketbase {
 			z-index: 13;
-			width: 400px;
+			width: 350px;
 			left: 0;
 		}
 

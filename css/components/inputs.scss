@@ -15,8 +15,7 @@
 	z-index: 100;
 
 	#content-container {
-		@extend %gray-container;
-		background: $white;
+		@extend %white-container;
 		max-width: 800px;
 		position: relative;
 		padding: 60px 20px 20px 20px;
@@ -86,6 +85,8 @@
 					font-size: 14px;
 					display: block;
 					color: $dark-gray;
+					font-weight: 300;
+					margin-bottom: 14px;
 				}
 
 
@@ -106,7 +107,8 @@
 					}
 
 					&:focus {
-						outline-color: $bg-gray !important;
+						outline-color: $white !important;
+						border-color: $primary;
 					}
 				}
 
@@ -115,9 +117,10 @@
 				}
 
 				.btn-input {
-					background: $white;
+					background: transparent;
 					color: $dark-gray;
-					border: 1px solid $dark-gray;
+					border: 1px solid #979eb4;
+
 				}
 
 				.btn-input.selected {
@@ -150,8 +153,9 @@
 			margin-bottom: 15px;
 		
 			.btn {
-				width: 40px;
-				height: 40px;
+				width: 50px;
+				height: 50px;
+				font-size: 18px;
 			}
 		}
 

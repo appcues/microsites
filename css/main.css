@@ -4063,6 +4063,7 @@ a.text-dark:focus, a.text-dark:hover {
 
 #form-content #content-container, #results-content #content-container {
   width: 90%;
+  background: #FFFFFF;
   margin: 0 auto;
   color: #000000;
   border-radius: 15px;
@@ -4108,8 +4109,8 @@ a.text-dark:focus, a.text-dark:hover {
   #landing #rocketship {
     position: absolute;
     left: 95px;
-    width: 200px;
-    bottom: 125px;
+    width: 150px;
+    bottom: 107.5px;
     z-index: 250; }
     #landing #rocketship .rocketship-stage {
       position: absolute;
@@ -4155,15 +4156,15 @@ a.text-dark:focus, a.text-dark:hover {
     #landing .background-elements #moon {
       position: absolute;
       width: 75px;
-      top: 150px;
-      right: 100px;
+      top: 125px;
+      right: 50px;
       z-index: 200; }
     #landing .background-elements #rocketbase, #landing .background-elements #sat, #landing .background-elements #cityscape-foreground {
       position: absolute;
       bottom: 0; }
     #landing .background-elements #rocketbase {
       z-index: 13;
-      width: 400px;
+      width: 350px;
       left: 0; }
     #landing .background-elements #sat {
       z-index: 12;
@@ -4218,7 +4219,6 @@ a.text-dark:focus, a.text-dark:hover {
     #form-content {
       top: 250px; } }
   #form-content #content-container {
-    background: #FFFFFF;
     max-width: 800px;
     position: relative;
     padding: 60px 20px 20px 20px; }
@@ -4268,7 +4268,9 @@ a.text-dark:focus, a.text-dark:hover {
       #form-content #content-container .form-row .form-group small {
         font-size: 14px;
         display: block;
-        color: #576784; }
+        color: #576784;
+        font-weight: 300;
+        margin-bottom: 14px; }
       #form-content #content-container .form-row .form-group input {
         border-right: none;
         border-left: none;
@@ -4283,13 +4285,14 @@ a.text-dark:focus, a.text-dark:hover {
           #form-content #content-container .form-row .form-group input {
             min-width: 300px; } }
         #form-content #content-container .form-row .form-group input:focus {
-          outline-color: #F5F7FA !important; }
+          outline-color: #FFFFFF !important;
+          border-color: #5C5CFF; }
       #form-content #content-container .form-row .form-group input, #form-content #content-container .form-row .form-group button {
         font-size: 16px; }
       #form-content #content-container .form-row .form-group .btn-input {
-        background: #FFFFFF;
+        background: transparent;
         color: #576784;
-        border: 1px solid #576784; }
+        border: 1px solid #979eb4; }
       #form-content #content-container .form-row .form-group .btn-input.selected {
         background: #5C5CFF !important;
         color: #FFFFFF !important;
@@ -4305,8 +4308,9 @@ a.text-dark:focus, a.text-dark:hover {
       margin-top: 15px;
       margin-bottom: 15px; }
       #form-content #content-container #release-importance .btn {
-        width: 40px;
-        height: 40px; }
+        width: 50px;
+        height: 50px;
+        font-size: 18px; }
     #form-content #content-container #input-employee-number .btn, #form-content #content-container #input-sales-team .btn {
       width: 100px;
       height: 40px;
@@ -4376,9 +4380,11 @@ a.text-dark:focus, a.text-dark:hover {
       margin-bottom: 50px; }
     #results-content #content-container .buttons {
       margin-top: 75px; }
+      #results-content #content-container .buttons .btn {
+        margin-left: 10px;
+        margin-right: 10px; }
   #results-content #timeline-content #line {
     width: 1px;
-    background: #979eb4;
     position: absolute;
     top: 0;
     bottom: 0;
@@ -4392,21 +4398,21 @@ a.text-dark:focus, a.text-dark:hover {
     margin-right: auto; }
     #results-content #timeline-content .milestone .date {
       text-transform: uppercase;
-      font-size: 8px;
+      font-size: 4px;
       color: #979eb4;
       background: #FFFFFF;
       border: 1px solid #979eb4;
-      width: 40px;
-      height: 40px;
-      border-radius: 40px;
+      width: 45px;
+      height: 45px;
+      border-radius: 45px;
       line-height: 1;
-      padding-top: 5px;
+      padding-top: 8px;
       position: absolute;
       top: 0;
       z-index: 10; }
       #results-content #timeline-content .milestone .date span {
         display: block;
-        font-size: 18px;
+        font-size: 13px;
         line-height: 1;
         color: #5C5CFF;
         margin-top: 2.5px; }
@@ -4442,14 +4448,15 @@ a.text-dark:focus, a.text-dark:hover {
             width: 18px;
             margin-right: 5px; }
           #results-content #timeline-content .milestone .content .body-content .due-date h6 {
-            font-size: 12px;
-            color: #576784;
+            font-size: 13px;
+            font-weight: 300;
+            color: #242a35;
             display: inline;
             vertical-align: middle; }
         #results-content #timeline-content .milestone .content .body-content .body {
           margin-top: 20px;
-          font-size: 16px;
-          color: #979eb4;
+          font-size: 15px;
+          color: #576784;
           text-align: left;
           margin-bottom: 0;
           font-weight: 300; }
