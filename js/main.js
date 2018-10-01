@@ -51,18 +51,18 @@ var appcuesProductLaunchPlanner = {
 
 	flyRocketShip: function() {
 		$("#rocketship .smoke").fadeOut("slow");
-		$("#rocketship").css("bottom", "auto").animate({
+		$("#rocketship").animate({
 			    top: "-800px",
 			    zoom: "50%"
 		  	}, 2500, function() {
-		});
+		}).css("bottom", "auto");
 		 
 		setTimeout(function() {
 			$("#rocketship").addClass('rotated');
 		}, 3000);
 		
 		setTimeout(function() {
-	  		$("#rocketship").css("left", "auto").animate({
+	  		$("#rocketship").animate({
 			    right: "500px",
 			    top: "500px",
 			    zoom: "25%"

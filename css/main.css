@@ -4146,7 +4146,8 @@ a.text-dark:focus, a.text-dark:hover {
     /* Firefox */
     -webkit-transform: rotate(130deg) !important;
     /* Safari and Chrome */
-    -o-transform: rotate(130deg) !important; }
+    -o-transform: rotate(130deg) !important;
+    left: auto; }
   #landing .background-elements {
     position: absolute;
     width: 100%;
