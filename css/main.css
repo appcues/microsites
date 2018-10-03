@@ -4478,18 +4478,18 @@ a.text-dark:focus, a.text-dark:hover {
           margin-left: auto; }
           #results-content #timeline-content .milestone:nth-child(odd) .date {
             left: -20px; }
-          #results-content #timeline-content .milestone:nth-child(odd) .content {
+          #results-content #timeline-content .milestone:nth-child(odd) .milestone-content {
             margin: 20px 0 20px 50px; }
-            #results-content #timeline-content .milestone:nth-child(odd) .content .header {
+            #results-content #timeline-content .milestone:nth-child(odd) .milestone-content .header {
               border-top-right-radius: 15px;
               margin-left: auto; }
         #results-content #timeline-content .milestone:nth-child(even) {
           margin-right: auto; }
           #results-content #timeline-content .milestone:nth-child(even) .date {
             right: -20px; }
-          #results-content #timeline-content .milestone:nth-child(even) .content {
+          #results-content #timeline-content .milestone:nth-child(even) .milestone-content {
             margin: 20px 50px 20px 0; }
-            #results-content #timeline-content .milestone:nth-child(even) .content .header {
+            #results-content #timeline-content .milestone:nth-child(even) .milestone-content .header {
               border-top-left-radius: 15px;
               margin-right: auto; } }
 
