@@ -43,6 +43,7 @@
     color: $black;
     border-radius: 15px;
     padding: 25px;
+    font-family: "Muli", sans-serif !important;
     box-shadow: 1px 18px 38px 11.27px rgba(42, 40, 55, 0.05); 
 
     @include media-breakpoint-up(md) {

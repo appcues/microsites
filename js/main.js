@@ -314,7 +314,7 @@ var appcuesProductLaunchPlanner = {
 	},
 
 	renderMilestoneHTML: function(milestone, milestoneDate, milestoneDateString) {
-		var milestoneHTML = "<div class='milestone'><div class='date'>"+ appcuesProductLaunchPlanner.shortMonths(milestoneDate) + "<br><span class='number'>" + milestoneDate.getDate() + "</span></div><div class='content'><div class='header'><h5>" + milestone.title +"</h5><img class='icon' src='https://s3-us-west-2.amazonaws.com/appcues-public/microsites/product-launch-planner/img/icons/" + milestone.icon + "'alt='milestone icon'/></div><div class='body-content'><div class='due-date'><img class='icon' src='https://s3-us-west-2.amazonaws.com/appcues-public/microsites/product-launch-planner/img/icons/clock.svg' alt='icon of clock'/><h6>" + milestone.finalizeByText + milestoneDateString + "</h6></div><p class='body'>" + milestone.body +"</p></div></div></div>";
+		var milestoneHTML = "<div class='milestone'><div class='date'>"+ appcuesProductLaunchPlanner.shortMonths(milestoneDate) + "<br><span class='number'>" + milestoneDate.getDate() + "</span></div><div class='milestone-content'><div class='header'><h5>" + milestone.title +"</h5><img class='icon' src='https://s3-us-west-2.amazonaws.com/appcues-public/microsites/product-launch-planner/img/icons/" + milestone.icon + "'alt='milestone icon'/></div><div class='body-content'><div class='due-date'><img class='icon' src='https://s3-us-west-2.amazonaws.com/appcues-public/microsites/product-launch-planner/img/icons/clock.svg' alt='icon of clock'/><h6>" + milestone.finalizeByText + milestoneDateString + "</h6></div><p class='body'>" + milestone.body +"</p></div></div></div>";
 		$("#milestones").append(milestoneHTML);
 	},
 

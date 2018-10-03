@@ -11,6 +11,7 @@
 	height: 100vh;
 	width: 100vw;
 	overflow: hidden;
+	font-family: "Muli", sans-serif !important;
 	min-height: 800px;
 
 	#rocketship {
@@ -77,7 +78,7 @@
 		-webkit-transform: rotate(130deg) !important; /* Safari and Chrome */
 		-o-transform: rotate(130deg) !important;
 		left: auto;
-		
+
 	}
 
 
@@ -116,9 +117,10 @@
 
 		#cityscape-foreground {
 			z-index: 11;
-			height: 450px;
+			height: 250px;
 			left: 50%;
     		transform: translateX(-50%);
+    		bottom: 0;
 		}
 
 	}
