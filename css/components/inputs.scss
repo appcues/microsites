@@ -86,6 +86,8 @@
 			height: 200px;
 
 			.form-group {
+				position: relative;
+
 				label {
 					padding-left: 0;
 					display: block;
@@ -204,6 +206,27 @@
 				font-size: 18px;
 			}
 		}
+
+
+		// //styling for date picker icon
+		// #question-3 {
+		// 	.input-group-append {
+		// 		position: absolute;
+		// 		right: 0;
+		// 		bottom: 28px;
+		// 		color: $primary;
+
+		// 		button {
+		// 			border: none !important;
+		// 			color: $primary;
+
+		// 			&:hover, &:focus {
+		// 				border: none !important;
+		// 				color: $primary-button-bg;
+		// 			}
+		// 		}
+		// 	}
+		// }
 
 		#input-employee-number, #input-sales-team {
 

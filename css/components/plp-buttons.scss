@@ -63,13 +63,13 @@
 	}
 
 	&:hover {
-		background: #3f3feb;
-		background-color: #3f3feb;
-		border-color: #3f3feb;
-		border-right-color: #3f3feb;
-		border-top-color: #3f3feb;
-		border-left-color: #3f3feb;
-		border-bottom-color: #3f3feb;
+		background: $primary-button-bg;
+		background-color: $primary-button-bg;
+		border-color: $primary-button-bg;
+		border-right-color: $primary-button-bg;
+		border-top-color: $primary-button-bg;
+		border-left-color: $primary-button-bg;
+		border-bottom-color: $primary-button-bg;
 	}
 }
 

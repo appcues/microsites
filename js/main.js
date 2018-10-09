@@ -16,7 +16,7 @@ var appcuesProductLaunchPlanner = {
 		appcuesProductLaunchPlanner.loadForm();
 		appcuesProductLaunchPlanner.setButtonClicks();
 		appcuesProductLaunchPlanner.setInputButtonClick();
-		appcuesProductLaunchPlanner.setEnterClick();
+		appcuesProductLaunchPlanner.setDownloadClick();
 
 	},			
 
@@ -94,7 +94,7 @@ var appcuesProductLaunchPlanner = {
 		appcuesProductLaunchPlanner.setNextButton();
 		appcuesProductLaunchPlanner.setBackButton();
 		appcuesProductLaunchPlanner.setSubmitButton();
-		appcuesProductLaunchPlanner.setEnterClick();
+		appcuesProductLaunchPlanner.setDownloadClick();
 	},
 
 	setInputButtonClick: function() {
@@ -142,6 +142,7 @@ var appcuesProductLaunchPlanner = {
 				$('#template-title-content').fadeOut("slow");
 				$('#form-content').fadeOut("slow");
 				appcuesProductLaunchPlanner.flyRocketShip();
+
 				setTimeout(function() {
 					appcuesProductLaunchPlanner.submitForm();
 				}, 5000);
@@ -170,15 +171,9 @@ var appcuesProductLaunchPlanner = {
 
 	},
 
-	setEnterClick: function() {
-		// $(document).keyup(function(e) {
-		// 	if(e.keyCode === 13) {
-		// 		e.preventDefault();
-		// 		e.stopPropagation();
-		// 		$( "#next-button" ).click();
-		// 		return false;
-		// 	}
-		// })
+	setDownloadClick: function() {
+		$("#download-button").click(function(){
+		});
 	},
 
 	addData: function(element) {

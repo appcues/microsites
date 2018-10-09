@@ -4302,72 +4302,74 @@ a.text-dark:focus, a.text-dark:hover {
     #form-content #content-container .form-row {
       display: none;
       height: 200px; }
-      #form-content #content-container .form-row .form-group label {
-        padding-left: 0;
-        display: block;
-        font-weight: 500;
-        font-size: 18px;
-        line-height: 1.15;
-        color: #242A35; }
+      #form-content #content-container .form-row .form-group {
+        position: relative; }
+        #form-content #content-container .form-row .form-group label {
+          padding-left: 0;
+          display: block;
+          font-weight: 500;
+          font-size: 18px;
+          line-height: 1.15;
+          color: #242A35; }
+          @media (min-width: 768px) {
+            #form-content #content-container .form-row .form-group label {
+              font-size: 22px; } }
+        #form-content #content-container .form-row .form-group small {
+          font-size: 12px;
+          display: block;
+          color: #576784;
+          line-height: 1.15;
+          font-weight: 300;
+          margin-bottom: 20px; }
+          @media (min-width: 768px) {
+            #form-content #content-container .form-row .form-group small {
+              font-size: 14px;
+              margin-bottom: 40px; } }
+        #form-content #content-container .form-row .form-group input {
+          border-right: none;
+          border-left: none;
+          border-top: none;
+          background: #FFFFFF;
+          color: #576784;
+          width: 100%;
+          margin-top: 0;
+          border-bottom: 2px solid #979eb4;
+          max-width: 500px; }
+          @media (min-width: 768px) {
+            #form-content #content-container .form-row .form-group input {
+              min-width: 300px; } }
+          #form-content #content-container .form-row .form-group input:focus {
+            outline-color: #FFFFFF !important;
+            border-color: #5C5CFF; }
+        #form-content #content-container .form-row .form-group input, #form-content #content-container .form-row .form-group button {
+          font-size: 16px; }
+        #form-content #content-container .form-row .form-group input::-webkit-input-placeholder {
+          /* Chrome/Opera/Safari */
+          color: #c0c6d9; }
+        #form-content #content-container .form-row .form-group input::-moz-placeholder {
+          /* Firefox 19+ */
+          color: #c0c6d9; }
+        #form-content #content-container .form-row .form-group input:-ms-input-placeholder {
+          /* IE 10+ */
+          color: #c0c6d9; }
+        #form-content #content-container .form-row .form-group input:-moz-placeholder {
+          /* Firefox 18- */
+          color: #c0c6d9; }
+        #form-content #content-container .form-row .form-group .btn-input {
+          background: transparent;
+          color: #576784;
+          border: 1px solid #979eb4; }
+        #form-content #content-container .form-row .form-group .btn-input.selected {
+          background: #5C5CFF !important;
+          color: #FFFFFF !important;
+          border-color: #3923B7 !important; }
         @media (min-width: 768px) {
           #form-content #content-container .form-row .form-group label {
-            font-size: 22px; } }
-      #form-content #content-container .form-row .form-group small {
-        font-size: 12px;
-        display: block;
-        color: #576784;
-        line-height: 1.15;
-        font-weight: 300;
-        margin-bottom: 20px; }
-        @media (min-width: 768px) {
+            font-size: 22px; }
           #form-content #content-container .form-row .form-group small {
-            font-size: 14px;
-            margin-bottom: 40px; } }
-      #form-content #content-container .form-row .form-group input {
-        border-right: none;
-        border-left: none;
-        border-top: none;
-        background: #FFFFFF;
-        color: #576784;
-        width: 100%;
-        margin-top: 0;
-        border-bottom: 2px solid #979eb4;
-        max-width: 500px; }
-        @media (min-width: 768px) {
-          #form-content #content-container .form-row .form-group input {
-            min-width: 300px; } }
-        #form-content #content-container .form-row .form-group input:focus {
-          outline-color: #FFFFFF !important;
-          border-color: #5C5CFF; }
-      #form-content #content-container .form-row .form-group input, #form-content #content-container .form-row .form-group button {
-        font-size: 16px; }
-      #form-content #content-container .form-row .form-group input::-webkit-input-placeholder {
-        /* Chrome/Opera/Safari */
-        color: #c0c6d9; }
-      #form-content #content-container .form-row .form-group input::-moz-placeholder {
-        /* Firefox 19+ */
-        color: #c0c6d9; }
-      #form-content #content-container .form-row .form-group input:-ms-input-placeholder {
-        /* IE 10+ */
-        color: #c0c6d9; }
-      #form-content #content-container .form-row .form-group input:-moz-placeholder {
-        /* Firefox 18- */
-        color: #c0c6d9; }
-      #form-content #content-container .form-row .form-group .btn-input {
-        background: transparent;
-        color: #576784;
-        border: 1px solid #979eb4; }
-      #form-content #content-container .form-row .form-group .btn-input.selected {
-        background: #5C5CFF !important;
-        color: #FFFFFF !important;
-        border-color: #3923B7 !important; }
-      @media (min-width: 768px) {
-        #form-content #content-container .form-row .form-group label {
-          font-size: 22px; }
-        #form-content #content-container .form-row .form-group small {
-          font-size: 14px; }
-        #form-content #content-container .form-row .form-group input, #form-content #content-container .form-row .form-group button {
-          font-size: 16px; } }
+            font-size: 14px; }
+          #form-content #content-container .form-row .form-group input, #form-content #content-container .form-row .form-group button {
+            font-size: 16px; } }
     #form-content #content-container #release-importance {
       margin-top: 15px;
       margin-bottom: 15px;
