@@ -16,9 +16,9 @@
 
 	#rocketship {
 		position: absolute;
-		left: 95px;
-		width: 150px;
-		bottom: 107.5px;;
+		left: 115px;
+		width: 120px;
+		bottom: 92.5px;
 		z-index: 250;
 
 		.rocketship-stage {
@@ -26,7 +26,6 @@
 			width: 100%;
 			bottom: 0;
 			opacity: 0;
-			transition: opacity .5s ease;
 			
 
 			&:nth-child(1) {
@@ -63,10 +62,11 @@
 		}
 
 		.rocketship-stage.smoke {
-			bottom: -100px;
+			bottom: -60px;
 		}
 
 		.rocketship-stage.shown {
+			transition: opacity .5s ease;
 			opacity: 1 !important;
 		}
 	}
@@ -93,9 +93,13 @@
 		#moon {
 			position: absolute;
 			width: 75px;
-			top: 125px;
+			top: 75px;
     		right: 50px;
 			z-index: 200;
+
+			@media screen and (min-height: $mobile-height-breakpoint) {
+				top: 100px;
+			}
 		}
 
 		#rocketbase, #sat, #cityscape-foreground {
@@ -105,19 +109,26 @@
 
 		#rocketbase {
 			z-index: 13;
-			width: 350px;
-			left: 0;
+			width: 300px;
+			left: 30px;
 		}
 
 		#sat {
 			z-index: 12;
-			width: 250px;
-			right: 0;
+			width: 200px;
+			right: 30px;
+			display: none;
+
+
+			@include media-breakpoint-up(md) {
+				display: block;
+			}
+
 		}
 
 		#cityscape-foreground {
 			z-index: 11;
-			height: 250px;
+			width: 100vw;
 			left: 50%;
     		transform: translateX(-50%);
     		bottom: 0;
@@ -125,7 +136,10 @@
 
 	}
 
-	
+	#landing-parallax {
+		overflow: hidden;
+
+	}
 
 	.stars {
 		position: absolute;
@@ -133,6 +147,8 @@
 		top: 0;
 		left: 0;
 		z-index: 9;
+		min-width: 1000px;
+
 	}
 }
 
@@ -149,24 +165,47 @@
 	left: 0;
 	z-index: 100;
 
-	.logo {
-		height: 32px;
-		position: absolute;
-		top: 19px;
-		left: 20px;
+	@include media-breakpoint-up(md) {
+		padding: 10px 30px;
 	}
 
-	h1 {
-		font-size: 13px;
-		text-transform: uppercase;
-		font-weight: 700;
-		letter-spacing: 2.5px;
-		position: absolute;
-		line-height: 1;
-		top: 28px;
-		right: 20px;
+	.nav-content {
+		position: relative;
+		max-width: 1400px;
+		margin: 0 auto;
+
+
+		.logo {
+			height: 20px;
+			position: absolute;
+			top: 10px;
+			left: 0;
+
+			@include media-breakpoint-up(md) {
+				height: 32px;
+				top: 19px;
+			}
+		}
+
+		h1 {
+			font-size: 11px;
+			text-transform: uppercase;
+			font-weight: 700;
+			letter-spacing: 2.5px;
+			position: absolute;
+			top: 17px;
+			right: 0;
+			text-align: right;
+
+			@include media-breakpoint-up(md) {
+				top: 31px;
+			}
+		}
 
 	}
+	
+
+	
 }
 
 

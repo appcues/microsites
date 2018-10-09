@@ -37,16 +37,18 @@
 }
 
 %white-container {
-    width: 90%;
+    width: 98%;
     background: $white;
     margin: 0 auto;
     color: $black;
     border-radius: 15px;
     padding: 25px;
     font-family: "Muli", sans-serif !important;
+    overflow: scroll;
     box-shadow: 1px 18px 38px 11.27px rgba(42, 40, 55, 0.05); 
 
     @include media-breakpoint-up(md) {
+      width: 90%;
       padding: 75px 60px;
     }
 
@@ -54,18 +56,22 @@
 
 .title-content {
   position: absolute;
-  top: 250px;
+  top: 175px;
   z-index: 50;
   color: $white;
 
+  @media screen and (min-height: $mobile-height-breakpoint) {
+    top: 250px;
+  }
+
   h2 {
-    font-size: 30px;
+    font-size: 35px;
     margin-bottom: 15px;
     font-weight: 300;
   }
 
   h5 {
-    font-size: 12px;
+    font-size: 14px;
     line-height: 1.6;
   } 
 

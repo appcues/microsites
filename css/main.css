@@ -4062,29 +4062,34 @@ a.text-dark:focus, a.text-dark:hover {
   color: #FFFFFF !important; }
 
 #form-content #content-container, #results-content #content-container {
-  width: 90%;
+  width: 98%;
   background: #FFFFFF;
   margin: 0 auto;
   color: #000000;
   border-radius: 15px;
   padding: 25px;
   font-family: "Muli", sans-serif !important;
+  overflow: scroll;
   box-shadow: 1px 18px 38px 11.27px rgba(42, 40, 55, 0.05); }
   @media (min-width: 768px) {
     #form-content #content-container, #results-content #content-container {
+      width: 90%;
       padding: 75px 60px; } }
 
 .title-content {
   position: absolute;
-  top: 250px;
+  top: 175px;
   z-index: 50;
   color: #FFFFFF; }
+  @media screen and (min-height: 650px) {
+    .title-content {
+      top: 250px; } }
   .title-content h2 {
-    font-size: 30px;
+    font-size: 35px;
     margin-bottom: 15px;
     font-weight: 300; }
   .title-content h5 {
-    font-size: 12px;
+    font-size: 14px;
     line-height: 1.6; }
   @media (min-width: 768px) {
     .title-content h2 {
@@ -4110,16 +4115,15 @@ a.text-dark:focus, a.text-dark:hover {
   min-height: 800px; }
   #landing #rocketship {
     position: absolute;
-    left: 95px;
-    width: 150px;
-    bottom: 107.5px;
+    left: 115px;
+    width: 120px;
+    bottom: 92.5px;
     z-index: 250; }
     #landing #rocketship .rocketship-stage {
       position: absolute;
       width: 100%;
       bottom: 0;
-      opacity: 0;
-      transition: opacity .5s ease; }
+      opacity: 0; }
       #landing #rocketship .rocketship-stage:nth-child(1) {
         z-index: 21; }
       #landing #rocketship .rocketship-stage:nth-child(2) {
@@ -4137,8 +4141,9 @@ a.text-dark:focus, a.text-dark:hover {
       #landing #rocketship .rocketship-stage:nth-child(8) {
         z-index: 23; }
     #landing #rocketship .rocketship-stage.smoke {
-      bottom: -100px; }
+      bottom: -60px; }
     #landing #rocketship .rocketship-stage.shown {
+      transition: opacity .5s ease;
       opacity: 1 !important; }
   #landing #rocketship.rotated {
     transform: rotate(130deg) !important;
@@ -4159,32 +4164,42 @@ a.text-dark:focus, a.text-dark:hover {
     #landing .background-elements #moon {
       position: absolute;
       width: 75px;
-      top: 125px;
+      top: 75px;
       right: 50px;
       z-index: 200; }
+      @media screen and (min-height: 650px) {
+        #landing .background-elements #moon {
+          top: 100px; } }
     #landing .background-elements #rocketbase, #landing .background-elements #sat, #landing .background-elements #cityscape-foreground {
       position: absolute;
       bottom: 0; }
     #landing .background-elements #rocketbase {
       z-index: 13;
-      width: 350px;
-      left: 0; }
+      width: 300px;
+      left: 30px; }
     #landing .background-elements #sat {
       z-index: 12;
-      width: 250px;
-      right: 0; }
+      width: 200px;
+      right: 30px;
+      display: none; }
+      @media (min-width: 768px) {
+        #landing .background-elements #sat {
+          display: block; } }
     #landing .background-elements #cityscape-foreground {
       z-index: 11;
-      height: 250px;
+      width: 100vw;
       left: 50%;
       transform: translateX(-50%);
       bottom: 0; }
+  #landing #landing-parallax {
+    overflow: hidden; }
   #landing .stars {
     position: absolute;
     width: 100vw;
     top: 0;
     left: 0;
-    z-index: 9; }
+    z-index: 9;
+    min-width: 1000px; }
 
 #short-nav {
   height: 60px;
@@ -4196,27 +4211,44 @@ a.text-dark:focus, a.text-dark:hover {
   top: 0;
   left: 0;
   z-index: 100; }
-  #short-nav .logo {
-    height: 32px;
-    position: absolute;
-    top: 19px;
-    left: 20px; }
-  #short-nav h1 {
-    font-size: 13px;
-    text-transform: uppercase;
-    font-weight: 700;
-    letter-spacing: 2.5px;
-    position: absolute;
-    line-height: 1;
-    top: 28px;
-    right: 20px; }
+  @media (min-width: 768px) {
+    #short-nav {
+      padding: 10px 30px; } }
+  #short-nav .nav-content {
+    position: relative;
+    max-width: 1400px;
+    margin: 0 auto; }
+    #short-nav .nav-content .logo {
+      height: 20px;
+      position: absolute;
+      top: 10px;
+      left: 0; }
+      @media (min-width: 768px) {
+        #short-nav .nav-content .logo {
+          height: 32px;
+          top: 19px; } }
+    #short-nav .nav-content h1 {
+      font-size: 11px;
+      text-transform: uppercase;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      position: absolute;
+      top: 17px;
+      right: 0;
+      text-align: right; }
+      @media (min-width: 768px) {
+        #short-nav .nav-content h1 {
+          top: 31px; } }
 
 #form-content {
   position: absolute;
   display: none;
-  top: 50px;
+  top: 75px;
   z-index: 100; }
-  @media screen and (min-height: 700px) {
+  @media (min-width: 768px) {
+    #form-content {
+      top: 50px; } }
+  @media screen and (min-height: 650px) {
     #form-content {
       top: 150px; } }
   @media screen and (min-height: 1000px) {
@@ -4229,28 +4261,33 @@ a.text-dark:focus, a.text-dark:hover {
     font-family: "Muli", sans-serif !important; }
     @media (min-width: 768px) {
       #form-content #content-container {
-        padding: 60px 20px 20px 20px; } }
+        padding: 80px 20px 20px 20px; } }
     #form-content #content-container #error-message {
       color: #FF3B4E;
-      font-size: 14px;
+      font-size: 11px;
       font-style: italic;
       display: none;
-      top: 80px;
-      position: absolute; }
-    #form-content #content-container .progress-bar {
+      top: 77px;
+      position: absolute;
+      margin-bottom: 0; }
+      @media (min-width: 768px) {
+        #form-content #content-container #error-message {
+          top: 100px;
+          font-size: 14px; } }
+    #form-content #content-container .plp-progress-bar {
       position: absolute;
       top: 0;
       width: 100%;
       left: 0;
       margin-bottom: 10px;
       text-align: left; }
-      #form-content #content-container .progress-bar #progress-bar-line {
+      #form-content #content-container .plp-progress-bar #plp-progress-bar-line {
         height: 10px;
         margin-bottom: 10px;
         border-top-left-radius: 15px;
         width: 12.5%;
         background: #5C5CFF; }
-      #form-content #content-container .progress-bar #progress-bar-line.complete {
+      #form-content #content-container .plp-progress-bar #plp-progress-bar-line.complete {
         border-top-right-radius: 15px; }
     #form-content #content-container #progress-question {
       font-size: 12px;
@@ -4258,9 +4295,10 @@ a.text-dark:focus, a.text-dark:hover {
       font-weight: 600;
       line-height: 1;
       text-transform: uppercase;
-      margin: 0 0 30px 0; }
-    #form-content #content-container #planner-form {
-      padding-left: 20px; }
+      margin: 0 0 25px 0; }
+    @media (min-width: 768px) {
+      #form-content #content-container #planner-form {
+        padding-left: 20px; } }
     #form-content #content-container .form-row {
       display: none;
       height: 200px; }
@@ -4268,14 +4306,23 @@ a.text-dark:focus, a.text-dark:hover {
         padding-left: 0;
         display: block;
         font-weight: 500;
-        font-size: 22px;
+        font-size: 18px;
+        line-height: 1.15;
         color: #242A35; }
+        @media (min-width: 768px) {
+          #form-content #content-container .form-row .form-group label {
+            font-size: 22px; } }
       #form-content #content-container .form-row .form-group small {
-        font-size: 14px;
+        font-size: 12px;
         display: block;
         color: #576784;
+        line-height: 1.15;
         font-weight: 300;
-        margin-bottom: 14px; }
+        margin-bottom: 20px; }
+        @media (min-width: 768px) {
+          #form-content #content-container .form-row .form-group small {
+            font-size: 14px;
+            margin-bottom: 40px; } }
       #form-content #content-container .form-row .form-group input {
         border-right: none;
         border-left: none;
@@ -4283,7 +4330,7 @@ a.text-dark:focus, a.text-dark:hover {
         background: #FFFFFF;
         color: #576784;
         width: 100%;
-        margin-top: 15px;
+        margin-top: 0;
         border-bottom: 2px solid #979eb4;
         max-width: 500px; }
         @media (min-width: 768px) {
@@ -4294,6 +4341,18 @@ a.text-dark:focus, a.text-dark:hover {
           border-color: #5C5CFF; }
       #form-content #content-container .form-row .form-group input, #form-content #content-container .form-row .form-group button {
         font-size: 16px; }
+      #form-content #content-container .form-row .form-group input::-webkit-input-placeholder {
+        /* Chrome/Opera/Safari */
+        color: #c0c6d9; }
+      #form-content #content-container .form-row .form-group input::-moz-placeholder {
+        /* Firefox 19+ */
+        color: #c0c6d9; }
+      #form-content #content-container .form-row .form-group input:-ms-input-placeholder {
+        /* IE 10+ */
+        color: #c0c6d9; }
+      #form-content #content-container .form-row .form-group input:-moz-placeholder {
+        /* Firefox 18- */
+        color: #c0c6d9; }
       #form-content #content-container .form-row .form-group .btn-input {
         background: transparent;
         color: #576784;
@@ -4311,21 +4370,35 @@ a.text-dark:focus, a.text-dark:hover {
           font-size: 16px; } }
     #form-content #content-container #release-importance {
       margin-top: 15px;
-      margin-bottom: 15px; }
+      margin-bottom: 15px;
+      position: relative;
+      width: 100%; }
       #form-content #content-container #release-importance .btn {
+        width: 40px;
+        height: 40px;
+        width: 10%;
+        font-size: 14.4px;
         width: 50px;
         height: 50px;
         font-size: 18px; }
     #form-content #content-container #input-employee-number .btn, #form-content #content-container #input-sales-team .btn {
-      width: 100px;
+      width: 80px;
+      margin: 5px 10px;
       height: 40px;
-      margin: 15px 20px;
       text-transform: none; }
       #form-content #content-container #input-employee-number .btn:first-child, #form-content #content-container #input-sales-team .btn:first-child {
         margin-left: 0; }
+      #form-content #content-container #input-employee-number .btn:nth-child(4), #form-content #content-container #input-sales-team .btn:nth-child(4) {
+        margin-left: 0; }
+      @media (min-width: 768px) {
+        #form-content #content-container #input-employee-number .btn, #form-content #content-container #input-sales-team .btn {
+          width: 100px;
+          margin: 15px 20px; }
+          #form-content #content-container #input-employee-number .btn:nth-child(4), #form-content #content-container #input-sales-team .btn:nth-child(4) {
+            margin-left: 20px; } }
 
 .form-buttons {
-  margin-top: 25px; }
+  margin-top: 50px; }
 
 .moving-button, #submit-button, #download-button, #appcues-button {
   padding: 10px 20px;
@@ -4333,6 +4406,8 @@ a.text-dark:focus, a.text-dark:hover {
   text-transform: capitalize; }
   .moving-button span, #submit-button span, #download-button span, #appcues-button span {
     font-size: 16px;
+    margin-top: -4px;
+    display: inline-block;
     line-height: 1;
     vertical-align: middle;
     text-transform: capitalize; }
@@ -4344,6 +4419,11 @@ a.text-dark:focus, a.text-dark:hover {
   display: none; }
   #submit-button span {
     margin-left: 5px; }
+  #submit-button .hide-mobile {
+    display: none; }
+    @media (min-width: 576px) {
+      #submit-button .hide-mobile {
+        display: inline; } }
 
 #next-button {
   display: none; }
@@ -4362,6 +4442,14 @@ a.text-dark:focus, a.text-dark:hover {
 
 #next-button span, #get-started-button span {
   margin-right: 5px; }
+#next-button:hover, #get-started-button:hover {
+  background: #3f3feb;
+  background-color: #3f3feb;
+  border-color: #3f3feb;
+  border-right-color: #3f3feb;
+  border-top-color: #3f3feb;
+  border-left-color: #3f3feb;
+  border-bottom-color: #3f3feb; }
 
 #back-button {
   border-color: #979eb4;
@@ -4379,49 +4467,75 @@ a.text-dark:focus, a.text-dark:hover {
   margin-top: 100px;
   z-index: 300; }
   #results-content #content-container {
-    max-width: 1400px; }
+    max-width: 1400px;
+    padding-left: 15px;
+    padding-right: 5px; }
+    @media (min-width: 768px) {
+      #results-content #content-container {
+        padding-right: 25px;
+        padding-left: 25px; } }
     #results-content #content-container #results-title {
       font-size: 24px;
       margin-bottom: 50px; }
-    #results-content #content-container .buttons {
-      margin-top: 75px; }
-      #results-content #content-container .buttons .btn {
+    #results-content #content-container #results-end {
+      margin-top: 75px;
+      padding-right: 10px; }
+      @media (min-width: 768px) {
+        #results-content #content-container #results-end {
+          padding-right: 0; } }
+      #results-content #content-container #results-end .btn {
         margin-left: 10px;
         margin-right: 10px; }
+      #results-content #content-container #results-end #appcues-signup {
+        margin-top: 25px;
+        font-size: 14px; }
+        #results-content #content-container #results-end #appcues-signup a {
+          color: #5C5CFF; }
   #results-content #timeline-content #line {
     width: 1px;
     position: absolute;
     top: 0;
     bottom: 0;
     z-index: 1;
-    background: #576784; }
-    @media (min-width: 768px) {
+    background: #979eb4; }
+    @media (min-width: 992px) {
       #results-content #timeline-content #line {
         left: calc(50% + .5px); } }
   #results-content #timeline-content .milestone {
     position: relative;
     margin: 0;
-    margin-right: auto; }
-    #results-content #timeline-content .milestone .date {
+    margin-right: auto;
+    padding-left: 40px;
+    margin-bottom: 25px; }
+    @media (min-width: 768px) {
+      #results-content #timeline-content .milestone {
+        padding-left: 50px; } }
+    #results-content #timeline-content .milestone .date-container {
       text-transform: uppercase;
-      font-size: 4px;
       color: #979eb4;
       background: #FFFFFF;
       border: 1px solid #979eb4;
       width: 45px;
       height: 45px;
       border-radius: 45px;
-      line-height: 1;
-      padding-top: 8px;
       position: absolute;
       top: 0;
-      z-index: 10; }
-      #results-content #timeline-content .milestone .date span {
-        display: block;
-        font-size: 13px;
+      z-index: 10;
+      left: -22.5px; }
+      #results-content #timeline-content .milestone .date-container .date {
         line-height: 1;
-        color: #5C5CFF;
-        margin-top: 2.5px; }
+        transform: translate(-50%, -50%);
+        top: 50%;
+        left: 50%;
+        position: absolute;
+        color: #979eb4;
+        font-size: 10px; }
+        #results-content #timeline-content .milestone .date-container .date span {
+          display: block;
+          font-size: 15px;
+          line-height: 1;
+          color: #5C5CFF;
+          margin-top: 2.5px; }
     #results-content #timeline-content .milestone .milestone-content {
       border-radius: 15px; }
       #results-content #timeline-content .milestone .milestone-content .header {
@@ -4434,9 +4548,13 @@ a.text-dark:focus, a.text-dark:hover {
         font-family: "Muli", sans-serif !important; }
         #results-content #timeline-content .milestone .milestone-content .header h5 {
           display: inline-block;
-          line-height: 1;
+          line-height: 1.1;
           margin: 0;
-          vertical-align: middle; }
+          vertical-align: middle;
+          font-size: 14px; }
+          @media (min-width: 768px) {
+            #results-content #timeline-content .milestone .milestone-content .header h5 {
+              font-size: 16px; } }
         #results-content #timeline-content .milestone .milestone-content .header .icon {
           height: 20px;
           position: absolute;
@@ -4457,7 +4575,7 @@ a.text-dark:focus, a.text-dark:hover {
             margin-right: 5px; }
           #results-content #timeline-content .milestone .milestone-content .body-content .due-date h6 {
             font-size: 13px;
-            font-weight: 300;
+            font-weight: 500;
             color: #242a35;
             display: inline;
             vertical-align: middle;
@@ -4467,17 +4585,23 @@ a.text-dark:focus, a.text-dark:hover {
           font-size: 15px;
           color: #576784;
           text-align: left;
-          margin-bottom: 0;
           font-weight: 300;
           font-family: "Muli", sans-serif !important; }
-    @media (min-width: 768px) {
+          #results-content #timeline-content .milestone .milestone-content .body-content .body p {
+            margin-bottom: 0; }
+          #results-content #timeline-content .milestone .milestone-content .body-content .body ul {
+            padding-left: 20px; }
+    @media (min-width: 992px) {
       #results-content #timeline-content .milestone {
         width: 50%;
+        padding-left: 0;
+        margin-bottom: 0;
         margin: 0; }
         #results-content #timeline-content .milestone:nth-child(odd) {
           margin-left: auto; }
-          #results-content #timeline-content .milestone:nth-child(odd) .date {
-            left: -20px; }
+          #results-content #timeline-content .milestone:nth-child(odd) .date-container {
+            left: -22.5px;
+            right: auto; }
           #results-content #timeline-content .milestone:nth-child(odd) .milestone-content {
             margin: 20px 0 20px 50px; }
             #results-content #timeline-content .milestone:nth-child(odd) .milestone-content .header {
@@ -4485,8 +4609,9 @@ a.text-dark:focus, a.text-dark:hover {
               margin-left: auto; }
         #results-content #timeline-content .milestone:nth-child(even) {
           margin-right: auto; }
-          #results-content #timeline-content .milestone:nth-child(even) .date {
-            right: -20px; }
+          #results-content #timeline-content .milestone:nth-child(even) .date-container {
+            left: auto;
+            right: -22.5px; }
           #results-content #timeline-content .milestone:nth-child(even) .milestone-content {
             margin: 20px 50px 20px 0; }
             #results-content #timeline-content .milestone:nth-child(even) .milestone-content .header {

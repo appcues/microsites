@@ -5,6 +5,7 @@ $brand-primary-dark: #3923B7;
 $bg-gray: #F5F7FA;
 $dark-gray: #576784;
 $light-gray: #979eb4;
+$mobile-height-breakpoint: 650px;
 
 $body-font-size: 18px;
 
@@ -427,7 +428,7 @@ $input-focus-color:                     $input-color !default;
 $input-focus-width:                     $input-btn-focus-width !default;
 $input-focus-box-shadow:                $input-btn-focus-box-shadow !default;
 
-$input-placeholder-color:               $gray-600 !default;
+$input-placeholder-color:               #c0c6d9 !default;
 
 $input-height-border:                   $input-btn-border-width * 2 !default;
 
