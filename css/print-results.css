@@ -1,0 +1,39 @@
+@media print {
+
+	#template-title-content, #results-title-container, #form-content, #landing, .background-elements, #results-end, #line {
+		display: none;
+	}
+  
+  	#results {
+	    margin: 12px;
+	    padding: 0;
+	    width: 100%;
+	    box-shadow: none;
+	    top: 0;
+	}
+
+	#results-content {
+		margin-top: 0;
+	}
+
+	.milestone {
+		display: block;
+		margin-bottom: 15px;
+		page-break-before: auto; /* 'always,' 'avoid,' 'left,' 'inherit,' or 'right' */
+	    page-break-after: auto; /* 'always,' 'avoid,' 'left,' 'inherit,' or 'right' */
+	    page-break-inside: avoid; /* or 'auto' */
+	}
+
+	.milestone-content .header {
+		background: #5C5CFF;
+		background-color: #5C5CFF;
+		border: 1px solid #c0c6d9;
+		border-top-right-radius: 15px;
+		border-top-left-radius: 15px;
+		border-bottom: none;
+	}
+
+	#results-content #timeline-content .milestone .milestone-content .header h5 {
+		color: #666;
+	}
+}

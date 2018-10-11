@@ -20,6 +20,7 @@
     <link href="https://fonts.googleapis.com/css?family=Muli:300,400,500,600" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="./css/normalize.css">
     <link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css"> 
+    <link rel="stylesheet" type="text/css" href="./css/print-results.css"> 
     <link rel="stylesheet" type="text/css" href="./css/main.css" >
     
 
@@ -98,8 +99,10 @@
             </div>
             <div id="results" class="col-12 title-content">
                 <div class="text-center">
-                    <h2>Product Launch Planner Results</h2>
-                    <h5>Here’s your complete playbook to launch <span id="results-title-2"></span></h5>
+                    <div id="results-title-container">
+                        <h2>Product Launch Planner Results</h2>
+                        <h5>Here’s your complete playbook to launch <span id="results-title-2"></span></h5>
+                    </div>
                     <div id="results-content" class="row">
                         <div id="content-container">
                             <h5 id="results-title"></h5>
@@ -110,12 +113,10 @@
                                 </div>
                             </div>
                             <div id="results-end">
-                                <a href="https://s3.us-east-2.amazonaws.com/bgw-personal/Flavor+of+Love+Paper.pdf" target="blank">
-                                    <div id="download-button" class="btn btn-success">
-                                        <span>Download PDF</span>
-                                        <img src="https://s3-us-west-2.amazonaws.com/appcues-public/microsites/product-launch-planner/img/icons/pdf.svg" class="button-icon"/>
-                                    </div>
-                                </a>
+                                <div id="download-button" class="btn btn-success">
+                                    <span>Download PDF</span>
+                                    <img src="https://s3-us-west-2.amazonaws.com/appcues-public/microsites/product-launch-planner/img/icons/pdf.svg" class="button-icon"/>
+                                </div>
                                 <p id="appcues-signup">Want help fueling your rocketship? <a href="https://my.appcues.com/register" target="_blank">Try out Appcues</a> today!</p>
                             </div>
                         </div>
@@ -134,6 +135,7 @@
     <script src="https://cdn.sobekrepository.org/includes/jquery-rotate/2.2/jquery-rotate.js"></script>
     <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
     <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
 
     <!-- <script src="./libraries/js/parallax/parallax.js"></script> -->

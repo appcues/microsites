@@ -173,7 +173,7 @@ var appcuesProductLaunchPlanner = {
 
 	setDownloadClick: function() {
 		$("#download-button").click(function(){
-			// a2f16f44732c4d8dbb8092c109df84b5
+
 		});
 	},
 
@@ -194,9 +194,7 @@ var appcuesProductLaunchPlanner = {
 	sendEmailInput: function(emailValue) {
 		var postRequestUrl = "https://hooks.zapier.com/hooks/catch/118654/l4ahnh/?" + $.param(emailValue);
 
-		$.post(postRequestUrl, function(data, status){
-
-		});
+		$.post(postRequestUrl, function(data, status){});
 	},
 
 	moveNext: function(targetInput) {
@@ -277,8 +275,6 @@ var appcuesProductLaunchPlanner = {
 		    appcuesProductLaunchPlanner.addMilestone(appcuesProductLaunchPlanner.milestoneData[i], launchDate, employeeCount, importanceLevel, salesTeam);
 		}
 
-		
-
 		$('#results').fadeIn( "slow" );
 		appcuesProductLaunchPlanner.setTimelineBottom();
 		$('#results-title').text(appcuesProductLaunchPlanner.formData[0] + " Launch Plan");
@@ -334,7 +330,7 @@ var appcuesProductLaunchPlanner = {
 			"title": "Plan and host event or keynote",
 			"finalizeByDays": -90, 
 			"finalizeByText": "Start writing your keynote by ",
-			"body": "<p>If you have a user conference, save the product launch announcement for then in order to make a big splash. If you don't have a user conference yet, plan a launch party and have your CEO or product lead give a short talk on the release. Consider live streaming and/or recording the talk for future promotions.</p>"
+			"body": "<p>Have a user conference coming up? Save your product launch announcement for the conference to make a big splash. If you don't have a conference on your calendar yet, plan a launch party and have your CEO or product lead give a short talk about the release. Consider live streaming and/or recording the talk for future promotions.</p>"
 		}, {
 			"conditions": "None",
 			"icon": "objective-results.svg",
