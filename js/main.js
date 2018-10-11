@@ -16,8 +16,6 @@ var appcuesProductLaunchPlanner = {
 		appcuesProductLaunchPlanner.loadForm();
 		appcuesProductLaunchPlanner.setButtonClicks();
 		appcuesProductLaunchPlanner.setInputButtonClick();
-		appcuesProductLaunchPlanner.setDownloadClick();
-
 	},			
 
 	loadForm: function() {
@@ -60,14 +58,14 @@ var appcuesProductLaunchPlanner = {
 		 
 		setTimeout(function() {
 			$("#rocketship").addClass('rotated');
-		}, 3000);
+		}, 2700);
 		
 		setTimeout(function() {
 	  		$("#rocketship").animate({
 			    right: "500px",
 			    top: "350px",
 			    zoom: "25%"
-			}, 2500, function() {}), 4000
+			}, 1500, function() {}), 2700
 	  	});	
 
 	},
@@ -173,7 +171,7 @@ var appcuesProductLaunchPlanner = {
 
 	setDownloadClick: function() {
 		$("#download-button").click(function(){
-
+			window.print()
 		});
 	},
 
