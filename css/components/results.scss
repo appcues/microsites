@@ -59,7 +59,7 @@ $date-container-size: 45px;
 			top: 0;
 			bottom: 0;
 			z-index: 1;
-			background: $light-gray;
+			background: #c0c6d9;
 
 			@include media-breakpoint-up(lg) {
 				left: calc(50% + .5px);
@@ -84,7 +84,7 @@ $date-container-size: 45px;
 				text-transform: uppercase;
 				color: $light-gray;
 				background: $white;
-				border: 1px solid $light-gray;
+				border: 1px solid #c0c6d9;
 				width: $date-container-size;
 				height: $date-container-size;
 				border-radius: $date-container-size;
@@ -150,7 +150,7 @@ $date-container-size: 45px;
 
 				.body-content {
 					padding: 20px 25px;
-					border: 1px solid $light-gray;
+					border: 1px solid #c0c6d9;
 					border-top: none;
 					border-bottom-right-radius: 15px;
 					border-bottom-left-radius: 15px;
@@ -243,6 +243,13 @@ $date-container-size: 45px;
 				}
 			}
 			
+		}
+
+		.milestone.passed-due {
+			.date-container {
+				border-color: #FF3B4E !important;
+				border-width: 1.25px;
+			}
 		}
 	}
 }

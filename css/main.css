@@ -4090,12 +4090,12 @@ a.text-dark:focus, a.text-dark:hover {
     font-weight: 300; }
   .title-content h5 {
     font-size: 14px;
-    line-height: 1.6; }
+    line-height: 1.8; }
   @media (min-width: 768px) {
     .title-content h2 {
-      font-size: 46px; }
+      font-size: 52px; }
     .title-content h5 {
-      font-size: 16px; } }
+      font-size: 17px; } }
 
 #landing {
   position: fixed;
@@ -4117,7 +4117,7 @@ a.text-dark:focus, a.text-dark:hover {
     position: absolute;
     left: 115px;
     width: 120px;
-    bottom: 92.5px;
+    bottom: 112.5px;
     z-index: 250; }
     #landing #rocketship .rocketship-stage {
       position: absolute;
@@ -4141,7 +4141,7 @@ a.text-dark:focus, a.text-dark:hover {
       #landing #rocketship .rocketship-stage:nth-child(8) {
         z-index: 23; }
     #landing #rocketship .rocketship-stage.smoke {
-      bottom: -60px; }
+      bottom: -50px; }
     #landing #rocketship .rocketship-stage.shown {
       transition: opacity .5s ease;
       opacity: 1 !important; }
@@ -4159,7 +4159,7 @@ a.text-dark:focus, a.text-dark:hover {
     position: absolute;
     width: 100%;
     height: 100%;
-    bottom: 0;
+    bottom: 20px;
     left: 0; }
     #landing .background-elements #moon {
       position: absolute;
@@ -4190,7 +4190,7 @@ a.text-dark:focus, a.text-dark:hover {
       width: 100vw;
       left: 50%;
       transform: translateX(-50%);
-      bottom: 0; }
+      bottom: -20px; }
   #landing #landing-parallax {
     overflow: hidden; }
   #landing .stars {
@@ -4320,7 +4320,8 @@ a.text-dark:focus, a.text-dark:hover {
           color: #576784;
           line-height: 1.15;
           font-weight: 300;
-          margin-bottom: 20px; }
+          margin-bottom: 20px;
+          margin-top: 15px; }
           @media (min-width: 768px) {
             #form-content #content-container .form-row .form-group small {
               font-size: 14px;
@@ -4425,15 +4426,15 @@ a.text-dark:focus, a.text-dark:hover {
     display: none; }
     @media (min-width: 576px) {
       #submit-button .hide-mobile {
-        display: inline; } }
+        display: inline;
+        margin: 0 !important;
+        vertical-align: top; } }
 
 #next-button {
   display: none; }
 
-#download-button {
-  margin-left: 20px; }
-  #download-button img {
-    width: 15px; }
+#download-button img {
+  width: 22px; }
 
 #submit-button.show-btn, #next-button.show-btn {
   display: inline-block !important; }
@@ -4499,7 +4500,7 @@ a.text-dark:focus, a.text-dark:hover {
     top: 0;
     bottom: 0;
     z-index: 1;
-    background: #979eb4; }
+    background: #c0c6d9; }
     @media (min-width: 992px) {
       #results-content #timeline-content #line {
         left: calc(50% + .5px); } }
@@ -4516,7 +4517,7 @@ a.text-dark:focus, a.text-dark:hover {
       text-transform: uppercase;
       color: #979eb4;
       background: #FFFFFF;
-      border: 1px solid #979eb4;
+      border: 1px solid #c0c6d9;
       width: 45px;
       height: 45px;
       border-radius: 45px;
@@ -4564,7 +4565,7 @@ a.text-dark:focus, a.text-dark:hover {
           right: 25px; }
       #results-content #timeline-content .milestone .milestone-content .body-content {
         padding: 20px 25px;
-        border: 1px solid #979eb4;
+        border: 1px solid #c0c6d9;
         border-top: none;
         border-bottom-right-radius: 15px;
         border-bottom-left-radius: 15px;
@@ -4619,5 +4620,8 @@ a.text-dark:focus, a.text-dark:hover {
             #results-content #timeline-content .milestone:nth-child(even) .milestone-content .header {
               border-top-left-radius: 15px;
               margin-right: auto; } }
+  #results-content #timeline-content .milestone.passed-due .date-container {
+    border-color: #FF3B4E !important;
+    border-width: 1.25px; }
 
 /*# sourceMappingURL=main.css.map */

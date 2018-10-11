@@ -21,7 +21,7 @@ var appcuesProductLaunchPlanner = {
 	},			
 
 	loadForm: function() {
-		$("#planner-form").append("<h6 id='progress-question'>Question <span id='question-step'>1</span> of 8</h6><p id='error-message'>Please provide a valid response</p><div class='form-row input-form-row selected' id='question-1'><div class='form-group'><label for='input-release-name'>What is the name of the release?</label><small id='input-release-help'>Bonus points for code names</small><input type='text' class='form-control' id='input-release-name' placeholder='The iPhone XS'></div></div><div class='form-row btn-form-row' id='question-2'><div class='form-group'><label for='release-importance'>How significant is your release?</label><small id='importance-help'>1 means no one cares, 10 means it's the next iPhone</small><div class='btn-toolbar'><div class='btn-group' id='release-importance'><button type='button' class='btn btn-input'>1</button><button type='button' class='btn btn-input'>2</button><button type='button' class='btn btn-input'>3</button><button type='button' class='btn btn-input'>4</button><button type='button' class='btn btn-input'>5</button><button type='button' class='btn btn-input'>6</button><button type='button' class='btn btn-input'>7</button><button type='button' class='btn btn-input'>8</button><button type='button' class='btn btn-input'>9</button><button type='button' class='btn btn-input'>10</button></div></div></div></div><div class='form-row input-form-row' id='question-3'><div class='form-group'><label for='input-release-date'>When is the estimated release date?</label><small id='input-release-date-help'>We’ll build a custom calendar of deadlines to hit</small><input class='form-control' type='date' id='input-release-date'></div></div> <div class='form-row btn-form-row' id='question-4'> <div class='form-group'> <label for='input-employee-number'>Do you have a sales team?</label> <small id='employee-number-help'>If so, we’ll provide specific tasks for sales.</small> <div class='row'><div class='col-12' id='input-sales-team'><button type='button' class='btn btn-input'>Yes</button><button type='button' class='btn btn-input'>No</button></div></div></div></div> <div class='form-row btn-form-row' id='question-5'> <div class='form-group'> <label for='input-employee-number'>What is the approximate number of employees at your company?</label> <small id='employee-number-help'>We’ll only recommend tasks that your team has bandwidth for.</small> <div class='row'><div class='col-12' id='input-employee-number'><button type='button' class='btn btn-input'>1-9</button><button type='button' class='btn btn-input'>10-24</button><button type='button' class='btn btn-input'>25-99</button><button type='button' class='btn btn-input'>100-499</button><button type='button' class='btn btn-input'>500+</button></div></div></div></div> <div class='form-row input-form-row' id='question-6'> <div class='form-group'> <label for='input-email'>Your work email</label> <small id='emailHelp'>We'd love to follow up after your launch to see how we can improve</small> <input type='email' class='form-control' id='input-email' aria-describedby='emailHelp' placeholder='yourname@yourcompany.com'></div></div> <div class='form-row input-form-row' id='question-7'> <div class='form-group'> <label for='input-first-name'>Your first name</label> <small id='firstNameHelp'>We’re Appcues! Nice to meet you.</small> <input type='text' class='form-control' id='input-first-name' aria-describedby='firstNameHelp' placeholder='The Big Lebowski'></div></div> <div class='form-row input-form-row' id='question-8'>     <div class='form-group'> <label for='input-website'>What’s your company’s website?</label> <small id='importanceHelp'>We’ll keep an eye out for your launch!</small> <input type='email' class='form-control' id='input-website' aria-describedby='emailHelp' placeholder='www.appcues.com'></div></div>");
+		$("#planner-form").append("<h6 id='progress-question'>Question <span id='question-step'>1</span> of 8</h6><p id='error-message'>Please provide a valid response</p><div class='form-row input-form-row selected' id='question-1'><div class='form-group'><label for='input-release-name'>What is the name of your release?</label><small id='input-release-help'>Bonus points for cool code names</small><input type='text' class='form-control' id='input-release-name' placeholder='The iPhone XS'></div></div><div class='form-row btn-form-row' id='question-2'><div class='form-group'><label for='release-importance'>How significant is your release?</label><small id='importance-help'>On a scale from no one cares to the latest iPhone</small><div class='btn-toolbar'><div class='btn-group' id='release-importance'><button type='button' class='btn btn-input'>1</button><button type='button' class='btn btn-input'>2</button><button type='button' class='btn btn-input'>3</button><button type='button' class='btn btn-input'>4</button><button type='button' class='btn btn-input'>5</button><button type='button' class='btn btn-input'>6</button><button type='button' class='btn btn-input'>7</button><button type='button' class='btn btn-input'>8</button><button type='button' class='btn btn-input'>9</button><button type='button' class='btn btn-input'>10</button></div></div></div></div><div class='form-row input-form-row' id='question-3'><div class='form-group'><label for='input-release-date'>When is the estimated release date?</label><small id='input-release-date-help'>We’ll build a custom calendar with deadlines for your team to hit</small><input class='form-control' type='date' id='input-release-date'></div></div> <div class='form-row btn-form-row' id='question-4'> <div class='form-group'> <label for='input-employee-number'>Do you have a sales team?</label> <small id='employee-number-help'>If so, we’ll provide specific tasks for sales</small> <div class='row'><div class='col-12' id='input-sales-team'><button type='button' class='btn btn-input'>Yes</button><button type='button' class='btn btn-input'>No</button></div></div></div></div> <div class='form-row btn-form-row' id='question-5'> <div class='form-group'> <label for='input-employee-number'>How many employees are at your company?</label> <small id='employee-number-help'>We’ll only recommend tasks that your team has bandwidth for</small> <div class='row'><div class='col-12' id='input-employee-number'><button type='button' class='btn btn-input'>1-9</button><button type='button' class='btn btn-input'>10-24</button><button type='button' class='btn btn-input'>25-99</button><button type='button' class='btn btn-input'>100-499</button><button type='button' class='btn btn-input'>500+</button></div></div></div></div> <div class='form-row input-form-row' id='question-6'> <div class='form-group'> <label for='input-email'>What's your work email?</label> <small id='emailHelp'>We’d love to follow up after your launch to see how it went (and how we can improve)</small> <input type='email' class='form-control' id='input-email' aria-describedby='emailHelp' placeholder='yourname@yourcompany.com'></div></div> <div class='form-row input-form-row' id='question-7'> <div class='form-group'> <label for='input-first-name'>What should we call you?</label> <small id='firstNameHelp'>We’re Appcues! Nice to meet you.</small> <input type='text' class='form-control' id='input-first-name' aria-describedby='firstNameHelp' placeholder='The Big Lebowski'></div></div> <div class='form-row input-form-row' id='question-8'>     <div class='form-group'> <label for='input-website'>One last thing! What’s your company’s website?</label> <small id='importanceHelp'>We’ll keep an eye out for your launch</small> <input type='text' class='form-control' id='input-website' aria-describedby='emailHelp' placeholder='www.appcues.com'></div></div>");
 	},
 
 	setParallaxScene: function(elementID) {
@@ -65,7 +65,7 @@ var appcuesProductLaunchPlanner = {
 		setTimeout(function() {
 	  		$("#rocketship").animate({
 			    right: "500px",
-			    top: "500px",
+			    top: "350px",
 			    zoom: "25%"
 			}, 2500, function() {}), 4000
 	  	});	
@@ -173,6 +173,7 @@ var appcuesProductLaunchPlanner = {
 
 	setDownloadClick: function() {
 		$("#download-button").click(function(){
+			// a2f16f44732c4d8dbb8092c109df84b5
 		});
 	},
 
@@ -320,6 +321,10 @@ var appcuesProductLaunchPlanner = {
 	renderMilestoneHTML: function(milestone, milestoneDate, milestoneDateString) {
 		var milestoneHTML = "<div class='milestone'><div class='date-container'><p class='date'>"+ appcuesProductLaunchPlanner.shortMonths(milestoneDate) + "<br><span class='number'>" + milestoneDate.getDate() + "</span></p></div><div class='milestone-content'><div class='header'><h5>" + milestone.title +"</h5><img class='icon' src='https://s3-us-west-2.amazonaws.com/appcues-public/microsites/product-launch-planner/img/icons/" + milestone.icon + "'alt='milestone icon'/></div><div class='body-content'><div class='due-date'><img class='icon' src='https://s3-us-west-2.amazonaws.com/appcues-public/microsites/product-launch-planner/img/icons/clock.svg' alt='icon of clock'/><h6>" + milestone.finalizeByText + milestoneDateString + "</h6></div><div class='body'>" + milestone.body +"</div></div></div></div>";
 		$("#milestones").append(milestoneHTML);
+
+		if (milestoneDate < new Date()) {
+			$("#milestones .milestone:last").addClass('passed-due');
+		}
 	},
 
 
@@ -336,98 +341,98 @@ var appcuesProductLaunchPlanner = {
 			"title": "Identify objectives and key results",
 			"finalizeByDays": -30, 
 			"finalizeByText": "Finalize by ",
-			"body": "<p>Before you start planning specific launch tactics, take time to ask yourself a few questions to define your objectives and some key results to measure the launch by:</p><ul><li>Why is this product needed?</li><li>How is this launch aligned with company and department targets?</li><li>What are the goals of the campaign? (ie. number of MQLs, number of trials started, number of units sold)</li><li>How will we know if we are successful?</li></ul>"
+			"body": "<p>Before you dive into specifics, take some time to define your objectives and identify some key results for measuring success. Ask yourself a few questions:</p><ul><li>Why is this product needed?</li><li>How is this launch aligned with company and departmental targets?</li><li>What are the goals of the campaign? (ie. number of MQLs, number of trials started, number of units sold)?</li><li>How will we know if we are successful?</li></ul>"
 		}, {
 			"conditions": "None",
 			"icon": "messaging.svg",
 			"title": "Define messaging",
 			"finalizeByDays": -15, 
 			"finalizeByText": "Finalize by ",
-			"body": "<p>Product messaging is as much of an art as it is a science. Before writing any product launch copy ask yourself, “What pain will this campaign/project solve for the chosen audience? What will the thing we’re marketing allow them to do, that they couldn’t before?” The best product copy uses the audience’s own words, so try digging into any user research or support tickets you have access to.</p>"
+			"body": "<p>Product messaging is as much an art as it is a science. Before you start writing any copy, ask yourself a few questions like:</p><ul><li>What audience pain point does this campaign address?</li><li>What does the product we’re launching allow users to do that they couldn’t do before?</li></ul><p>Remember, the best product copy uses customers’ own words, so try digging into any user research or support tickets that you have available to come up with the right language.</p>"
 		}, {
 			"conditions": {"importanceLevel": 5},
 			"icon": "blog.svg",
 			"title": "Write blog post",
 			"finalizeByDays": -8, 
 			"finalizeByText": "Draft blog post by ",
-			"body": "<p>Blog posts allow you to dive a bit deeper into the ‘why’ behind the creation of your product. Publish a post on your public blog from your CEO or product lead that describes the vision for where the company is headed and how this product launch fits into that vision. Make sure to include a clear call-to-action at the end of the post to try the product.</p>"
+			"body": "<p>Blog posts allow you to dive deeper into the ‘why’ of your product.<br>Publish a post on your public blog—ideally from your CEO or product lead—that describes the vision for where the company is headed and how this product launch fits into that vision. Make sure to include a clear call-to-action at the the end of the post encouraging readers to try the new product.</p>"
 		}, {
 			"conditions": {"importanceLevel": 7, "salesTeam": true},
 			"icon": "sales-collateral.svg",
 			"title": "Develop sales collateral",
 			"finalizeByDays": -7, 
 			"finalizeByText": "Distribute to sales by ",
-			"body": "<p>Create a single page of collateral on your new product that your sales team can attach—or link to—from emails to prospects. Keep it simple: Focus on messaging they should be using and how they should answer the most common questions they will get, like how this product provides value, and what differentiates it from the competition.</p>"
+			"body": "<p>Create a single page of collateral about your new product that your sales team can attach—or link to—in emails to prospects.<br>Keep it simple. Focus on the messaging that your sales team should use and how they should answer common questions like how this product provides value, and what differentiates it from the competition. </p>"
 		}, {
 			"conditions": {"importanceLevel": 9},
 			"icon": "press.svg",
 			"title": "Reach out to press",
 			"finalizeByDays": -7, 
 			"finalizeByText": "Contact press by ",
-			"body": "<p>Pitch out your launch story to industry press under an embargo. Make sure to have customer quotes and success stories ready and available.</p>"
+			"body": "<p>Pitch your launch story to industry press under an embargo. Make sure that you have customer quotes and success stories available.</p>"
 		}, {
 			"conditions": "None",
 			"icon": "in-product-tutorial.svg",
 			"title": "Build in-product tutorial",
 			"finalizeByDays": -7, 
 			"finalizeByText": "Queue up by ",
-			"body": "<p>Exceptional user onboarding is the best way to decrease churn and guarantee the folks you’ve marketed the product to will stick around long enough to get value from it. For new products, we recommend <a href='https://www.appcues.com/checklists' target='_blank'>onboarding Checklists</a> to walk your user through specific product functions that will help them be successful. For new feature launches, try a 1-3 step <a href='https://www.appcues.com/feature-adoption-software' target='_blank'>feature adoption flow</a>.</p>"
+			"body": "<p>Exceptional user onboarding is the best way to minimize churn and guarantee that users will stick around long enough to realize the full value of your product.<br>For new products, we recommend using onboarding Checklists to walk users through the specific functions that will help them be successful within your product.<br> For new feature launches, try a 1-3 step <a href='https://www.appcues.com/feature-adoption-software' target='_blank'>feature adoption flow</a>.</p>"
 		}, {
 			"conditions": {"importanceLevel": 7},
 			"icon": "feature.svg",
 			"title": "Create a feature page",
 			"finalizeByDays": -5, 
 			"finalizeByText": "Complete by ",
-			"body": "<p>Build a standalone feature page. You can drive blog and press traffic here to help inspire and convert. If you want a particular action done on this page—like signing up for a new product—then structure your feature page as a landing page that only pushes to that one action. Include minimum linking to other pages, as that will pull people away.</p>"
+			"body": "<p>Build a standalone feature page. You can drive blog and press traffic here to help inspire and convert.<br>If you want people to perform a specific action on this page—like signing up for a new product—then you should structure your feature page as a landing page that is devoted to a single action. Avoid linking to other pages unnecessarily.</p>"
 		}, {
 			"conditions": {"importanceLevel": 7},
 			"icon": "paid.svg",
 			"title": "Boost using paid ads",
 			"finalizeByDays": -3, 
 			"finalizeByText": "Set up before ",
-			"body": "<p>Paid ads can increase your reach quickly. Create ads to push to the feature page you made for your launch. You can also set up retargeting ads to get your message in front of folks that need a bit more persuading.</p>"
+			"body": "<p>Paid ads can quickly increase your reach. Create ads to push the feature page that you made for your launch. You can also set up retargeting ads for folks that need a bit more persuading.</p>"
 		}, {
 			"conditions": {"importanceLevel": 5},
 			"icon": "email.svg",
 			"title": "Send announcement email",
 			"finalizeByDays": -2, 
 			"finalizeByText": "Draft by ",
-			"body": "<p>Summarize your blog post in an email to your subscribers. Link them to the post—or even the feature landing page—to learn more about the new product.</p>"
+			"body": "<p>Summarize your blog post in an email to your subscribers. Keep it short, sweet, and exciting. Link them to the post—or even the feature landing page—for more info about your new product.</p>"
 		}, {
 			"conditions": {"importanceLevel": 2},
 			"icon": "blog.svg",
 			"title": "Write help center documentation",
 			"finalizeByDays": -2, 
 			"finalizeByText": "Draft by ",
-			"body": "<p>Almost as quick as folks start exploring your product, they’ll start to have questions. Write out comprehensive how-to content to live in your help center to start, adding to it when support tickets begin to roll in.</p>"
+			"body": "<p>New products come with new questions. Start by writing up comprehensive how-to content that will lives in your help center. Be sure to add to it as the support tickets begin rolling in.</p>"
 		}, {
 			"conditions": {"importanceLevel": 8},
 			"icon": "product-hunt.svg",
 			"title": "Launch on Product Hunt ",
 			"finalizeByDays": 0, 
 			"finalizeByText": "Plan before ",
-			"body": "<p>Product Hunt can be a great source of traffic on launch day, but it takes a bit of planning to be successful on it. You’ll want to put a standalone feature page as its own product on Product Hunt. For maximum amplification, try connecting with a top Hunter on Product Hunt ahead of the launch and coordinate them to post the feature page for you.</p>"
+			"body": "<p>Product Hunt can be an awesome source of launch day traffic, but it takes a bit of planning to get it right.<br>You’ll want to put a standalone feature page as its own, distinct product.  For maximum amplification, try connecting with a top Hunter ahead of the launch and arrange for them to post the feature page for you.</p>"
 		}, {
 			"conditions": {"importanceLevel": 5},
 			"icon": "social.svg",
 			"title": "Promote on social media",
 			"finalizeByDays": 0, 
 			"finalizeByText": "Queue up on ",
-			"body": "<p>Using the product messaging you created a month ago, it’s time to create social media posts. At the very minimum, post a link to your blog article on your social outlets, including a rich image and an interesting hook. You can also play around with a GIF of the product, a photo of the team celebrating, or a native video of the CEO or product lead announcing the launch.</p>"
+			"body": "<p>Create social media posts using the product messaging that you defined a couple weeks back.<br>At the very minimum, you should post a link to your blog article on your social outlets, along with a rich image and an interesting hook.<br>You can also play around with a GIF of the product in action, a photo of your team celebrating, or a native video of your CEO or product lead announcing the launch.</p>"
 		}, {
 			"conditions": {"importanceLevel": 4, "salesTeam": true},
 			"icon": "email.svg",
 			"title": "Send emails from sales",
 			"finalizeByDays": 2, 
 			"finalizeByText": "Send by ",
-			"body": "<p>Have your sales team reach out to their hot leads, explaining to each prospect how it can help them in their unique goals. You can also offer to show them a private demo of the new product.</p>"
+			"body": "<p>Have your sales team reach out to their hot leads, explaining to each prospect how your new product can help them reach their unique goals. Your sales team could also offer to show these leads a private demo of the product to really generate interest.</p>"
 		}, {
 			"conditions": {"importanceLevel": 5},
 			"icon": "webinar.svg",
 			"title": "Host webinar",
 			"finalizeByDays": 3, 
 			"finalizeByText": "Perform on ",
-			"body": "<p>Webinars connects a captive audience with an exciting voice from your company. Schedule a 15-30 minute webinar to demonstrate your new tool to your customers and prospects. Our favorite format is to start with a few slides of vision before getting into the nitty gritty and end with answering questions from the audience.</p>"
+			"body": "<p>Webinars connect a captive audience with an exciting voice from your company. Schedule a 15–30 minute webinar to demonstrate your new product to customers and prospects.<br>Our favorite webinar format starts with a few slides of vision before getting into the nitty gritty details, then finishes by answering questions from the audience.</p>"
 		}]
 
 };
@@ -441,15 +446,5 @@ $(function() {
 $(window).resize(function(){
 	appcuesProductLaunchPlanner.setTimelineBottom();
 });
-
-
-
-
-
-
-
-
-
-
 
 

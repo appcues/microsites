@@ -72,16 +72,16 @@
 
   h5 {
     font-size: 14px;
-    line-height: 1.6;
+    line-height: 1.8;
   } 
 
   @include media-breakpoint-up(md) {
     h2 {
-      font-size: 46px;
+      font-size: 52px;
     }
 
     h5 {
-      font-size: 16px;
+      font-size: 17px;
     }
   }
 
