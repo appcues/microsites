@@ -1,5 +1,12 @@
 .form-buttons {
 	margin-top: 50px;
+	width: 100%;
+
+	.button-column {
+		width: 50%;
+		display: inline-block;
+		float: left;
+	}
 }
 
 .moving-button, #submit-button, #download-button, #appcues-button {

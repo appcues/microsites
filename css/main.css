@@ -4055,6 +4055,9 @@ a.text-dark:focus, a.text-dark:hover {
     flex-direction: column;
     justify-content: center; } }
 
+.clear-div {
+  clear: both; }
+
 .bold-text {
   font-weight: 900 !important; }
 
@@ -4103,9 +4106,9 @@ a.text-dark:focus, a.text-dark:hover {
   top: 0;
   background: #0f2043;
   /* Old browsers */
-  background: -moz-linear-gradient(top, #08152b 0%, #0f2043 100%);
-  background: -webkit-linear-gradient(top, #08152b 0%, #0f2043 100%);
-  background: linear-gradient(to bottom, #08152b 0%, #0f2043 100%);
+  background: -moz-linear-gradient(top, #08152b 0%, #0f2043 55%, #0f2043 100%);
+  background: -webkit-linear-gradient(top, #08152b 0%, #0f2043 55%, #0f2043 100%);
+  background: linear-gradient(to bottom, #08152b 0%, #0f2043 55%, gba(15, 32, 67, 1) 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0f2043', endColorstr='#08152b',GradientType=0 );
   z-index: 20;
   height: 100vh;
@@ -4401,7 +4404,12 @@ a.text-dark:focus, a.text-dark:hover {
             margin-left: 20px; } }
 
 .form-buttons {
-  margin-top: 50px; }
+  margin-top: 50px;
+  width: 100%; }
+  .form-buttons .button-column {
+    width: 50%;
+    display: inline-block;
+    float: left; }
 
 .moving-button, #submit-button, #download-button, #appcues-button {
   padding: 10px 20px;

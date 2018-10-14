@@ -189,9 +189,8 @@ var appcuesProductLaunchPlanner = {
 	    return re.test(String(email).toLowerCase());
 	},
 
-	sendEmailInput: function(emailValue) {
-		var postRequestUrl = "https://hooks.zapier.com/hooks/catch/118654/l4ahnh/?" + $.param(emailValue);
-
+	sendEmailInput: function(emailValue, launchDate) {
+		var postRequestUrl = "https://hooks.zapier.com/hooks/catch/118654/l4ahnh/?email=" + emailValue + "&launch_date=" + launchDate;
 		$.post(postRequestUrl, function(data, status){});
 	},
 
@@ -231,6 +230,7 @@ var appcuesProductLaunchPlanner = {
 			if (targetInput.find('input').attr('id') === "input-email"){
 				var targetEmail = targetInput.find('input').val();
 				if(appcuesProductLaunchPlanner.validateEmail(targetEmail)) {
+					appcuesProductLaunchPlanner.sendEmailInput(targetEmail, appcuesProductLaunchPlanner.formData[2]);
 					appcuesProductLaunchPlanner.moveNext(targetInput);
 				} else {
 					$('#error-message').show();
