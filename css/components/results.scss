@@ -193,7 +193,6 @@ $date-container-size: 45px;
 
 					}
 				}
-
 			}
 
 			@include media-breakpoint-up(lg) {
@@ -248,6 +247,13 @@ $date-container-size: 45px;
 		.milestone.passed-due {
 			.date-container {
 				border-color: #FF3B4E !important;
+				border-width: 1.25px;
+			}
+		}
+
+		.milestone.launch-day {
+			.date-container {
+				border-color: #5C5FFC !important;
 				border-width: 1.25px;
 			}
 		}

@@ -1,8 +1,38 @@
 var appcuesProductLaunchPlanner = {
 
 	formData: [],
+	formDataLabels: ["release_name", "signifance", "launch_date", "sales_team", "employee_count", "email", "first_name", "website"],
 	counter: 0,
 	shortMonthsArray: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+	isAbandoned: true,
+
+	createRandomID: function() {
+	  var text = "";
+	  var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+	  for (var i = 0; i < 5; i++)
+	    text += possible.charAt(Math.floor(Math.random() * possible.length));
+
+	  return text;
+	},
+
+	zapData: function() {
+		var postRequestUrlData = "https://hooks.zapier.com/hooks/catch/118654/l4ahnh/?";
+
+		var z;
+		for (z = 0; z < appcuesProductLaunchPlanner.formData.length; z++) { 
+		    if(appcuesProductLaunchPlanner.formData[z] === undefined ) {
+		    	postRequestUrlData += appcuesProductLaunchPlanner.formDataLabels[z] + "=&";
+		    } else {
+		    	postRequestUrlData += appcuesProductLaunchPlanner.formDataLabels[z] + "=" + appcuesProductLaunchPlanner.formData[z] + "&";
+		    }
+		}
+
+		postRequestUrlData += "random_id=" + appcuesProductLaunchPlanner.randomID;
+
+		$.post(postRequestUrlData, function(data, status){});
+	},
+
 
 	shortMonths: function(dt) { 
 	    return appcuesProductLaunchPlanner.shortMonthsArray[dt.getMonth()]; 
@@ -10,16 +40,16 @@ var appcuesProductLaunchPlanner = {
 
 
 	startSite: function() {
-
 		appcuesProductLaunchPlanner.setParallaxScene('landing-parallax');
 		appcuesProductLaunchPlanner.getStarted();
 		appcuesProductLaunchPlanner.loadForm();
 		appcuesProductLaunchPlanner.setButtonClicks();
 		appcuesProductLaunchPlanner.setInputButtonClick();
+		appcuesProductLaunchPlanner.randomID = appcuesProductLaunchPlanner.createRandomID();
 	},			
 
 	loadForm: function() {
-		$("#planner-form").append("<h6 id='progress-question'>Question <span id='question-step'>1</span> of 8</h6><p id='error-message'>Please provide a valid response</p><div class='form-row input-form-row selected' id='question-1'><div class='form-group'><label for='input-release-name'>What is the name of your release?</label><small id='input-release-help'>Bonus points for cool code names</small><input type='text' class='form-control' id='input-release-name' placeholder='The iPhone XS'></div></div><div class='form-row btn-form-row' id='question-2'><div class='form-group'><label for='release-importance'>How significant is your release?</label><small id='importance-help'>On a scale from no one cares to the latest iPhone</small><div class='btn-toolbar'><div class='btn-group' id='release-importance'><button type='button' class='btn btn-input'>1</button><button type='button' class='btn btn-input'>2</button><button type='button' class='btn btn-input'>3</button><button type='button' class='btn btn-input'>4</button><button type='button' class='btn btn-input'>5</button><button type='button' class='btn btn-input'>6</button><button type='button' class='btn btn-input'>7</button><button type='button' class='btn btn-input'>8</button><button type='button' class='btn btn-input'>9</button><button type='button' class='btn btn-input'>10</button></div></div></div></div><div class='form-row input-form-row' id='question-3'><div class='form-group'><label for='input-release-date'>When is the estimated release date?</label><small id='input-release-date-help'>We’ll build a custom calendar with deadlines for your team to hit</small><input class='form-control' type='date' id='input-release-date'></div></div> <div class='form-row btn-form-row' id='question-4'> <div class='form-group'> <label for='input-employee-number'>Do you have a sales team?</label> <small id='employee-number-help'>If so, we’ll provide specific tasks for sales</small> <div class='row'><div class='col-12' id='input-sales-team'><button type='button' class='btn btn-input'>Yes</button><button type='button' class='btn btn-input'>No</button></div></div></div></div> <div class='form-row btn-form-row' id='question-5'> <div class='form-group'> <label for='input-employee-number'>How many employees are at your company?</label> <small id='employee-number-help'>We’ll only recommend tasks that your team has bandwidth for</small> <div class='row'><div class='col-12' id='input-employee-number'><button type='button' class='btn btn-input'>1-9</button><button type='button' class='btn btn-input'>10-24</button><button type='button' class='btn btn-input'>25-99</button><button type='button' class='btn btn-input'>100-499</button><button type='button' class='btn btn-input'>500+</button></div></div></div></div> <div class='form-row input-form-row' id='question-6'> <div class='form-group'> <label for='input-email'>What's your work email?</label> <small id='emailHelp'>We’d love to follow up after your launch to see how it went (and how we can improve)</small> <input type='email' class='form-control' id='input-email' aria-describedby='emailHelp' placeholder='yourname@yourcompany.com'></div></div> <div class='form-row input-form-row' id='question-7'> <div class='form-group'> <label for='input-first-name'>What should we call you?</label> <small id='firstNameHelp'>We’re Appcues! Nice to meet you.</small> <input type='text' class='form-control' id='input-first-name' aria-describedby='firstNameHelp' placeholder='The Big Lebowski'></div></div> <div class='form-row input-form-row' id='question-8'>     <div class='form-group'> <label for='input-website'>One last thing! What’s your company’s website?</label> <small id='importanceHelp'>We’ll keep an eye out for your launch</small> <input type='text' class='form-control' id='input-website' aria-describedby='emailHelp' placeholder='www.appcues.com'></div></div>");
+		$("#planner-form").append("<h6 id='progress-question'>Question <span id='question-step'>1</span> of 8</h6><p id='error-message'>Please provide a valid response</p><div class='form-row input-form-row selected' id='question-1'><div class='form-group'><label for='input-release-name'>What is the name of your release?</label><small id='input-release-help'>Bonus points for cool code names</small><input type='text' class='form-control' id='input-release-name' placeholder='The iPhone XS'></div></div><div class='form-row btn-form-row' id='question-2'><div class='form-group'><label for='release-importance'>How significant is your release?</label><small id='importance-help'>On a scale from no one cares to the latest iPhone</small><div class='btn-toolbar'><div class='btn-group' id='release-importance'><button type='button' class='btn btn-input'>1</button><button type='button' class='btn btn-input'>2</button><button type='button' class='btn btn-input'>3</button><button type='button' class='btn btn-input'>4</button><button type='button' class='btn btn-input'>5</button><button type='button' class='btn btn-input'>6</button><button type='button' class='btn btn-input'>7</button><button type='button' class='btn btn-input'>8</button><button type='button' class='btn btn-input'>9</button><button type='button' class='btn btn-input'>10</button></div></div></div></div><div class='form-row input-form-row' id='question-3'><div class='form-group'><label for='input-release-date'>When is the estimated release date?</label><small id='input-release-date-help'>We’ll build a custom calendar with deadlines for your team to hit</small><input class='form-control' type='date' id='input-release-date'></div></div> <div class='form-row btn-form-row' id='question-4'> <div class='form-group'> <label for='input-employee-number'>Do you have a sales team?</label> <small id='employee-number-help'>If so, we’ll provide specific tasks for sales</small> <div class='row'><div class='col-12' id='input-sales-team'><button type='button' class='btn btn-input'>Yes</button><button type='button' class='btn btn-input'>No</button></div></div></div></div> <div class='form-row btn-form-row' id='question-5'> <div class='form-group'> <label for='input-employee-number'>How many employees are at your company?</label> <small id='employee-number-help'>We’ll only recommend tasks that your team has bandwidth for</small> <div class='row'><div class='col-12' id='input-employee-number'><button type='button' class='btn btn-input'>1-9</button><button type='button' class='btn btn-input'>10-24</button><button type='button' class='btn btn-input'>25-99</button><button type='button' class='btn btn-input'>100-499</button><button type='button' class='btn btn-input'>500+</button></div></div></div></div> <div class='form-row input-form-row' id='question-6'> <div class='form-group'> <label for='input-email'>What's your work email?</label> <small id='emailHelp'>We’d love to follow up after your launch to see how it went (and how we can improve)</small> <input type='email' class='form-control' id='input-email' aria-describedby='emailHelp' placeholder='yourname@yourcompany.com'></div></div> <div class='form-row input-form-row' id='question-7'> <div class='form-group'> <label for='input-first-name'>What should we call you?</label> <small id='firstNameHelp'>We’re Appcues! Nice to meet you.</small> <input type='text' class='form-control' id='input-first-name' aria-describedby='firstNameHelp' placeholder='The Big Lebowski'></div></div> <div class='form-row input-form-row' id='question-8'>     <div class='form-group'> <label for='input-website'>One last thing! What’s your company’s website?</label> <small id='importanceHelp'>We’ll keep an eye out for your launch</small> <input type='url' class='form-control' id='input-website' aria-describedby='emailHelp' placeholder='www.appcues.com'></div></div>");
 	},
 
 	setParallaxScene: function(elementID) {
@@ -78,7 +108,7 @@ var appcuesProductLaunchPlanner = {
 
 	getStarted: function() {
 		$("#get-started-button").click(function(){
-			console.log(appcuesProductLaunchPlanner.formData);
+
 			$('#template-title-content').fadeOut( "slow" );
 			$('#form-content').fadeIn("slow");
 			$('#question-' + (appcuesProductLaunchPlanner.formData.length + 1)).fadeIn("slow");
@@ -125,7 +155,7 @@ var appcuesProductLaunchPlanner = {
 				$('#question-' + (appcuesProductLaunchPlanner.formData.length)).fadeIn("slow");	
 				appcuesProductLaunchPlanner.updateProgressBar(appcuesProductLaunchPlanner.formData.length);
 				appcuesProductLaunchPlanner.formData.pop();
-				console.log(appcuesProductLaunchPlanner.formData);
+				
 			}
 			
 		});
@@ -189,22 +219,21 @@ var appcuesProductLaunchPlanner = {
 	    return re.test(String(email).toLowerCase());
 	},
 
-	sendEmailInput: function(emailValue, launchDate) {
-		var postRequestUrl = "https://hooks.zapier.com/hooks/catch/118654/l4ahnh/?email=" + emailValue + "&launch_date=" + launchDate;
-		$.post(postRequestUrl, function(data, status){});
-	},
+	// sendEmailInput: function(emailValue, launchDate) {
+	// 	var postRequestUrl = "https://hooks.zapier.com/hooks/catch/118654/l4ahnh/?email=" + emailValue + "&launch_date=" + launchDate + "&random_id=" + appcuesProductLaunchPlanner.randomID;
+	// 	$.post(postRequestUrl, function(data, status){});
+	// },
 
 	moveNext: function(targetInput) {
 		if (appcuesProductLaunchPlanner.checkInput(targetInput)) {
 					
 			appcuesProductLaunchPlanner.addData(targetInput);
-			console.log(appcuesProductLaunchPlanner.formData);
+
 			$('#question-' + appcuesProductLaunchPlanner.formData.length).hide();
 			$('#question-' + (appcuesProductLaunchPlanner.formData.length + 1)).fadeIn("slow");
 			appcuesProductLaunchPlanner.updateProgressBar(appcuesProductLaunchPlanner.formData.length + 1);
 			appcuesProductLaunchPlanner.changeRocketShip("forward");
 			$('#error-message').hide();
-			console.log("Here");
 
 
 			//make the length formula dynamic off of number of children with form row class
@@ -218,7 +247,6 @@ var appcuesProductLaunchPlanner = {
 			
 		} else {
 			$('#error-message').show();
-			console.log("Here 2");
 		}
 	},
 
@@ -230,7 +258,6 @@ var appcuesProductLaunchPlanner = {
 			if (targetInput.find('input').attr('id') === "input-email"){
 				var targetEmail = targetInput.find('input').val();
 				if(appcuesProductLaunchPlanner.validateEmail(targetEmail)) {
-					appcuesProductLaunchPlanner.sendEmailInput(targetEmail, appcuesProductLaunchPlanner.formData[2]);
 					appcuesProductLaunchPlanner.moveNext(targetInput);
 				} else {
 					$('#error-message').show();
@@ -266,6 +293,8 @@ var appcuesProductLaunchPlanner = {
 	},
 
 	submitForm: function() {
+		appcuesProductLaunchPlanner.zapData();
+		appcuesProductLaunchPlanner.isAbandoned = false;
 		var launchDate = appcuesProductLaunchPlanner.getLaunchDate(appcuesProductLaunchPlanner.formData[2]), employeeCount = appcuesProductLaunchPlanner.getEmployeeCount(appcuesProductLaunchPlanner.formData[4]), importanceLevel = parseInt(appcuesProductLaunchPlanner.formData[1]), salesTeam =  appcuesProductLaunchPlanner.getSalesTeamValue(appcuesProductLaunchPlanner.formData[3]);
 
 		var i;
@@ -284,7 +313,7 @@ var appcuesProductLaunchPlanner = {
 	},
 
 	addMilestone: function(milestone, launchDate, employeeCount, importanceLevel, salesTeam) {
-		var launchDateRecycled = new Date(launchDate)
+		var launchDateRecycled = new Date(launchDate);
 		var milestoneDate = new Date(launchDateRecycled.setDate(launchDateRecycled.getDate() + milestone.finalizeByDays))
 		var milestoneDateString =  appcuesProductLaunchPlanner.shortMonths(milestoneDate) + " " + milestoneDate.getDate() + ", " + milestoneDate.getFullYear();
 
@@ -292,20 +321,15 @@ var appcuesProductLaunchPlanner = {
 			appcuesProductLaunchPlanner.renderMilestoneHTML(milestone, milestoneDate, milestoneDateString);
 		} else if ('employeeCount' in milestone.conditions && 'importanceLevel' in milestone.conditions) {
 			if ((employeeCount >= milestone.conditions.employeeCount) && (importanceLevel >= milestone.conditions.importanceLevel)) {
-				console.log(employeeCount);
-				console.log(importanceLevel);
 				appcuesProductLaunchPlanner.renderMilestoneHTML(milestone, milestoneDate, milestoneDateString);	
 			}
 		} else if ('salesTeam' in milestone.conditions && 'importanceLevel' in milestone.conditions) {
 			if ((salesTeam === milestone.conditions.salesTeam) && (importanceLevel >= milestone.conditions.importanceLevel)) {
-				console.log(salesTeam);
-				console.log(importanceLevel);
 				appcuesProductLaunchPlanner.renderMilestoneHTML(milestone, milestoneDate, milestoneDateString);
 			}
 			
 		} else if ('importanceLevel' in milestone.conditions) {
 			if (importanceLevel >= milestone.conditions.importanceLevel) {
-				console.log(importanceLevel);
 				appcuesProductLaunchPlanner.renderMilestoneHTML(milestone, milestoneDate, milestoneDateString);
 			}
 		} else {
@@ -436,6 +460,14 @@ var appcuesProductLaunchPlanner = {
 $(function() {
   appcuesProductLaunchPlanner.startSite();
 });
+
+window.addEventListener("beforeunload", function (event) {
+  if (appcuesProductLaunchPlanner.isAbandoned) {
+  	appcuesProductLaunchPlanner.zapData();	
+  }
+  
+});
+
 
 $(window).resize(function(){
 	appcuesProductLaunchPlanner.setTimelineBottom();

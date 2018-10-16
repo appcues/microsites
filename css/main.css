@@ -4632,5 +4632,8 @@ a.text-dark:focus, a.text-dark:hover {
   #results-content #timeline-content .milestone.passed-due .date-container {
     border-color: #FF3B4E !important;
     border-width: 1.25px; }
+  #results-content #timeline-content .milestone.launch-day .date-container {
+    border-color: #5C5FFC !important;
+    border-width: 1.25px; }
 
 /*# sourceMappingURL=main.css.map */
