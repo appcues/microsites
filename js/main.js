@@ -462,7 +462,7 @@ $(function() {
 });
 
 window.addEventListener("beforeunload", function (event) {
-  if (appcuesProductLaunchPlanner.isAbandoned) {
+  if (appcuesProductLaunchPlanner.isAbandoned && (appcuesProductLaunchPlanner.formData.length !== 0)) {
   	appcuesProductLaunchPlanner.zapData();	
   }
   
