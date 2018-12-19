@@ -1,0 +1,19 @@
+$black: #000000;
+$white: #FFFFFF;
+$dark-gray: #4A4A4A;
+
+$body-font-size: 18px;
+//Font//
+body {
+  font-family: AvenirNextLTPro-Regular, sans-serif;
+  font-size: $body-font-size;
+}
+
+
+
+
+
+//Breakpoints//
+$breakpoint-desktop: 800px;
+$breakpoint-large: 1250px;
+$breakpoint-xlarge: 1600px;
