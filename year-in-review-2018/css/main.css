@@ -4070,9 +4070,6 @@ a.text-dark:focus, a.text-dark:hover {
 .clear-div {
   clear: both; }
 
-.bold-text {
-  font-weight: 900 !important; }
-
 .text-white {
   color: #FFFFFF !important; }
 
@@ -4081,20 +4078,23 @@ a.text-dark:focus, a.text-dark:hover {
   font-family: "Muli", sans-serif !important; }
   .section .content {
     text-align: center;
-    max-width: 1000px;
+    max-width: 1400px;
     margin: 0 auto; }
     .section .content h1, .section .content h2, .section .content h3, .section .content h4, .section .content h5, .section .content h6 {
       font-weight: 100; }
     .section .content .section-title {
       margin: 25px 0; }
       .section .content .section-title .icon {
-        width: 50px;
-        margin-bottom: 10px; }
+        width: 40px; }
       .section .content .section-title h3 {
         font-size: 15px;
         text-transform: uppercase;
         letter-spacing: 5px;
-        font-weight: 900; }
+        font-weight: 600;
+        margin-top: 15px;
+        margin-bottom: 0px; }
+    .section .content .section-title.extra-margin-bottom {
+      margin-bottom: 180px; }
 
 .section.dark-bg h1, .section.dark-bg h2, .section.dark-bg h3, .section.dark-bg h4, .section.dark-bg h5, .section.dark-bg h6 {
   color: #FFFFFF; }
@@ -4145,11 +4145,11 @@ a.text-dark:focus, a.text-dark:hover {
       text-transform: uppercase;
       color: #FFFFFF;
       letter-spacing: 5px;
-      font-weight: 900; }
+      font-weight: 600; }
     #landing .content .year-image {
       width: 95%;
       max-width: 900px;
-      margin: 0 auto; }
+      margin: 10px auto 50px auto; }
 
 #short-nav {
   height: 60px;
@@ -4186,7 +4186,7 @@ a.text-dark:focus, a.text-dark:hover {
       font-size: 12px;
       line-height: 1;
       padding: 10px;
-      font-weight: 900;
+      font-weight: 600;
       margin: 13px 0; }
       #short-nav .nav-content .btn:hover {
         color: #5C5CFF;
@@ -4194,6 +4194,230 @@ a.text-dark:focus, a.text-dark:hover {
       @media (min-width: 768px) {
         #short-nav .nav-content .btn {
           padding: 10px 20px; } }
+
+#moments-celebrated .moment {
+  padding: 50px 25px; }
+  #moments-celebrated .moment h4, #moments-celebrated .moment h5 {
+    font-size: 30px;
+    line-height: 1.1;
+    margin: 0; }
+  #moments-celebrated .moment h4 {
+    color: #FFFFFF;
+    font-weight: 100;
+    margin-bottom: 20px; }
+  #moments-celebrated .moment h5 {
+    color: #5C5CFF;
+    font-weight: 600; }
+#moments-celebrated .border-bottom {
+  border-bottom: 1px solid #C0C6D9; }
+
+#by-the-numbers .section-body {
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+  #by-the-numbers .section-body .gif-image {
+    width: 100%;
+    border-radius: 10px; }
+  #by-the-numbers .section-body .gif-content {
+    position: absolute; }
+    #by-the-numbers .section-body .gif-content h4, #by-the-numbers .section-body .gif-content h6 {
+      color: #FFFFFF;
+      line-height: 1.2;
+      margin: 0; }
+    #by-the-numbers .section-body .gif-content h4 {
+      font-size: 50px;
+      margin-bottom: 5px; }
+    #by-the-numbers .section-body .gif-content h6 {
+      font-size: 20px; }
+
+#fuel .fuel-card {
+  position: relative;
+  padding: 20px;
+  margin: 10px auto;
+  width: 300px;
+  background: #FFFFFF;
+  border-radius: 10px; }
+  #fuel .fuel-card .icon {
+    height: 100px;
+    margin: 25px auto 50px auto; }
+  #fuel .fuel-card h5, #fuel .fuel-card h6 {
+    margin: 0;
+    line-height: 1.1; }
+  #fuel .fuel-card h5 {
+    text-align: center;
+    font-weight: 300;
+    color: #5C5CFF;
+    margin-bottom: 20px;
+    font-size: 55px; }
+  #fuel .fuel-card h6 {
+    margin-top: 15px;
+    color: #242a35;
+    font-size: 20px; }
+  #fuel .fuel-card .plus {
+    width: 30px;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    cursor: pointer; }
+  @media (min-width: 768px) {
+    #fuel .fuel-card {
+      width: 200px;
+      height: 300px; }
+      #fuel .fuel-card .icon {
+        height: 60px;
+        margin: 25px auto; } }
+  @media (min-width: 992px) {
+    #fuel .fuel-card {
+      height: 350px;
+      width: 300px; }
+      #fuel .fuel-card .icon {
+        height: 100px;
+        margin: 25px auto 50px auto; } }
+  @media (min-width: 1250px) {
+    #fuel .fuel-card {
+      height: 400px;
+      width: 400px;
+      padding-top: 50px; } }
+  #fuel .fuel-card .tooltip {
+    color: #FFFFFF;
+    background: #5C5CFF;
+    font-size: 14px;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    opacity: 0;
+    position: absolute;
+    top: -100px;
+    left: -120px;
+    width: 275px;
+    height: 50px;
+    margin: 0; }
+    #fuel .fuel-card .tooltip:after {
+      border-top: 10px solid #5C5CFF;
+      border-left: 10px solid transparent;
+      border-right: 10px solid transparent;
+      bottom: -10px;
+      content: "";
+      position: absolute;
+      left: 50%;
+      margin-left: -10px;
+      width: 0;
+      height: 0; }
+
+#real-mvps .section-image {
+  height: 450px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
+  border-radius: 10px;
+  margin: 20px 10px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+  @media (min-width: 768px) {
+    #real-mvps .section-image {
+      height: 700px; } }
+  #real-mvps .section-image h4 {
+    color: #FFFFFF;
+    font-weight: 300;
+    font-size: 40px; }
+#real-mvps #dog-mvps {
+  background-image: url("https://s3-us-west-2.amazonaws.com/appcues-public/microsites/year-in-review/2018/real-mvps/dog.png"); }
+#real-mvps #cat-mvps {
+  background-image: url("https://s3-us-west-2.amazonaws.com/appcues-public/microsites/year-in-review/2018/real-mvps/cat.png"); }
+#real-mvps #frog-mvps {
+  background-image: url("https://s3-us-west-2.amazonaws.com/appcues-public/microsites/year-in-review/2018/real-mvps/frog.png"); }
+
+#thankful .section-body .thankful-card {
+  position: relative;
+  border-radius: 10px;
+  margin: 25px auto;
+  background: #FFFFFF;
+  padding: 30px 20px;
+  height: 300px;
+  width: 300px; }
+  #thankful .section-body .thankful-card .icon {
+    height: 100px;
+    margin: 0 auto; }
+  #thankful .section-body .thankful-card h5 {
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    left: 0;
+    bottom: 20px;
+    font-size: 16px;
+    color: #576784;
+    font-weight: 300; }
+    #thankful .section-body .thankful-card h5 .number {
+      color: #5C5CFF;
+      font-size: 50px;
+      font-weight: 500;
+      margin-bottom: 20px; }
+@media (min-width: 576px) {
+  #thankful .section-body .thankful-card {
+    height: 225px;
+    width: 225px; }
+    #thankful .section-body .thankful-card .icon {
+      height: 50px; }
+  #thankful .section-body .thankful-card.extra-margin-top {
+    margin-top: 100px; } }
+@media (min-width: 768px) {
+  #thankful .section-body .thankful-card.tablet-margin-right {
+    margin-left: 10px; }
+  #thankful .section-body .thankful-card.tablet-margin-left {
+    margin-right: 10px; } }
+@media (min-width: 992px) {
+  #thankful .section-body .thankful-card.extra-margin-top {
+    margin-top: 25px; } }
+@media (min-width: 1250px) {
+  #thankful .section-body .thankful-card {
+    margin: 160px 10px 0 10px;
+    height: 300px;
+    width: 300px; }
+    #thankful .section-body .thankful-card .icon {
+      height: 100px; }
+  #thankful .section-body .thankful-card.extra-margin-top {
+    margin-top: 160px; } }
+
+#run-the-world .section-body h5 {
+  font-size: 24px;
+  margin-bottom: 75px; }
+  @media (min-width: 768px) {
+    #run-the-world .section-body h5 {
+      font-size: 36px; } }
+#run-the-world .section-image {
+  width: 95%;
+  margin: 0 auto;
+  max-width: 2000px; }
+
+#coming-next .upcoming-moments .upcoming-moment {
+  margin-bottom: 25px;
+  position: relative;
+  padding-right: 25px; }
+  #coming-next .upcoming-moments .upcoming-moment .icon {
+    position: absolute;
+    width: 40px;
+    top: 0;
+    left: 0; }
+  #coming-next .upcoming-moments .upcoming-moment .copy {
+    width: 100%;
+    padding-left: 60px;
+    text-align: left; }
+    #coming-next .upcoming-moments .upcoming-moment .copy h5 {
+      font-size: 18px;
+      font-weight: 500;
+      margin-bottom: 20px;
+      color: #242a35; }
+    #coming-next .upcoming-moments .upcoming-moment .copy p {
+      font-size: 16px;
+      color: #576784;
+      font-weight: 100;
+      line-height: 1.75; }
+@media (min-width: 576px) {
+  #coming-next .upcoming-moments .upcoming-moment.margin-bottom {
+    margin-bottom: 100px; } }
 
 #hiring .section-body h5 {
   font-size: 24px;

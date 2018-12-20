@@ -1,0 +1,45 @@
+#coming-next {
+	.upcoming-moments {
+		.upcoming-moment {
+			margin-bottom: 25px;
+			position: relative;
+			padding-right: 25px;
+
+
+			.icon {
+				position: absolute;
+				width: 40px;
+				top: 0;
+				left: 0;
+			}
+
+			.copy {
+				width: 100%;
+				padding-left: 60px;
+				text-align: left;
+
+				h5 {
+					font-size: 18px;
+					font-weight: 500;
+					margin-bottom: 20px;
+					color: $dark-gray;
+				}
+
+				p {
+					font-size: $body-font-size;
+					color: $med-gray;
+					font-weight: 100;
+					line-height: 1.75;
+				}
+
+			}
+
+		}
+
+		.upcoming-moment.margin-bottom {
+			@include media-breakpoint-up(sm) { 
+				margin-bottom: 100px;
+			}
+		}
+	}	
+}

@@ -32,13 +32,13 @@
 			text-transform: uppercase;
 			color: $white;
 			letter-spacing: 5px;
-			font-weight: 900;
+			font-weight: 600;
 		}	
 
 		.year-image {
 			width: 95%;
 			max-width: 900px;
-			margin: 0 auto;	
+			margin: 10px auto 50px auto;	
 		}
 
 
@@ -97,7 +97,7 @@
 			font-size: 12px;
 			line-height: 1;
 			padding: 10px;
-    		font-weight: 900;
+    		font-weight: 600;
     		margin: 13px 0;
 
 			&:hover {
