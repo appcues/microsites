@@ -1176,7 +1176,7 @@ pre {
 .btn {
   display: inline-block;
   font-weight: 500;
-  font-size: 16px !important;
+  font-size: 16px;
   text-align: center;
   white-space: nowrap;
   vertical-align: middle;
@@ -4077,6 +4077,9 @@ a.text-dark:focus, a.text-dark:hover {
     flex-direction: column;
     justify-content: center; } }
 
+.row:before, .row:after {
+  content: none; }
+
 .clear-div {
   clear: both; }
 
@@ -4177,18 +4180,19 @@ a.text-dark:focus, a.text-dark:hover {
       margin: 10px auto 50px auto; }
 
 #yir-short-nav {
-  height: 60px;
-  padding: 10px;
+  height: 70px;
+  padding: 15px;
   color: #FFFFFF;
   width: 100%;
   background: transparent;
   position: absolute;
   top: 0;
   left: 0;
+  overflow: hidden;
   z-index: 100; }
   @media (min-width: 768px) {
     #yir-short-nav {
-      padding: 10px 30px; } }
+      padding: 15px 30px; } }
   #yir-short-nav .nav-content {
     position: relative;
     max-width: 1400px;
@@ -4205,21 +4209,28 @@ a.text-dark:focus, a.text-dark:hover {
     #yir-short-nav .nav-content .yir-share .yir-social-link {
       display: inline-block; }
       #yir-short-nav .nav-content .yir-share .yir-social-link .icon {
-        height: 30px;
-        margin: 15px 2.5px;
+        height: 20px;
+        margin: 10px 2.5px;
         cursor: pointer; }
+        @media (min-width: 576px) {
+          #yir-short-nav .nav-content .yir-share .yir-social-link .icon {
+            height: 30px;
+            margin: 5px 2.5px; } }
         @media (min-width: 768px) {
           #yir-short-nav .nav-content .yir-share .yir-social-link .icon {
-            margin: 15px 5px; } }
+            margin: 5px 5px; } }
     #yir-short-nav .nav-content .btn-outline-white {
-      font-size: 16px;
+      font-size: 13px;
+      padding: 14px 10px;
       line-height: 1;
-      padding: 14px 20px;
-      font-weight: 500;
-      margin: 13px 0; }
+      font-weight: 500; }
       #yir-short-nav .nav-content .btn-outline-white:hover {
         color: #5C5CFF;
         background: #FFFFFF; }
+      @media (min-width: 576px) {
+        #yir-short-nav .nav-content .btn-outline-white {
+          font-size: 16px;
+          padding: 14px 20px; } }
 
 .yir-line {
   width: 1px;

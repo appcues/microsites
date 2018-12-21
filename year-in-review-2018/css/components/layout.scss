@@ -26,6 +26,10 @@
   }
 }
 
+.row:before, .row:after {
+  content: none;
+}
+
 .clear-div {
   clear: both;
 }
