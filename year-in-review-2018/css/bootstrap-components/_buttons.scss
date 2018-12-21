@@ -6,7 +6,7 @@
 
 .btn {
   display: inline-block;
-  font-weight: $btn-font-weight;
+  font-weight: 500;
   font-size: $body-font-size !important;
   text-align: center;
   white-space: nowrap;
@@ -87,17 +87,19 @@ fieldset[disabled] a.btn {
   font-weight: $font-weight-normal;
   color: $link-color;
   background-color: transparent;
+  text-decoration: none;
 
   @include hover {
     color: $link-hover-color;
-    text-decoration: $link-hover-decoration;
+    text-decoration: none !important;
     background-color: transparent;
     border-color: transparent;
   }
 
+
   &:focus,
   &.focus {
-    text-decoration: $link-hover-decoration;
+    text-decoration: none;
     border-color: transparent;
     box-shadow: none;
   }
@@ -110,8 +112,20 @@ fieldset[disabled] a.btn {
   // No need for an active state here
 }
 
-.btn-link.btn-outline {
+.btn-link.btn-outline-white {
   border: 1px solid $white;
+  color: $white;
+}
+
+.btn-link.btn-outline-purple {
+  border: 1px solid $primary;
+  color: $primary;
+  font-weight: 300;
+
+  &:hover {
+    color: $white;
+    background: $primary;
+  }
 }
 
 .btn-white {

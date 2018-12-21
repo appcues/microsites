@@ -1,6 +1,7 @@
 .section {
 	padding: 160px 10px;
-	font-family: "Muli", sans-serif !important;
+	font-family: 'Muli', sans-serif !important;
+	position: relative;
 
 	.content {
 		text-align: center;
@@ -9,10 +10,17 @@
 
 		h1, h2, h3, h4, h5, h6 {
 			font-weight: 100;
+			font-family: 'Muli', sans-serif !important;
+		}
+
+		a, p, div {
+			font-family: 'Muli', sans-serif !important;
 		}
 
 		.section-title {
-			margin: 25px 0;
+			padding: 25px 0;
+		    position: relative;
+		    z-index: 1000;
 
 			.icon {
 				width: 40px;
@@ -31,6 +39,12 @@
 
 		.section-title.extra-margin-bottom {
 			margin-bottom: 180px;
+		}
+
+		.section-body, .section-image {
+			padding: 25px 0;
+		    position: relative;
+		    z-index: 1000;
 		}
 		
 	}
@@ -51,11 +65,19 @@
 
 .section.dark-blue-bg {
 	background: $dark-blue;
+	
+	.section-title, .section-body {
+		background: $dark-blue;
+	}
 }
 
 
 .section.light-gray-bg {
 	background: $light-gray;
+	
+	.section-title, .section-body {
+		background: $light-gray;
+	}
 }
 
 .purple-gradient-bg {

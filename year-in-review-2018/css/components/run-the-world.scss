@@ -16,5 +16,9 @@
 		width: 95%;
 		margin: 0 auto;
 		max-width: 2000px;
+		padding: 25px 0;
+	    position: relative;
+	    z-index: 1000;
+	    background: $dark-blue;
 	}	
 }

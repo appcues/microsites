@@ -19,20 +19,24 @@
 			color: $white;
 			font-weight: 300;
 			font-size: 40px;
+			padding: 0 20px;
 
+			span {
+				font-size: 20px;
+			}
 		}
 	}
 
 	#dog-mvps {
-		background-image: url('https://s3-us-west-2.amazonaws.com/appcues-public/microsites/year-in-review/2018/real-mvps/dog.png');
+		background-image: url('https://s3-us-west-2.amazonaws.com/appcues-public/microsites/year-in-review/2018/img/real-mvps/dog.png');
 	}
 
 	#cat-mvps {
-		background-image: url('https://s3-us-west-2.amazonaws.com/appcues-public/microsites/year-in-review/2018/real-mvps/cat.png');
+		background-image: url('https://s3-us-west-2.amazonaws.com/appcues-public/microsites/year-in-review/2018/img/real-mvps/cat.png');
 	}
 
 	#frog-mvps {
-		background-image: url('https://s3-us-west-2.amazonaws.com/appcues-public/microsites/year-in-review/2018/real-mvps/frog.png');
+		background-image: url('https://s3-us-west-2.amazonaws.com/appcues-public/microsites/year-in-review/2018/img/real-mvps/frog.png');
 	}
 	
 

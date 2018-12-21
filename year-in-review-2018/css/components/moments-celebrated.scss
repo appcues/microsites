@@ -1,4 +1,10 @@
 #moments-celebrated {
+	.section-body {
+		@include media-breakpoint-up(sm) { 
+			background: transparent !important;
+		}
+	}
+
 	.moment {
 		padding: 50px 25px;
 
@@ -22,5 +28,13 @@
 
 	.border-bottom {
 		border-bottom: 1px solid $line-gray;
+	}
+
+	.border-bottom-mobile {
+		border-bottom: 1px solid $line-gray;
+		
+		@include media-breakpoint-up(sm) { 
+			border-bottom: none;
+		}
 	}
 }

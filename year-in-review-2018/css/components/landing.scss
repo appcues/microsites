@@ -4,7 +4,7 @@
 	height: 100vh;
 	width: 100vw;
 	overflow: hidden;
-	font-family: "Muli", sans-serif !important;
+	font-family: 'Muli', sans-serif !important;
 	min-height: 800px;
 	display: flex;
 	align-items: center;
@@ -33,6 +33,7 @@
 			color: $white;
 			letter-spacing: 5px;
 			font-weight: 600;
+			font-family: 'Muli', sans-serif !important;
 		}	
 
 		.year-image {
@@ -49,7 +50,7 @@
 
 
 
-#short-nav {
+#yir-short-nav {
 	height: 60px;
 	padding: 10px;
 	color: $white;
@@ -69,22 +70,26 @@
 		max-width: 1400px;
 		margin: 0 auto;
 
-		.share {
+		.yir-share {
 
 			p {
+				display: none !important;
 				font-size: 12px;
 				display: inline-block;
 				line-height: 1;
 				margin: 12px 5px 12px 0;
+				font-weight: 600;
 				text-transform: uppercase;
+				color: $white;
 			}
 
-			.social-link {
+			.yir-social-link {
 				display: inline-block;
 
 				.icon {
 					height: 30px; 
 					margin: 15px 2.5px;
+					cursor: pointer;
 
 					@include media-breakpoint-up(md) {
 						margin: 15px 5px;
@@ -93,20 +98,16 @@
 			}
 		}
 
-		.btn {
-			font-size: 12px;
+		.btn-outline-white {
+			font-size: 16px;
 			line-height: 1;
-			padding: 10px;
-    		font-weight: 600;
+			padding: 14px 20px;
+    		font-weight: 500;
     		margin: 13px 0;
 
 			&:hover {
 				color: $primary;
 				background: $white;
-			}
-
-			@include media-breakpoint-up(md) {
-				padding: 10px 20px;
 			}
 		}
 	}

@@ -1,0 +1,62 @@
+.yir-line {
+	width: 1px;
+	background: #C0C6D9;
+	position: absolute;
+	left: calc(50% + .5px);
+	z-index: 100;
+}
+
+#landing {
+	.yir-line {
+		top: 80%;
+		bottom: 0;
+	}
+}
+#things-shipped {
+	.yir-line {
+		top: 0;
+		bottom: 0;
+	}
+}
+#moments-celebrated {
+	.yir-line {
+		top: 0;
+		bottom: 0;
+	}
+}
+#by-the-numbers {
+	.yir-line {
+		top: 0;
+		bottom: 0;
+	}
+}
+#fuel {
+	.yir-line {
+		top: 0;
+		bottom: 0;
+	}
+}
+#real-mvps {
+	.yir-line {
+		top: 0;
+		bottom: 0;
+	}
+}
+#thankful {
+	.yir-line {
+		top: 0;
+		bottom: 0;
+	}
+}
+#run-the-world {
+	.yir-line {
+		top: 0;
+		bottom: 0;
+	}
+}
+#coming-next {
+	.yir-line {
+		top: 0;
+		bottom: -100px;
+	}
+}

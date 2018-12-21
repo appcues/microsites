@@ -1,0 +1,147 @@
+#things-shipped {
+	.section-body {
+		background: transparent;
+	}
+
+	.milestones {
+		max-width: 1200px;
+		margin: 0 auto; 
+
+		.milestone {
+			margin: 30px auto;
+			max-width: 550px;
+			width: 98%;
+			position: relative;
+			border-radius: 10px;
+			box-shadow: 0px 11px 28.7px 6.3px rgba(40, 29, 85, 0.06); 
+
+			@include media-breakpoint-up(lg) {
+				width: 48%;
+			} 
+
+			.milestone-image {
+				width: 100%;
+				border-top-left-radius: 10px;
+				border-top-right-radius: 10px;
+			}
+
+			.milestone-content {
+				width: 100%;
+				background: $white;
+				padding: 40px;
+				text-align: left;
+				border-bottom-left-radius: 10px;
+				border-bottom-right-radius: 10px;
+
+				.date {
+					font-size: 12px;
+					letter-spacing: 2px;
+					color: #979eb4;
+					font-weight: 300;
+					margin: 0 0 15px 0;
+					text-transform: uppercase;
+				}
+
+				.header {
+					font-size: 20px;
+					color: $dark-gray;
+					font-weight: 500;
+					margin: 0 0 25px 0;
+				}
+
+				.body {
+					font-size: 16px;
+					color: $med-gray;
+					font-weight: 400;
+					line-height: 1.7;
+					margin: 0 0 20px 0;
+				}
+
+				.btn {
+
+
+				}
+			}
+
+
+			@include media-breakpoint-up(lg) {
+				opacity: 0;
+				transition: opacity 1s ease, margin 400ms ease;
+
+				&:nth-child(even) {
+					margin-left: auto;
+					margin-right: -1000px;
+
+					.milestone-image {
+						border-top-left-radius: 0px;
+					}
+				}
+
+				&:nth-child(odd) {
+					margin-right: auto;
+					margin-left: -1000px;
+					.milestone-image {
+						border-top-right-radius: 0px;
+					}
+				}
+				
+			}
+
+		}
+
+		.milestone.visible {
+			@include media-breakpoint-up(lg) {
+				opacity: 1;
+				&:nth-child(even) {
+					margin-right: 0;
+				}
+
+				&:nth-child(odd) {
+					margin-left: 0;
+				}
+			}
+		}
+	}
+
+	.yir-line {
+		.circle {
+			display: none;
+			@include media-breakpoint-up(lg) {
+				display: block;
+
+				&:before {
+					left: -5px;
+					content: ' \25CF';
+					position: absolute;
+					font-size: 20px;
+					color: $line-gray;
+				}	
+
+				&:nth-child(1) {
+					&:before {
+						top: 325px;
+					}
+				}
+
+				&:nth-child(2) {
+					&:before {
+						top: 1050px;
+					}
+				}
+
+				&:nth-child(3) {
+					&:before {
+						top: 1800px;
+					}
+				}
+
+				&:nth-child(4) {
+					&:before {
+						top: 2475px;
+					}
+				}
+			}
+		}
+		
+	}
+}

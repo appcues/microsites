@@ -1,6 +1,15 @@
 #thankful {
 	.section-body {
+		margin-top: 0;
+
+		.thankful-card.show {
+			opacity: 1;
+			margin-top: 25px;	
+		}
+
 		.thankful-card {
+			opacity: 0;
+			transition: opacity 1s ease, margin 500ms ease;
 			position: relative;
 			border-radius: 10px;
 			margin: 25px auto;
@@ -8,6 +17,8 @@
 			padding: 30px 20px;
 			height: 300px;
 			width: 300px;
+			box-shadow: 0px 11px 28.7px 6.3px rgba(40, 29, 85, 0.06); 
+
 			
 
 			.icon {
@@ -20,10 +31,10 @@
 				text-align: center;
 				width: 100%; 
 				left: 0;
-				bottom: 20px;
-				font-size: 16px;
+				bottom: 30px;
+				font-size: 18px;
 				color: $med-gray;
-				font-weight: 300;
+				font-weight: 400;
 
 				.number {
 					color: $primary;
@@ -46,42 +57,21 @@
 					height: 50px;
 				}
 			}
-
-			.thankful-card.extra-margin-top {
-				margin-top: 100px;
-			}
 		}
 
 		@include media-breakpoint-up(md) {
-			.thankful-card.tablet-margin-right {
-				margin-left: 10px;
-			}
-
-			.thankful-card.tablet-margin-left {
-				margin-right: 10px; 
-			}
-		}
-
-		@include media-breakpoint-up(lg) { 
-			.thankful-card.extra-margin-top {
-				margin-top: 25px;
-			}
-
+			margin-top: 160px;
 		}
 
 		@include media-breakpoint-up(xl) {
 			.thankful-card {
-				margin: 160px 10px 0 10px; 
+				margin: 150px 10px 20px 10px; 
 				height: 300px;
 				width: 300px;
 
 				.icon {
 					height: 100px;
 				}
-			}
-
-			.thankful-card.extra-margin-top {
-				margin-top: 160px;
 			}
 		}
 	}

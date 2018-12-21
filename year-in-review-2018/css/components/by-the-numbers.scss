@@ -1,6 +1,6 @@
 #by-the-numbers {
 	.section-body {
-		padding: 10px 20px;
+		padding: 10px 0;
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -13,19 +13,39 @@
 		.gif-content {
 			position: absolute;
 
-			h4, h6 {
+			h4, h6, h5 {
 				color: $white;
 				line-height: 1.2;
 				margin: 0;
 			}
 
+			h5 {
+				text-transform: uppercase;
+				font-size: 15px;
+				margin-bottom: 10px;
+				letter-spacing: 5px;
+				font-weight: 600;
+			}
+
 			h4 {
-				font-size: 50px;
-				margin-bottom: 5px
+				font-size: 24px;
+				font-weight: 300;
+				margin-bottom: 15px;
 			}
 
 			h6 {
-				font-size: 20px;
+				font-size: 12px;
+			}
+
+			@include media-breakpoint-up(md) {
+
+				h4 {
+					font-size: 50px;
+				}
+
+				h6 {
+					font-size: 20px;
+				}
 			}
 
 		}
