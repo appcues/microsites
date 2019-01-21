@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0, shrink-to-fit=no"/>
+    <meta name="description" content="[Appcues]">
+    <meta name="author" content="[Appcues]">
+    <meta name="keywords" content="[content]">
+    <meta property="og:image" content="https://s3-us-west-2.amazonaws.com/appcues-public/microsites/build-vs-buy/img/share_preview.jpeg"/>
+    <meta property="og:url"                content="" />
+    <meta property="og:type"               content="article" />
+    <meta property="og:title"              content="[TBD]" />
+    <meta property="og:description"        content="[TBD]" />
+
+    <title>Build vs. Buy Calculator</title>
+
+
+    <!-- CSS
+    ================================================== -->
+    <link href="https://fonts.googleapis.com/css?family=Muli:300,400,500,600" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="./css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css"> 
+    <link rel="stylesheet" type="text/css" href="./css/print-results.css"> 
+    <link rel="stylesheet" type="text/css" href="./css/slider.css"> 
+    <link rel="stylesheet" type="text/css" href="./css/main.css" >
+    
+
+  </head>
+
+  <body>
+
+    <div class="container-fluid">
+        <div id="share-navbar">
+            <div class="nav-content">
+                <a href="https://www.appcues.com/" target="_blank">
+                    <img class="logo" src="https://s3-us-west-2.amazonaws.com/appcues-public/microsites/logos/logo-white.svg" alt="Appcues Logo"/>
+                </a>
+                <div class="social-share">
+                </div>
+            </div>
+        </div>
+        <div id="calculator">
+            <div id="calculator-content" class="row">
+                <div class="col-12">
+                    <div id="introduction">
+                        <h1>The User Onboarding Cost Calculator</h1>
+                        <h5>Determine the true cost of building your own user onboarding experiences using your existing product team.</h5>
+                        <a href="https://www.appcues.com/blog/build-vs-buy-saas" target="_blank">See more about our methodology</a>
+                    </div>
+                </div>
+                <div class="col-12 col-md-7">
+                    <div id="inputs-container">
+                        <div class="intro">
+                            <h4>Modify the values to calculate the full cost</h4>
+                            <p>Enter the number of people involved from each team and their average salaries.</p>
+                        </div>
+                        <div id="inputs">
+                            <div class="input">
+                                <h6>Designers</h6>
+                                <div class="form-group">
+                                    <label>How many designers</label>
+                                    <select class="form-control">
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label>Average designer salary</label>
+                                    <span class="input-dollar-sign">$</span>
+                                    <input class="salary" id="designer-salary"/>
+                                    <input class="slider" id="desginer-salary-slider" type="range" min="0" max="200000" data-rangeslider>
+                                </div>
+                            </div>
+                            <div class="input">
+                                <h6>Product Managers</h6>
+                                <div class="form-group">
+                                    <label>How many product managers</label>
+                                    <select class="form-control">
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label>Average product manager salary</label>
+                                    <span class="input-dollar-sign">$</span>
+                                    <input class="salary" id="designer-salary"/>
+                                    <input class="slider" id="desginer-salary-slider" type="range" min="0" max="200000" data-rangeslider>
+                                </div>
+                            </div>
+                            <div class="input">
+                                <h6>Developers</h6>
+                                <div class="form-group">
+                                    <label>How many developers</label>
+                                    <select class="form-control">
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label>Average developer salary</label>
+                                    <span class="input-dollar-sign">$</span>
+                                    <input class="salary" id="designer-salary"/>
+                                    <input class="slider" id="desginer-salary-slider" type="range" min="0" max="200000" data-rangeslider>
+                                </div>
+                            </div>
+                            <div class="input">
+                                <div class="form-group">
+                                    <label>Does your product team use third party tools like Amplitude or Mixpanel?</label>
+                                    <div class="buttons">
+                                        <p class="btn btn-outline-light">Yes</p>
+                                        <p class="btn btn-outline-light">No</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="input">
+                                <div class="form-group">
+                                    <label>Have you worked on your product’s user onboarding experience in the past?</label>
+                                    <div class="buttons">
+                                        <p class="btn btn-outline-light">Yes</p>
+                                        <p class="btn btn-outline-light">No</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="submit-results" class="btn btn-block btn-primary">See Results</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-5">
+                    <div id="results-container">
+                        <div class="result">
+                            <h5>Initial cost of building on your own</h5>
+                            <p>The expected initial cost of building your own onboarding with the selected team</p>
+                            <h4 class="value" id="build-on-own">0</h4>
+                            <div class="extra-details">
+                                <img src="https://s3-us-west-2.amazonaws.com/appcues-public/microsites/build-vs-buy/img/icons/clock.svg" class="clock-icon"/>
+                                <p>Time spent (days) on the initial build</p>
+                                <ul>
+                                    <li>Designers: 7 days</li>
+                                    <li>Product Managers: 9 days</li>
+                                    <li>Developers: 75 days</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="result">
+                            <h5>Cost to maintain your own</h5>
+                            <p>The expected annual maintenance cost of a complete onboarding build</p>
+                            <h4 class="value" id="maintain-on-own">0</h4>
+                            <div class="extra-details">
+                                <img src="https://s3-us-west-2.amazonaws.com/appcues-public/microsites/build-vs-buy/img/icons/clock.svg" class="clock-icon"/>
+                                <p>Time spent (days) on maintenance</p>
+                                <ul>
+                                    <li>Designers: 1 day</li>
+                                    <li>Product Managers: 5 days</li>
+                                    <li>Developers: 45 days</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="result">
+                            <h5>Total year one cost</h5>
+                            <h3 class="value" id="total-cost">0</h3>
+                        </div>
+                        <div class="user-actions">
+                            <h5>Sticker shock? You could save up to <span class="primary-text">$##,###</span> with Appcues.</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Javascript
+    ================================================== -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/color/jquery.color.plus-names-2.1.2.min.js"></script>
+    <script src='https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.5/jquery-ui.min.js'></script>
+    <script src="https://cdn.sobekrepository.org/includes/jquery-rotate/2.2/jquery-rotate.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
+
+
+    <!-- <script src="./libraries/js/parallax/parallax.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
+    <script src="./libraries/js/slider/slider.min.js"></script>
+    <script src="./js/main.js"></script>
+    <script src="./js/chrome-mobile.js"></script>
+
+    <!-- /Javascript
+    ================================================== -->
+  </body>
+</html>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  

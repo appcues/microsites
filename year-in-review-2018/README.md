@@ -8,6 +8,7 @@ sass --watch css/application.scss:css/main.css
 
 To start development server
 python -m SimpleHTTPServer 8035
+python3 -m http.server 8040
 
 
 Remove .DS_Store

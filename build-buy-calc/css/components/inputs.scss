@@ -1,0 +1,94 @@
+#inputs-container {
+	@extend %white-container;
+	padding: 85px 25px;
+
+	@include media-breakpoint-up(lg) {
+		padding: 85px;
+	}
+
+	.intro {
+		h4 {
+			font-size: 18px;
+		}
+
+		p {
+			font-size: 16px;
+			font-style: italic;
+		}
+
+		@include media-breakpoint-up(lg) {
+			h4 {
+				font-size: 24px;
+			}
+		}
+	}
+
+	#inputs {
+
+		.input {
+			.form-group {
+				margin: 20px 0;	
+				position: relative;
+
+				.input-dollar-sign {
+					position: absolute;
+					right: 155px;
+					font-weight: 700;
+					font-size: 15px;
+					top: 7.5px;
+				}
+
+				.salary {
+					position: absolute;
+					right: 0;
+					top: 0;
+					border: 1px solid $gray-100;
+					border-radius: 15px;
+					font-size: 15px;
+					line-height: 1.5;
+				    height: 35px;
+				    padding: 5px;
+				    width: 150px;
+
+					&:focus {
+						outline: none;
+						border-color: $primary;
+					}
+				}
+
+				.slider {
+					display: block;
+					margin-top: 20px;
+					width: 100%;
+				}
+
+				label {
+					font-size: 15px;
+				}
+
+
+				select {
+					margin-left: 20px;
+					background: $white;
+					font-size: 15px;
+					width: 75px;
+					height: 35px;
+				}
+			}
+			
+			h6 {
+				font-size: 16px;
+			}
+
+			
+
+
+			@include media-breakpoint-up(lg) {
+			}
+
+
+
+		}
+
+	}
+}

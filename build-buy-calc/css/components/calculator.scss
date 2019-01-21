@@ -1,0 +1,77 @@
+#calculator {
+	padding: 60px 10px;
+	background: $bg-gray;
+	background-image: url("https://s3-us-west-2.amazonaws.com/appcues-public/microsites/build-vs-buy/img/layout/blurple-bg.svg");
+	background-repeat: no-repeat;
+	background-position: 0% 0%;
+	background-size: auto 100%;
+	min-width: 100vw;
+	min-height: 100vh;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1;
+
+	@include media-breakpoint-up(md) {
+		background-size: 100% auto;
+	}
+
+	@include media-breakpoint-up(xl) {
+		background-size: 90% auto;
+	}
+
+	#calculator-content {
+		max-width: 1600px;
+		margin: 0 auto;
+	}
+
+
+	#introduction {
+		color: $white;
+		margin: 50px 0;
+
+		h1 {
+			font-size: 30px;
+			line-height: 1.2;
+			margin-bottom: 15px;
+		}
+
+		h5, a {
+			font-size: 15px;
+			line-height: 1.5;
+		}
+
+		a {
+			text-decoration: underline;
+			color: $white;
+		}
+
+
+		@include media-breakpoint-up(md) {
+
+			h1 {
+				font-size: 34px;
+				margin-bottom: 15px;
+			}
+
+			h5, a {
+				font-size: 15px;
+			}
+		}
+
+		@include media-breakpoint-up(lg) {
+			margin: 75px 100px;
+
+			h1 {
+				font-size: 46px;
+				margin-bottom: 25px;
+			}
+
+			h5, a {
+				font-size: 18px;
+			}
+		}
+	}
+
+
+}
