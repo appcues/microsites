@@ -1,56 +1,193 @@
-// input[type=range] {
-//   -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
-//   width: 100%; /* Specific width is required for Firefox. */
-//   background: transparent; /* Otherwise white in Chrome */
-// }
+$slider-dot-height: 14px;
+$slider-dot-width: 14px;
+$slider-border-radius: 50px;
+$slider-height: 8px;
 
-// input[type=range]::-webkit-slider-thumb {
-//   -webkit-appearance: none;
-// }
+.slider-container {
+	width: 100%;
+	margin-top: 25px;
 
-// input[type=range]:focus {
-//   outline: none; /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */
-// }
+	.slider-column, td, tr, th {
+		width: 100%;
+		border: 0 none !important;
+	}
 
-// input[type=range]::-ms-track {
-//   width: 100%;
-//   cursor: pointer;
+	.slider {
+		position: absolute;
+		left: 0px;
+		top: 0px;
+		overflow: visible;
+		z-index: 100;
+		cursor: pointer;
+	}
 
-//   /* Hides the slider so custom styles can be added */
-//   background: $primary; 
-//   border-color: transparent;
-//   color: transparent;
-// }
+	/* slidershell exists only
+	to provide a positioning context for the range input and other elements.*/
+	.slidershell {
+		border: 0 none;
+		position: relative;
+		left: 0px;
+		top: 0px;
+		overflow: visible;
+	}
+
+	/* .slidertrack is the visible track on which the user drags the thumb button. */
+	.slidertrack {
+		border: 0 none;
+		border-radius: 2px;
+		background: #edeef2;
+		position: absolute;
+		height: $slider-height;
+	}
+
+	/* .sliderfill adds color (or a gradient as seen here) to the track as the user 
+		drags the thumb. */
+	.sliderfill {
+		border-radius: 2px;
+		height: $slider-height;
+		position: absolute;
+		opacity: 1;
+		pointer-events: none;
+		background: $brand-primary;
+		z-index: 100;
+		cursor: pointer;
+	}
+
+	/* .sliderthumb can be any css you like including an image. 
+		The dimensions must match those found in the rule for 
+		input[type=range]::-webkit-slider-thumb. */
+	.sliderthumb {
+		width: $slider-dot-width;
+		height: $slider-dot-height;
+		background-color: $brand-primary;
+		border-radius: $slider-border-radius;
+		position: absolute;
+		left: 0px;
+		top: -3px;
+		border: 0 none;
+		padding: 0px;
+		margin: 0px;
+		text-align: center;
+		pointer-events: none;
+	}
+
+	/* .slidervalue can be styled as you see fit */
+	.slidervalue {
+		width: $slider-dot-width;
+		height: $slider-dot-height;
+		line-height: $slider-dot-height;
+		color: #fff;
+		font-family: helvetica,sans-serif;
+		font-size: 18px;
+		position: absolute;
+		left: 0px;
+		top: 0px;
+		border: 0 none;
+		border-radius: $slider-border-radius;
+		padding: 0px;
+		margin: 0px;
+		text-align: center;
+		pointer-events: none;
+	}
 
 
-// /* Special styling for WebKit/Blink */
-// input[type=range]::-webkit-slider-thumb {
-//   -webkit-appearance: none;
-//   border: 1px solid $brand-primary-dark;
-//   height: 20px;
-//   width: 20px;
-//   border-radius: 300px;
-//   background: $primary;
-//   cursor: pointer;
-//   margin-top: -14px; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
-// }
+	/* First we have to make transparent all the default elements of the range input.
+		We use color: transparent to eliminate the default tick marks in IE. */
 
-// /* All the same stuff for Firefox */
-// input[type=range]::-moz-range-thumb {
-//   border: 1px solid $brand-primary-dark;
-//   height: 20px;
-//   width: 20px;
-//   border-radius: 3px;
-//   background: $primary;
-//   cursor: pointer;
-// }
+	input[type=range]::-ms-track {
+		width: 100%;
+		height: 100%;
+		-webkit-appearance: none;
+		margin: 0px;
+		padding: 0px;
+		border: 0 none;
+		background: $brand-primary;
+		color: transparent;
+		overflow: visible;
+	}
+	input[type=range]::-moz-range-track {
+		width: 100%;
+		height: 100%;
+		-moz-appearance: none;
+		margin: 0px;
+		padding: 0px;
+		border: 0 none;
+		background: $brand-primary;
+		color: transparent;
+		overflow: visible;
 
-// /* All the same stuff for IE */
-// input[type=range]::-ms-thumb {
-//   border: 1px solid $brand-primary-dark;
-//   height: 20px;
-//   width: 20px;
-//   border-radius: 3px;
-//   background: $primary;
-//   cursor: pointer;
-// }
+	}
+	input[type=range] {
+		width: 100%;
+		height: 100%;
+		-webkit-appearance: none;
+		margin: 0px;
+		padding: 0px;
+		border: 0 none;
+		background: transparent;
+		color: transparent;
+		overflow: visible;
+	}
+	/* we need a separate rule for when the range input is to be vertical */
+	input[type=range].slidervertical {
+		-webkit-appearance: slider-vertical;
+		writing-mode: bt-lr; /* IE */
+		opacity: 0.01; /* needed to hide the default slider-vertical appearance */
+	}
+
+	input[type=range]:focus::-webkit-slider-runnable-track {
+		background: transparent;
+		border: transparent;
+	}
+	input[type=range]:focus {
+		outline: none;
+	}
+		
+	/* Make the thumbs the same size as your custom sliderthumb. 
+		they will not be visible but they will be draggable. 	*/
+	input[type=range]::-ms-thumb {
+		width: $slider-dot-width;
+		height: $slider-dot-height;
+		border-radius: 0px;
+		border: 0 none;
+		background: transparent;
+	}
+
+	input[type=range]::-moz-range-thumb {
+		width: $slider-dot-width;
+		height: $slider-dot-height;
+		border-radius: 0px;
+		border: 0 none;
+		background: transparent;
+	}	
+	input[type=range]::-webkit-slider-thumb {
+		width: $slider-dot-width;
+		height: $slider-dot-height;
+		border-radius: 0px;
+		border: 0 none;
+		background: transparent;
+		-webkit-appearance: none;
+	}
+
+	/* microsoft IE10+ and Edge - eliminates default fills before and after thumb */
+	input[type=range]::-ms-fill-lower {
+		background: transparent;
+		border: 0 none;
+	}
+	input[type=range]::-ms-fill-upper {
+		background: transparent;
+		border: 0 none;
+	}
+	input[type=range]::-ms-tooltip { 
+		display: none;
+	}
+
+
+
+	/* other rules you may need for page styling */
+
+
+
+
+
+}

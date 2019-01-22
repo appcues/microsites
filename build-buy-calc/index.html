@@ -21,7 +21,6 @@
     <link rel="stylesheet" type="text/css" href="./css/normalize.css">
     <link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css"> 
     <link rel="stylesheet" type="text/css" href="./css/print-results.css"> 
-    <link rel="stylesheet" type="text/css" href="./css/slider.css"> 
     <link rel="stylesheet" type="text/css" href="./css/main.css" >
     
 
@@ -48,7 +47,7 @@
                         <a href="https://www.appcues.com/blog/build-vs-buy-saas" target="_blank">See more about our methodology</a>
                     </div>
                 </div>
-                <div class="col-12 col-md-7">
+                <div class="col-12 col-md-7 calc-container">
                     <div id="inputs-container">
                         <div class="intro">
                             <h4>Modify the values to calculate the full cost</h4>
@@ -71,7 +70,19 @@
                                     <label>Average designer salary</label>
                                     <span class="input-dollar-sign">$</span>
                                     <input class="salary" id="designer-salary"/>
-                                    <input class="slider" id="desginer-salary-slider" type="range" min="0" max="200000" data-rangeslider>
+                                    <div class="slider-container">
+                                        <table class="slider-column">
+                                            <tr><td>
+                                                <div class="slidershell">
+                                                    <div class="sliderfill"></div>
+                                                    <div class="slidertrack"></div>
+                                                    <div class="sliderthumb"></div>
+                                                    <input class="slider" id="designer-salary-slider" type="range" min="0" max="200000" value="0"
+                                                    oninput="showValue(value,1,false);" onchange="showValue(value,1,false);"/>
+                                                </div>
+                                            </td></tr>
+                                        </table>
+                                    </div>
                                 </div>
                             </div>
                             <div class="input">
@@ -89,8 +100,20 @@
                                 <div class="form-group">
                                     <label>Average product manager salary</label>
                                     <span class="input-dollar-sign">$</span>
-                                    <input class="salary" id="designer-salary"/>
-                                    <input class="slider" id="desginer-salary-slider" type="range" min="0" max="200000" data-rangeslider>
+                                    <input class="salary" id="pm-salary"/>
+                                    <div class="slider-container">
+                                        <table class="slider-column">
+                                            <tr><td>
+                                                <div class="slidershell">
+                                                    <div class="sliderfill"></div>
+                                                    <div class="slidertrack"></div>
+                                                    <div class="sliderthumb"></div>
+                                                    <input class="slider" id="pm-salary-slider" type="range" min="0" max="200000" value="0"
+                                                    oninput="showValue(value,1,false);" onchange="showValue(value,1,false);"/>
+                                                </div>
+                                            </td></tr>
+                                        </table>
+                                    </div>
                                 </div>
                             </div>
                             <div class="input">
@@ -108,16 +131,29 @@
                                 <div class="form-group">
                                     <label>Average developer salary</label>
                                     <span class="input-dollar-sign">$</span>
-                                    <input class="salary" id="designer-salary"/>
-                                    <input class="slider" id="desginer-salary-slider" type="range" min="0" max="200000" data-rangeslider>
+                                    <input class="salary" id="developer-salary"/>
+                                    <div class="slider-container">
+                                        <table class="slider-column">
+                                            <tr><td>
+                                                <div class="slidershell">
+                                                    <div class="sliderfill"></div>
+                                                    <div class="slidertrack"></div>
+                                                    <div class="sliderthumb"></div>
+                                                    <input class="slider" id="developer-salary-slider" type="range" min="0" max="200000" value="0"
+                                                    oninput="showValue(value,1,false);" onchange="showValue(value,1,false);"/>
+                                                </div>
+                                            </td></tr>
+                                        </table>
+                                    </div>
                                 </div>
                             </div>
                             <div class="input">
                                 <div class="form-group">
                                     <label>Does your product team use third party tools like Amplitude or Mixpanel?</label>
                                     <div class="buttons">
-                                        <p class="btn btn-outline-light">Yes</p>
-                                        <p class="btn btn-outline-light">No</p>
+                                        <button class="btn btn-input">Yes</button>
+                                        <button class="btn btn-input">No</button>
+                                        <button class="btn btn-input">Not Sure</button>
                                     </div>
                                 </div>
                             </div>
@@ -125,8 +161,9 @@
                                 <div class="form-group">
                                     <label>Have you worked on your product’s user onboarding experience in the past?</label>
                                     <div class="buttons">
-                                        <p class="btn btn-outline-light">Yes</p>
-                                        <p class="btn btn-outline-light">No</p>
+                                        <button class="btn btn-input">Yes</button>
+                                        <button class="btn btn-input">No</button>
+                                        <button class="btn btn-input">Not Sure</button>
                                     </div>
                                 </div>
                             </div>
@@ -134,7 +171,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-md-5">
+                <div class="col-12 col-md-5 calc-container">
                     <div id="results-container">
                         <div class="result">
                             <h5>Initial cost of building on your own</h5>
@@ -187,10 +224,6 @@
     <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
     <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
 
-
-    <!-- <script src="./libraries/js/parallax/parallax.js"></script> -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
-    <script src="./libraries/js/slider/slider.min.js"></script>
     <script src="./js/main.js"></script>
     <script src="./js/chrome-mobile.js"></script>
 

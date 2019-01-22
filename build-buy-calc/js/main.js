@@ -37,6 +37,8 @@ var appcuesBuildVsBuyCalc = {
 		// $.post(postRequestUrlData, function(data, status){});
 	},
 
+	
+
 	initializeSliders: function() {
 		$('input[type="range"]').click(function(){
 			appcuesBuildVsBuyCalc.changeSalaryValue(this);
@@ -46,6 +48,52 @@ var appcuesBuildVsBuyCalc = {
 		   appcuesBuildVsBuyCalc.updateSliderValue(this);
 		});
 	},
+
+
+	initSlider: function(sliderID,vertical) {
+		/* setup variables for the elements of our slider */
+		debugger;
+		var thumb = document.getElementById("sliderthumb" + slidernum);
+		var shell = document.getElementById("slidershell" + slidernum);
+		var track = document.getElementById("slidertrack" + slidernum);
+		var fill = document.getElementById("sliderfill" + slidernum);
+		var slider = document.getElementById("slider" + slidernum);
+		
+		var pc = val/(slider.max - slider.min); /* the percentage slider value */
+		var thumbsize = 14; /* must match the thumb size in your css */
+		var bigval = 250; /* widest or tallest value depending on orientation */
+		var smallval = 40; /* narrowest or shortest value depending on orientation */
+		var tracksize = bigval - thumbsize;
+		var fillsize = 16;
+		var filloffset = 10;
+		var bordersize = 2;
+		var loc = vertical ? (1 - pc) * tracksize : pc * tracksize;
+		
+		// fill.style.opacity = pc + 0.2 > 1 ? 1 : pc + 0.2;
+		
+		// thumb.style.top =  (vertical ? loc : 0) + "px";
+		thumb.style.left = (vertical ? 0 : loc) + "px";
+		// fill.style.top = (vertical ? loc + (thumbsize/2) : filloffset + bordersize) + "px";
+		fill.style.left = (vertical ? filloffset + bordersize : 0) + "px";
+		fill.style.width = (vertical ? fillsize : loc + (thumbsize/2)) + "px";
+		// fill.style.height = (vertical ? bigval - filloffset - fillsize - loc : fillsize) + "px";
+		shell.style.height = (vertical ? bigval : smallval) + "px";
+		shell.style.width = (vertical ? smallval : bigval) + "px";
+		// track.style.height = (vertical ? bigval - 4 : fillsize) + "px"; /* adjust for border */
+		track.style.width = (vertical ? fillsize : bigval - 4) + "px"; /* adjust for border */
+		track.style.left = (vertical ? filloffset + bordersize : 0) + "px";
+		// track.style.top = (vertical ? 0 : filloffset + bordersize) + "px";
+	},
+	
+
+	setSliderValue: function(val,num,vertical) {
+		debugger;
+		//change to be the salary input value
+		document.getElementById("slider"+num).value = val;
+		showValue(val,num,vertical);
+	},
+
+
 
 	changeSalaryValue: function(slider) {
 		$(slider.parentElement).children('.salary').val(appcuesBuildVsBuyCalc.formatCurrency(slider.value));
@@ -80,7 +128,12 @@ var appcuesBuildVsBuyCalc = {
 	},
 
 	startSite: function() {
-		appcuesBuildVsBuyCalc.initializeSliders();
+		appcuesBuildVsBuyCalc.initSlider();
+		appcuesBuildVsBuyCalc.setSliderValue(100000,"#designer-salary-slider",false);
+		appcuesBuildVsBuyCalc.setSliderValue(100000,"#pm-salary-slider",false);
+		appcuesBuildVsBuyCalc.setSliderValue(100000,"#developer-salary-slider",false);
+		
+
 		appcuesBuildVsBuyCalc.randomID = appcuesBuildVsBuyCalc.createRandomID();
 	},			
 

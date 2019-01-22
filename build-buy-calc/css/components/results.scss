@@ -2,6 +2,10 @@
 	@extend %white-container;
 	padding: 85px 0;
 
+	@include media-breakpoint-up(md) {
+	    min-height: 100%;
+	}
+
 	@include media-breakpoint-up(lg) {
 		padding: 85px 0;
 	}
@@ -19,13 +23,13 @@
 			font-size: 13px;
 			text-transform: uppercase;
 			color: $dark-gray;
-			letter-spacing: 1px;
+			letter-spacing: .5px;
 			font-weight: 700;
 		}
 
 		p {
-			font-size: 18px;
-			line-height: 25px;
+			font-size: 13px;
+			line-height: 1.5;
 			color: $medium-gray;
 			font-weight: 600;
 		}
@@ -66,7 +70,7 @@
 			}
 
 			p {
-				font-size: 18px;
+				font-size: 14px;
 			}
 
 			h4 {
@@ -77,11 +81,7 @@
 				font-size: 60px;
 			}
 		}
-
-		@include media-breakpoint-up(xl) {
-			padding: 30px 60px;
-		}
-
+		
 		h3.active {
 			color: $primary;
 		}
@@ -99,7 +99,7 @@
 
 			p {
 				display: inline-block;
-				font-size: 16px;
+				font-size: 14px;
 				color: $dark-gray;
 				font-weight: 700;
 				vertical-align: middle;
@@ -114,7 +114,7 @@
 
 				li {
 					font-weight: 700;
-					font-size: 16px;
+					font-size: 13px;
 					line-height: 1.5;
 					color: $medium-gray;
 				}
