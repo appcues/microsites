@@ -47,15 +47,19 @@
 			margin-bottom: 40px;
 
 			.form-group {
-				margin: 20px 0;	
+				margin: 10px 0 20px 0;	
 				position: relative;
 
 				.input-dollar-sign {
 					position: absolute;
-					right: 155px;
+					right: 82.5px;
 					font-weight: 700;
 					font-size: 15px;
 					top: 7.5px;
+
+					@include media-breakpoint-up(md) {
+						right: 155px;
+					}
 				}
 
 				.salary {
@@ -67,8 +71,12 @@
 					font-size: 15px;
 					line-height: 1.5;
 				    height: 35px;
-				    padding: 5px;
-				    width: 150px;
+				    padding: 5px 10px;
+				    width: 80px;
+
+				    @include media-breakpoint-up(md) {
+				    	width: 150px;
+				    }
 
 					&:focus {
 						outline: none;
@@ -80,12 +88,15 @@
 					font-size: 12px;
 					color: $medium-gray;
 					font-weight: 400;
+					height: 35px;
+    				margin-top: 10px;
+    				margin-bottom: 0;
 				}
 
 
 				select {
 					margin-left: 20px;
-					color: $medium-gray;
+					color: $dark-gray;
 					background: $white;
 					font-size: 15px;
 					width: 75px;
@@ -94,6 +105,10 @@
 				option {
 					color: $medium-gray;
 				}
+			}
+
+			.form-group.how-many-form {
+				margin-bottom: 0;
 			}
 			
 			h6 {
@@ -106,16 +121,22 @@
 			.buttons {
 				.btn-input {
 					border: 1px solid $gray-100;
-					font-size: 14px;
+					font-size: 12px !important;
+					width: 80px;
 					padding: 8px 0;
-					width: 100px;
 					background: $white;
 					color: $medium-gray;
 					transition: background 300ms, color 300ms;
 					text-transform: capitalize;
 					outline: none;
 					font-size: 15px;
-					margin: 20px 10px 0 10px;
+					margin: 20px 5px 0 5px;
+
+					@include media-breakpoint-up(md) {
+						font-size: 14px !important;
+						width: 100px;
+						margin: 20px 10px 0 10px;
+					}
 
 					&:first-child {
 						margin-left: 0;

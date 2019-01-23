@@ -1,7 +1,7 @@
-$slider-dot-height: 14px;
-$slider-dot-width: 14px;
+$slider-dot-height: 15px;
+$slider-dot-width: 15px;
 $slider-border-radius: 50px;
-$slider-height: 8px;
+$slider-height: 10px;
 
 .slider-container {
 	width: 100%;
@@ -29,6 +29,7 @@ $slider-height: 8px;
 		left: 0px;
 		top: 0px;
 		overflow: visible;
+		width: 100%;
 	}
 
 	/* .slidertrack is the visible track on which the user drags the thumb button. */
@@ -36,8 +37,10 @@ $slider-height: 8px;
 		border: 0 none;
 		border-radius: 2px;
 		background: #edeef2;
+		left: 0;
 		position: absolute;
 		height: $slider-height;
+		width: 100%;
 	}
 
 	/* .sliderfill adds color (or a gradient as seen here) to the track as the user 
@@ -46,6 +49,7 @@ $slider-height: 8px;
 		border-radius: 2px;
 		height: $slider-height;
 		position: absolute;
+		left: 0;
 		opacity: 1;
 		pointer-events: none;
 		background: $brand-primary;
@@ -63,7 +67,7 @@ $slider-height: 8px;
 		border-radius: $slider-border-radius;
 		position: absolute;
 		left: 0px;
-		top: -3px;
+		top: -2.5px;
 		border: 0 none;
 		padding: 0px;
 		margin: 0px;

@@ -4183,14 +4183,17 @@ a.text-dark:focus, a.text-dark:hover {
   #inputs-container #inputs .input {
     margin-bottom: 40px; }
     #inputs-container #inputs .input .form-group {
-      margin: 20px 0;
+      margin: 10px 0 20px 0;
       position: relative; }
       #inputs-container #inputs .input .form-group .input-dollar-sign {
         position: absolute;
-        right: 155px;
+        right: 82.5px;
         font-weight: 700;
         font-size: 15px;
         top: 7.5px; }
+        @media (min-width: 768px) {
+          #inputs-container #inputs .input .form-group .input-dollar-sign {
+            right: 155px; } }
       #inputs-container #inputs .input .form-group .salary {
         position: absolute;
         right: 0;
@@ -4200,40 +4203,53 @@ a.text-dark:focus, a.text-dark:hover {
         font-size: 15px;
         line-height: 1.5;
         height: 35px;
-        padding: 5px;
-        width: 150px; }
+        padding: 5px 10px;
+        width: 80px; }
+        @media (min-width: 768px) {
+          #inputs-container #inputs .input .form-group .salary {
+            width: 150px; } }
         #inputs-container #inputs .input .form-group .salary:focus {
           outline: none;
           border-color: #5C5CFF; }
       #inputs-container #inputs .input .form-group label {
         font-size: 12px;
         color: #576784;
-        font-weight: 400; }
+        font-weight: 400;
+        height: 35px;
+        margin-top: 10px;
+        margin-bottom: 0; }
       #inputs-container #inputs .input .form-group select {
         margin-left: 20px;
-        color: #576784;
+        color: #242a35;
         background: #FFFFFF;
         font-size: 15px;
         width: 75px;
         height: 35px; }
       #inputs-container #inputs .input .form-group option {
         color: #576784; }
+    #inputs-container #inputs .input .form-group.how-many-form {
+      margin-bottom: 0; }
     #inputs-container #inputs .input h6 {
       font-size: 14px;
       font-weight: 700;
       color: #242a35; }
     #inputs-container #inputs .input .buttons .btn-input {
       border: 1px solid #C0C6D9;
-      font-size: 14px;
+      font-size: 12px !important;
+      width: 80px;
       padding: 8px 0;
-      width: 100px;
       background: #FFFFFF;
       color: #576784;
       transition: background 300ms, color 300ms;
       text-transform: capitalize;
       outline: none;
       font-size: 15px;
-      margin: 20px 10px 0 10px; }
+      margin: 20px 5px 0 5px; }
+      @media (min-width: 768px) {
+        #inputs-container #inputs .input .buttons .btn-input {
+          font-size: 14px !important;
+          width: 100px;
+          margin: 20px 10px 0 10px; } }
       #inputs-container #inputs .input .buttons .btn-input:first-child {
         margin-left: 0; }
       #inputs-container #inputs .input .buttons .btn-input:hover {
@@ -4290,39 +4306,43 @@ a.text-dark:focus, a.text-dark:hover {
     position: relative;
     left: 0px;
     top: 0px;
-    overflow: visible; }
+    overflow: visible;
+    width: 100%; }
   .slider-container .slidertrack {
     border: 0 none;
     border-radius: 2px;
     background: #edeef2;
+    left: 0;
     position: absolute;
-    height: 8px; }
+    height: 10px;
+    width: 100%; }
   .slider-container .sliderfill {
     border-radius: 2px;
-    height: 8px;
+    height: 10px;
     position: absolute;
+    left: 0;
     opacity: 1;
     pointer-events: none;
     background: #5C5CFF;
     z-index: 100;
     cursor: pointer; }
   .slider-container .sliderthumb {
-    width: 14px;
-    height: 14px;
+    width: 15px;
+    height: 15px;
     background-color: #5C5CFF;
     border-radius: 50px;
     position: absolute;
     left: 0px;
-    top: -3px;
+    top: -2.5px;
     border: 0 none;
     padding: 0px;
     margin: 0px;
     text-align: center;
     pointer-events: none; }
   .slider-container .slidervalue {
-    width: 14px;
-    height: 14px;
-    line-height: 14px;
+    width: 15px;
+    height: 15px;
+    line-height: 15px;
     color: #fff;
     font-family: helvetica,sans-serif;
     font-size: 18px;
@@ -4377,20 +4397,20 @@ a.text-dark:focus, a.text-dark:hover {
   .slider-container input[type=range]:focus {
     outline: none; }
   .slider-container input[type=range]::-ms-thumb {
-    width: 14px;
-    height: 14px;
+    width: 15px;
+    height: 15px;
     border-radius: 0px;
     border: 0 none;
     background: transparent; }
   .slider-container input[type=range]::-moz-range-thumb {
-    width: 14px;
-    height: 14px;
+    width: 15px;
+    height: 15px;
     border-radius: 0px;
     border: 0 none;
     background: transparent; }
   .slider-container input[type=range]::-webkit-slider-thumb {
-    width: 14px;
-    height: 14px;
+    width: 15px;
+    height: 15px;
     border-radius: 0px;
     border: 0 none;
     background: transparent;
