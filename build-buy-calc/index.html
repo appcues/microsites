@@ -152,7 +152,7 @@
                             <div class="input">
                                 <div class="form-group">
                                     <label>Does your product team use third party tools like Amplitude or Mixpanel?</label>
-                                    <div class="buttons">
+                                    <div class="buttons" id="third-party-tools-btns">
                                         <button class="btn btn-input btn-choice">Yes</button>
                                         <button class="btn btn-input btn-choice">No</button>
                                         <button class="btn btn-input btn-choice">Not Sure</button>
@@ -162,7 +162,7 @@
                             <div class="input">
                                 <div class="form-group">
                                     <label>Have you worked on your product’s user onboarding experience in the past?</label>
-                                    <div class="buttons">
+                                    <div class="buttons" id="worked-onboarding-btns">
                                         <button class="btn btn-input btn-choice">Yes</button>
                                         <button class="btn btn-input btn-choice">No</button>
                                         <button class="btn btn-input btn-choice">Not Sure</button>
@@ -212,7 +212,9 @@
                             <small>(Assuming an annual plan costing <span id="plan-amount"></span>)</small>
                             <div class="email-container">
                                 <input id="user-email" type="email" placeholder="Email Address" />
-                                <button class="btn btn-primary btn-block" id="send-results">Email yourself a copy</button>
+                                <button class="btn btn-primary btn-block" id="send-results-btn">Email yourself a copy</button>
+                                <p class="email-send-msg" id="email-success-message">Your results have been sent!</p>
+                                <p class="email-send-msg" id="email-error-message">Please provide a valid email address</p>
                             </div>
                         </div>
                     </div>

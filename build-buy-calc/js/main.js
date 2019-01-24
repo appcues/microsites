@@ -10,11 +10,35 @@ var appcuesBuildVsBuyCalc = {
 	},
 
 	updateUrl: function(designerCount, pmCount, developerCount, designerSalary, pmSalary, developerSalary) {
+		var params = {designerCount: designerCount, pmCount: pmCount, developerCount: developerCount, designerSalary: designerSalary, pmSalary: pmSalary, developerSalary: developerSalary};
+		var paramsStr = "?" + $.param( params );
+		window.history.replaceState(null, null, window.location.pathname + paramsStr);
+	},
 
+	findURLParam: function(name) {
+			var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
+			return results[1] || 0;
 	},
 
 	processURL: function() {
-
+		// debugger;
+		if(window.location.href.indexOf("?") !== -1) {
+			$('#designer-count').val(appcuesBuildVsBuyCalc.findURLParam("designerCount"));
+			$('#pm-count').val(appcuesBuildVsBuyCalc.findURLParam("pmCount"));
+			$('#developer-count').val(appcuesBuildVsBuyCalc.findURLParam("developerCount"));
+			$('#designer-salary').val(appcuesBuildVsBuyCalc.findURLParam("designerSalary"));
+			$('#pm-salary').val(appcuesBuildVsBuyCalc.findURLParam("pmSalary"));
+			$('#developer-salary').val(appcuesBuildVsBuyCalc.findURLParam("developerSalary"));
+			appcuesBuildVsBuyCalc.changeSliderPosition(appcuesBuildVsBuyCalc.findURLParam("designerSalary"), "#designer-salary-slider", false);
+			appcuesBuildVsBuyCalc.changeSliderPosition(appcuesBuildVsBuyCalc.findURLParam("pmSalary"), "#pm-salary-slider", false);
+			appcuesBuildVsBuyCalc.changeSliderPosition(appcuesBuildVsBuyCalc.findURLParam("developerSalary"), "#developer-salary-slider", false);
+			$('#inputs-disable').css('display', 'flex');
+			appcuesBuildVsBuyCalc.calculateValues();
+		} else {
+			appcuesBuildVsBuyCalc.changeSliderPosition(100000, "#designer-salary-slider", false);
+			appcuesBuildVsBuyCalc.changeSliderPosition(100000, "#pm-salary-slider", false);
+			appcuesBuildVsBuyCalc.changeSliderPosition(100000, "#developer-salary-slider", false);
+		}
 	},
 
 	calculateValues: function() {
@@ -46,8 +70,8 @@ var appcuesBuildVsBuyCalc = {
 		$("#final-output").css('opacity', '1');
 		$('#total-cost-savings').text("$" + appcuesBuildVsBuyCalc.formatCurrency(estimatedCostSavings));
 		$('#plan-amount').text("$" + appcuesBuildVsBuyCalc.formatCurrency(appcuesCost));
+		appcuesBuildVsBuyCalc.updateUrl(designerCount, pmCount, developerCount, designerSalary, pmSalary, developerSalary);
 
-		appcuesBuildVsBuyCalc.sendHubSpotData(estimatedCostSavings, email, cookie);
 	},
 
 	setDaysValue: function(value) {
@@ -58,19 +82,9 @@ var appcuesBuildVsBuyCalc = {
 		}
 	},
 
-	checkInput: function(element) {
-		if(element.hasClass('input-form-row')){
-			var inputValue = element.find('input').val();
-		} else {
-			var inputValue = element.find('.btn-input.selected').text();
-		}
-
-		if (inputValue.length < 1) {
-			return false;
-		} else {
-			return true;
-		}
-
+	validateEmail: function(email) {
+	    var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+	    return re.test(String(email).toLowerCase());
 	},
 	
 
@@ -97,6 +111,17 @@ var appcuesBuildVsBuyCalc = {
 
 		$("#modify-inputs-btn").click(function(){
 			$('#inputs-disable').css('display', 'none');
+		});
+
+		$("#send-results-btn").click(function(){
+			var targetEmail = $("#user-email").val();
+			if(appcuesBuildVsBuyCalc.validateEmail(targetEmail)) {
+				appcuesBuildVsBuyCalc.sendHubSpotData();
+				$('#email-success-message').show();
+			} else {
+				$('#email-error-message').show();
+			}
+			
 		});
 	},
 
@@ -147,26 +172,30 @@ var appcuesBuildVsBuyCalc = {
 	    if (parts.length == 2) return parts.pop().split(";").shift();
 	},
 
-	sendHubSpotData: function(emailAddress) {
-		// var hubspotPostRequestUrlData = "https://api.hsforms.com/submissions/v3/integration/submit/305687/1be5ba33-6d73-4ee9-bd62-bff7d6613222";
-		// var hubspotCookie = appcuesBuildVsBuyCalc.getCookie('hubspotutk');
+	sendHubSpotData: function() {
+		var hubspotPostRequestUrlData = "https://api.hsforms.com/submissions/v3/integration/submit/305687/1e00b286-368c-4dc6-9d5c-993184449d63";
+		var hubspotCookie = appcuesBuildVsBuyCalc.getCookie('hubspotutk');
+		var copiedUrl = window.location.href;
+		var costSaving = $("#total-cost-savings").text();
+		var thirdPartyTools = $("#third-party-tools-btns").children('.selected').text();
+		var workedOnboarding = $("#worked-onboarding-btns").children('.selected').text();
 
-		// $.ajax({
-  //        url: hubspotPostRequestUrlData,
-  //        type:"POST",
-  //        data:JSON.stringify({ "fields": [{"name": "email","value": emailAddress}], "context": {"hutk": hubspotCookie, "pageUri": document.location.href}}),
-  //        contentType:"application/json",
-  //        dataType:"json",
-  //        success: function(){}
-  //       });
+
+		$.ajax({
+         url: hubspotPostRequestUrlData,
+         type:"POST",
+         data:JSON.stringify({ "fields": [{"name": "email","value": emailAddress}, {"name": "onboarding_calculator_url" ,"value": copiedUrl}, {"name": "user_onboarding_calculator_total_cost_saving", "value": costSaving}, , {"name": "onboarding_calculator_third_party_tools", "value": thirdPartyTools}, {"name": "onboarding_calculator_worked_on_onboarding", "value": workedOnboarding}], "context": {"hutk": hubspotCookie, "pageUri": document.location.href}}),
+         contentType:"application/json",
+         dataType:"json",
+         success: function(){}
+        });
 	},
 
 	startSite: function() {
-		appcuesBuildVsBuyCalc.changeSliderPosition(100000, "#designer-salary-slider", false);
-		appcuesBuildVsBuyCalc.changeSliderPosition(100000, "#pm-salary-slider", false);
-		appcuesBuildVsBuyCalc.changeSliderPosition(100000, "#developer-salary-slider", false);
+		appcuesBuildVsBuyCalc.processURL();
 		appcuesBuildVsBuyCalc.salaryChangeSlider();
 		appcuesBuildVsBuyCalc.setButtonClicks();
+		
 	}
 
 
@@ -177,7 +206,4 @@ var appcuesBuildVsBuyCalc = {
 $(function() {
   appcuesBuildVsBuyCalc.startSite();
 });
-
-
-
 

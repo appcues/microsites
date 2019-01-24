@@ -167,11 +167,28 @@
 			    width: 100%;   
 			}
 
-			button {
+			#send-results-btn {
 				font-size: 15px;
 				padding: 10px;
 				text-transform: none;
 				margin-top: 10px;
+			}
+
+			.email-send-msg {
+				font-size: 12px;
+				margin-top: 10px;
+				text-align: center;
+				font-weight: 100;
+				margin-bottom: 0;
+				display: none;
+			}
+
+			#email-success-message {
+				color: $green;
+			}
+
+			#email-error-message {
+				color: $red;
 			}
 		}
 

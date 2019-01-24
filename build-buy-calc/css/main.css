@@ -4582,10 +4582,21 @@ a.text-dark:focus, a.text-dark:hover {
         margin-bottom: 10px;
         border-radius: 7.5px;
         width: 100%; }
-      #results-container #final-output .email-container button {
+      #results-container #final-output .email-container #send-results-btn {
         font-size: 15px;
         padding: 10px;
         text-transform: none;
         margin-top: 10px; }
+      #results-container #final-output .email-container .email-send-msg {
+        font-size: 12px;
+        margin-top: 10px;
+        text-align: center;
+        font-weight: 100;
+        margin-bottom: 0;
+        display: none; }
+      #results-container #final-output .email-container #email-success-message {
+        color: #28a745; }
+      #results-container #final-output .email-container #email-error-message {
+        color: #FF3B4E; }
 
 /*# sourceMappingURL=main.css.map */
