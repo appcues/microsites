@@ -1,15 +1,4 @@
 var appcuesBuildVsBuyCalc = {
-	isAbandoned: true,
-
-	createRandomID: function() {
-	  var text = "";
-	  var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-
-	  for (var i = 0; i < 5; i++)
-	    text += possible.charAt(Math.floor(Math.random() * possible.length));
-
-	  return text;
-	},
 
 	formatCurrency: function(total) {
 	    var neg = false;
@@ -47,6 +36,18 @@ var appcuesBuildVsBuyCalc = {
 		$('#maintenance-days-list').find('.pm-days').text(appcuesBuildVsBuyCalc.setDaysValue(pmCount * maintainPMDays));
 		$('#maintenance-days-list').find('.developer-days').text(appcuesBuildVsBuyCalc.setDaysValue(developerCount * maintainDeveloperDays));
 
+		if((maintenanceOutput + costOutput) < 20000) {
+			var appcuesCost = 4788;
+		} else {
+			var appcuesCost = 7788;
+		}
+
+		var estimatedCostSavings = maintenanceOutput + costOutput - appcuesCost;
+		$("#final-output").css('opacity', '1');
+		$('#total-cost-savings').text("$" + appcuesBuildVsBuyCalc.formatCurrency(estimatedCostSavings));
+		$('#plan-amount').text("$" + appcuesBuildVsBuyCalc.formatCurrency(appcuesCost));
+
+		appcuesBuildVsBuyCalc.sendHubSpotData(estimatedCostSavings, email, cookie);
 	},
 
 	setDaysValue: function(value) {
@@ -55,11 +56,6 @@ var appcuesBuildVsBuyCalc = {
 		} else {
 			return value + " days";
 		}
-	},
-
-
-	setSubmitButton: function() {
-		
 	},
 
 	checkInput: function(element) {
@@ -95,7 +91,12 @@ var appcuesBuildVsBuyCalc = {
 		});
 
 		$('#submit-results').click(function() {
+			$('#inputs-disable').css('display', 'flex');
 			appcuesBuildVsBuyCalc.calculateValues();
+		});
+
+		$("#modify-inputs-btn").click(function(){
+			$('#inputs-disable').css('display', 'none');
 		});
 	},
 
@@ -166,7 +167,6 @@ var appcuesBuildVsBuyCalc = {
 		appcuesBuildVsBuyCalc.changeSliderPosition(100000, "#developer-salary-slider", false);
 		appcuesBuildVsBuyCalc.salaryChangeSlider();
 		appcuesBuildVsBuyCalc.setButtonClicks();
-		appcuesBuildVsBuyCalc.randomID = appcuesBuildVsBuyCalc.createRandomID();
 	}
 
 
@@ -177,14 +177,6 @@ var appcuesBuildVsBuyCalc = {
 $(function() {
   appcuesBuildVsBuyCalc.startSite();
 });
-
-window.addEventListener("beforeunload", function (event) {
-  if (appcuesBuildVsBuyCalc.isAbandoned && (appcuesBuildVsBuyCalc.formData.length !== 0)) {
-  	appcuesBuildVsBuyCalc.zapData();	
-  }
-  
-});
-
 
 
 

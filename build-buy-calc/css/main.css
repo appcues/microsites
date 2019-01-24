@@ -4092,6 +4092,19 @@ a.text-dark:focus, a.text-dark:hover {
     position: relative;
     max-width: 1400px;
     margin: 0 auto; }
+    #share-navbar .nav-content .social-share {
+      position: absolute;
+      right: 0;
+      top: 4px; }
+      #share-navbar .nav-content .social-share .at-share-btn-elements .at-share-btn {
+        background: transparent !important;
+        transform: none !important;
+        border: 2px solid #c0c6d9 !important;
+        border-radius: 40px !important; }
+        #share-navbar .nav-content .social-share .at-share-btn-elements .at-share-btn:hover {
+          transform: none !important; }
+        #share-navbar .nav-content .social-share .at-share-btn-elements .at-share-btn:focus {
+          outline: none; }
     #share-navbar .nav-content .logo {
       height: 20px;
       position: absolute;
@@ -4136,7 +4149,8 @@ a.text-dark:focus, a.text-dark:hover {
       line-height: 1.5; }
     #calculator #introduction a {
       text-decoration: underline;
-      color: #FFFFFF; }
+      color: #FFFFFF;
+      cursor: pointer; }
     @media (min-width: 768px) {
       #calculator #introduction h1 {
         font-size: 34px;
@@ -4154,7 +4168,8 @@ a.text-dark:focus, a.text-dark:hover {
 
 #inputs-container {
   padding: 85px 25px;
-  margin-bottom: 50px; }
+  margin-bottom: 50px;
+  position: relative; }
   @media (min-width: 992px) {
     #inputs-container {
       margin-bottom: 0px; } }
@@ -4219,12 +4234,28 @@ a.text-dark:focus, a.text-dark:hover {
         margin-top: 10px;
         margin-bottom: 0; }
       #inputs-container #inputs .input .form-group select {
+        cursor: pointer;
         margin-left: 20px;
         color: #242a35;
         background: #FFFFFF;
         font-size: 15px;
         width: 75px;
-        height: 35px; }
+        height: 35px;
+        background-image: linear-gradient(45deg, transparent 50%, #576784 50%), linear-gradient(135deg, #576784 50%, transparent 50%);
+        background-position: calc(100% - 20px) calc(1em), calc(100% - 15px) calc(1em);
+        background-size: 5px 5px, 5px 5px, 1px 1.5em;
+        padding: 0 5px 0 15px;
+        background-repeat: no-repeat;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        -webkit-appearance: none;
+        -moz-appearance: none; }
+        #inputs-container #inputs .input .form-group select:focus {
+          outline: none; }
+      #inputs-container #inputs .input .form-group select:-moz-focusring {
+        color: transparent;
+        text-shadow: 0 0 0 #000; }
       #inputs-container #inputs .input .form-group option {
         color: #576784; }
     #inputs-container #inputs .input .form-group.how-many-form {
@@ -4271,6 +4302,26 @@ a.text-dark:focus, a.text-dark:hover {
     font-size: 15px;
     padding: 12px 0;
     text-transform: capitalize; }
+
+#inputs-disable {
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.9);
+  z-index: 1000;
+  display: none; }
+  #inputs-disable #modify-inputs-btn {
+    font-size: 15px;
+    font-weight: 500;
+    padding: 12px 10px;
+    width: 60%;
+    margin: 0 auto;
+    max-width: 350px;
+    text-transform: none; }
 
 .slider-container {
   width: 100%;
@@ -4499,5 +4550,42 @@ a.text-dark:focus, a.text-dark:hover {
         font-size: 13px;
         line-height: 1.5;
         color: #576784; }
+  #results-container #final-output {
+    padding: 50px 0;
+    opacity: 0;
+    transition: opacity .5s;
+    text-align: center; }
+    #results-container #final-output h5 {
+      font-size: 16px;
+      color: #242a35;
+      font-weight: 700;
+      margin: 10px 0 5px 0; }
+      #results-container #final-output h5 span {
+        color: #5C5CFF; }
+    #results-container #final-output small {
+      font-size: 10px;
+      font-weight: 400;
+      font-style: italic;
+      margin-bottom: 25px; }
+    #results-container #final-output .email-container {
+      margin-top: 25px;
+      min-width: 250px;
+      width: 70%;
+      margin: 0 auto;
+      max-width: 500px; }
+      #results-container #final-output .email-container input {
+        border: 1px solid #C0C6D9;
+        color: #576784;
+        padding: 10px;
+        font-size: 15px;
+        margin-top: 25px;
+        margin-bottom: 10px;
+        border-radius: 7.5px;
+        width: 100%; }
+      #results-container #final-output .email-container button {
+        font-size: 15px;
+        padding: 10px;
+        text-transform: none;
+        margin-top: 10px; }
 
 /*# sourceMappingURL=main.css.map */

@@ -14,7 +14,6 @@
 
     <title>Build vs. Buy Calculator</title>
 
-
     <!-- CSS
     ================================================== -->
     <link href="https://fonts.googleapis.com/css?family=Muli:300,400,500,600" rel="stylesheet">
@@ -34,6 +33,7 @@
                     <img class="logo" src="https://s3-us-west-2.amazonaws.com/appcues-public/microsites/logos/logo-white.svg" alt="Appcues Logo"/>
                 </a>
                 <div class="social-share">
+                    <div class="addthis_inline_share_toolbox" data-url="https://www.appcues.com/resources/user-onboarding-cost-calculator" data-title="The User Onboarding Cost Calculator" data-media="https://s3-us-west-2.amazonaws.com/appcues-public/microsites/build-vs-buy/img/share_preview.jpeg"></div>
                 </div>
             </div>
         </div>
@@ -48,6 +48,9 @@
                 </div>
                 <div class="col-12 col-md-7 calc-container">
                     <div id="inputs-container">
+                        <div id="inputs-disable">
+                            <button id="modify-inputs-btn" class="btn btn-primary btn-block">Modify inputs</button>
+                        </div>
                         <div class="intro">
                             <h4>Modify the values to calculate the full cost</h4>
                             <p>Enter the number of people involved from each team and their average salaries.</p>
@@ -123,7 +126,7 @@
                                         <option>1</option>
                                         <option>2</option>
                                         <option>3</option>
-                                        <option>4</option>
+                                        <option selected="selected">4</option>
                                         <option>5</option>
                                     </select>
                                 </div>
@@ -204,8 +207,13 @@
                             <h5>Total year one cost</h5>
                             <h3 class="value" id="total-cost">0</h3>
                         </div>
-                        <div class="user-actions">
-                            <h5>Sticker shock? You could save up to <span class="primary-text">$##,###</span> with Appcues.</h5>
+                        <div id="final-output" class="user-actions">
+                            <h5>Total estimated savings with Appcues <span id="total-cost-savings"></span></h5>
+                            <small>(Assuming an annual plan costing <span id="plan-amount"></span>)</small>
+                            <div class="email-container">
+                                <input id="user-email" type="email" placeholder="Email Address" />
+                                <button class="btn btn-primary btn-block" id="send-results">Email yourself a copy</button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -216,6 +224,18 @@
 
     <!-- Javascript
     ================================================== -->
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5c48d6867413d326"></script>
+    <script>
+        var addthis_share = addthis_share || {}
+        addthis_share = {
+            passthrough : {
+                twitter: {
+                    via: "appcues",
+                    text: "Find out the true cost of building user onboarding experiences with this calculator from"
+                }
+            }
+        }
+    </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/color/jquery.color.plus-names-2.1.2.min.js"></script>
     <script src='https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.5/jquery-ui.min.js'></script>

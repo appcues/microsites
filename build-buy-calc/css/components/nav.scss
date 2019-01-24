@@ -20,6 +20,32 @@
 		max-width: 1400px;
 		margin: 0 auto;
 
+		.social-share {
+			position: absolute;
+			right: 0;
+			top: 4px;
+
+			.at-share-btn-elements {
+				.at-share-btn {
+					background: transparent !important;
+					transform: none !important;
+					border: 2px solid #c0c6d9 !important;
+					border-radius: 40px !important;
+
+
+					&:hover {
+						transform: none !important;
+
+					}
+
+					&:focus {
+						outline: none;
+					}
+					
+				}
+			}
+		}
+
 		.logo {
 			height: 20px;
 			position: absolute;
