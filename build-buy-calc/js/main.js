@@ -21,7 +21,6 @@ var appcuesBuildVsBuyCalc = {
 	},
 
 	processURL: function() {
-		// debugger;
 		if(window.location.href.indexOf("?") !== -1) {
 			$('#designer-count').val(appcuesBuildVsBuyCalc.findURLParam("designerCount"));
 			$('#pm-count').val(appcuesBuildVsBuyCalc.findURLParam("pmCount"));
@@ -111,13 +110,15 @@ var appcuesBuildVsBuyCalc = {
 
 		$("#modify-inputs-btn").click(function(){
 			$('#inputs-disable').css('display', 'none');
+			$("#final-output").css('opacity', '0');
+
 		});
 
-		$("#send-results-btn").click(function(){
+		$("#send-results-btn").click(function(e){
+			e.preventDefault();
 			var targetEmail = $("#user-email").val();
 			if(appcuesBuildVsBuyCalc.validateEmail(targetEmail)) {
-				appcuesBuildVsBuyCalc.sendHubSpotData();
-				$('#email-success-message').show();
+				appcuesBuildVsBuyCalc.sendHubSpotData(targetEmail);
 			} else {
 				$('#email-error-message').show();
 			}
@@ -172,7 +173,7 @@ var appcuesBuildVsBuyCalc = {
 	    if (parts.length == 2) return parts.pop().split(";").shift();
 	},
 
-	sendHubSpotData: function() {
+	sendHubSpotData: function(emailAddress) {
 		var hubspotPostRequestUrlData = "https://api.hsforms.com/submissions/v3/integration/submit/305687/1e00b286-368c-4dc6-9d5c-993184449d63";
 		var hubspotCookie = appcuesBuildVsBuyCalc.getCookie('hubspotutk');
 		var copiedUrl = window.location.href;
@@ -180,14 +181,17 @@ var appcuesBuildVsBuyCalc = {
 		var thirdPartyTools = $("#third-party-tools-btns").children('.selected').text();
 		var workedOnboarding = $("#worked-onboarding-btns").children('.selected').text();
 
+		// debugger;
 
 		$.ajax({
          url: hubspotPostRequestUrlData,
          type:"POST",
-         data:JSON.stringify({ "fields": [{"name": "email","value": emailAddress}, {"name": "onboarding_calculator_url" ,"value": copiedUrl}, {"name": "user_onboarding_calculator_total_cost_saving", "value": costSaving}, , {"name": "onboarding_calculator_third_party_tools", "value": thirdPartyTools}, {"name": "onboarding_calculator_worked_on_onboarding", "value": workedOnboarding}], "context": {"hutk": hubspotCookie, "pageUri": document.location.href}}),
+         data:JSON.stringify({ "fields": [{"name": "email","value": emailAddress}, {"name": "onboarding_calculator_url", "value": copiedUrl}, {"name": "user_onboarding_calculator_total_cost_saving", "value": costSaving}, {"name": "onboarding_calculator_third_party_tools", "value": thirdPartyTools}, {"name": "onboarding_calculator_worked_on_onboarding", "value": workedOnboarding}], "context": {"hutk": hubspotCookie, "pageUri": document.location.href}}),
          contentType:"application/json",
          dataType:"json",
-         success: function(){}
+         success: function(){
+         	$('#email-success-message').show();
+         }
         });
 	},
 
@@ -195,7 +199,6 @@ var appcuesBuildVsBuyCalc = {
 		appcuesBuildVsBuyCalc.processURL();
 		appcuesBuildVsBuyCalc.salaryChangeSlider();
 		appcuesBuildVsBuyCalc.setButtonClicks();
-		
 	}
 
 
