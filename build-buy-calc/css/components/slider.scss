@@ -5,7 +5,12 @@ $slider-height: 10px;
 
 .slider-container {
 	width: 100%;
-	margin-top: 25px;
+	margin-top: 8px;
+	display: none;
+
+	@include media-breakpoint-up(lg) {
+		display: block;
+	}
 
 	.slider-column, td, tr, th {
 		width: 100%;
@@ -35,7 +40,7 @@ $slider-height: 10px;
 	/* .slidertrack is the visible track on which the user drags the thumb button. */
 	.slidertrack {
 		border: 0 none;
-		border-radius: 2px;
+		border-radius: $slider-border-radius;
 		background: #edeef2;
 		left: 0;
 		position: absolute;
@@ -46,7 +51,7 @@ $slider-height: 10px;
 	/* .sliderfill adds color (or a gradient as seen here) to the track as the user 
 		drags the thumb. */
 	.sliderfill {
-		border-radius: 2px;
+		border-radius: $slider-border-radius;
 		height: $slider-height;
 		position: absolute;
 		left: 0;

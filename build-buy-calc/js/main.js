@@ -106,6 +106,12 @@ var appcuesBuildVsBuyCalc = {
 		$('#submit-results').click(function() {
 			$('#inputs-disable').css('display', 'flex');
 			appcuesBuildVsBuyCalc.calculateValues();
+
+			if($(window).width() < 768) {
+				$('html, body').animate({
+			      scrollTop: ($("#results-container").offset().top - 25)
+			    }, 1000)
+			}
 		});
 
 		$("#modify-inputs-btn").click(function(){

@@ -1,6 +1,6 @@
 #inputs-container {
 	@extend %white-container;
-	padding: 85px 25px;
+	padding: 35px;
 	margin-bottom: 50px;
 	position: relative;
 
@@ -9,18 +9,19 @@
 	}
 
 	@include media-breakpoint-up(lg) {
-		padding: 85px;
+		padding: 65px;
 	}
 
 	.intro {
 		margin-bottom: 50px;
 		h4 {
 			font-size: 18px;
-			font-weight: 700;
+			font-weight: 600;
 			color: $dark-gray;
 		}
 
 		p {
+			margin-top: 15px;
 			font-size: 13px;
 			font-style: italic;
 			font-weight: 400;
@@ -34,18 +35,18 @@
 	}
 
 	.calc-container {
-		@include media-breakpoint-up(md) {
+		@include media-breakpoint-up(lg) {
 			min-height: 100%;
 		}
 	}
 
 	#inputs {
-		@include media-breakpoint-up(md) {
+		@include media-breakpoint-up(lg) {
 		    min-height: 100%;
 		}
 
 		.input {
-			margin-bottom: 40px;
+			margin-bottom: 60px;
 
 			.form-group {
 				margin: 10px 0 20px 0;	
@@ -54,11 +55,11 @@
 				.input-dollar-sign {
 					position: absolute;
 					right: 82.5px;
-					font-weight: 700;
+					font-weight: 600;
 					font-size: 15px;
 					top: 7.5px;
 
-					@include media-breakpoint-up(md) {
+					@include media-breakpoint-up(lg) {
 						right: 155px;
 					}
 				}
@@ -68,14 +69,14 @@
 					right: 0;
 					top: 0;
 					border: 1px solid $gray-100;
-					border-radius: 15px;
+					border-radius: 5px;
 					font-size: 15px;
 					line-height: 1.5;
 				    height: 35px;
 				    padding: 5px 10px;
 				    width: 80px;
 
-				    @include media-breakpoint-up(md) {
+				    @include media-breakpoint-up(lg) {
 				    	width: 150px;
 				    }
 
@@ -97,6 +98,7 @@
 
 				select {
 					cursor: pointer;
+					border: 1px solid $gray-100;
 					margin-left: 20px;
 					color: $dark-gray;
 					background: $white;
@@ -144,7 +146,7 @@
 			
 			h6 {
 				font-size: 14px;
-				font-weight: 700;
+				font-weight: 600;
 				color: $dark-gray;
 			}
 
@@ -163,7 +165,7 @@
 					font-size: 15px;
 					margin: 20px 5px 0 5px;
 
-					@include media-breakpoint-up(md) {
+					@include media-breakpoint-up(lg) {
 						font-size: 14px !important;
 						width: 100px;
 						margin: 20px 10px 0 10px;

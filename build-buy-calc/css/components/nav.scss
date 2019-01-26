@@ -1,7 +1,6 @@
 
 #share-navbar {
-	height: 60px;
-	padding: 10px;
+	padding: 10px 20px;
 	color: $white;
 	width: 100%;
 	background: transparent;
@@ -25,13 +24,25 @@
 			right: 0;
 			top: 4px;
 
+			span {
+				font-size: 12px;
+				font-weight: 600;
+				letter-spacing: 1px;
+				color: $light-gray;
+				vertical-align: middle;
+				text-transform: uppercase;
+			}
+
+			.addthis_inline_share_toolbox {
+				display: inline-block;
+				vertical-align: middle;
+			}
+
 			.at-share-btn-elements {
+
 				.at-share-btn {
 					background: transparent !important;
 					transform: none !important;
-					border: 2px solid #c0c6d9 !important;
-					border-radius: 40px !important;
-
 
 					&:hover {
 						transform: none !important;
@@ -54,7 +65,7 @@
 
 			@include media-breakpoint-up(md) {
 				height: 30px;
-				top: 5px;
+				top: 20px;
 			}
 		}
 	}

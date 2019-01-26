@@ -1563,6 +1563,10 @@ fieldset[disabled] a.btn {
     border-color: #343a40;
     box-shadow: 0 0 0 0.2rem rgba(52, 58, 64, 0.5); }
 
+.btn-primary:hover {
+  background-color: #4343c5 !important;
+  border-color: #4343c5 !important; }
+
 .btn-link {
   font-weight: 400;
   color: #5C5CFF;
@@ -4075,8 +4079,7 @@ a.text-dark:focus, a.text-dark:hover {
   box-shadow: 1px 18px 38px 11.27px rgba(42, 40, 55, 0.05); }
 
 #share-navbar {
-  height: 60px;
-  padding: 10px;
+  padding: 10px 20px;
   color: #FFFFFF;
   width: 100%;
   background: transparent;
@@ -4096,11 +4099,19 @@ a.text-dark:focus, a.text-dark:hover {
       position: absolute;
       right: 0;
       top: 4px; }
+      #share-navbar .nav-content .social-share span {
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 1px;
+        color: #979eb4;
+        vertical-align: middle;
+        text-transform: uppercase; }
+      #share-navbar .nav-content .social-share .addthis_inline_share_toolbox {
+        display: inline-block;
+        vertical-align: middle; }
       #share-navbar .nav-content .social-share .at-share-btn-elements .at-share-btn {
         background: transparent !important;
-        transform: none !important;
-        border: 2px solid #c0c6d9 !important;
-        border-radius: 40px !important; }
+        transform: none !important; }
         #share-navbar .nav-content .social-share .at-share-btn-elements .at-share-btn:hover {
           transform: none !important; }
         #share-navbar .nav-content .social-share .at-share-btn-elements .at-share-btn:focus {
@@ -4113,7 +4124,7 @@ a.text-dark:focus, a.text-dark:hover {
       @media (min-width: 768px) {
         #share-navbar .nav-content .logo {
           height: 30px;
-          top: 5px; } }
+          top: 20px; } }
 
 #calculator {
   padding: 60px 10px;
@@ -4159,15 +4170,15 @@ a.text-dark:focus, a.text-dark:hover {
         font-size: 15px; } }
     @media (min-width: 992px) {
       #calculator #introduction {
-        margin: 75px 100px; }
+        margin: 95px; }
         #calculator #introduction h1 {
           font-size: 46px;
           margin-bottom: 25px; }
         #calculator #introduction h5, #calculator #introduction a {
-          font-size: 18px; } }
+          font-size: 16px; } }
 
 #inputs-container {
-  padding: 85px 25px;
+  padding: 35px;
   margin-bottom: 50px;
   position: relative; }
   @media (min-width: 992px) {
@@ -4175,38 +4186,39 @@ a.text-dark:focus, a.text-dark:hover {
       margin-bottom: 0px; } }
   @media (min-width: 992px) {
     #inputs-container {
-      padding: 85px; } }
+      padding: 65px; } }
   #inputs-container .intro {
     margin-bottom: 50px; }
     #inputs-container .intro h4 {
       font-size: 18px;
-      font-weight: 700;
+      font-weight: 600;
       color: #242a35; }
     #inputs-container .intro p {
+      margin-top: 15px;
       font-size: 13px;
       font-style: italic;
       font-weight: 400; }
     @media (min-width: 992px) {
       #inputs-container .intro h4 {
         font-size: 22px; } }
-  @media (min-width: 768px) {
+  @media (min-width: 992px) {
     #inputs-container .calc-container {
       min-height: 100%; } }
-  @media (min-width: 768px) {
+  @media (min-width: 992px) {
     #inputs-container #inputs {
       min-height: 100%; } }
   #inputs-container #inputs .input {
-    margin-bottom: 40px; }
+    margin-bottom: 60px; }
     #inputs-container #inputs .input .form-group {
       margin: 10px 0 20px 0;
       position: relative; }
       #inputs-container #inputs .input .form-group .input-dollar-sign {
         position: absolute;
         right: 82.5px;
-        font-weight: 700;
+        font-weight: 600;
         font-size: 15px;
         top: 7.5px; }
-        @media (min-width: 768px) {
+        @media (min-width: 992px) {
           #inputs-container #inputs .input .form-group .input-dollar-sign {
             right: 155px; } }
       #inputs-container #inputs .input .form-group .salary {
@@ -4214,13 +4226,13 @@ a.text-dark:focus, a.text-dark:hover {
         right: 0;
         top: 0;
         border: 1px solid #C0C6D9;
-        border-radius: 15px;
+        border-radius: 5px;
         font-size: 15px;
         line-height: 1.5;
         height: 35px;
         padding: 5px 10px;
         width: 80px; }
-        @media (min-width: 768px) {
+        @media (min-width: 992px) {
           #inputs-container #inputs .input .form-group .salary {
             width: 150px; } }
         #inputs-container #inputs .input .form-group .salary:focus {
@@ -4235,6 +4247,7 @@ a.text-dark:focus, a.text-dark:hover {
         margin-bottom: 0; }
       #inputs-container #inputs .input .form-group select {
         cursor: pointer;
+        border: 1px solid #C0C6D9;
         margin-left: 20px;
         color: #242a35;
         background: #FFFFFF;
@@ -4262,7 +4275,7 @@ a.text-dark:focus, a.text-dark:hover {
       margin-bottom: 0; }
     #inputs-container #inputs .input h6 {
       font-size: 14px;
-      font-weight: 700;
+      font-weight: 600;
       color: #242a35; }
     #inputs-container #inputs .input .buttons .btn-input {
       border: 1px solid #C0C6D9;
@@ -4276,7 +4289,7 @@ a.text-dark:focus, a.text-dark:hover {
       outline: none;
       font-size: 15px;
       margin: 20px 5px 0 5px; }
-      @media (min-width: 768px) {
+      @media (min-width: 992px) {
         #inputs-container #inputs .input .buttons .btn-input {
           font-size: 14px !important;
           width: 100px;
@@ -4325,7 +4338,8 @@ a.text-dark:focus, a.text-dark:hover {
 
 .slider-container {
   width: 100%;
-  margin-top: 25px;
+  margin-top: 8px;
+  display: none;
   /* slidershell exists only
   to provide a positioning context for the range input and other elements.*/
   /* .slidertrack is the visible track on which the user drags the thumb button. */
@@ -4342,6 +4356,9 @@ a.text-dark:focus, a.text-dark:hover {
   	they will not be visible but they will be draggable. 	*/
   /* microsoft IE10+ and Edge - eliminates default fills before and after thumb */
   /* other rules you may need for page styling */ }
+  @media (min-width: 992px) {
+    .slider-container {
+      display: block; } }
   .slider-container .slider-column, .slider-container td, .slider-container tr, .slider-container th {
     width: 100%;
     border: 0 none !important; }
@@ -4361,14 +4378,14 @@ a.text-dark:focus, a.text-dark:hover {
     width: 100%; }
   .slider-container .slidertrack {
     border: 0 none;
-    border-radius: 2px;
+    border-radius: 50px;
     background: #edeef2;
     left: 0;
     position: absolute;
     height: 10px;
     width: 100%; }
   .slider-container .sliderfill {
-    border-radius: 2px;
+    border-radius: 50px;
     height: 10px;
     position: absolute;
     left: 0;
@@ -4476,56 +4493,60 @@ a.text-dark:focus, a.text-dark:hover {
     display: none; }
 
 #results-container {
-  padding: 85px 0; }
-  @media (min-width: 768px) {
+  padding: 35px 0; }
+  @media (min-width: 992px) {
     #results-container {
       min-height: 100%; } }
   @media (min-width: 992px) {
     #results-container {
-      padding: 85px 0; } }
+      padding: 65px 0; } }
   #results-container .result {
-    padding: 25px;
-    border-bottom: 1px solid #979eb4; }
+    padding: 25px 35px;
+    border-bottom: 1px solid #C0C6D9; }
+    @media (min-width: 992px) {
+      #results-container .result {
+        padding: 25px 65px; } }
     #results-container .result:first-child {
       padding-top: 0 !important; }
     #results-container .result h5 {
       font-size: 13px;
       text-transform: uppercase;
       color: #242a35;
-      letter-spacing: .5px;
-      font-weight: 700; }
+      letter-spacing: 1px;
+      font-weight: 600; }
     #results-container .result p {
+      margin-top: 15px;
       font-size: 13px;
       line-height: 1.5;
       color: #576784;
-      font-weight: 600; }
+      font-weight: 400; }
     #results-container .result h3, #results-container .result h4 {
       color: #C0C6D9;
-      font-weight: 400;
+      font-weight: 300;
       margin-bottom: 10px; }
       #results-container .result h3:before, #results-container .result h4:before {
         content: "\0024";
         font-size: 20px;
         vertical-align: top; }
     #results-container .result h3 {
-      font-size: 60px; }
+      font-size: 60px;
+      margin-top: 15px; }
       #results-container .result h3:before {
         font-size: 30px; }
     #results-container .result h4 {
-      font-size: 40px; }
+      font-size: 40px;
+      margin-top: 20px; }
       #results-container .result h4:before {
         font-size: 20px; }
     @media (min-width: 992px) {
-      #results-container .result {
-        padding: 30px 40px; }
-        #results-container .result h5 {
-          font-size: 13px; }
-        #results-container .result p {
-          font-size: 14px; }
-        #results-container .result h4 {
-          font-size: 40px; }
-        #results-container .result h3 {
-          font-size: 60px; } }
+      #results-container .result h5 {
+        font-size: 13px; }
+      #results-container .result p {
+        font-size: 14px; }
+      #results-container .result h4 {
+        font-size: 40px; }
+      #results-container .result h3 {
+        font-size: 60px; } }
     #results-container .result h3.active {
       color: #5C5CFF; }
     #results-container .result h4.active {
@@ -4535,10 +4556,11 @@ a.text-dark:focus, a.text-dark:hover {
       margin-right: 5px;
       display: inline-block; }
     #results-container .result .extra-details p {
+      margin-top: 0;
       display: inline-block;
       font-size: 14px;
       color: #242a35;
-      font-weight: 700;
+      font-weight: 600;
       vertical-align: middle;
       margin-bottom: 0; }
     #results-container .result .extra-details ul {
@@ -4546,12 +4568,12 @@ a.text-dark:focus, a.text-dark:hover {
       padding-left: 22px;
       padding-bottom: 0; }
       #results-container .result .extra-details ul li {
-        font-weight: 700;
+        font-weight: 400;
         font-size: 13px;
         line-height: 1.5;
         color: #576784; }
   #results-container #final-output {
-    padding: 50px 0;
+    padding: 50px 35px;
     opacity: 0;
     transition: opacity .5s;
     text-align: center; }

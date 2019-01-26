@@ -1,19 +1,23 @@
 #results-container {
 	@extend %white-container;
-	padding: 85px 0;
+	padding: 35px 0;
 
-	@include media-breakpoint-up(md) {
+	@include media-breakpoint-up(lg) {
 	    min-height: 100%;
 	}
 
 	@include media-breakpoint-up(lg) {
-		padding: 85px 0;
+		padding: 65px 0;
 	}
 
 
 	.result {
-		padding: 25px;
-		border-bottom: 1px solid $light-gray;
+		padding: 25px 35px;
+		border-bottom: 1px solid $gray-100;
+
+		@include media-breakpoint-up(lg) {
+			padding: 25px 65px;
+		}
 
 		&:first-child {
 			padding-top: 0 !important; 
@@ -23,20 +27,21 @@
 			font-size: 13px;
 			text-transform: uppercase;
 			color: $dark-gray;
-			letter-spacing: .5px;
-			font-weight: 700;
+			letter-spacing: 1px;
+			font-weight: 600;
 		}
 
 		p {
+			margin-top: 15px;
 			font-size: 13px;
 			line-height: 1.5;
 			color: $medium-gray;
-			font-weight: 600;
+			font-weight: 400;
 		}
 
 		h3, h4 {
 			color: $gray-100;
-			font-weight: 400;
+			font-weight: 300;
 			margin-bottom: 10px;
 
 			&:before {
@@ -48,6 +53,7 @@
 
 		h3 {
 			font-size: 60px;
+			margin-top: 15px;
 
 			&:before {
 				font-size: 30px;
@@ -56,6 +62,7 @@
 
 		h4 {
 			font-size: 40px;
+			margin-top: 20px;
 
 			&:before {
 				font-size: 20px;
@@ -63,7 +70,6 @@
 		}
 
 		@include media-breakpoint-up(lg) {
-			padding: 30px 40px;
 
 			h5 {
 				font-size: 13px;
@@ -98,10 +104,11 @@
 			}
 
 			p {
+				margin-top: 0;
 				display: inline-block;
 				font-size: 14px;
 				color: $dark-gray;
-				font-weight: 700;
+				font-weight: 600;
 				vertical-align: middle;
 				margin-bottom: 0;
 			}
@@ -113,7 +120,7 @@
 				padding-bottom: 0;
 
 				li {
-					font-weight: 700;
+					font-weight: 400;
 					font-size: 13px;
 					line-height: 1.5;
 					color: $medium-gray;
@@ -126,7 +133,7 @@
 
 
 	#final-output {
-		padding: 50px 0;
+		padding: 50px 35px;
 		opacity: 0;
 		transition: opacity .5s;
 		text-align: center;
