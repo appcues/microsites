@@ -4038,8 +4038,9 @@ a.text-dark:focus, a.text-dark:hover {
 
 .container-fluid {
   max-width: none;
-  overflow-x: hidden;
-  background: #F5F7FA; }
+  background: #F5F7FA;
+  padding-left: 0;
+  padding-right: 0; }
 
 .vertical-center {
   position: relative;
@@ -4079,17 +4080,14 @@ a.text-dark:focus, a.text-dark:hover {
   box-shadow: 1px 18px 38px 11.27px rgba(42, 40, 55, 0.05); }
 
 #share-navbar {
-  padding: 10px 20px;
+  padding: 0 20px;
   color: #FFFFFF;
   width: 100%;
   background: transparent;
-  position: absolute;
-  top: 0;
-  left: 0;
   z-index: 100; }
   @media (min-width: 768px) {
     #share-navbar {
-      padding: 10px 30px;
+      padding: 0 30px;
       color: #5C5CFF; } }
   #share-navbar .nav-content {
     position: relative;
@@ -4127,17 +4125,15 @@ a.text-dark:focus, a.text-dark:hover {
           top: 20px; } }
 
 #calculator {
-  padding: 60px 10px;
+  padding: 60px 0;
   background: #F5F7FA;
   background-image: url("https://s3-us-west-2.amazonaws.com/appcues-public/microsites/build-vs-buy/img/layout/blurple-bg.svg");
   background-repeat: no-repeat;
   background-position: 0% 0%;
   background-size: auto 100%;
+  width: 100%;
   min-width: 100vw;
   min-height: 100vh;
-  position: absolute;
-  top: 0;
-  left: 0;
   z-index: 1; }
   @media (min-width: 768px) {
     #calculator {
@@ -4146,11 +4142,14 @@ a.text-dark:focus, a.text-dark:hover {
     #calculator {
       background-size: 90% auto; } }
   #calculator #calculator-content {
-    max-width: 1600px;
-    margin: 0 auto; }
+    margin: 0; }
+    @media (min-width: 992px) {
+      #calculator #calculator-content {
+        margin: 0 auto;
+        max-width: 1600px; } }
   #calculator #introduction {
     color: #FFFFFF;
-    margin: 50px 0; }
+    margin: 50px 5px; }
     #calculator #introduction h1 {
       font-size: 30px;
       line-height: 1.2;
@@ -4178,14 +4177,15 @@ a.text-dark:focus, a.text-dark:hover {
           font-size: 16px; } }
 
 #inputs-container {
-  padding: 35px;
+  padding: 35px 20px;
   margin-bottom: 50px;
   position: relative; }
+  @media (min-width: 768px) {
+    #inputs-container {
+      padding: 35px; } }
   @media (min-width: 992px) {
     #inputs-container {
-      margin-bottom: 0px; } }
-  @media (min-width: 992px) {
-    #inputs-container {
+      margin-bottom: 0px;
       padding: 65px; } }
   #inputs-container .intro {
     margin-bottom: 50px; }
@@ -4217,27 +4217,27 @@ a.text-dark:focus, a.text-dark:hover {
       position: relative; }
       #inputs-container #inputs .input .form-group .input-dollar-sign {
         position: absolute;
-        right: 82.5px;
+        right: 87.5px;
         font-weight: 600;
         font-size: 15px;
         top: 7.5px; }
         @media (min-width: 992px) {
           #inputs-container #inputs .input .form-group .input-dollar-sign {
-            right: 155px; } }
+            right: 105px; } }
       #inputs-container #inputs .input .form-group .salary {
         position: absolute;
         right: 0;
         top: 0;
         border: 1px solid #C0C6D9;
         border-radius: 5px;
-        font-size: 15px;
+        font-size: 16px;
         line-height: 1.5;
         height: 35px;
         padding: 5px 10px;
-        width: 80px; }
+        width: 85px; }
         @media (min-width: 992px) {
           #inputs-container #inputs .input .form-group .salary {
-            width: 150px; } }
+            width: 100px; } }
         #inputs-container #inputs .input .form-group .salary:focus {
           outline: none;
           border-color: #5C5CFF; }
@@ -4254,7 +4254,7 @@ a.text-dark:focus, a.text-dark:hover {
         margin-left: 20px;
         color: #242a35;
         background: #FFFFFF;
-        font-size: 15px;
+        font-size: 16px;
         width: 75px;
         height: 35px;
         background-image: linear-gradient(45deg, transparent 50%, #576784 50%), linear-gradient(135deg, #576784 50%, transparent 50%);
@@ -4266,7 +4266,13 @@ a.text-dark:focus, a.text-dark:hover {
         -moz-box-sizing: border-box;
         box-sizing: border-box;
         -webkit-appearance: none;
-        -moz-appearance: none; }
+        -moz-appearance: none;
+        position: absolute;
+        right: 0; }
+        @media (min-width: 576px) {
+          #inputs-container #inputs .input .form-group select {
+            position: relative;
+            right: auto; } }
         #inputs-container #inputs .input .form-group select:focus {
           outline: none; }
       #inputs-container #inputs .input .form-group select:-moz-focusring {
@@ -4280,10 +4286,15 @@ a.text-dark:focus, a.text-dark:hover {
       font-size: 14px;
       font-weight: 600;
       color: #242a35; }
+    #inputs-container #inputs .input .hidden-mobile-text {
+      display: none; }
+      @media (min-width: 768px) {
+        #inputs-container #inputs .input .hidden-mobile-text {
+          display: inline-block; } }
     #inputs-container #inputs .input .buttons .btn-input {
       border: 1px solid #C0C6D9;
       font-size: 12px !important;
-      width: 80px;
+      width: 60px;
       padding: 8px 0;
       background: #FFFFFF;
       color: #576784;
@@ -4292,6 +4303,9 @@ a.text-dark:focus, a.text-dark:hover {
       outline: none;
       font-size: 15px;
       margin: 20px 5px 0 5px; }
+      @media (min-width: 768px) {
+        #inputs-container #inputs .input .buttons .btn-input {
+          width: 80px; } }
       @media (min-width: 992px) {
         #inputs-container #inputs .input .buttons .btn-input {
           font-size: 14px !important;
@@ -4309,7 +4323,7 @@ a.text-dark:focus, a.text-dark:hover {
       background: #5C5CFF;
       color: #FFFFFF;
       border-color: #5C5CFF; }
-    @media (min-width: 768px) {
+    @media (min-width: 992px) {
       #inputs-container #inputs .input .form-group label {
         font-size: 14px; }
       #inputs-container #inputs .input h6 {

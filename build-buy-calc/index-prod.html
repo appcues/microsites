@@ -5,6 +5,7 @@
 <img class="logo" src="https://s3-us-west-2.amazonaws.com/appcues-public/microsites/logos/logo-white.svg" alt="Appcues Logo"/>
 </a>
 <div class="social-share">
+<span>Share</span>
 <div class="addthis_inline_share_toolbox" data-url="https://www.appcues.com/resources/user-onboarding-cost-calculator" data-title="The User Onboarding Cost Calculator" data-media="https://s3-us-west-2.amazonaws.com/appcues-public/microsites/build-vs-buy/img/share_preview.jpeg"></div>
 </div>
 </div>
@@ -18,7 +19,7 @@
 <a href="https://www.appcues.com/blog/build-vs-buy-saas" target="_blank">See more about our methodology</a>
 </div>
 </div>
-<div class="col-12 col-md-7 calc-container">
+<div class="col-12 col-lg-7 calc-container">
 <div id="inputs-container">
 <div id="inputs-disable">
 <button id="modify-inputs-btn" class="btn btn-primary btn-block">Modify inputs</button>
@@ -31,7 +32,7 @@
 <div class="input">
 <h6>Designers</h6>
 <div class="form-group how-many-form">
-<label>How many designers</label>
+<label>How many<span class="hidden-mobile-text"> designers</span></label>
 <select class="form-control" id="designer-count">
 <option>1</option>
 <option>2</option>
@@ -41,7 +42,7 @@
 </select>
 </div>
 <div class="form-group">
-<label>Average designer salary</label>
+<label>Average<span class="hidden-mobile-text"> designer</span> salary</label>
 <span class="input-dollar-sign">$</span>
 <input class="salary" id="designer-salary"/>
 <div class="slider-container">
@@ -62,7 +63,7 @@ oninput="appcuesBuildVsBuyCalc.setSliderValue(value,this.id);" onchange="appcues
 <div class="input">
 <h6>Product Managers</h6>
 <div class="form-group how-many-form">
-<label>How many product managers</label>
+<label>How many<span class="hidden-mobile-text"> product managers</span></label>
 <select class="form-control" id="pm-count">
 <option>1</option>
 <option>2</option>
@@ -72,7 +73,7 @@ oninput="appcuesBuildVsBuyCalc.setSliderValue(value,this.id);" onchange="appcues
 </select>
 </div>
 <div class="form-group">
-<label>Average product manager salary</label>
+<label>Average<span class="hidden-mobile-text"> product manager</span> salary</label>
 <span class="input-dollar-sign">$</span>
 <input class="salary" id="pm-salary"/>
 <div class="slider-container">
@@ -93,7 +94,7 @@ oninput="appcuesBuildVsBuyCalc.setSliderValue(value,this.id);" onchange="appcues
 <div class="input">
 <h6>Developers</h6>
 <div class="form-group how-many-form">
-<label>How many developers</label>
+<label>How many<span class="hidden-mobile-text"> developers</span></label>
 <select class="form-control" id="developer-count">
 <option>1</option>
 <option>2</option>
@@ -103,7 +104,7 @@ oninput="appcuesBuildVsBuyCalc.setSliderValue(value,this.id);" onchange="appcues
 </select>
 </div>
 <div class="form-group">
-<label>Average developer salary</label>
+<label>Average<span class="hidden-mobile-text"> developer</span> salary</label>
 <span class="input-dollar-sign">$</span>
 <input class="salary" id="developer-salary"/>
 <div class="slider-container">
@@ -145,7 +146,7 @@ oninput="appcuesBuildVsBuyCalc.setSliderValue(value,this.id);" onchange="appcues
 </div>
 </div>
 </div>
-<div class="col-12 col-md-5 calc-container">
+<div class="col-12 col-lg-5 calc-container">
 <div id="results-container">
 <div class="result">
 <h5>Initial cost of building on your own</h5>
@@ -193,4 +194,4 @@ oninput="appcuesBuildVsBuyCalc.setSliderValue(value,this.id);" onchange="appcues
 </div>
 </div>
 </div>
-</div>
+</div>	
