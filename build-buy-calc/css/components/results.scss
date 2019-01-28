@@ -12,11 +12,11 @@
 
 
 	.result {
-		padding: 25px 35px;
+		padding: 35px 35px 25px 35px;
 		border-bottom: 1px solid $gray-100;
 
 		@include media-breakpoint-up(lg) {
-			padding: 25px 65px;
+			padding: 35px 65px 25px 65px;
 		}
 
 		&:first-child {
@@ -63,6 +63,7 @@
 		h4 {
 			font-size: 40px;
 			margin-top: 20px;
+			margin-bottom: 20px;
 
 			&:before {
 				font-size: 20px;
@@ -118,6 +119,7 @@
 				list-style-type: none;
 				padding-left: 22px;
 				padding-bottom: 0;
+				margin-bottom: 10px;
 
 				li {
 					font-weight: 400;
@@ -150,7 +152,7 @@
 		}
 
 		small {
-			font-size: 10px;
+			font-size: 12px;
 			font-weight: 400;
 			font-style: italic;
 			margin-bottom: 25px;

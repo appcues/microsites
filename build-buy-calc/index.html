@@ -43,8 +43,8 @@
                 <div class="col-12">
                     <div id="introduction">
                         <h1>The User Onboarding Cost Calculator</h1>
-                        <h5>Determine the true cost of building your own user onboarding experiences using your existing product team.</h5>
-                        <a href="https://www.appcues.com/blog/build-vs-buy-saas" target="_blank">See more about our methodology</a>
+                        <h5>Calculate the true cost of building your own user onboarding experiences with your existing product team.</h5>
+                        <a href="https://www.appcues.com/blog/build-vs-buy-saas" target="_blank">Learn more about our methodology</a>
                     </div>
                 </div>
                 <div class="col-12 col-lg-7 calc-container">
@@ -53,14 +53,14 @@
                             <button id="modify-inputs-btn" class="btn btn-primary btn-block">Modify inputs</button>
                         </div>
                         <div class="intro">
-                            <h4>Modify the values to calculate the full cost</h4>
-                            <p>Enter the number of people involved from each team and their average salaries.</p>
+                            <h4>What does your product team look like? Modify the values below:</h4>
+                            <p>Select the number of people on each team, plus their average salaries.</p>
                         </div>
                         <div id="inputs">
                             <div class="input">
                                 <h6>Designers</h6>
                                 <div class="form-group how-many-form">
-                                    <label>How many<span class="hidden-mobile-text"> designers</span></label>
+                                    <label>How many<span class="hidden-mobile-text">&nbsp;designers</span></label>
                                     <select class="form-control" id="designer-count">
                                         <option>1</option>
                                         <option>2</option>
@@ -70,9 +70,9 @@
                                     </select>
                                 </div>
                                 <div class="form-group">
-                                    <label>Average<span class="hidden-mobile-text"> designer</span> salary</label>
+                                    <label>Average<span class="hidden-mobile-text">&nbsp;designer</span>&nbsp;salary</label>
                                     <span class="input-dollar-sign">$</span>
-                                    <input class="salary" id="designer-salary"/>
+                                    <input class="salary" type="text" id="designer-salary"/>
                                     <div class="slider-container">
                                         <table class="slider-column">
                                             <tr><td>
@@ -91,7 +91,7 @@
                             <div class="input">
                                 <h6>Product Managers</h6>
                                 <div class="form-group how-many-form">
-                                    <label>How many<span class="hidden-mobile-text"> product managers</span></label>
+                                    <label>How many<span class="hidden-mobile-text">&nbsp;product managers</span></label>
                                     <select class="form-control" id="pm-count">
                                         <option>1</option>
                                         <option>2</option>
@@ -101,9 +101,9 @@
                                     </select>
                                 </div>
                                 <div class="form-group">
-                                    <label>Average<span class="hidden-mobile-text"> product manager</span> salary</label>
+                                    <label>Average<span class="hidden-mobile-text">&nbsp;product manager</span>&nbsp;salary</label>
                                     <span class="input-dollar-sign">$</span>
-                                    <input class="salary" id="pm-salary"/>
+                                    <input class="salary" type="text" id="pm-salary"/>
                                     <div class="slider-container">
                                         <table class="slider-column">
                                             <tr><td>
@@ -122,7 +122,7 @@
                             <div class="input">
                                 <h6>Developers</h6>
                                 <div class="form-group how-many-form">
-                                    <label>How many<span class="hidden-mobile-text"> developers</span></label>
+                                    <label>How many<span class="hidden-mobile-text">&nbsp;developers</span></label>
                                     <select class="form-control" id="developer-count">
                                         <option>1</option>
                                         <option>2</option>
@@ -132,9 +132,9 @@
                                     </select>
                                 </div>
                                 <div class="form-group">
-                                    <label>Average<span class="hidden-mobile-text"> developer</span> salary</label>
+                                    <label>Average<span class="hidden-mobile-text">&nbsp;developer</span>&nbsp;salary</label>
                                     <span class="input-dollar-sign">$</span>
-                                    <input class="salary" id="developer-salary"/>
+                                    <input class="salary" type="text" id="developer-salary"/>
                                     <div class="slider-container">
                                         <table class="slider-column">
                                             <tr><td>
@@ -152,7 +152,7 @@
                             </div>
                             <div class="input">
                                 <div class="form-group">
-                                    <label>Does your product team use third party tools like Amplitude or Mixpanel?</label>
+                                    <label>Does your product team use third-party tools like Amplitude or Mixpanel?</label>
                                     <div class="buttons" id="third-party-tools-btns">
                                         <button class="btn btn-input btn-choice">Yes</button>
                                         <button class="btn btn-input btn-choice">No</button>
@@ -162,7 +162,7 @@
                             </div>
                             <div class="input">
                                 <div class="form-group">
-                                    <label>Have you worked on your product’s user onboarding experience in the past?</label>
+                                    <label>Does your product already have a user onboarding experience?</label>
                                     <div class="buttons" id="worked-onboarding-btns">
                                         <button class="btn btn-input btn-choice">Yes</button>
                                         <button class="btn btn-input btn-choice">No</button>
@@ -178,11 +178,11 @@
                     <div id="results-container">
                         <div class="result">
                             <h5>Initial cost of building on your own</h5>
-                            <p>The expected initial cost of building your own onboarding with the selected team</p>
+                            <p>Predicted initial cost of building your own onboarding with your current team:</p>
                             <h4 class="value" id="build-cost">0</h4>
                             <div class="extra-details">
                                 <img src="https://s3-us-west-2.amazonaws.com/appcues-public/microsites/build-vs-buy/img/icons/clock.svg" class="clock-icon"/>
-                                <p>Time spent (days) on the initial build</p>
+                                <p>Total time spent (days) on the initial build</p>
                                 <ul id="build-days-list">
                                     <li>Designers: <span class="designer-days"></span></li>
                                     <li>Product Managers: <span class="pm-days"></span></li>
@@ -192,11 +192,11 @@
                         </div>
                         <div class="result">
                             <h5>Cost to maintain your own</h5>
-                            <p>The expected annual maintenance cost of a complete onboarding build</p>
+                            <p>Predicted annual maintenance cost of a complete onboarding build:</p>
                             <h4 class="value" id="maintain-cost">0</h4>
                             <div class="extra-details">
                                 <img src="https://s3-us-west-2.amazonaws.com/appcues-public/microsites/build-vs-buy/img/icons/clock.svg" class="clock-icon"/>
-                                <p>Time spent (days) on maintenance</p>
+                                <p>Total time spent (days) on maintenance</p>
                                 <ul id="maintenance-days-list">
                                     <li>Designers: <span class="designer-days"></span></li>
                                     <li>Product Managers: <span class="pm-days"></span></li>
@@ -205,15 +205,15 @@
                             </div>
                         </div>
                         <div class="result">
-                            <h5>Total year one cost</h5>
+                            <h5>Total cost (year one)</h5>
                             <h3 class="value" id="total-cost">0</h3>
                         </div>
                         <div id="final-output" class="user-actions">
-                            <h5>Total estimated savings with Appcues <span id="total-cost-savings"></span></h5>
-                            <small>(Assuming an annual plan costing <span id="plan-amount"></span>)</small>
+                            <h5>Estimated savings with Appcues <span id="total-cost-savings"></span></h5>
+                            <small>(Based on an annual plan rate of <span id="plan-amount"></span>)</small>
                             <div class="email-container">
                                 <input id="user-email" type="email" placeholder="Email Address" />
-                                <button class="btn btn-primary btn-block" id="send-results-btn">Email yourself a copy</button>
+                                <button class="btn btn-primary btn-block" id="send-results-btn">Send yourself a copy</button>
                                 <p class="email-send-msg" id="email-success-message">Your results have been sent!</p>
                                 <p class="email-send-msg" id="email-error-message">Please provide a valid email address</p>
                             </div>
@@ -234,7 +234,7 @@
             passthrough : {
                 twitter: {
                     via: "appcues",
-                    text: "Find out the true cost of building user onboarding experiences with this calculator from"
+                    text: "Find out the true cost of building user onboarding experiences with this calculator"
                 }
             }
         }

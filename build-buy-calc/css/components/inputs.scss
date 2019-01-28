@@ -86,9 +86,6 @@
 				    	width: 100px;
 				    }
 
-				    // @include media-breakpoint-up(lg) {
-				    // 	width: 150px;
-				    // }
 
 					&:focus {
 						outline: none;
@@ -135,7 +132,7 @@
 					position: absolute;
     				right: 0;
 
-    				@include media-breakpoint-up(sm) {
+    				@include media-breakpoint-up(lg) {
     					position: relative;
     					right: auto;
     				}
@@ -226,7 +223,7 @@
 			
 
 
-			@include media-breakpoint-up(lg) {
+			@include media-breakpoint-up(sm) {
 				.form-group {
 					label {
 						font-size: 14px;

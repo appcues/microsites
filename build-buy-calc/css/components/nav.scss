@@ -25,9 +25,12 @@
 				font-size: 12px;
 				font-weight: 600;
 				letter-spacing: 1px;
-				color: $light-gray;
+				color: $white;
 				vertical-align: middle;
 				text-transform: uppercase;
+				@include media-breakpoint-up(md) {
+					color: $light-gray;
+				}
 			}
 
 			.addthis_inline_share_toolbox {
