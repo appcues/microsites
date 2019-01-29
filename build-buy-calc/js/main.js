@@ -10,7 +10,12 @@ var appcuesBuildVsBuyCalc = {
 	},
 
 	addNumberCommmas: function(number) { 
-	    return number.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,");
+		if (number.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,") === "NaN") {
+			return 0;
+		} else  {
+			return number.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,");	
+		}
+	    
 	},
 
 	removeNumberCommas: function(number) {
@@ -145,7 +150,6 @@ var appcuesBuildVsBuyCalc = {
 	salaryChangeSlider: function() {
 		$('.salary').on("change paste keyup", function() {
 			var targetSlider = $(this).next('.slider-container').find('.slider');
-			debugger;
 			appcuesBuildVsBuyCalc.changeSliderPosition(appcuesBuildVsBuyCalc.removeNumberCommas(this.value),targetSlider);
 		});
 
@@ -158,7 +162,6 @@ var appcuesBuildVsBuyCalc = {
 		var thumb = $(sliderID).parent().children(".sliderthumb")[0];
 		var fill = $(sliderID).parent().children(".sliderfill")[0];
 		var slider = $(sliderID)[0];
-		// debugger;
 		var pc = val/(slider.max - slider.min); /* the percentage slider value */
 		
 		$(sliderID).parents('.slider-container').parent().children('.salary').val(appcuesBuildVsBuyCalc.addNumberCommmas(val));
@@ -199,15 +202,21 @@ var appcuesBuildVsBuyCalc = {
 		var hubspotCookie = appcuesBuildVsBuyCalc.getCookie('hubspotutk');
 		var copiedUrl = window.location.href;
 		var costSaving = $("#total-cost-savings").text();
+		var onboarding_calculator_build_cost = $("#build-cost").text();
 		var thirdPartyTools = $("#third-party-tools-btns").children('.selected').text();
 		var workedOnboarding = $("#worked-onboarding-btns").children('.selected').text();
+		var buildDaysList = $("#build-days-list").children();
+		var onboarding_calculator_build_time = 0;
 
-		// debugger;
-
+		var i;
+		for (i = 0; i < buildDaysList.length; i++) { 
+		  onboarding_calculator_build_time += parseInt($(buildDaysList[i]).children('span').text().replace(" days", "").replace(" day",""));
+		}
+		
 		$.ajax({
          url: hubspotPostRequestUrlData,
          type:"POST",
-         data:JSON.stringify({ "fields": [{"name": "email","value": emailAddress}, {"name": "onboarding_calculator_url", "value": copiedUrl}, {"name": "user_onboarding_calculator_total_cost_saving", "value": costSaving}, {"name": "onboarding_calculator_third_party_tools", "value": thirdPartyTools}, {"name": "onboarding_calculator_worked_on_onboarding", "value": workedOnboarding}], "context": {"hutk": hubspotCookie, "pageUri": document.location.href}}),
+         data:JSON.stringify({ "fields": [{"name": "email","value": emailAddress}, {"name": "onboarding_calculator_url", "value": copiedUrl}, {"name": "user_onboarding_calculator_total_cost_saving", "value": costSaving}, {"name": "onboarding_calculator_build_cost", "value": onboarding_calculator_build_cost}, {"name": "onboarding_calculator_build_time", "value": onboarding_calculator_build_time}, {"name": "onboarding_calculator_third_party_tools", "value": thirdPartyTools}, {"name": "onboarding_calculator_worked_on_onboarding", "value": workedOnboarding}], "context": {"hutk": hubspotCookie, "pageUri": document.location.href}}),
          contentType:"application/json",
          dataType:"json",
          success: function(){

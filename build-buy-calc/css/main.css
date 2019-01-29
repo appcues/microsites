@@ -4595,7 +4595,7 @@ a.text-dark:focus, a.text-dark:hover {
         line-height: 1.5;
         color: #576784; }
   #results-container #final-output {
-    padding: 50px 35px;
+    padding: 45px 35px;
     opacity: 0;
     transition: opacity .5s;
     text-align: center; }
@@ -4637,7 +4637,10 @@ a.text-dark:focus, a.text-dark:hover {
         text-align: center;
         font-weight: 100;
         margin-bottom: 0;
-        display: none; }
+        display: none;
+        position: absolute;
+        transform: translateX(-50%);
+        left: 50%; }
       #results-container #final-output .email-container #email-success-message {
         color: #28a745; }
       #results-container #final-output .email-container #email-error-message {
