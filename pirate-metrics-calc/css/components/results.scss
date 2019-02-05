@@ -1,0 +1,210 @@
+#results-container {
+	@extend %white-container;
+	padding: 35px 0;
+
+	@include media-breakpoint-up(lg) {
+	    min-height: 100%;
+	}
+
+	@include media-breakpoint-up(lg) {
+		padding: 65px 0;
+	}
+
+
+	.result {
+		padding: 35px 35px 25px 35px;
+		border-bottom: 1px solid $gray-100;
+
+		@include media-breakpoint-up(lg) {
+			padding: 35px 65px 25px 65px;
+		}
+
+		&:first-child {
+			padding-top: 0 !important; 
+		}
+
+		h5 {
+			font-size: 13px;
+			text-transform: uppercase;
+			color: $dark-gray;
+			letter-spacing: 1px;
+			font-weight: 600;
+		}
+
+		p {
+			margin-top: 15px;
+			font-size: 13px;
+			line-height: 1.5;
+			color: $medium-gray;
+			font-weight: 400;
+		}
+
+		h3, h4 {
+			color: $gray-100;
+			font-weight: 300;
+			margin-bottom: 10px;
+
+			&:before {
+				content: "\0024"; 
+				font-size: 20px;
+    			vertical-align: top;
+			}
+		}
+
+		h3 {
+			font-size: 60px;
+			margin-top: 15px;
+
+			&:before {
+				font-size: 30px;
+			}
+		}
+
+		h4 {
+			font-size: 40px;
+			margin-top: 20px;
+			margin-bottom: 20px;
+
+			&:before {
+				font-size: 20px;
+			}
+		}
+
+		@include media-breakpoint-up(lg) {
+
+			h5 {
+				font-size: 13px;
+			}
+
+			p {
+				font-size: 14px;
+			}
+
+			h4 {
+				font-size: 40px;
+			}
+
+			h3 {
+				font-size: 60px;
+			}
+		}
+		
+		h3.active {
+			color: $primary;
+		}
+
+		h4.active {
+			color: $medium-gray;
+		}
+
+		.extra-details {
+			.clock-icon {
+				width: 15px;
+				margin-right: 5px;
+				display: inline-block;
+			}
+
+			p {
+				margin-top: 0;
+				display: inline-block;
+				font-size: 14px;
+				color: $dark-gray;
+				font-weight: 600;
+				vertical-align: middle;
+				margin-bottom: 0;
+			}
+
+
+			ul {
+				list-style-type: none;
+				padding-left: 22px;
+				padding-bottom: 0;
+				margin-bottom: 10px;
+
+				li {
+					font-weight: 400;
+					font-size: 13px;
+					line-height: 1.5;
+					color: $medium-gray;
+				}
+			}	
+		}
+
+		
+	}
+
+	#final-output {
+		padding: 45px 35px;
+		opacity: 0;
+		transition: opacity .5s;
+		text-align: center;
+
+		h5 {
+			font-size: 16px;
+		    color: $dark-gray;
+		    font-weight: 700;
+		    margin: 10px 0 5px 0;
+
+		    span {
+		    	color: $brand-primary;
+		    }
+		}
+
+		small {
+			font-size: 12px;
+			font-weight: 400;
+			font-style: italic;
+			margin-bottom: 25px;
+		}
+
+		.email-container {
+			margin-top: 25px;
+			min-width: 250px;
+			width: 70%;
+			margin: 0 auto;
+			max-width: 500px;
+
+			input {
+			    border: 1px solid $gray-100;
+			    color: $medium-gray;
+			    padding: 10px;
+			    font-size: 15px;
+			    margin-top: 25px;
+				margin-bottom: 10px;    
+			    border-radius: 7.5px;
+			    width: 100%;   
+			}
+
+			#send-results-btn {
+				font-size: 15px;
+				padding: 10px;
+				text-transform: none;
+				margin-top: 10px;
+			}
+
+			.email-send-msg {
+				font-size: 12px;
+				margin-top: 10px;
+				text-align: center;
+				font-weight: 100;
+				margin-bottom: 0;
+				display: none;
+				position: absolute;
+			    transform: translateX(-50%);
+			    left: 50%;
+			}
+
+			#email-success-message {
+				color: $green;
+			}
+
+			#email-error-message {
+				color: $red;
+			}
+		}
+
+		
+
+	}
+
+}

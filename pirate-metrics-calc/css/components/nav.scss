@@ -1,0 +1,76 @@
+
+#share-navbar {
+	padding: 0 20px;
+	color: $white;
+	width: 100%;
+	background: transparent;
+	z-index: 100;
+
+	@include media-breakpoint-up(md) {
+		padding: 0 30px;
+		color: $primary;
+	}
+
+	.nav-content {
+		position: relative;
+		max-width: 1400px;
+		margin: 0 auto;
+
+		.social-share {
+			position: absolute;
+			right: 0;
+			top: 4px;
+
+			span {
+				font-size: 12px;
+				font-weight: 600;
+				letter-spacing: 1px;
+				color: $white;
+				vertical-align: middle;
+				text-transform: uppercase;
+				@include media-breakpoint-up(md) {
+					color: $light-gray;
+				}
+			}
+
+			.addthis_inline_share_toolbox {
+				display: inline-block;
+				vertical-align: middle;
+			}
+
+			.at-share-btn-elements {
+
+				.at-share-btn {
+					background: transparent !important;
+					transform: none !important;
+
+					&:hover {
+						transform: none !important;
+
+					}
+
+					&:focus {
+						outline: none;
+					}
+					
+				}
+			}
+		}
+
+		.logo {
+			height: 20px;
+			position: absolute;
+			top: 10px;
+			left: 0;
+
+			@include media-breakpoint-up(md) {
+				height: 30px;
+				top: 20px;
+			}
+		}
+	}
+
+}
+	
+
+	

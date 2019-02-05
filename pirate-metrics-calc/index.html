@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0, shrink-to-fit=no"/>
+    <meta name="description" content="[Appcues]">
+    <meta name="author" content="[Appcues]">
+    <meta name="keywords" content="[content]">
+    <meta property="og:image" content="https://s3-us-west-2.amazonaws.com/appcues-public/microsites/pirate-metrics-calc/img/share_preview.jpeg"/>
+    <meta property="og:url"                content="" />
+    <meta property="og:type"               content="article" />
+    <meta property="og:title"              content="[TBD]" />
+    <meta property="og:description"        content="[TBD]" />
+
+    <title>Pirate Metrics Calculator</title>
+
+    <!-- CSS
+    ================================================== -->
+    <link href="https://fonts.googleapis.com/css?family=Muli:300,400,500,600" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="./css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css"> 
+    <link rel="stylesheet" type="text/css" href="./css/main.css" >
+
+
+  </head>
+
+  <body>
+
+    <div class="container-fluid">
+        <div id="share-navbar">
+            <div class="nav-content">
+                <a href="https://www.appcues.com/" target="_blank">
+                    <img class="logo" src="https://s3-us-west-2.amazonaws.com/appcues-public/microsites/logos/logo-white.svg" alt="Appcues Logo"/>
+                </a>
+                <div class="social-share">
+                    <span>Share</span>
+                    <div class="addthis_inline_share_toolbox" data-url="https://www.appcues.com/resources/pirate-metrics-calculator" data-title="The Pirate Metrics Calculator" data-media="https://s3-us-west-2.amazonaws.com/appcues-public/microsites/pirate-metrics-calc/img/share_preview.jpeg"></div>
+                </div>
+            </div>
+        </div>
+        <div id="calculator">
+            <div id="calculator-content" class="row">
+                <div class="col-12">
+                    <div id="introduction">
+                        <h1>The Pirate Metrics Calculator</h1>
+                        <h5>Description</h5>
+                        <a href="" target="_blank">Learn more about our methodology</a>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-7 calc-container">
+                    <div id="inputs-container">
+                        <div id="inputs-disable">
+                            <button id="modify-inputs-btn" class="btn btn-primary btn-block">Modify inputs</button>
+                        </div>
+                        <div class="intro">
+                            <h4>What does your product team look like? Modify the values below:</h4>
+                            <p>Select the number of people on each team, plus their average salaries.</p>
+                        </div>
+                        <div id="inputs">
+                            <div class="input">
+                                <h6>Designers</h6>
+                                <div class="form-group how-many-form">
+                                    <label>How many<span class="hidden-mobile-text">&nbsp;designers</span>?</label>
+                                    <select class="form-control" id="designer-count">
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label>Average<span class="hidden-mobile-text">&nbsp;designer</span>&nbsp;salary</label>
+                                    <span class="input-dollar-sign">$</span>
+                                    <input class="salary" type="text" id="designer-salary"/>
+                                    <div class="slider-container">
+                                        <table class="slider-column">
+                                            <tr><td>
+                                                <div class="slidershell">
+                                                    <div class="sliderfill"></div>
+                                                    <div class="slidertrack"></div>
+                                                    <div class="sliderthumb"></div>
+                                                    <input class="slider" id="designer-salary-slider" type="range" min="0" max="500000" value="0"
+                                                    oninput="appcuesBuildVsBuyCalc.setSliderValue(value,this.id);" onchange="appcuesBuildVsBuyCalc.setSliderValue(value,this.id);"/>
+                                                </div>
+                                            </td></tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="input">
+                                <h6>Product Managers</h6>
+                                <div class="form-group how-many-form">
+                                    <label>How many<span class="hidden-mobile-text">&nbsp;product managers</span>?</label>
+                                    <select class="form-control" id="pm-count">
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label>Average<span class="hidden-mobile-text">&nbsp;product manager</span>&nbsp;salary</label>
+                                    <span class="input-dollar-sign">$</span>
+                                    <input class="salary" type="text" id="pm-salary"/>
+                                    <div class="slider-container">
+                                        <table class="slider-column">
+                                            <tr><td>
+                                                <div class="slidershell">
+                                                    <div class="sliderfill"></div>
+                                                    <div class="slidertrack"></div>
+                                                    <div class="sliderthumb"></div>
+                                                    <input class="slider" id="pm-salary-slider" type="range" min="0" max="500000" value="0"
+                                                    oninput="appcuesBuildVsBuyCalc.setSliderValue(value,this.id);" onchange="appcuesBuildVsBuyCalc.setSliderValue(value,this.id);"/>
+                                                </div>
+                                            </td></tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="input">
+                                <h6>Developers</h6>
+                                <div class="form-group how-many-form">
+                                    <label>How many<span class="hidden-mobile-text">&nbsp;developers</span>?</label>
+                                    <select class="form-control" id="developer-count">
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option selected="selected">4</option>
+                                        <option>5</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label>Average<span class="hidden-mobile-text">&nbsp;developer</span>&nbsp;salary</label>
+                                    <span class="input-dollar-sign">$</span>
+                                    <input class="salary" type="text" id="developer-salary"/>
+                                    <div class="slider-container">
+                                        <table class="slider-column">
+                                            <tr><td>
+                                                <div class="slidershell">
+                                                    <div class="sliderfill"></div>
+                                                    <div class="slidertrack"></div>
+                                                    <div class="sliderthumb"></div>
+                                                    <input class="slider" id="developer-salary-slider" type="range" min="0" max="500000" value="0"
+                                                    oninput="appcuesBuildVsBuyCalc.setSliderValue(value,this.id);" onchange="appcuesBuildVsBuyCalc.setSliderValue(value,this.id);"/>
+                                                </div>
+                                            </td></tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="input">
+                                <div class="form-group">
+                                    <label>Does your product team use third-party tools like Amplitude or Mixpanel?</label>
+                                    <div class="buttons" id="third-party-tools-btns">
+                                        <button class="btn btn-input btn-choice">Yes</button>
+                                        <button class="btn btn-input btn-choice">No</button>
+                                        <button class="btn btn-input btn-choice">Not Sure</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="input">
+                                <div class="form-group">
+                                    <label>Does your product already have a user onboarding experience?</label>
+                                    <div class="buttons" id="worked-onboarding-btns">
+                                        <button class="btn btn-input btn-choice">Yes</button>
+                                        <button class="btn btn-input btn-choice">No</button>
+                                        <button class="btn btn-input btn-choice">Not Sure</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="submit-results" class="btn btn-block btn-primary">See Results</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-5 calc-container">
+                    <div id="results-container">
+                        <div class="result">
+                            <h5>Initial cost of building on your own</h5>
+                            <p>Predicted initial cost of building your own onboarding with your current team:</p>
+                            <h4 class="value" id="build-cost">0</h4>
+                            <div class="extra-details">
+                                <img src="https://s3-us-west-2.amazonaws.com/appcues-public/microsites/pirate-metrics-calc/img/icons/clock.svg" class="clock-icon"/>
+                                <p>Total time spent (days) on the initial build</p>
+                                <ul id="build-days-list">
+                                    <li>Designers: <span class="designer-days"></span></li>
+                                    <li>Product Managers: <span class="pm-days"></span></li>
+                                    <li>Developers: <span class="developer-days"></span></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="result">
+                            <h5>Cost to maintain your own</h5>
+                            <p>Predicted annual maintenance cost of a complete onboarding build:</p>
+                            <h4 class="value" id="maintain-cost">0</h4>
+                            <div class="extra-details">
+                                <img src="https://s3-us-west-2.amazonaws.com/appcues-public/microsites/pirate-metrics-calc/img/icons/clock.svg" class="clock-icon"/>
+                                <p>Total time spent (days) on maintenance</p>
+                                <ul id="maintenance-days-list">
+                                    <li>Designers: <span class="designer-days"></span></li>
+                                    <li>Product Managers: <span class="pm-days"></span></li>
+                                    <li>Developers: <span class="developer-days"></span></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="result">
+                            <h5>Total cost (year one)</h5>
+                            <h3 class="value" id="total-cost">0</h3>
+                        </div>
+                        <div id="final-output" class="user-actions">
+                            <h5>Estimated savings with Appcues <span id="total-cost-savings"></span></h5>
+                            <small>(Based on an annual plan rate of <span id="plan-amount"></span>)</small>
+                            <div class="email-container">
+                                <input id="user-email" type="email" placeholder="Email Address" />
+                                <button class="btn btn-primary btn-block" id="send-results-btn">Send yourself a copy</button>
+                                <p class="email-send-msg" id="email-success-message">Your results have been sent!</p>
+                                <p class="email-send-msg" id="email-error-message">Please provide a valid email address</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Javascript
+    ================================================== -->
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5c59e54b1cb40478"></script>
+    <script>
+        var addthis_share = addthis_share || {}
+        addthis_share = {
+            passthrough : {
+                twitter: {
+                    via: "appcues",
+                    text: ""
+                }
+            }
+        }
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/color/jquery.color.plus-names-2.1.2.min.js"></script>
+    <script src='https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.5/jquery-ui.min.js'></script>
+    <script src="https://cdn.sobekrepository.org/includes/jquery-rotate/2.2/jquery-rotate.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
+
+    <script src="./js/main.js"></script>
+    <script src="./js/chrome-mobile.js"></script>
+
+    
+    <!-- /Javascript
+    ================================================== -->
+  </body>
+</html>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
