@@ -1,7 +1,7 @@
 #calculator {
 	padding: 60px 0;
 	background: $bg-gray;
-	background-image: url("https://s3-us-west-2.amazonaws.com/appcues-public/microsites/pirate-metrics-calc/img/layout/blurple-bg.svg");
+	background-image: url("https://s3-us-west-2.amazonaws.com/appcues-public/microsites/pirate-metrics-calc/img/layout/blue-bg.svg");
 	background-repeat: no-repeat;
 	background-position: 0% 0%;
 	background-size: auto 100%;
@@ -22,8 +22,11 @@
 		margin: 0;
 		@include media-breakpoint-up(lg) {
 			margin: 0 auto;
-			max-width: 1600px;
+			max-width: 1300px;
+		}
 
+		.calc-container {
+			margin: 50px auto;
 		}
 	}
 

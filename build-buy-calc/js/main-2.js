@@ -120,6 +120,13 @@ var appcuesBuildVsBuyCalc = {
 			$('#inputs-disable').css('display', 'flex');
 			appcuesBuildVsBuyCalc.calculateValues();
 
+			analytics.track('Marketing Resources CTA Click',
+			{ 
+				buttonCopy: "See Results",
+			    currentUrl: window.location.href,
+			    section: "User Onboarding Cost Calculator"
+			});	
+
 			if($(window).width() < 768) {
 				$('html, body').animate({
 			      scrollTop: ($("#results-container").offset().top - 25)
@@ -140,6 +147,7 @@ var appcuesBuildVsBuyCalc = {
 			var targetEmail = $("#user-email").val();
 			if(appcuesBuildVsBuyCalc.validateEmail(targetEmail)) {
 				appcuesBuildVsBuyCalc.sendHubSpotData(targetEmail);
+
 			} else {
 				$('#email-error-message').show();
 			}

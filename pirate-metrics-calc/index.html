@@ -47,167 +47,121 @@
                         <a href="" target="_blank">Learn more about our methodology</a>
                     </div>
                 </div>
-                <div class="col-12 col-lg-7 calc-container">
+                <div class="col-12 calc-container">
                     <div id="inputs-container">
                         <div id="inputs-disable">
                             <button id="modify-inputs-btn" class="btn btn-primary btn-block">Modify inputs</button>
                         </div>
                         <div class="intro">
-                            <h4>What does your product team look like? Modify the values below:</h4>
-                            <p>Select the number of people on each team, plus their average salaries.</p>
+                            <h4>Give me some inputs</h4>
+                            <p>Adjust your benchmark data and see the lift</p>
                         </div>
                         <div id="inputs">
-                            <div class="input">
-                                <h6>Designers</h6>
-                                <div class="form-group how-many-form">
-                                    <label>How many<span class="hidden-mobile-text">&nbsp;designers</span>?</label>
-                                    <select class="form-control" id="designer-count">
-                                        <option>1</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                        <option>4</option>
-                                        <option>5</option>
-                                    </select>
-                                </div>
-                                <div class="form-group">
-                                    <label>Average<span class="hidden-mobile-text">&nbsp;designer</span>&nbsp;salary</label>
-                                    <span class="input-dollar-sign">$</span>
-                                    <input class="salary" type="text" id="designer-salary"/>
-                                    <div class="slider-container">
-                                        <table class="slider-column">
-                                            <tr><td>
-                                                <div class="slidershell">
-                                                    <div class="sliderfill"></div>
-                                                    <div class="slidertrack"></div>
-                                                    <div class="sliderthumb"></div>
-                                                    <input class="slider" id="designer-salary-slider" type="range" min="0" max="500000" value="0"
-                                                    oninput="appcuesBuildVsBuyCalc.setSliderValue(value,this.id);" onchange="appcuesBuildVsBuyCalc.setSliderValue(value,this.id);"/>
-                                                </div>
-                                            </td></tr>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="input">
-                                <h6>Product Managers</h6>
-                                <div class="form-group how-many-form">
-                                    <label>How many<span class="hidden-mobile-text">&nbsp;product managers</span>?</label>
-                                    <select class="form-control" id="pm-count">
-                                        <option>1</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                        <option>4</option>
-                                        <option>5</option>
-                                    </select>
-                                </div>
-                                <div class="form-group">
-                                    <label>Average<span class="hidden-mobile-text">&nbsp;product manager</span>&nbsp;salary</label>
-                                    <span class="input-dollar-sign">$</span>
-                                    <input class="salary" type="text" id="pm-salary"/>
-                                    <div class="slider-container">
-                                        <table class="slider-column">
-                                            <tr><td>
-                                                <div class="slidershell">
-                                                    <div class="sliderfill"></div>
-                                                    <div class="slidertrack"></div>
-                                                    <div class="sliderthumb"></div>
-                                                    <input class="slider" id="pm-salary-slider" type="range" min="0" max="500000" value="0"
-                                                    oninput="appcuesBuildVsBuyCalc.setSliderValue(value,this.id);" onchange="appcuesBuildVsBuyCalc.setSliderValue(value,this.id);"/>
-                                                </div>
-                                            </td></tr>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="input">
-                                <h6>Developers</h6>
-                                <div class="form-group how-many-form">
-                                    <label>How many<span class="hidden-mobile-text">&nbsp;developers</span>?</label>
-                                    <select class="form-control" id="developer-count">
-                                        <option>1</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                        <option selected="selected">4</option>
-                                        <option>5</option>
-                                    </select>
-                                </div>
-                                <div class="form-group">
-                                    <label>Average<span class="hidden-mobile-text">&nbsp;developer</span>&nbsp;salary</label>
-                                    <span class="input-dollar-sign">$</span>
-                                    <input class="salary" type="text" id="developer-salary"/>
-                                    <div class="slider-container">
-                                        <table class="slider-column">
-                                            <tr><td>
-                                                <div class="slidershell">
-                                                    <div class="sliderfill"></div>
-                                                    <div class="slidertrack"></div>
-                                                    <div class="sliderthumb"></div>
-                                                    <input class="slider" id="developer-salary-slider" type="range" min="0" max="500000" value="0"
-                                                    oninput="appcuesBuildVsBuyCalc.setSliderValue(value,this.id);" onchange="appcuesBuildVsBuyCalc.setSliderValue(value,this.id);"/>
-                                                </div>
-                                            </td></tr>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="input">
-                                <div class="form-group">
-                                    <label>Does your product team use third-party tools like Amplitude or Mixpanel?</label>
-                                    <div class="buttons" id="third-party-tools-btns">
-                                        <button class="btn btn-input btn-choice">Yes</button>
-                                        <button class="btn btn-input btn-choice">No</button>
-                                        <button class="btn btn-input btn-choice">Not Sure</button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="input">
-                                <div class="form-group">
-                                    <label>Does your product already have a user onboarding experience?</label>
-                                    <div class="buttons" id="worked-onboarding-btns">
-                                        <button class="btn btn-input btn-choice">Yes</button>
-                                        <button class="btn btn-input btn-choice">No</button>
-                                        <button class="btn btn-input btn-choice">Not Sure</button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div id="submit-results" class="btn btn-block btn-primary">See Results</div>
+                            <table class="table table-bordered calculator-table">
+                                <thead>
+                                    <tr>
+                                      <th scope="col"></th>
+                                      <th scope="col">Benchmark</th>
+                                      <th scope="col">Experiment</th>
+                                      <th scope="col">Percent Difference</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr id="acquisiton-inputs">
+                                        <th scope="row">Acquisiton
+                                            <div class="tooltip">
+                                                <p class="copy">Acquition tooltip content</p><img src="https://s3-us-west-2.amazonaws.com/appcues-public/microsites/pirate-metrics-calc/img/icons/tooltip.svg" class="icon"/>
+                                            </div>
+                                        </th>
+                                        <td class="input benchmark">
+                                            <input class="table-input" type="text" val="5,000"/>
+                                        </td>
+                                        <td class="calculated disabled">
+                                            <span></span>
+                                        </td>
+                                        <td class="input percent-diff">
+                                            <input class="table-input" type="text"/>
+                                        </td>
+                                    </tr>
+                                    <tr id="activation-inputs">
+                                        <th scope="row">Activation
+                                            <div class="tooltip">
+                                                <p class="copy">Activation tooltip content</p><img src="https://s3-us-west-2.amazonaws.com/appcues-public/microsites/pirate-metrics-calc/img/icons/tooltip.svg" class="icon"/>
+                                            </div>
+                                        </th>
+                                        <td class="input benchmark">
+                                            <input class="table-input" type="text" val="30.0%"/>
+                                        </td>
+                                        <td class="calculated disabled">
+                                            <span></span>
+                                        </td>
+                                        <td class="input percent-diff">
+                                            <input class="table-input" type="text"/>
+                                        </td>
+                                    </tr>
+                                    <tr id="revenue-inputs">
+                                        <th scope="row">Revenue (monthly per customer)
+                                            <div class="tooltip">
+                                                <p class="copy">Revenue (monthly per customer) tooltip content</p><img src="https://s3-us-west-2.amazonaws.com/appcues-public/microsites/pirate-metrics-calc/img/icons/tooltip.svg" class="icon"/>
+                                            </div>
+                                        </th>
+                                        <td class="input benchmark">
+                                            <input class="table-input" type="text" val="$100"/>
+                                        </td>
+                                        <td class="calculated disabled">
+                                            <span></span>
+                                        </td>
+                                        <td class="input percent-diff">
+                                            <input class="table-input" type="text"/>
+                                        </td>
+                                    </tr>
+                                    <tr id="retention-inputs">
+                                        <th scope="row">Retention
+                                            <div class="tooltip">
+                                                <p class="copy">Retention tooltip content</p><img src="https://s3-us-west-2.amazonaws.com/appcues-public/microsites/pirate-metrics-calc/img/icons/tooltip.svg" class="icon"/>
+                                            </div>
+                                        </th>
+                                        <td class="input benchmark">
+                                            <input class="table-input" type="text" val="97.0%"/>
+                                        </td>
+                                        <td class="calculated disabled">
+                                            <span></span>
+                                        </td>
+                                        <td class="input percent-diff">
+                                            <input class="table-input" type="text"/>
+                                        </td>
+                                    </tr>
+                                    <tr id="referral-inputs">
+                                        <th scope="row">Referral
+                                            <div class="tooltip">
+                                                <p class="copy">Referral tooltip content</p><img src="https://s3-us-west-2.amazonaws.com/appcues-public/microsites/pirate-metrics-calc/img/icons/tooltip.svg" class="icon"/>
+                                            </div>
+                                        </th>
+                                        <td class="input benchmark">
+                                            <input class="table-input" type="text" val="22.0%"/>
+                                        </td>
+                                        <td class="calculated disabled">
+                                            <span></span>
+                                        </td>
+                                        <td class="input percent-diff">
+                                            <input class="table-input" type="text"/>
+                                        </td>
+                                    </tr>
+                                    <tr id="mrr-calculations" class="blue-background">
+                                        <th scope="row">Monthly Recurring Revenue (MRR)</th>
+                                        <td class="calculated benchmark"></td>
+                                        <td class="calculated"></td>
+                                        <td class="calculated percent-diff"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <p id="input-error-message">Please input a valid number</p>
+                            <div id="submit-results" class="btn btn-primary">See Results</div>
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-lg-5 calc-container">
+                <div class="col-12 calc-container">
                     <div id="results-container">
-                        <div class="result">
-                            <h5>Initial cost of building on your own</h5>
-                            <p>Predicted initial cost of building your own onboarding with your current team:</p>
-                            <h4 class="value" id="build-cost">0</h4>
-                            <div class="extra-details">
-                                <img src="https://s3-us-west-2.amazonaws.com/appcues-public/microsites/pirate-metrics-calc/img/icons/clock.svg" class="clock-icon"/>
-                                <p>Total time spent (days) on the initial build</p>
-                                <ul id="build-days-list">
-                                    <li>Designers: <span class="designer-days"></span></li>
-                                    <li>Product Managers: <span class="pm-days"></span></li>
-                                    <li>Developers: <span class="developer-days"></span></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="result">
-                            <h5>Cost to maintain your own</h5>
-                            <p>Predicted annual maintenance cost of a complete onboarding build:</p>
-                            <h4 class="value" id="maintain-cost">0</h4>
-                            <div class="extra-details">
-                                <img src="https://s3-us-west-2.amazonaws.com/appcues-public/microsites/pirate-metrics-calc/img/icons/clock.svg" class="clock-icon"/>
-                                <p>Total time spent (days) on maintenance</p>
-                                <ul id="maintenance-days-list">
-                                    <li>Designers: <span class="designer-days"></span></li>
-                                    <li>Product Managers: <span class="pm-days"></span></li>
-                                    <li>Developers: <span class="developer-days"></span></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="result">
-                            <h5>Total cost (year one)</h5>
-                            <h3 class="value" id="total-cost">0</h3>
-                        </div>
                         <div id="final-output" class="user-actions">
                             <h5>Estimated savings with Appcues <span id="total-cost-savings"></span></h5>
                             <small>(Based on an annual plan rate of <span id="plan-amount"></span>)</small>
@@ -216,6 +170,44 @@
                                 <button class="btn btn-primary btn-block" id="send-results-btn">Send yourself a copy</button>
                                 <p class="email-send-msg" id="email-success-message">Your results have been sent!</p>
                                 <p class="email-send-msg" id="email-error-message">Please provide a valid email address</p>
+                            </div>
+                        </div>
+                        <div id="full-results">
+                            <div id="benchmark-full-results">
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Month</th>
+                                            <th scope="col">Existing</th>
+                                            <th scope="col">Acquired</th>
+                                            <th scope="col">Activated</th>
+                                            <th scope="col">Retained</th>
+                                            <th scope="col">Ending</th>
+                                            <th scope="col">Referred</th>
+                                            <th scope="col">Cohort Revenue</th>
+                                            <th scope="col">Benchmark</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody></tbody>
+                                </table>
+                            </div>
+                            <div id="experiment-full-results">
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Month</th>
+                                            <th scope="col">Existing</th>
+                                            <th scope="col">Acquired</th>
+                                            <th scope="col">Activated</th>
+                                            <th scope="col">Retained</th>
+                                            <th scope="col">Ending</th>
+                                            <th scope="col">Referred</th>
+                                            <th scope="col">Cohort Revenue</th>
+                                            <th scope="col">Benchmark</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody></tbody>
+                                </table>
                             </div>
                         </div>
                     </div>

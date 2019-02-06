@@ -4465,7 +4465,8 @@ a.text-dark:focus, a.text-dark:hover {
     overflow: visible; }
   .slider-container input[type=range] {
     width: 100%;
-    height: 100%;
+    height: 16px;
+    opacity: 0;
     -webkit-appearance: none;
     margin: 0px;
     padding: 0px;

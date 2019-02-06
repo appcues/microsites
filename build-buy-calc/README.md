@@ -1,4 +1,4 @@
-Appcues Product Launch Planner
+Appcues User Onboarding Cost Calculator
 Authors: Ben Winter
 Designer: Tanya Higgins
 
