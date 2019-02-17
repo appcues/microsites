@@ -43,8 +43,8 @@
                 <div class="col-12">
                     <div id="introduction">
                         <h1>The Pirate Metrics Calculator</h1>
-                        <h5>Description</h5>
-                        <a href="" target="_blank">Learn more about our methodology</a>
+                        <h5>Which SaaS metrics should you calculate? Look no further than the Pirate metrics—acquisition, activation, revenue, retention, and referral—or AARRR for short. Use the Pirate Metrics Calculator to compare the impact that a lift on each metric will have on your monthly recurring revenue (MRR).</h5>
+                        <a href="https://www.appcues.com/blog/the-impact-of-activation-vs-other-pirate-metrics" target="_blank">Learn more about our methodology</a>
                     </div>
                 </div>
                 <div class="col-12 calc-container">
@@ -62,7 +62,7 @@
                                     <tr>
                                       <th scope="col"></th>
                                       <th scope="col">Benchmark</th>
-                                      <th scope="col">Experiment</th>
+                                      <th scope="col" class="disabled">Experiment</th>
                                       <th scope="col">Percent Difference</th>
                                     </tr>
                                 </thead>
@@ -74,84 +74,84 @@
                                             </div>
                                         </th>
                                         <td class="input benchmark">
-                                            <input class="table-input" type="text" val="5,000"/>
+                                            <input class="table-input comma-number" type="text" id="BenchAcquisiton"/>
                                         </td>
                                         <td class="calculated disabled">
                                             <span></span>
                                         </td>
                                         <td class="input percent-diff">
-                                            <input class="table-input" type="text"/>
+                                            <input class="table-input percentage" type="text" id="PDacquisiton"/>
                                         </td>
                                     </tr>
-                                    <tr id="activation-inputs">
+                                    <tr id="activation-inputs" class="percentage-values">
                                         <th scope="row">Activation
                                             <div class="tooltip">
                                                 <p class="copy">Activation tooltip content</p><img src="https://s3-us-west-2.amazonaws.com/appcues-public/microsites/pirate-metrics-calc/img/icons/tooltip.svg" class="icon"/>
                                             </div>
                                         </th>
                                         <td class="input benchmark">
-                                            <input class="table-input" type="text" val="30.0%"/>
+                                            <input class="table-input percentage" type="text" id="BenchActivation"/>
                                         </td>
                                         <td class="calculated disabled">
                                             <span></span>
                                         </td>
                                         <td class="input percent-diff">
-                                            <input class="table-input" type="text"/>
+                                            <input class="table-input percentage" type="text" id="PDactivation"/>
                                         </td>
                                     </tr>
-                                    <tr id="revenue-inputs">
+                                    <tr id="revenue-inputs" class="currency-values">
                                         <th scope="row">Revenue (monthly per customer)
                                             <div class="tooltip">
                                                 <p class="copy">Revenue (monthly per customer) tooltip content</p><img src="https://s3-us-west-2.amazonaws.com/appcues-public/microsites/pirate-metrics-calc/img/icons/tooltip.svg" class="icon"/>
                                             </div>
                                         </th>
                                         <td class="input benchmark">
-                                            <input class="table-input" type="text" val="$100"/>
+                                            <input class="table-input currency" type="text" id="BenchRevenue"/>
                                         </td>
                                         <td class="calculated disabled">
                                             <span></span>
                                         </td>
                                         <td class="input percent-diff">
-                                            <input class="table-input" type="text"/>
+                                            <input class="table-input percentage" type="text" id="PDrevenue"/>
                                         </td>
                                     </tr>
-                                    <tr id="retention-inputs">
+                                    <tr id="retention-inputs" class="percentage-values">
                                         <th scope="row">Retention
                                             <div class="tooltip">
                                                 <p class="copy">Retention tooltip content</p><img src="https://s3-us-west-2.amazonaws.com/appcues-public/microsites/pirate-metrics-calc/img/icons/tooltip.svg" class="icon"/>
                                             </div>
                                         </th>
                                         <td class="input benchmark">
-                                            <input class="table-input" type="text" val="97.0%"/>
+                                            <input class="table-input percentage" type="text" id="BenchRetention"/>
                                         </td>
                                         <td class="calculated disabled">
                                             <span></span>
                                         </td>
                                         <td class="input percent-diff">
-                                            <input class="table-input" type="text"/>
+                                            <input class="table-input percentage" type="text" id="PDretention"/>
                                         </td>
                                     </tr>
-                                    <tr id="referral-inputs">
+                                    <tr id="referral-inputs" class="percentage-values">
                                         <th scope="row">Referral
                                             <div class="tooltip">
                                                 <p class="copy">Referral tooltip content</p><img src="https://s3-us-west-2.amazonaws.com/appcues-public/microsites/pirate-metrics-calc/img/icons/tooltip.svg" class="icon"/>
                                             </div>
                                         </th>
                                         <td class="input benchmark">
-                                            <input class="table-input" type="text" val="22.0%"/>
+                                            <input class="table-input percentage" type="text" id="BenchReferral"/>
                                         </td>
                                         <td class="calculated disabled">
                                             <span></span>
                                         </td>
                                         <td class="input percent-diff">
-                                            <input class="table-input" type="text"/>
+                                            <input class="table-input percentage" type="text" id="PDreferral"/>
                                         </td>
                                     </tr>
                                     <tr id="mrr-calculations" class="blue-background">
                                         <th scope="row">Monthly Recurring Revenue (MRR)</th>
-                                        <td class="calculated benchmark"></td>
-                                        <td class="calculated"></td>
-                                        <td class="calculated percent-diff"></td>
+                                        <td class="calculated benchmark">-</td>
+                                        <td class="calculated">-</td>
+                                        <td class="calculated percent-diff">-</td>
                                     </tr>
                                 </tbody>
                             </table>

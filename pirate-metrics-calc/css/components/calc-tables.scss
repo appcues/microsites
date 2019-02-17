@@ -8,17 +8,25 @@
 
 	thead, tr, td, th, tbody {
 		border: .5px solid $gray-100;
+		padding: 5px;
+    	vertical-align: middle;
 	}
 
 	thead {
 		font-weight: 600;
 		font-size: 15px;
+
 		tr {
 			th {
 				text-align: center;
 				border: .5px solid $gray-100;
 				border-bottom-width: .5px;
 			}
+
+			th.disabled {
+				background: #f5f7fa;
+			}
+
 		}
 	}
 

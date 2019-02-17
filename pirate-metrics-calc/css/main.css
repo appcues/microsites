@@ -4424,6 +4424,8 @@ a.text-dark:focus, a.text-dark:hover {
       font-size: 30px;
       line-height: 1.2;
       margin-bottom: 15px; }
+    #calculator #introduction h5 {
+      margin-bottom: 20px; }
     #calculator #introduction h5, #calculator #introduction a {
       font-size: 15px;
       line-height: 1.5; }
@@ -4511,7 +4513,9 @@ a.text-dark:focus, a.text-dark:hover {
   border: 1px solid #C0C6D9;
   border-radius: 5.5px; }
   .calculator-table thead, .calculator-table tr, .calculator-table td, .calculator-table th, .calculator-table tbody {
-    border: 0.5px solid #C0C6D9; }
+    border: 0.5px solid #C0C6D9;
+    padding: 5px;
+    vertical-align: middle; }
   .calculator-table thead {
     font-weight: 600;
     font-size: 15px; }
@@ -4519,6 +4523,8 @@ a.text-dark:focus, a.text-dark:hover {
       text-align: center;
       border: 0.5px solid #C0C6D9;
       border-bottom-width: .5px; }
+    .calculator-table thead tr th.disabled {
+      background: #f5f7fa; }
   .calculator-table tr th {
     padding: 15px 25px;
     vertical-align: middle; }
