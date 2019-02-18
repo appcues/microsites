@@ -4484,6 +4484,8 @@ a.text-dark:focus, a.text-dark:hover {
     display: block;
     margin: 30px auto;
     text-align: center; }
+  #inputs-container #inputs #submit-results.disabled {
+    pointer-events: none !important; }
 
 #inputs-disable {
   position: absolute;
@@ -4563,7 +4565,8 @@ a.text-dark:focus, a.text-dark:hover {
         width: 16px;
         cursor: pointer; }
   .calculator-table tr td {
-    text-align: center; }
+    text-align: center;
+    position: relative; }
     .calculator-table tr td input, .calculator-table tr td span {
       padding: 5px 10px;
       font-size: 15px;
@@ -4573,6 +4576,32 @@ a.text-dark:focus, a.text-dark:hover {
       text-align: center; }
       .calculator-table tr td input:focus, .calculator-table tr td input:hover, .calculator-table tr td span:focus, .calculator-table tr td span:hover {
         outline: none; }
+  .calculator-table tr td.input .input-error-message {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    border-radius: 5px;
+    top: 40px;
+    background: #FF3B4E;
+    color: #FFFFFF;
+    font-weight: 500;
+    font-size: 11px;
+    line-height: 1.3;
+    padding: 10px;
+    margin: 0;
+    width: 100px;
+    z-index: 100; }
+    .calculator-table tr td.input .input-error-message p {
+      margin: 0; }
+    .calculator-table tr td.input .input-error-message:before {
+      content: '';
+      height: 0;
+      position: absolute;
+      width: 0;
+      top: -10px;
+      left: 47.5px;
+      border: 5px solid transparent;
+      border-bottom: 5px solid #FF3B4E; }
   .calculator-table tr td.disabled {
     color: #979eb4;
     background: #f5f7fa; }

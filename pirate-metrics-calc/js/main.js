@@ -16,8 +16,6 @@ var appcuesPirateMetricsCalc = {
 	},
  
 
-	
-
 	updateUrl: function(BenchAcquisiton, PDacquisiton, BenchActivation, PDactivation, BenchRevenue, PDrevenue, BenchRetention, PDretention, BenchReferral, PDreferral) {
 		var params = {BenchAcquisiton: BenchAcquisiton, PDacquisiton: PDacquisiton, BenchActivation: BenchActivation, PDactivation: PDactivation, BenchRevenue: BenchRevenue, PDrevenue: PDrevenue, BenchRetention: BenchRetention, PDretention: PDretention, BenchReferral: BenchReferral, PDreferral: PDreferral};
 		var paramsStr = "?" + $.param( params );
@@ -49,13 +47,18 @@ var appcuesPirateMetricsCalc = {
 	throwInputError: function(el) {
 		if(!$(el).hasClass("bad-input")) {
 			$(el).addClass("bad-input");
-			$(el).parent().append(appcuesPirateMetricsCalc.inputErrorMessage);	
+			$(el).parent().append(appcuesPirateMetricsCalc.inputErrorMessage);
+			$('#submit-results').addClass('disabled');
 		}
 	},
 
 	removeInputError: function(el) {
 		$(el).removeClass("bad-input");
 		$(el).parent().children().remove(".input-error-message");
+
+		if ($('.input-error-message').length === 0) {
+			$('#submit-results').removeClass('disabled');
+		}
 	},
 
 	setInputTableListners: function() {

@@ -90,6 +90,7 @@
 
 		td {
 			text-align: center;
+			position: relative;
 
 			input, span {
 				padding: 5px 10px;
@@ -102,6 +103,40 @@
 			    &:focus, &:hover {
 			    	outline: none;
 			    }
+			}
+		}
+
+		td.input {
+			.input-error-message {
+				position: absolute;
+				left: 50%;
+				transform: translate(-50%);
+			    border-radius: 5px;
+			    top: 40px;
+				background: $red;
+				color: $white;
+			    font-weight: 500;
+			    font-size: 11px;
+			    line-height: 1.3;
+			    padding: 10px;
+			    margin: 0;
+			    width: 100px;
+			    z-index: 100;
+
+			    p {
+			    	margin: 0;
+			    }
+
+				&:before {
+					content: '';
+				    height: 0;
+				    position: absolute;
+				    width: 0;
+				    top: -10px;
+				    left: 47.5px;
+				    border: 5px solid transparent;
+				    border-bottom: 5px solid $red;
+				}
 			}
 		}
 
