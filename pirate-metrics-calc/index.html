@@ -67,91 +67,115 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr id="acquisiton-inputs">
-                                        <th scope="row">Acquisiton
+                                    <tr id="acquisiton-inputs" class="mobile-row">
+                                        <th scope="row" class="row-header">Acquisiton
                                             <div class="tooltip">
                                                 <p class="copy">Acquition tooltip content</p><img src="https://s3-us-west-2.amazonaws.com/appcues-public/microsites/pirate-metrics-calc/img/icons/tooltip.svg" class="icon"/>
                                             </div>
                                         </th>
                                         <td class="input benchmark">
-                                            <input class="table-input comma-number" type="text" id="BenchAcquisiton"/>
+                                            <p class="mobile-label">Benchmark</p>
+                                            <input class="table-input comma-number" type="text" id="benchAcquisiton"/>
                                         </td>
                                         <td class="calculated disabled">
-                                            <span></span>
+                                            <p class="mobile-label">Experiment</p>
+                                            <span class="experiment-value" id="experimentAcquisiton"></span>
                                         </td>
                                         <td class="input percent-diff">
-                                            <input class="table-input percentage" type="text" id="PDacquisiton"/>
+                                            <p class="mobile-label">Percent Difference</p>
+                                            <input class="table-input percentage" type="text" id="pdAcquisiton"/>
                                         </td>
                                     </tr>
-                                    <tr id="activation-inputs" class="percentage-values">
-                                        <th scope="row">Activation
+                                    <tr id="activation-inputs" class="mobile-row percentage-values">
+                                        <th scope="row" class="row-header">Activation
                                             <div class="tooltip">
                                                 <p class="copy">Activation tooltip content</p><img src="https://s3-us-west-2.amazonaws.com/appcues-public/microsites/pirate-metrics-calc/img/icons/tooltip.svg" class="icon"/>
                                             </div>
                                         </th>
                                         <td class="input benchmark">
-                                            <input class="table-input percentage" type="text" id="BenchActivation"/>
+                                            <p class="mobile-label">Benchmark</p>
+                                            <input class="table-input percentage" type="text" id="benchActivation"/>
                                         </td>
                                         <td class="calculated disabled">
-                                            <span></span>
+                                            <p class="mobile-label">Experiment</p>
+                                            <span class="experiment-value" id="experimentActivation"></span>
                                         </td>
                                         <td class="input percent-diff">
-                                            <input class="table-input percentage" type="text" id="PDactivation"/>
+                                            <p class="mobile-label">Percent Difference</p>
+                                            <input class="table-input percentage" type="text" id="pdActivation"/>
                                         </td>
                                     </tr>
-                                    <tr id="revenue-inputs" class="currency-values">
-                                        <th scope="row">Revenue (monthly per customer)
+                                    <tr id="revenue-inputs" class="mobile-row currency-values">
+                                        <th scope="row" class="row-header">Revenue (monthly per customer)
                                             <div class="tooltip">
                                                 <p class="copy">Revenue (monthly per customer) tooltip content</p><img src="https://s3-us-west-2.amazonaws.com/appcues-public/microsites/pirate-metrics-calc/img/icons/tooltip.svg" class="icon"/>
                                             </div>
                                         </th>
                                         <td class="input benchmark">
-                                            <input class="table-input currency" type="text" id="BenchRevenue"/>
+                                            <p class="mobile-label">Benchmark</p>
+                                            <input class="table-input currency" type="text" id="benchRevenue"/>
                                         </td>
                                         <td class="calculated disabled">
-                                            <span></span>
+                                            <p class="mobile-label">Experiment</p>
+                                            <span class="experiment-value" id="experimentRevenue"></span>
                                         </td>
                                         <td class="input percent-diff">
-                                            <input class="table-input percentage" type="text" id="PDrevenue"/>
+                                            <p class="mobile-label">Percent Difference</p>
+                                            <input class="table-input percentage" type="text" id="pdRevenue"/>
                                         </td>
                                     </tr>
-                                    <tr id="retention-inputs" class="percentage-values">
-                                        <th scope="row">Retention
+                                    <tr id="retention-inputs" class="mobile-row percentage-values">
+                                        <th scope="row" class="row-header">Retention
                                             <div class="tooltip">
                                                 <p class="copy">Retention tooltip content</p><img src="https://s3-us-west-2.amazonaws.com/appcues-public/microsites/pirate-metrics-calc/img/icons/tooltip.svg" class="icon"/>
                                             </div>
                                         </th>
                                         <td class="input benchmark">
-                                            <input class="table-input percentage" type="text" id="BenchRetention"/>
+                                            <p class="mobile-label">Benchmark</p>
+                                            <input class="table-input percentage" type="text" id="benchRetention"/>
                                         </td>
                                         <td class="calculated disabled">
-                                            <span></span>
+                                            <p class="mobile-label">Experiment</p>
+                                            <span class="experiment-value" id="experimentRetention"></span>
                                         </td>
                                         <td class="input percent-diff">
-                                            <input class="table-input percentage" type="text" id="PDretention"/>
+                                            <p class="mobile-label">Percent Difference</p>
+                                            <input class="table-input percentage" type="text" id="pdRetention"/>
                                         </td>
                                     </tr>
-                                    <tr id="referral-inputs" class="percentage-values">
-                                        <th scope="row">Referral
+                                    <tr id="referral-inputs" class="mobile-row percentage-values">
+                                        <th scope="row" class="row-header">Referral
                                             <div class="tooltip">
                                                 <p class="copy">Referral tooltip content</p><img src="https://s3-us-west-2.amazonaws.com/appcues-public/microsites/pirate-metrics-calc/img/icons/tooltip.svg" class="icon"/>
                                             </div>
                                         </th>
                                         <td class="input benchmark">
-                                            <input class="table-input percentage" type="text" id="BenchReferral"/>
+                                            <p class="mobile-label">Benchmark</p>
+                                            <input class="table-input percentage" type="text" id="benchReferral"/>
                                         </td>
                                         <td class="calculated disabled">
-                                            <span></span>
+                                            <p class="mobile-label">Experiment</p>
+                                            <span class="experiment-value" id="experimentReferral"></span>
                                         </td>
                                         <td class="input percent-diff">
-                                            <input class="table-input percentage" type="text" id="PDreferral"/>
+                                            <p class="mobile-label">Percent Difference</p>
+                                            <input class="table-input percentage" type="text" id="pdReferral"/>
                                         </td>
                                     </tr>
-                                    <tr id="mrr-calculations" class="blue-background">
-                                        <th scope="row">Monthly Recurring Revenue (MRR)</th>
-                                        <td class="calculated benchmark">-</td>
-                                        <td class="calculated">-</td>
-                                        <td class="calculated percent-diff">-</td>
+                                    <tr id="mrr-calculations" class="mobile-row">
+                                        <th scope="row" class="row-header">Monthly Recurring Revenue (MRR)</th>
+                                        <td class="calculated benchmark">
+                                            <p class="mobile-label">Benchmark</p>
+                                            -
+                                        </td>
+                                        <td class="calculated">
+                                            <p class="mobile-label">Experiment</p>
+                                            -
+                                        </td>
+                                        <td class="calculated percent-diff">
+                                            <p class="mobile-label">Percent Difference</p>
+                                            -
+                                        </td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -161,7 +185,7 @@
                 </div>
                 <div class="col-12 calc-container">
                     <div id="results-container">
-                        <div id="final-output" class="user-actions">
+                        <!-- <div id="final-output" class="user-actions">
                             <h5>Estimated savings with Appcues <span id="total-cost-savings"></span></h5>
                             <small>(Based on an annual plan rate of <span id="plan-amount"></span>)</small>
                             <div class="email-container">
@@ -170,7 +194,7 @@
                                 <p class="email-send-msg" id="email-success-message">Your results have been sent!</p>
                                 <p class="email-send-msg" id="email-error-message">Please provide a valid email address</p>
                             </div>
-                        </div>
+                        </div> -->
                         <div id="full-results">
                             <div id="benchmark-full-results">
                                 <table class="table table-bordered">
@@ -184,7 +208,7 @@
                                             <th scope="col">Ending</th>
                                             <th scope="col">Referred</th>
                                             <th scope="col">Cohort Revenue</th>
-                                            <th scope="col">Benchmark</th>
+                                            <th scope="col">Benchmark Revenue</th>
                                         </tr>
                                     </thead>
                                     <tbody></tbody>
@@ -202,7 +226,7 @@
                                             <th scope="col">Ending</th>
                                             <th scope="col">Referred</th>
                                             <th scope="col">Cohort Revenue</th>
-                                            <th scope="col">Benchmark</th>
+                                            <th scope="col">Experiment Revenue</th>
                                         </tr>
                                     </thead>
                                     <tbody></tbody>
