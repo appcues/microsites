@@ -4,6 +4,8 @@ var appcuesPirateMetricsCalc = {
 	defaultValues: {benchAcquisiton: "5000", pdAcquisiton: "10.0", benchActivation: "30.0", pdActivation: "10.0", benchRevenue: "100", pdRevenue: "10.0", benchRetention: "97.0", pdRetention: "10.0", benchReferral: "22.0", pdReferral: "10.0"},
 	resultMonths: 36,
 	fullResults: {'benchmark': [], 'experiment': []},
+	benchmarkMRR: 0,
+	experimentMRR: 0,
 
 	addNumberCommmas: function(number) { 
 		return number.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,");	
@@ -37,13 +39,12 @@ var appcuesPirateMetricsCalc = {
 	},
 
 	findURLParam: function(name) {
-			var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
-			if (results === null) {
-				return false;
-			} else {
-				return results[1] || 0;	
-			}
-			
+		var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
+		if (results === null) {
+			return false;
+		} else {
+			return results[1] || 0;	
+		}
 	},
 
 	processURL: function() {
@@ -52,7 +53,7 @@ var appcuesPirateMetricsCalc = {
 			if(appcuesPirateMetricsCalc.findURLParam(key) === false) {
 				appcuesPirateMetricsCalc.updateInputTableValue($(targetInput), appcuesPirateMetricsCalc.defaultValues[key]);
 			} else {
-				appcuesPirateMetricsCalc.updateInputTableValue($(targetInput), appcuesPirateMetricsCalc.findURLParam(key));
+				appcuesPirateMetricsCalc.updateInputTableValue($(targetInput), appcuesPirateMetricsCalc.findURLParam(key).toString());
 			}
 		    
 		});
@@ -100,18 +101,35 @@ var appcuesPirateMetricsCalc = {
 	},
 
 	calculateResults() {
-		appcuesPirateMetricsCalc.calculateExperimentResults();
-		appcuesPirateMetricsCalc.calculateBenchmarkResults();
+		var experimentAcquisiton = appcuesPirateMetricsCalc.removeNumberCharacters($("#experimentAcquisiton").text(), true, false), experimentActivation = appcuesPirateMetricsCalc.removeNumberCharacters($("#experimentActivation").text(), true, true), experimentRevenue = appcuesPirateMetricsCalc.removeNumberCharacters($("#experimentRevenue").text(), true, false), experimentRetention = appcuesPirateMetricsCalc.removeNumberCharacters($("#experimentRetention").text(), true, true), experimentReferral = appcuesPirateMetricsCalc.removeNumberCharacters($("#experimentReferral").text(), true, true);
+		var benchmarkAcquisiton = appcuesPirateMetricsCalc.removeNumberCharacters($("#benchAcquisiton").val(), true, false), benchmarkActivation = appcuesPirateMetricsCalc.removeNumberCharacters($("#benchActivation").val(), true, true), benchmarkRevenue = appcuesPirateMetricsCalc.removeNumberCharacters($("#benchRevenue").val(), true, false), benchmarkRetention = appcuesPirateMetricsCalc.removeNumberCharacters($("#benchRetention").val(), true, true), benchmarkReferral = appcuesPirateMetricsCalc.removeNumberCharacters($("#benchReferral").val(), true, true);
+		var pdAcquisiton = appcuesPirateMetricsCalc.removeNumberCharacters($("#pdAcquisiton").val(), true, false), pdActivation = appcuesPirateMetricsCalc.removeNumberCharacters($("#pdActivation").val(), true, false), pdRevenue = appcuesPirateMetricsCalc.removeNumberCharacters($("#pdRevenue").val(), true, false), pdRetention = appcuesPirateMetricsCalc.removeNumberCharacters($("#pdRetention").val(), true, false), pdReferral = appcuesPirateMetricsCalc.removeNumberCharacters($("#pdReferral").val(), true, false);
+
+		appcuesPirateMetricsCalc.calculateBenchmarkResults(benchmarkAcquisiton, benchmarkActivation, benchmarkRevenue, benchmarkRetention, benchmarkReferral);
+		appcuesPirateMetricsCalc.calculateExperimentResults(experimentAcquisiton, experimentActivation, experimentRevenue, experimentRetention, experimentReferral);
+		appcuesPirateMetricsCalc.updateUrl(benchmarkAcquisiton, pdAcquisiton, (benchmarkActivation * 100), pdActivation, benchmarkRevenue, pdRevenue, (benchmarkRetention * 100), pdRetention, (benchmarkReferral* 100), pdReferral);
+		// appcuesPirateMetricsCalc.renderGraph();
+		appcuesPirateMetricsCalc.setMRRValues(appcuesPirateMetricsCalc.benchmarkMRR, appcuesPirateMetricsCalc.experimentMRR);
+	},
+
+	setMRRValues(benchmark, experiment) {
+		var diffVal = appcuesPirateMetricsCalc.addNumberCommmas(((experiment - benchmark)/benchmark).toFixed(2), true, true);
+
+
+		var benchmarkMRR = appcuesPirateMetricsCalc.addNumberCommmas(Math.round(appcuesPirateMetricsCalc.benchmarkMRR), false, false);
+		var experimentMRR = appcuesPirateMetricsCalc.addNumberCommmas(Math.round(appcuesPirateMetricsCalc.experimentMRR), false, false);
+
+		$('#benchmarkMRR').text("$" + benchmarkMRR);
+		$('#experimentMRR').text("$" + experimentMRR);
+		$('#pdMRR').text(diffVal + "%");
 	},
 
 	renderGraph() {
 
 	},
 
-	calculateExperimentResults() {
+	calculateExperimentResults(experimentAcquisiton, experimentActivation, experimentRevenue, experimentRetention, experimentReferral) {
 		var i;
-
-		var experimentAcquisiton = appcuesPirateMetricsCalc.removeNumberCharacters($("#experimentAcquisiton").text(), true, false), experimentActivation = appcuesPirateMetricsCalc.removeNumberCharacters($("#experimentActivation").text(), true, true), experimentRevenue = appcuesPirateMetricsCalc.removeNumberCharacters($("#experimentRevenue").text(), true, false), experimentRetention = appcuesPirateMetricsCalc.removeNumberCharacters($("#experimentRetention").text(), true, true), experimentReferral = appcuesPirateMetricsCalc.removeNumberCharacters($("#experimentReferral").text(), true, true);
 
 		for (i = 0; i < appcuesPirateMetricsCalc.resultMonths; i++) { 
 			if (i === 0 ) {
@@ -133,16 +151,19 @@ var appcuesPirateMetricsCalc = {
 
 			var resultsRow = [rowMonth, rowExisting, rowAcquired, rowActivated, rowRetained, rowEnding, rowReferred, rowCohortRev, rowTotalRev];
 
+			if (i === 11) {
+				appcuesPirateMetricsCalc.experimentMRR = rowTotalRev;
+			}
+
 			appcuesPirateMetricsCalc.fullResults["experiment"].push(resultsRow);
 			appcuesPirateMetricsCalc.renderResultsTables(resultsRow, "#experiment-full-results");
+
 
 		}
 	},
 
-	calculateBenchmarkResults() {
+	calculateBenchmarkResults(benchmarkAcquisiton, benchmarkActivation, benchmarkRevenue, benchmarkRetention, benchmarkReferral) {
 		var i;
-
-		var benchmarkAcquisiton = appcuesPirateMetricsCalc.removeNumberCharacters($("#benchAcquisiton").val(), true, false), benchmarkActivation = appcuesPirateMetricsCalc.removeNumberCharacters($("#benchActivation").val(), true, true), benchmarkRevenue = appcuesPirateMetricsCalc.removeNumberCharacters($("#benchRevenue").val(), true, false), benchmarkRetention = appcuesPirateMetricsCalc.removeNumberCharacters($("#benchRetention").val(), true, true), benchmarkReferral = appcuesPirateMetricsCalc.removeNumberCharacters($("#benchReferral").val(), true, true);
 
 		for (i = 0; i < appcuesPirateMetricsCalc.resultMonths; i++) { 
 			if (i === 0 ) {
@@ -163,6 +184,10 @@ var appcuesPirateMetricsCalc = {
 			var rowTotalRev = (rowExisting + rowActivated) * benchmarkRevenue;
 
 			var resultsRow = [rowMonth, rowExisting, rowAcquired, rowActivated, rowRetained, rowEnding, rowReferred, rowCohortRev, rowTotalRev];
+
+			if (i === 11) {
+				appcuesPirateMetricsCalc.benchmarkMRR = rowTotalRev;
+			}
 
 			appcuesPirateMetricsCalc.fullResults["benchmark"].push(resultsRow);
 			appcuesPirateMetricsCalc.renderResultsTables(resultsRow, "#benchmark-full-results");
@@ -205,7 +230,7 @@ var appcuesPirateMetricsCalc = {
 			}
 		} else  {
 			var renderVal = parseFloat(calculatedVal, 10).toFixed(1);
-			$(row).find('.calculated.disabled').find('.experiment-value').text(renderVal);
+			$(row).find('.calculated.disabled').find('.experiment-value').text(renderVal + "%");
 		}
 		
 
@@ -237,15 +262,14 @@ var appcuesPirateMetricsCalc = {
 
 		});
 
-		$("#send-results-btn").click(function(e){
-			// e.preventDefault();
-			// var targetEmail = $("#user-email").val();
-			// if(appcuesPirateMetricsCalc.validateEmail(targetEmail)) {
-			// 	appcuesPirateMetricsCalc.sendHubSpotData(targetEmail);
-			// } else {
-			// 	$('#email-error-message').show();
-			// }
+		$('#detail-expand').click(function(){
+			$("#full-results").toggleClass('show');
+			$("#detail-arrow").toggleClass('rotated');
 			
+			$('html, body').animate({
+			    scrollTop: ($("#benchmark-full-results").offset().top - 25)
+			}, 1000)
+
 		});
 	},
 

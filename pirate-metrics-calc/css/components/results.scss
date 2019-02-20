@@ -2,23 +2,32 @@
 	@extend %white-container;
 	padding: 35px;
 
+	#full-results {
+		display: none;
+
+		h4 {
+			margin: 25px 0 15px 0;	
+			text-align: center;
+		    font-weight: 600;
+		    font-size: 16px;
+		}
+	}
+
+	#full-results.show {
+		display: block;
+	}
+
 
 	#benchmark-full-results, #experiment-full-results {
-		display: none;
-		margin: 50px 0;
+		margin-bottom: 50px;
 
-		@include media-breakpoint-up(md) {
-			display: block;
-		}
+		
 
 		thead {
 			font-weight: 600;
 			font-size: 13px;
-			display: none;
-
-			@include media-breakpoint-up(md) {
-				display: contents;
-			}
+			color: $white;
+			background: $brand-primary;
 
 			tr {
 				th {
@@ -34,10 +43,66 @@
 				text-align: center;
 				font-size: 12px;
 			}
+
+			tr {
+				&:nth-child(even) {
+					background: $gray-100;
+				}
+			}
 		}
 
 
 	}
+
+	#graph-container {
+		max-width: 1200px;
+		margin: 50px auto;
+
+		img {
+			width: 90%;
+			margin: 0 auto;
+		}
+	}
+
+
+
+	#detail-expand {
+		border-top: 1px solid $light-gray;
+		width: 100%;
+		margin-top: 25px;
+		padding: 15px;
+		text-align: center;
+		cursor: pointer;
+		display: none;
+
+		@include media-breakpoint-up(md) {
+			display: block;
+		}
+
+		p {
+			margin-bottom: 0;
+			font-size: 14px;
+			color: $medium-gray;
+			display: inline-block;
+		    margin-right: 10px;
+			vertical-align: middle;
+		}
+
+		#detail-arrow {
+			width: 10px;
+			transition: transform 300ms;
+		}
+
+		#detail-arrow.rotated {
+			transform: rotate(180deg) !important;
+		  	-ms-transform: rotate(180deg) !important; /* IE 9 */
+			-moz-transform: rotate(180deg) !important; /* Firefox */
+			-webkit-transform: rotate(180deg) !important; /* Safari and Chrome */
+			-o-transform: rotate(180deg) !important;
+		}
+	}
+
+
 
 
 

@@ -43,7 +43,7 @@
                 <div class="col-12">
                     <div id="introduction">
                         <h1>The Pirate Metrics Calculator</h1>
-                        <h5>Which SaaS metrics should you calculate? Look no further than the Pirate metrics—acquisition, activation, revenue, retention, and referral—or AARRR for short. Use the Pirate Metrics Calculator to compare the impact that a lift on each metric will have on your monthly recurring revenue (MRR).</h5>
+                        <h5>Which SaaS metrics should you calculate? Look no further than the Pirate metrics—acquisition, activation, revenue, retention, and referral—or AARRR for short.<br>Use the Pirate Metrics Calculator to compare the impact that a lift on each metric will have on your monthly recurring revenue (MRR).</h5>
                         <a href="https://www.appcues.com/blog/the-impact-of-activation-vs-other-pirate-metrics" target="_blank">Learn more about our methodology</a>
                     </div>
                 </div>
@@ -53,8 +53,8 @@
                             <button id="modify-inputs-btn" class="btn btn-primary btn-block">Modify inputs</button>
                         </div>
                         <div class="intro">
-                            <h4>Give me some inputs</h4>
-                            <p>Adjust your benchmark data and see the lift</p>
+                            <h4>Input your own values</h4>
+                            <p>You can adjust the benchmark data to compare the impact of a lift on each Pirate Metric</p>
                         </div>
                         <div id="inputs">
                             <table class="table table-bordered calculator-table">
@@ -62,7 +62,7 @@
                                     <tr>
                                       <th scope="col"></th>
                                       <th scope="col">Benchmark</th>
-                                      <th scope="col" class="disabled">Experiment</th>
+                                      <th scope="col" class="disabled">Experiment (fixed)</th>
                                       <th scope="col">Percent Difference</th>
                                     </tr>
                                 </thead>
@@ -70,7 +70,7 @@
                                     <tr id="acquisiton-inputs" class="mobile-row">
                                         <th scope="row" class="row-header">Acquisiton
                                             <div class="tooltip">
-                                                <p class="copy">Acquition tooltip content</p><img src="https://s3-us-west-2.amazonaws.com/appcues-public/microsites/pirate-metrics-calc/img/icons/tooltip.svg" class="icon"/>
+                                                <p class="copy">When users arrive to your product</p><img src="https://s3-us-west-2.amazonaws.com/appcues-public/microsites/pirate-metrics-calc/img/icons/tooltip.svg" class="icon"/>
                                             </div>
                                         </th>
                                         <td class="input benchmark">
@@ -78,7 +78,7 @@
                                             <input class="table-input comma-number" type="text" id="benchAcquisiton"/>
                                         </td>
                                         <td class="calculated disabled">
-                                            <p class="mobile-label">Experiment</p>
+                                            <p class="mobile-label">Experiment (fixed)</p>
                                             <span class="experiment-value" id="experimentAcquisiton"></span>
                                         </td>
                                         <td class="input percent-diff">
@@ -89,7 +89,7 @@
                                     <tr id="activation-inputs" class="mobile-row percentage-values">
                                         <th scope="row" class="row-header">Activation
                                             <div class="tooltip">
-                                                <p class="copy">Activation tooltip content</p><img src="https://s3-us-west-2.amazonaws.com/appcues-public/microsites/pirate-metrics-calc/img/icons/tooltip.svg" class="icon"/>
+                                                <p class="copy">When users have their first happy and successful experience</p><img src="https://s3-us-west-2.amazonaws.com/appcues-public/microsites/pirate-metrics-calc/img/icons/tooltip.svg" class="icon"/>
                                             </div>
                                         </th>
                                         <td class="input benchmark">
@@ -97,7 +97,7 @@
                                             <input class="table-input percentage" type="text" id="benchActivation"/>
                                         </td>
                                         <td class="calculated disabled">
-                                            <p class="mobile-label">Experiment</p>
+                                            <p class="mobile-label">Experiment (fixed)</p>
                                             <span class="experiment-value" id="experimentActivation"></span>
                                         </td>
                                         <td class="input percent-diff">
@@ -108,7 +108,7 @@
                                     <tr id="revenue-inputs" class="mobile-row currency-values">
                                         <th scope="row" class="row-header">Revenue (monthly per customer)
                                             <div class="tooltip">
-                                                <p class="copy">Revenue (monthly per customer) tooltip content</p><img src="https://s3-us-west-2.amazonaws.com/appcues-public/microsites/pirate-metrics-calc/img/icons/tooltip.svg" class="icon"/>
+                                                <p class="copy">When users pay</p><img src="https://s3-us-west-2.amazonaws.com/appcues-public/microsites/pirate-metrics-calc/img/icons/tooltip.svg" class="icon"/>
                                             </div>
                                         </th>
                                         <td class="input benchmark">
@@ -116,7 +116,7 @@
                                             <input class="table-input currency" type="text" id="benchRevenue"/>
                                         </td>
                                         <td class="calculated disabled">
-                                            <p class="mobile-label">Experiment</p>
+                                            <p class="mobile-label">Experiment (fixed)</p>
                                             <span class="experiment-value" id="experimentRevenue"></span>
                                         </td>
                                         <td class="input percent-diff">
@@ -135,7 +135,7 @@
                                             <input class="table-input percentage" type="text" id="benchRetention"/>
                                         </td>
                                         <td class="calculated disabled">
-                                            <p class="mobile-label">Experiment</p>
+                                            <p class="mobile-label">Experiment (fixed)</p>
                                             <span class="experiment-value" id="experimentRetention"></span>
                                         </td>
                                         <td class="input percent-diff">
@@ -154,27 +154,12 @@
                                             <input class="table-input percentage" type="text" id="benchReferral"/>
                                         </td>
                                         <td class="calculated disabled">
-                                            <p class="mobile-label">Experiment</p>
+                                            <p class="mobile-label">Experiment (fixed)</p>
                                             <span class="experiment-value" id="experimentReferral"></span>
                                         </td>
                                         <td class="input percent-diff">
                                             <p class="mobile-label">Percent Difference</p>
                                             <input class="table-input percentage" type="text" id="pdReferral"/>
-                                        </td>
-                                    </tr>
-                                    <tr id="mrr-calculations" class="mobile-row">
-                                        <th scope="row" class="row-header">Monthly Recurring Revenue (MRR)</th>
-                                        <td class="calculated benchmark">
-                                            <p class="mobile-label">Benchmark</p>
-                                            -
-                                        </td>
-                                        <td class="calculated">
-                                            <p class="mobile-label">Experiment</p>
-                                            -
-                                        </td>
-                                        <td class="calculated percent-diff">
-                                            <p class="mobile-label">Percent Difference</p>
-                                            -
                                         </td>
                                     </tr>
                                 </tbody>
@@ -195,43 +180,55 @@
                                 <p class="email-send-msg" id="email-error-message">Please provide a valid email address</p>
                             </div>
                         </div> -->
+                        <div id="graph-container">
+                            <h4>Impact of benchmark vs. experiment on recurring revenue</h4>
+                            <img src="https://s3-us-west-2.amazonaws.com/appcues-public/microsites/pirate-metrics-calc/img/graph-placeholder.png"/>
+                        </div>
+                        <div id="mrr-calculations">
+                            <h4>Monthly Recurring Revenue (after year one)</h4>
+                            <h5>Benchmark: <span id="benchmarkMRR">-</span></h5>
+                            <h5>Experiment: <span id="experimentMRR">-</span></h5>
+                            <h5>Percent Difference: <span id="pdMRR">-</span></h5>
+                        </div>
+                        <div id="detail-expand">
+                            <p>See detailed calculations</p>
+                            <img id="detail-arrow" src="https://s3-us-west-2.amazonaws.com/appcues-public/microsites/pirate-metrics-calc/img/icons/downarrow.svg"/>
+                        </div>
                         <div id="full-results">
-                            <div id="benchmark-full-results">
-                                <table class="table table-bordered">
-                                    <thead>
-                                        <tr>
-                                            <th scope="col">Month</th>
-                                            <th scope="col">Existing</th>
-                                            <th scope="col">Acquired</th>
-                                            <th scope="col">Activated</th>
-                                            <th scope="col">Retained</th>
-                                            <th scope="col">Ending</th>
-                                            <th scope="col">Referred</th>
-                                            <th scope="col">Cohort Revenue</th>
-                                            <th scope="col">Benchmark Revenue</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody></tbody>
-                                </table>
-                            </div>
-                            <div id="experiment-full-results">
-                                <table class="table table-bordered">
-                                    <thead>
-                                        <tr>
-                                            <th scope="col">Month</th>
-                                            <th scope="col">Existing</th>
-                                            <th scope="col">Acquired</th>
-                                            <th scope="col">Activated</th>
-                                            <th scope="col">Retained</th>
-                                            <th scope="col">Ending</th>
-                                            <th scope="col">Referred</th>
-                                            <th scope="col">Cohort Revenue</th>
-                                            <th scope="col">Experiment Revenue</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody></tbody>
-                                </table>
-                            </div>
+                            <h4>Benchmark Revenue by Month</h4>
+                            <table id="benchmark-full-results" class="table table-bordered">
+                                <thead>
+                                    <tr>y
+                                        <th scope="col">Month</th>
+                                        <th scope="col">Existing</th>
+                                        <th scope="col">Acquired</th>
+                                        <th scope="col">Activated</th>
+                                        <th scope="col">Retained</th>
+                                        <th scope="col">Ending</th>
+                                        <th scope="col">Referred</th>
+                                        <th scope="col">Cohort Revenue</th>
+                                        <th scope="col">Benchmark Revenue</th>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+                            <table id="experiment-full-results" class="table table-bordered">
+                                <h4>Experiment Revenue by Month</h4>
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Month</th>
+                                        <th scope="col">Existing</th>
+                                        <th scope="col">Acquired</th>
+                                        <th scope="col">Activated</th>
+                                        <th scope="col">Retained</th>
+                                        <th scope="col">Ending</th>
+                                        <th scope="col">Referred</th>
+                                        <th scope="col">Cohort Revenue</th>
+                                        <th scope="col">Experiment Revenue</th>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
                         </div>
                     </div>
                 </div>

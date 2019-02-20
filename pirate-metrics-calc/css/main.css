@@ -4680,19 +4680,22 @@ a.text-dark:focus, a.text-dark:hover {
 
 #results-container {
   padding: 35px; }
+  #results-container #full-results {
+    display: none; }
+    #results-container #full-results h4 {
+      margin: 25px 0 15px 0;
+      text-align: center;
+      font-weight: 600;
+      font-size: 16px; }
+  #results-container #full-results.show {
+    display: block; }
   #results-container #benchmark-full-results, #results-container #experiment-full-results {
-    display: none;
-    margin: 50px 0; }
-    @media (min-width: 768px) {
-      #results-container #benchmark-full-results, #results-container #experiment-full-results {
-        display: block; } }
+    margin-bottom: 50px; }
     #results-container #benchmark-full-results thead, #results-container #experiment-full-results thead {
       font-weight: 600;
       font-size: 13px;
-      display: none; }
-      @media (min-width: 768px) {
-        #results-container #benchmark-full-results thead, #results-container #experiment-full-results thead {
-          display: contents; } }
+      color: #FFFFFF;
+      background: #5C5CFF; }
       #results-container #benchmark-full-results thead tr th, #results-container #experiment-full-results thead tr th {
         text-align: center;
         border: 0.5px solid #C0C6D9;
@@ -4700,5 +4703,43 @@ a.text-dark:focus, a.text-dark:hover {
     #results-container #benchmark-full-results tbody td, #results-container #benchmark-full-results tbody th, #results-container #experiment-full-results tbody td, #results-container #experiment-full-results tbody th {
       text-align: center;
       font-size: 12px; }
+    #results-container #benchmark-full-results tbody tr:nth-child(even), #results-container #experiment-full-results tbody tr:nth-child(even) {
+      background: #C0C6D9; }
+  #results-container #graph-container {
+    max-width: 1200px;
+    margin: 50px auto; }
+    #results-container #graph-container img {
+      width: 90%;
+      margin: 0 auto; }
+  #results-container #detail-expand {
+    border-top: 1px solid #979eb4;
+    width: 100%;
+    margin-top: 25px;
+    padding: 15px;
+    text-align: center;
+    cursor: pointer;
+    display: none; }
+    @media (min-width: 768px) {
+      #results-container #detail-expand {
+        display: block; } }
+    #results-container #detail-expand p {
+      margin-bottom: 0;
+      font-size: 14px;
+      color: #576784;
+      display: inline-block;
+      margin-right: 10px;
+      vertical-align: middle; }
+    #results-container #detail-expand #detail-arrow {
+      width: 10px;
+      transition: transform 300ms; }
+    #results-container #detail-expand #detail-arrow.rotated {
+      transform: rotate(180deg) !important;
+      -ms-transform: rotate(180deg) !important;
+      /* IE 9 */
+      -moz-transform: rotate(180deg) !important;
+      /* Firefox */
+      -webkit-transform: rotate(180deg) !important;
+      /* Safari and Chrome */
+      -o-transform: rotate(180deg) !important; }
 
 /*# sourceMappingURL=main.css.map */
