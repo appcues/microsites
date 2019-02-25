@@ -35,6 +35,7 @@
 		color: $white;
 		margin: 50px 5px;
 
+
 		h1 {
 			font-size: 30px;
 			line-height: 1.2;
@@ -58,7 +59,7 @@
 
 
 		@include media-breakpoint-up(md) {
-
+			max-width: 750px;
 			h1 {
 				font-size: 34px;
 				margin-bottom: 15px;
@@ -70,7 +71,8 @@
 		}
 
 		@include media-breakpoint-up(lg) {
-			margin: 95px;
+			margin: 95px auto 95px 95px;
+			max-width: 900px;
 
 			h1 {
 				font-size: 46px;

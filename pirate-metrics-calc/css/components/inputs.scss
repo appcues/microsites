@@ -14,7 +14,8 @@
 	}
 
 	.intro {
-		margin-bottom: 50px;
+		margin-bottom: 35px;
+		text-align: center;
 		h4 {
 			font-size: 18px;
 			font-weight: 600;
@@ -29,6 +30,7 @@
 		}
 
 		@include media-breakpoint-up(lg) {
+			margin-bottom: 50px;
 			h4 {
 				font-size: 22px;
 			}
@@ -40,19 +42,78 @@
 		    min-height: 100%;
 		}
 
-
-		#submit-results {
-			font-size: 15px;
-			padding: 12px 0;
-			text-transform: capitalize;
-			width: 300px;
-			display: block;
-			margin: 30px auto;
+		#email-input-container {
+			margin: 60px auto 50px auto;
 			text-align: center;
-		}
+			display: block;
+			max-width: 700px;
+			padding: 0 5px;
 
-		#submit-results.disabled {
-			pointer-events: none !important;
+			#input-email {
+				width: 69%;
+				vertical-align: middle;
+				margin: 0;
+				display: inline-block;
+				height: 44px;
+			    margin-right: -2%;
+			    padding: 5px;
+			    font-size: 14px;
+			    border: 1px solid $gray-100;
+			    border-right: none;
+			    position: relative;
+				z-index: 5;
+				border-bottom-left-radius: 5.5px;
+				border-top-left-radius: 5.5px;
+
+				@include media-breakpoint-up(md) {
+					height: 48px;
+					padding: 5px 10px;
+				}
+
+				&:focus, &:active {
+					outline-color: $white !important;
+					border-color: $primary;
+				}
+			}
+
+			#submit-results, #recalculate-results {
+				margin: 0;
+				vertical-align: middle;
+				padding: 12px 0;
+				text-transform: capitalize;
+				width: 30%;
+				font-size: 12px;
+				display: inline-block;
+				border-bottom-left-radius: 0;
+				border-top-left-radius: 0;
+				position: relative;
+				z-index: 50;
+				
+
+				@include media-breakpoint-up(md) {
+					font-size: 15px;
+				}
+			}
+
+			#recalculate-results {
+				display: none;
+				margin: 0 auto;
+			    border-bottom-left-radius: 5.5px;
+			    border-top-left-radius: 5.5px;
+			}
+
+			#submit-results.disabled {
+				pointer-events: none !important;
+			}
+
+			#email-error-message {
+				color: $red;
+				font-size: 11px;
+				font-style: italic;
+				display: none;
+				margin-top: 15px;
+				margin-bottom: 0;
+			}
 		}
 	}
 }
