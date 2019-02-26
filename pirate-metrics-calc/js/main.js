@@ -269,12 +269,15 @@ var appcuesPirateMetricsCalc = {
 
 			var targetEmail = $('#input-email').val();
 
-			// if(appcuesPirateMetricsCalc.validateEmail(targetEmail)) {
+			if(appcuesPirateMetricsCalc.validateEmail(targetEmail)) {
 				$('#inputs-disable').css('display', 'flex');
 				$('#results-container').show();
 				appcuesPirateMetricsCalc.calculateResults();
 				appcuesPirateMetricsCalc.renderGraph();
 				appcuesPirateMetricsCalc.renderMobileGraph();
+
+				// debugger;
+				appcuesPirateMetricsCalc.sendHubSpotData(targetEmail);
 
 				$('html, body').animate({
 			      scrollTop: ($("#results-container").offset().top - 25)
@@ -282,9 +285,20 @@ var appcuesPirateMetricsCalc = {
 			    $('#recalculate-results').show();
 			    $('#input-email').hide()
 			    $('#submit-results').hide()
-			// } else {
-			// 	$('#email-error-message').show();
-			// }
+
+			    var lastScrollTop = 0;
+
+				$(window).scroll(function(event){
+					var st = $(this).scrollTop();
+					if (st < lastScrollTop){
+						appcuesPirateMetricsCalc.showPirate();
+						$(window).unbind('scroll');
+					}
+					lastScrollTop = st;
+			   	});
+			} else {
+				$('#email-error-message').show();
+			}
 
 		});
 
@@ -293,6 +307,7 @@ var appcuesPirateMetricsCalc = {
 			appcuesPirateMetricsCalc.calculateResults();
 			appcuesPirateMetricsCalc.renderGraph();
 			appcuesPirateMetricsCalc.renderMobileGraph();
+
 
 			$('html, body').animate({
 		      scrollTop: ($("#results-container").offset().top - 25)
@@ -336,7 +351,6 @@ var appcuesPirateMetricsCalc = {
 		// {"name": "marketing_ops_pirate_retention_calculator_churn_reduction", "value": copiedUrl}
 		// {"name": "marketing_ops_pirate_retention_calculator_mrr_increase", "value": copiedUrl}
 		// {"name": "marketing_ops_pirate_retention_calculator_retention_improvements", "value": copiedUrl}
-		// {"name": "marketing_ops_pirate_retention_calculator_target_group", "value": copiedUrl}
 		// {"name": "marketing_ops_pirate_retention_calculator_url", "value": copiedUrl}
 		
 		// $.ajax({
@@ -352,14 +366,12 @@ var appcuesPirateMetricsCalc = {
 	},
 
 	showPirate: function() {
-		var elementTop = $("#inputs-container").offset().top;
-		var elementBottom = elementTop + $("#inputs-container").outerHeight();
-		var viewportTop = $(window).scrollTop();
-		var viewportBottom = viewportTop + $(window).height();
-		if (elementBottom > viewportTop && elementTop < viewportBottom) {
-			console.log("hi");
-			// $("#pirate").show().animate({bottom: "-150px"}, 2500, "swing", {});
-		}
+		console.log("PIRATE");
+		$("#pirate").show().animate({bottom: "-25px"}, 1000);
+
+		setTimeout(function() {
+			$("#pirate").show().animate({bottom: "-350px"}, 2000);
+		}, 1500);
 	},
 
 	renderGraph: function() {
@@ -379,12 +391,14 @@ var appcuesPirateMetricsCalc = {
 					label: 'Benchmark',
 					borderColor: appcuesPirateMetricsCalc.benchmarkColor,
 					backgroundColor: appcuesPirateMetricsCalc.benchmarkColor,
-					data: appcuesPirateMetricsCalc.graphResults.benchmark
+					data: appcuesPirateMetricsCalc.graphResults.benchmark, 
+					borderWidth: 0
 				}, {
 					label: 'Experiment',
 					borderColor: appcuesPirateMetricsCalc.experimentColor,
 					backgroundColor: appcuesPirateMetricsCalc.experimentColor,
-					data: appcuesPirateMetricsCalc.graphResults.experiment
+					data: appcuesPirateMetricsCalc.graphResults.experiment, 
+					borderWidth: 0
 				}]
 			},
 			options: {
@@ -395,9 +409,6 @@ var appcuesPirateMetricsCalc = {
 					text: 'Impact of benchmark vs. experiment on recurring revenue',
 					fontSize: '22',
 					padding: 15
-				},
-				legend: {
-					position: 'bottom'
 				},
 
 				tooltips: {
@@ -417,13 +428,13 @@ var appcuesPirateMetricsCalc = {
 						color: '#242a35',
 						scaleLabel: {
 							display: true,
-							labelString: 'Month'
+							labelString: 'Month',
+							fontSize: 16,
+							fontColor: '#242a35'
 						},
 						ticks: {
-							autoSkip: true,
-							max: 36,
-                			min: 1,
-        					stepSize: 3
+							fontSize: 13,
+							fontColor: '#242a35'
 						}, 
 						gridLines: {
 						   display: false
@@ -433,7 +444,9 @@ var appcuesPirateMetricsCalc = {
 						color: '#242a35',
 						scaleLabel: {
 							display: true,
-							labelString: 'MRR ($000s)'
+							labelString: 'MRR ($000s)',
+							fontSize: 16,
+							fontColor: '#242a35'
 						},
 						ticks: {
 				            beginAtZero: true,
@@ -474,12 +487,14 @@ var appcuesPirateMetricsCalc = {
 					label: 'Benchmark',
 					borderColor: appcuesPirateMetricsCalc.benchmarkColor,
 					backgroundColor: appcuesPirateMetricsCalc.benchmarkColor,
-					data: appcuesPirateMetricsCalc.graphResults.benchmark.slice(0, 12)
+					data: appcuesPirateMetricsCalc.graphResults.benchmark.slice(0, 12),
+					borderWidth: 0
 				}, {
 					label: 'Experiment',
 					borderColor: appcuesPirateMetricsCalc.experimentColor,
 					backgroundColor: appcuesPirateMetricsCalc.experimentColor,
-					data: appcuesPirateMetricsCalc.graphResults.experiment.slice(0, 12)
+					data: appcuesPirateMetricsCalc.graphResults.experiment.slice(0, 12),
+					borderWidth: 0
 				}]
 			},
 			options: {
@@ -490,9 +505,6 @@ var appcuesPirateMetricsCalc = {
 					text: ['Impact of benchmark vs. experiment','on recurring revenue'],
 					fontSize: '16',
 					padding: 15
-				},
-				legend: {
-					position: 'bottom'
 				},
 
 				tooltips: {
@@ -512,13 +524,13 @@ var appcuesPirateMetricsCalc = {
 						color: '#242a35',
 						scaleLabel: {
 							display: true,
-							labelString: 'Month'
+							labelString: 'Month',
+							fontSize: 14,
+							fontColor: '#242a35'
 						},
 						ticks: {
-							autoSkip: true,
-							max: 36,
-                			min: 1,
-        					stepSize: 3
+							fontSize: 13,
+							fontColor: '#242a35'
 						}, 
 						gridLines: {
 						   display: false
@@ -528,7 +540,9 @@ var appcuesPirateMetricsCalc = {
 						color: '#242a35',
 						scaleLabel: {
 							display: true,
-							labelString: 'MRR ($Ms)'
+							labelString: 'MRR ($Ms)',
+							fontSize: 14,
+							fontColor: '#242a35'
 						},
 						ticks: {
 				            beginAtZero: true,
@@ -565,9 +579,7 @@ var appcuesPirateMetricsCalc = {
 
 $(function() {
 	appcuesPirateMetricsCalc.startSite();
-   	$(window).scroll(function(){
-   		appcuesPirateMetricsCalc.showPirate();
-   	});
+   	
 
 
 });

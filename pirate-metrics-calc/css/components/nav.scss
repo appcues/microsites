@@ -75,10 +75,14 @@
 
 	
 #pirate {
-	position: absolute;
+	position: fixed;
 	bottom: -350px;
     height: 200px;
 	right: 50px;
-	z-index: 1000;
+	z-index: 10000;
 	display: none;
 }
+
+
+
+

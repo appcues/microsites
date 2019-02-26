@@ -131,7 +131,8 @@
 
 	#graph-container-mobile {
 		display: block;
-
+		padding-left: 15px;
+		padding-right: 15px;
 		@include media-breakpoint-up(lg) {
 			display: none;
 		}
