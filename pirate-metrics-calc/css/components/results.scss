@@ -102,6 +102,7 @@
 
 		.calculator-table tr.mobile-row td span {
 			padding-left: 5px;
+			font-size: 14px;
 		}
 
 		.mobile-label {
@@ -124,7 +125,7 @@
 	#graph-container {
 		display: none;
 
-		@include media-breakpoint-up(lg) {
+		@include media-breakpoint-up(md) {
 			display: block;
 		}
 	}
@@ -133,14 +134,14 @@
 		display: block;
 		padding-left: 15px;
 		padding-right: 15px;
-		@include media-breakpoint-up(lg) {
+		@include media-breakpoint-up(md) {
 			display: none;
 		}
 	}
 
 
 	#detail-expand {
-		border-top: 1px solid $light-gray;
+		border-top: 1px solid $gray-100;
 		width: 100%;
 		margin-top: 50px;
 		padding: 20px 15px 10px 15px;

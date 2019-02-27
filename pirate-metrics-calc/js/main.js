@@ -1,12 +1,13 @@
 var appcuesPirateMetricsCalc = {
 
 	inputErrorMessage: "<div class='input-error-message'><p>Please provide a valid input (a positive integer)</p></div>",
-	defaultValues: {benchAcquisiton: "5000", pdAcquisiton: "10.0", benchActivation: "30.0", pdActivation: "10.0", benchRevenue: "100", pdRevenue: "10.0", benchRetention: "97.0", pdRetention: "10.0", benchReferral: "22.0", pdReferral: "10.0"},
+	defaultValues: {benchAcquisition: "5000", pdAcquisition: "10.0", benchActivation: "30.0", pdActivation: "10.0", benchRevenue: "100", pdRevenue: "10.0", benchRetention: "97.0", pdRetention: "10.0", benchReferral: "22.0", pdReferral: "10.0"},
 	resultMonths: 36,
 	fullResults: {'benchmark': [], 'experiment': []},
 	graphResults: {'xAxisLabels': [], 'benchmark': [], 'experiment': []},
 	benchmarkMRR: 0,
 	experimentMRR: 0,
+	differenceMRR: 0,
 	benchmarkColor: "rgba(92,92,255,.5)",
 	experimentColor: "rgba(44,180,255,.5)",
 	
@@ -40,8 +41,8 @@ var appcuesPirateMetricsCalc = {
 	},
  
 
-	updateUrl: function(benchAcquisiton, pdAcquisiton, benchActivation, pdActivation, benchRevenue, pdRevenue, benchRetention, pdRetention, benchReferral, pdReferral) {
-		var params = {benchAcquisiton: benchAcquisiton, pdAcquisiton: pdAcquisiton, benchActivation: benchActivation, pdActivation: pdActivation, benchRevenue: benchRevenue, pdRevenue: pdRevenue, benchRetention: benchRetention, pdRetention: pdRetention, benchReferral: benchReferral, pdReferral: pdReferral};
+	updateUrl: function(benchAcquisition, pdAcquisition, benchActivation, pdActivation, benchRevenue, pdRevenue, benchRetention, pdRetention, benchReferral, pdReferral) {
+		var params = {benchAcquisition: benchAcquisition, pdAcquisition: pdAcquisition, benchActivation: benchActivation, pdActivation: pdActivation, benchRevenue: benchRevenue, pdRevenue: pdRevenue, benchRetention: benchRetention, pdRetention: pdRetention, benchReferral: benchReferral, pdReferral: pdReferral};
 		var paramsStr = "?" + $.param( params );
 		window.history.replaceState(null, null, window.location.pathname + paramsStr);
 	},
@@ -109,19 +110,20 @@ var appcuesPirateMetricsCalc = {
 	},
 
 	calculateResults() {
-		var experimentAcquisiton = appcuesPirateMetricsCalc.removeNumberCharacters($("#experimentAcquisiton").text(), true, false), experimentActivation = appcuesPirateMetricsCalc.removeNumberCharacters($("#experimentActivation").text(), true, true), experimentRevenue = appcuesPirateMetricsCalc.removeNumberCharacters($("#experimentRevenue").text(), true, false), experimentRetention = appcuesPirateMetricsCalc.removeNumberCharacters($("#experimentRetention").text(), true, true), experimentReferral = appcuesPirateMetricsCalc.removeNumberCharacters($("#experimentReferral").text(), true, true);
-		var benchmarkAcquisiton = appcuesPirateMetricsCalc.removeNumberCharacters($("#benchAcquisiton").val(), true, false), benchmarkActivation = appcuesPirateMetricsCalc.removeNumberCharacters($("#benchActivation").val(), true, true), benchmarkRevenue = appcuesPirateMetricsCalc.removeNumberCharacters($("#benchRevenue").val(), true, false), benchmarkRetention = appcuesPirateMetricsCalc.removeNumberCharacters($("#benchRetention").val(), true, true), benchmarkReferral = appcuesPirateMetricsCalc.removeNumberCharacters($("#benchReferral").val(), true, true);
-		var pdAcquisiton = appcuesPirateMetricsCalc.removeNumberCharacters($("#pdAcquisiton").val(), true, false), pdActivation = appcuesPirateMetricsCalc.removeNumberCharacters($("#pdActivation").val(), true, false), pdRevenue = appcuesPirateMetricsCalc.removeNumberCharacters($("#pdRevenue").val(), true, false), pdRetention = appcuesPirateMetricsCalc.removeNumberCharacters($("#pdRetention").val(), true, false), pdReferral = appcuesPirateMetricsCalc.removeNumberCharacters($("#pdReferral").val(), true, false);
+		var experimentAcquisition = appcuesPirateMetricsCalc.removeNumberCharacters($("#experimentAcquisition").text(), true, false), experimentActivation = appcuesPirateMetricsCalc.removeNumberCharacters($("#experimentActivation").text(), true, true), experimentRevenue = appcuesPirateMetricsCalc.removeNumberCharacters($("#experimentRevenue").text(), true, false), experimentRetention = appcuesPirateMetricsCalc.removeNumberCharacters($("#experimentRetention").text(), true, true), experimentReferral = appcuesPirateMetricsCalc.removeNumberCharacters($("#experimentReferral").text(), true, true);
+		var benchmarkAcquisition = appcuesPirateMetricsCalc.removeNumberCharacters($("#benchAcquisition").val(), true, false), benchmarkActivation = appcuesPirateMetricsCalc.removeNumberCharacters($("#benchActivation").val(), true, true), benchmarkRevenue = appcuesPirateMetricsCalc.removeNumberCharacters($("#benchRevenue").val(), true, false), benchmarkRetention = appcuesPirateMetricsCalc.removeNumberCharacters($("#benchRetention").val(), true, true), benchmarkReferral = appcuesPirateMetricsCalc.removeNumberCharacters($("#benchReferral").val(), true, true);
+		var pdAcquisition = appcuesPirateMetricsCalc.removeNumberCharacters($("#pdAcquisition").val(), true, false), pdActivation = appcuesPirateMetricsCalc.removeNumberCharacters($("#pdActivation").val(), true, false), pdRevenue = appcuesPirateMetricsCalc.removeNumberCharacters($("#pdRevenue").val(), true, false), pdRetention = appcuesPirateMetricsCalc.removeNumberCharacters($("#pdRetention").val(), true, false), pdReferral = appcuesPirateMetricsCalc.removeNumberCharacters($("#pdReferral").val(), true, false);
 
-		appcuesPirateMetricsCalc.calculateBenchmarkResults(benchmarkAcquisiton, benchmarkActivation, benchmarkRevenue, benchmarkRetention, benchmarkReferral);
-		appcuesPirateMetricsCalc.calculateExperimentResults(experimentAcquisiton, experimentActivation, experimentRevenue, experimentRetention, experimentReferral);
-		appcuesPirateMetricsCalc.updateUrl(benchmarkAcquisiton, pdAcquisiton, (benchmarkActivation * 100), pdActivation, benchmarkRevenue, pdRevenue, (benchmarkRetention * 100), pdRetention, (benchmarkReferral* 100), pdReferral);
+		appcuesPirateMetricsCalc.calculateBenchmarkResults(benchmarkAcquisition, benchmarkActivation, benchmarkRevenue, benchmarkRetention, benchmarkReferral);
+		appcuesPirateMetricsCalc.calculateExperimentResults(experimentAcquisition, experimentActivation, experimentRevenue, experimentRetention, experimentReferral);
+		appcuesPirateMetricsCalc.updateUrl(benchmarkAcquisition, pdAcquisition, (benchmarkActivation * 100), pdActivation, benchmarkRevenue, pdRevenue, (benchmarkRetention * 100), pdRetention, (benchmarkReferral* 100), pdReferral);
 		appcuesPirateMetricsCalc.setMRRValues(appcuesPirateMetricsCalc.benchmarkMRR, appcuesPirateMetricsCalc.experimentMRR);
 	},
 
 	setMRRValues(benchmark, experiment) {
-		var pdDiffVal = appcuesPirateMetricsCalc.addNumberCommmas(((experiment - benchmark)/benchmark).toFixed(2), true, true);
+		var pdDiffVal = appcuesPirateMetricsCalc.addNumberCommmas((((experiment - benchmark)/benchmark)*100).toFixed(2), true, true);
 		var adDiffVal = appcuesPirateMetricsCalc.addNumberCommmas(Math.round(experiment - benchmark), true, true);
+		appcuesPirateMetricsCalc.differenceMRR = (experiment - benchmark);
 		var benchmarkMRR = appcuesPirateMetricsCalc.addNumberCommmas(Math.round(benchmark), false, false);
 		var experimentMRR = appcuesPirateMetricsCalc.addNumberCommmas(Math.round(experiment), false, false);
 
@@ -144,17 +146,17 @@ var appcuesPirateMetricsCalc = {
 
 	
 
-	calculateExperimentResults(experimentAcquisiton, experimentActivation, experimentRevenue, experimentRetention, experimentReferral) {
+	calculateExperimentResults(experimentAcquisition, experimentActivation, experimentRevenue, experimentRetention, experimentReferral) {
 		var i;
 
 		for (i = 0; i < appcuesPirateMetricsCalc.resultMonths; i++) { 
 			if (i === 0 ) {
 				var rowExisting = 0; 
-				var rowAcquired = experimentAcquisiton;
+				var rowAcquired = experimentAcquisition;
 
 			} else  {
 				var rowExisting = appcuesPirateMetricsCalc.fullResults["experiment"][i - 1][5];
-				var rowAcquired = experimentAcquisiton + appcuesPirateMetricsCalc.fullResults["experiment"][i - 1][6];
+				var rowAcquired = experimentAcquisition + appcuesPirateMetricsCalc.fullResults["experiment"][i - 1][6];
 			}
 
 			var rowMonth = i + 1;
@@ -179,17 +181,17 @@ var appcuesPirateMetricsCalc = {
 		}
 	},
 
-	calculateBenchmarkResults(benchmarkAcquisiton, benchmarkActivation, benchmarkRevenue, benchmarkRetention, benchmarkReferral) {
+	calculateBenchmarkResults(benchmarkAcquisition, benchmarkActivation, benchmarkRevenue, benchmarkRetention, benchmarkReferral) {
 		var i;
 
 		for (i = 0; i < appcuesPirateMetricsCalc.resultMonths; i++) { 
 			if (i === 0 ) {
 				var rowExisting = 0; 
-				var rowAcquired = benchmarkAcquisiton;
+				var rowAcquired = benchmarkAcquisition;
 
 			} else  {
 				var rowExisting = appcuesPirateMetricsCalc.fullResults["benchmark"][i - 1][5];
-				var rowAcquired = benchmarkAcquisiton + appcuesPirateMetricsCalc.fullResults["benchmark"][i - 1][6];
+				var rowAcquired = benchmarkAcquisition + appcuesPirateMetricsCalc.fullResults["benchmark"][i - 1][6];
 			}
 
 			var rowMonth = i + 1;
@@ -262,6 +264,20 @@ var appcuesPirateMetricsCalc = {
 	    return re.test(String(email).toLowerCase());
 	},
 
+	resetCalculations: function() {
+		$("#benchmark-full-results").find('tbody').empty();
+		$("#experiment-full-results").find('tbody').empty();
+		appcuesPirateMetricsCalc.fullResults = {'benchmark': [], 'experiment': []};
+		appcuesPirateMetricsCalc.graphResults = {'xAxisLabels': [], 'benchmark': [], 'experiment': []};
+	},
+
+	setTableInputClicks: function() {
+		$('.table-input').click(function(){
+			$(this).addClass('active-input');
+			$('#edit-pencil').hide();
+		});
+	},
+
 
 	setButtonClicks: function() {
 
@@ -276,7 +292,6 @@ var appcuesPirateMetricsCalc = {
 				appcuesPirateMetricsCalc.renderGraph();
 				appcuesPirateMetricsCalc.renderMobileGraph();
 
-				// debugger;
 				appcuesPirateMetricsCalc.sendHubSpotData(targetEmail);
 
 				$('html, body').animate({
@@ -303,6 +318,8 @@ var appcuesPirateMetricsCalc = {
 		});
 
 		$('#recalculate-results').click(function() {
+			appcuesPirateMetricsCalc.resetCalculations();
+			
 			$('#inputs-disable').css('display', 'flex');
 			appcuesPirateMetricsCalc.calculateResults();
 			appcuesPirateMetricsCalc.renderGraph();
@@ -330,7 +347,6 @@ var appcuesPirateMetricsCalc = {
 	        $("#full-results").toggleClass('show-results');
 			$("#detail-arrow").toggleClass('rotated');
 	        
-	        
 	        // Set scroll to current position minus previous offset/scroll
 	        $(document).scrollTop($('#detail-expand').offset().top-curOffset);
 		});
@@ -347,37 +363,35 @@ var appcuesPirateMetricsCalc = {
 		var hubspotPostRequestUrlData = "https://api.hsforms.com/submissions/v3/integration/submit/305687/504e56bd-5a7e-4de5-ae02-0a883054a014";
 		var hubspotCookie = appcuesPirateMetricsCalc.getCookie('hubspotutk');
 		var copiedUrl = window.location.href;
-
-		// {"name": "marketing_ops_pirate_retention_calculator_churn_reduction", "value": copiedUrl}
-		// {"name": "marketing_ops_pirate_retention_calculator_mrr_increase", "value": copiedUrl}
-		// {"name": "marketing_ops_pirate_retention_calculator_retention_improvements", "value": copiedUrl}
-		// {"name": "marketing_ops_pirate_retention_calculator_url", "value": copiedUrl}
 		
-		// $.ajax({
-  //        url: hubspotPostRequestUrlData,
-  //        type:"POST",
-  //        data:JSON.stringify({ "fields": [{"name": "email","value": emailAddress}, {"name": "marketing_ops_pirate_retention_calculator_mrr_increase", "value": copiedUrl}], "context": {"hutk": hubspotCookie, "pageUri": document.location.href}}),
-  //        contentType:"application/json",
-  //        dataType:"json",
-  //        success: function(){
-  //        	$('#email-success-message').show();
-  //        }
-  //       });
+		$.ajax({
+         url: hubspotPostRequestUrlData,
+         type:"POST",
+
+         data:JSON.stringify({ "fields": [{"name": "email", "value": emailAddress}, {"name": "marketing_ops_pirate_retention_calculator_starting_revenue", "value": appcuesPirateMetricsCalc.benchmarkMRR.toFixed(2).toString()}, {"name": "marketing_ops_pirate_retention_calculator_mrr_increase", "value": appcuesPirateMetricsCalc.differenceMRR.toFixed(2).toString()}, {"name": "marketing_ops_pirate_retention_calculator_url", "value": copiedUrl}], "context": {"hutk": hubspotCookie, "pageUri": document.location.href}}),
+         contentType:"application/json",
+         dataType:"json",
+         success: function(){}
+        });
 	},
 
 	showPirate: function() {
-		console.log("PIRATE");
-		$("#pirate").show().animate({bottom: "-25px"}, 1000);
+		if($(window).width() > 900) {
+			$("#pirate").show().animate({bottom: "-25px"}, 1000);
 
-		setTimeout(function() {
-			$("#pirate").show().animate({bottom: "-350px"}, 2000);
-		}, 1500);
+			setTimeout(function() {
+				$("#pirate").show().animate({bottom: "-350px"}, 2000);
+			}, 4500);	
+		}
+		
 	},
 
 	renderGraph: function() {
+		$("#graph-container").empty();
+		$("#graph-container").append('<canvas id="resultsGraph" width="600" height="400"></canvas>');
 
 		var ctx = document.getElementById('resultsGraph').getContext('2d');
-		var divisor = 1000;
+		var divisor = 1000000;
 		ctx.height = 800;
 
 		Chart.defaults.global.defaultFontFamily = "'Muli', san-serif";
@@ -408,6 +422,8 @@ var appcuesPirateMetricsCalc = {
 					display: true,
 					text: 'Impact of benchmark vs. experiment on recurring revenue',
 					fontSize: '22',
+					fontWeight: 600,
+    				fontColor: "#242a35",
 					padding: 15
 				},
 
@@ -416,7 +432,7 @@ var appcuesPirateMetricsCalc = {
 					position: 'nearest',
 					callbacks: {
                 		label: function(tooltipItem, data) {
-                			return '$' + appcuesPirateMetricsCalc.addNumberCommmas((tooltipItem.yLabel/divisor).toFixed(0));
+                			return '$' + appcuesPirateMetricsCalc.addNumberCommmas((tooltipItem.yLabel/divisor).toFixed(2)) + "M";
                 		}
                 	}
 				},
@@ -429,8 +445,9 @@ var appcuesPirateMetricsCalc = {
 						scaleLabel: {
 							display: true,
 							labelString: 'Month',
-							fontSize: 16,
-							fontColor: '#242a35'
+							fontSize: 14,
+							fontColor: '#242a35',
+							padding: 10
 						},
 						ticks: {
 							fontSize: 13,
@@ -444,14 +461,17 @@ var appcuesPirateMetricsCalc = {
 						color: '#242a35',
 						scaleLabel: {
 							display: true,
-							labelString: 'MRR ($000s)',
-							fontSize: 16,
-							fontColor: '#242a35'
+							labelString: 'MRR ($Ms)',
+							fontSize: 14,
+							fontColor: '#242a35',
+							padding: 10
 						},
 						ticks: {
 				            beginAtZero: true,
+				            fontSize: 13,
+							fontColor: '#242a35',
 				            callback: function(value, index, values) {
-					            return '$' + appcuesPirateMetricsCalc.addNumberCommmas(value/divisor);
+					            return '$' + appcuesPirateMetricsCalc.addNumberCommmas((value/divisor).toFixed(2));
 				            }
 				        }, 
 						gridLines: {
@@ -471,15 +491,17 @@ var appcuesPirateMetricsCalc = {
 	},
 
 	renderMobileGraph: function() {
-
-		var ctx = document.getElementById('resultsGraphMobile').getContext('2d');
+		$("#graph-container-mobile").empty();
+		$("#graph-container-mobile").append('<canvas id="resultsGraphMobile" width="400" height="400"></canvas>');
+		
+		var ctxMobile = document.getElementById('resultsGraphMobile').getContext('2d');
 		var divisor = 1000000;
-		ctx.height = 800;
+		ctxMobile.height = 800;
 
 		Chart.defaults.global.defaultFontFamily = "'Muli', san-serif";
 		Chart.defaults.global.defaultFontColor = "#576784";
 
-		var config = {
+		var configMobile = {
 			type: 'line',
 			data: {
 				labels: appcuesPirateMetricsCalc.graphResults["xAxisLabels"].slice(0, 12),
@@ -500,10 +522,15 @@ var appcuesPirateMetricsCalc = {
 			options: {
 				responsive: true,
 				aspectRatio: 1.5,
+				legend: {
+					position: 'bottom'
+				},
 				title: {
 					display: true,
 					text: ['Impact of benchmark vs. experiment','on recurring revenue'],
 					fontSize: '16',
+					fontStyle: 'normal',
+    				fontColor: "#242a35",
 					padding: 15
 				},
 
@@ -512,7 +539,7 @@ var appcuesPirateMetricsCalc = {
 					position: 'nearest',
 					callbacks: {
                 		label: function(tooltipItem, data) {
-                			return '$' + appcuesPirateMetricsCalc.addNumberCommmas((tooltipItem.yLabel/divisor).toFixed(0));
+                			return '$' + appcuesPirateMetricsCalc.addNumberCommmas((tooltipItem.yLabel/divisor).toFixed(2)) + "M";
                 		}
                 	}
 				},
@@ -526,7 +553,8 @@ var appcuesPirateMetricsCalc = {
 							display: true,
 							labelString: 'Month',
 							fontSize: 14,
-							fontColor: '#242a35'
+							fontColor: '#242a35',
+							padding: 10
 						},
 						ticks: {
 							fontSize: 13,
@@ -542,10 +570,13 @@ var appcuesPirateMetricsCalc = {
 							display: true,
 							labelString: 'MRR ($Ms)',
 							fontSize: 14,
-							fontColor: '#242a35'
+							fontColor: '#242a35',
+							padding: 10
 						},
 						ticks: {
 				            beginAtZero: true,
+				            fontSize: 13,
+							fontColor: '#242a35',
 				            callback: function(value, index, values) {
 					            return '$' + appcuesPirateMetricsCalc.addNumberCommmas(value/divisor);
 				            }
@@ -558,7 +589,7 @@ var appcuesPirateMetricsCalc = {
 			}
 		};
 
-		window.myLine = new Chart(ctx, config);
+		window.myLineMobile = new Chart(ctxMobile, configMobile);
 
 
 
@@ -569,6 +600,7 @@ var appcuesPirateMetricsCalc = {
 	startSite: function() {
 		appcuesPirateMetricsCalc.processURL();
 		appcuesPirateMetricsCalc.setButtonClicks();
+		appcuesPirateMetricsCalc.setTableInputClicks();
 		appcuesPirateMetricsCalc.setInputTableListners();
 	}
 

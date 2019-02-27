@@ -4501,10 +4501,10 @@ a.text-dark:focus, a.text-dark:hover {
       vertical-align: middle;
       margin: 0;
       display: inline-block;
-      height: 44px;
+      height: 45px;
       margin-right: -2%;
-      padding: 5px;
-      font-size: 14px;
+      padding: 5px 10px;
+      font-size: 16px;
       border: 1px solid #C0C6D9;
       border-right: none;
       position: relative;
@@ -4513,8 +4513,7 @@ a.text-dark:focus, a.text-dark:hover {
       border-top-left-radius: 5.5px; }
       @media (min-width: 900px) {
         #inputs-container #inputs #email-input-container #input-email {
-          height: 48px;
-          padding: 5px 10px; } }
+          height: 48px; } }
       #inputs-container #inputs #email-input-container #input-email:focus, #inputs-container #inputs #email-input-container #input-email:active {
         outline-color: #FFFFFF !important;
         border-color: #5C5CFF; }
@@ -4596,7 +4595,8 @@ a.text-dark:focus, a.text-dark:hover {
       .calculator-table thead tr th:last-child {
         border-right: none; }
     .calculator-table thead tr th.disabled {
-      background: #f5f7fa; }
+      background: #f5f7fa;
+      min-width: 160px; }
   .calculator-table tr.mobile-row {
     height: 190px; }
     @media (min-width: 900px) {
@@ -4622,6 +4622,8 @@ a.text-dark:focus, a.text-dark:hover {
         width: 150px;
         display: inline-block;
         font-size: 16px; }
+      .calculator-table tr.mobile-row th #edit-pencil, .calculator-table tr.mobile-row td #edit-pencil {
+        display: none; }
       .calculator-table tr.mobile-row th span, .calculator-table tr.mobile-row td span {
         color: #979eb4;
         font-size: 16px; }
@@ -4644,21 +4646,32 @@ a.text-dark:focus, a.text-dark:hover {
           border: none;
           display: table-cell;
           font-size: 15px;
-          width: auto;
+          width: 100%;
+          color: #979eb4; }
+        .calculator-table tr.mobile-row th input.active-input, .calculator-table tr.mobile-row td input.active-input {
           color: #242a35; }
+        .calculator-table tr.mobile-row th #benchAcquisition, .calculator-table tr.mobile-row td #benchAcquisition {
+          color: #242a35; }
+        .calculator-table tr.mobile-row th #edit-pencil, .calculator-table tr.mobile-row td #edit-pencil {
+          display: inline-block;
+          width: 14px;
+          position: absolute;
+          top: 12.5px;
+          right: 20px; }
         .calculator-table tr.mobile-row th span, .calculator-table tr.mobile-row td span {
           font-size: 15px; }
       .calculator-table tr.mobile-row td {
         text-align: center; }
       .calculator-table tr.mobile-row td.disabled {
-        background: #f5f7fa; } }
+        background: #f5f7fa;
+        pointer-events: none; } }
   .calculator-table tr .row-header {
     padding: 10px;
     min-width: auto; }
     @media (min-width: 576px) {
       .calculator-table tr .row-header {
         padding: 10px;
-        min-width: 270px; } }
+        min-width: 200px; } }
     @media (min-width: 992px) {
       .calculator-table tr .row-header {
         padding: 15px 20px;
@@ -4679,6 +4692,8 @@ a.text-dark:focus, a.text-dark:hover {
       color: #242a35; }
       .calculator-table tr td input:focus, .calculator-table tr td input:hover, .calculator-table tr td span:focus, .calculator-table tr td span:hover {
         outline: none; }
+    .calculator-table tr td .experiment-value {
+      color: #242a35 !important; }
   .calculator-table tr td.input .input-error-message {
     position: absolute;
     left: 50%;
@@ -4719,12 +4734,12 @@ a.text-dark:focus, a.text-dark:hover {
       background: #2CB4FF;
       color: #FFFFFF;
       font-weight: 500;
-      font-size: 11px;
+      font-size: 12px;
       line-height: 1.3;
-      padding: 20px 15px;
+      padding: 15px;
       margin: 0;
       height: auto;
-      min-width: 120px;
+      min-width: 155px;
       display: none; }
       .calculator-table .input-tooltip .copy:before {
         content: '';
@@ -4732,25 +4747,30 @@ a.text-dark:focus, a.text-dark:hover {
         position: absolute;
         width: 0;
         border: 5px solid transparent; }
-    .calculator-table .input-tooltip .copy.medium {
-      min-width: 195px; }
-    .calculator-table .input-tooltip .copy.long {
-      min-width: 205px; }
+    @media (min-width: 900px) {
+      .calculator-table .input-tooltip .copy.medium {
+        min-width: 240px; } }
+    @media (min-width: 900px) {
+      .calculator-table .input-tooltip .copy.long {
+        min-width: 280px; } }
     .calculator-table .input-tooltip .icon {
       width: 16px;
       cursor: pointer; }
+    .calculator-table .input-tooltip .lock.icon {
+      width: 12px;
+      margin-top: -4px; }
   .calculator-table .input-tooltip.left .copy {
     left: 28px;
-    top: -20px; }
+    top: -12.5px; }
     .calculator-table .input-tooltip.left .copy:before {
-      top: 22.5px;
+      top: 17.5px;
       left: -10px;
       border-right: 5px solid #2CB4FF; }
   .calculator-table .input-tooltip.top .copy {
     right: -20px;
     top: 30px; }
     .calculator-table .input-tooltip.top .copy:before {
-      right: 22.5px;
+      right: 21px;
       top: -10px;
       border-bottom: 5px solid #2CB4FF; }
 
@@ -4812,7 +4832,8 @@ a.text-dark:focus, a.text-dark:hover {
   #results-container #mrr-calculations #adMRR.negative, #results-container #mrr-calculations #pdMRR.negative {
     color: #FF3B4E; }
   #results-container #mrr-calculations .calculator-table tr.mobile-row td span {
-    padding-left: 5px; }
+    padding-left: 5px;
+    font-size: 14px; }
   #results-container #mrr-calculations .mobile-label {
     margin-right: 0; }
   #results-container #graph-container, #results-container #graph-container-mobile {
@@ -4824,18 +4845,18 @@ a.text-dark:focus, a.text-dark:hover {
       margin: 0 auto; }
   #results-container #graph-container {
     display: none; }
-    @media (min-width: 992px) {
+    @media (min-width: 900px) {
       #results-container #graph-container {
         display: block; } }
   #results-container #graph-container-mobile {
     display: block;
     padding-left: 15px;
     padding-right: 15px; }
-    @media (min-width: 992px) {
+    @media (min-width: 900px) {
       #results-container #graph-container-mobile {
         display: none; } }
   #results-container #detail-expand {
-    border-top: 1px solid #979eb4;
+    border-top: 1px solid #C0C6D9;
     width: 100%;
     margin-top: 50px;
     padding: 20px 15px 10px 15px;
