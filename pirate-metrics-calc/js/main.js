@@ -1,6 +1,7 @@
 var appcuesPirateMetricsCalc = {
 
-	inputErrorMessage: "<div class='input-error-message'><p>Please provide a valid input (a positive integer)</p></div>",
+	inputErrorMessageBenchmark: "<div class='input-error-message'><p>Please provide a valid input (a positive value)</p></div>",
+	inputErrorMessagePD: "<div class='input-error-message'><p>Please provide a valid input</p></div>",
 	defaultValues: {benchAcquisition: "5000", pdAcquisition: "10.0", benchActivation: "30.0", pdActivation: "10.0", benchRevenue: "100", pdRevenue: "10.0", benchRetention: "97.0", pdRetention: "10.0", benchReferral: "22.0", pdReferral: "10.0"},
 	resultMonths: 36,
 	fullResults: {'benchmark': [], 'experiment': []},
@@ -23,20 +24,27 @@ var appcuesPirateMetricsCalc = {
 			} else {
 				return parseFloat(number.replace(/,/g, '').replace("$", '').replace(/%/g, ''));	
 			}
-			
-			
 		} else {
 			return number.replace(/,/g, '').replace("$", '').replace(/%/g, '');
 		}
 		
 	},
 
-	checkInput: function(number) {
-		if(number === "" || number === "0" || number === 0) {
-			return true;
+	checkInput: function(el, number) {
+		if($(el).parent().hasClass('benchmark')) {
+			if(number === "" || number === "0" || number === 0) {
+				return true;
+			} else {
+				return isNaN(number);	
+			}
 		} else {
-			return isNaN(number);	
+			if(number === "") {
+				return true;
+			} else {
+				return isNaN(number);	
+			}
 		}
+			
 		
 	},
  
@@ -71,7 +79,12 @@ var appcuesPirateMetricsCalc = {
 	throwInputError: function(el) {
 		if(!$(el).hasClass("bad-input")) {
 			$(el).addClass("bad-input");
-			$(el).parent().append(appcuesPirateMetricsCalc.inputErrorMessage);
+			if($(el).parent().hasClass('percent-diff')) {
+				$(el).parent().append(appcuesPirateMetricsCalc.inputErrorMessagePD);	
+			} else {
+				$(el).parent().append(appcuesPirateMetricsCalc.inputErrorMessageBenchmark);
+			}
+			
 			$('#submit-results').addClass('disabled');
 		}
 	},
@@ -94,7 +107,7 @@ var appcuesPirateMetricsCalc = {
 	updateInputTableValue: function(el, inputValue) {
 		var inputVal = appcuesPirateMetricsCalc.removeNumberCharacters(inputValue, false, false);
 
-		if (appcuesPirateMetricsCalc.checkInput(inputVal)) {
+		if (appcuesPirateMetricsCalc.checkInput(el, inputVal)) {
 			appcuesPirateMetricsCalc.throwInputError(el);
 		}  else {
 			if(el.hasClass('comma-number')) {
