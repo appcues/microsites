@@ -90,3 +90,13 @@
   }
 
 }
+
+.footer-link {
+  font-size: 12px !important;
+  @include media-breakpoint-up(md) {
+    font-size: 13px !important;
+  }
+  @include media-breakpoint-up(lg) {
+    font-size: 14px !important;
+  } 
+}

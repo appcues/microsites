@@ -4079,6 +4079,15 @@ a.text-dark:focus, a.text-dark:hover {
   overflow: scroll;
   box-shadow: 1px 18px 38px 11.27px rgba(42, 40, 55, 0.05); }
 
+.footer-link {
+  font-size: 12px !important; }
+  @media (min-width: 768px) {
+    .footer-link {
+      font-size: 13px !important; } }
+  @media (min-width: 992px) {
+    .footer-link {
+      font-size: 14px !important; } }
+
 #share-navbar {
   padding: 0 20px;
   color: #FFFFFF;

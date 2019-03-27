@@ -4100,6 +4100,15 @@ a.text-dark:focus, a.text-dark:hover {
     .title-content h5 {
       font-size: 17px; } }
 
+.footer-link {
+  font-size: 12px !important; }
+  @media (min-width: 768px) {
+    .footer-link {
+      font-size: 13px !important; } }
+  @media (min-width: 992px) {
+    .footer-link {
+      font-size: 14px !important; } }
+
 #landing {
   position: fixed;
   left: 0;
