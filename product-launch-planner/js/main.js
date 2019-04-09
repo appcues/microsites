@@ -443,7 +443,7 @@ var appcuesProductLaunchPlanner = {
 			"title": "Write help center documentation",
 			"finalizeByDays": -2, 
 			"finalizeByText": "Draft by ",
-			"body": "<p>New products come with new questions. Start by writing up comprehensive how-to content that will lives in your help center. Be sure to add to it as the support tickets begin rolling in.</p>"
+			"body": "<p>New products come with new questions. Start by writing up comprehensive how-to content that will live in your help center. Be sure to add to it as the support tickets begin rolling in.</p>"
 		}, {
 			"conditions": {"importanceLevel": 8},
 			"icon": "product-hunt.svg",
