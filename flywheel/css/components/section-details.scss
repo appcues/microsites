@@ -1,0 +1,66 @@
+#fw-main-content {
+	text-align: center;
+	max-width: 1300px;
+	margin: 0 auto;
+
+	#flywheel-section-details {
+		display: none;
+		height: 500px;
+		padding: 10px;
+		width: 60%;
+		background: $white;
+		border-radius: 15px;
+		box-shadow: 1px 18px 38px 11.27px rgba(42, 40, 55, 0.05);
+	}
+
+
+	#flywheel-section-details.active {
+		display: inline-block;
+		max-width: 600px;
+		vertical-align: top;
+	}	
+
+
+	#fw-stage-content, #fw-action-content {
+		display: none;
+
+		.fw-subsection {
+			width: 100%;
+			padding: 20px 15px;
+			text-align: left;
+
+			h5 {
+				text-transform: uppercase;
+				font-weight: 800;
+				color: $dark-gray;
+				display: block;
+				width: 100%;
+				font-size: 13px;
+				margin: 10px 0 15px 0;
+			}
+		}
+	}
+
+	#fw-stage-content.active, #fw-action-content.active {
+		display: block;
+	}
+
+	#fw-stage-content {
+		
+		#fw-stage-engage {
+			
+			.flow-section {
+
+			}
+
+		}
+	}
+	
+	#fw-action-content {
+
+	}
+
+	
+}
+
+

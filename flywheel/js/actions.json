@@ -1,0 +1,158 @@
+{
+	"activate": {
+		"gradient": {
+			"start": "#5c5cff",
+			"end": "#8960ff"
+		},
+		"header": "Activate",
+		"description": "Activation looks different for every company. But at its core, activation is a feeling that the user experiences. It’s a moment of relief and excitement when a user discovers the solution to their problem.",
+		"goals": [
+			{
+				"icon": "evaluators.svg",
+				"text": "Evaluators"
+			}, {
+				"icon": "beginners.svg",
+				"text": "Beginners"
+			}
+		],
+		"data": [
+			{
+				"icon": "graph.svg",
+				"header": "34%", 
+				"description": "Why, sometimes I’ve activated as many as six impossible things before breakfast."
+			}, {
+				"icon": "graph.svg",
+				"header": "68%",
+				"description": "Activate different doors, you may find a you there that you never knew was yours. Anything can happen."
+			}
+		],
+		"resources": [
+			{
+				"title": "Gather ye activation rosebuds",
+				"description": "No. Ding! Thank you for playing anyway. Because we are food for worms, lads. Because, believe it or not, each and every one of us in this room is one day going to stop breathing, turn cold and die.",
+				"link": "https://www.appcues.com"
+			}, {
+				"title": "while ye may acitvate",
+				"description": "No. Ding! Thank you for playing anyway. Because we are food for worms, lads. Because, believe it or not, each and every one of us in this room is one day going to stop breathing, turn cold and die.",
+				"link": "https://www.appcues.com"
+			}
+		]
+	}, 
+	"adopt": {
+		"gradient": {
+			"start": "#5c5cff",
+			"end": "#8960ff"
+		},
+		"header": "Adopt",
+		"description": "Adoption is about forming habits and getting people to associate your product with a specific task or solution. Users who have adopted your product don’t put a lot of thought into deciding to use your product, they just use it.",
+		"goals": [
+			{
+				"icon": "beginners.svg",
+				"text": "Beginners"
+			}, {
+				"icon": "regulars.svg",
+				"text": "Regulars"
+			}
+		],
+		"data": [
+			{
+				"icon": "graph.svg",
+				"header": "82%", 
+				"description": "Why, sometimes I’ve adopted as many as six impossible things before breakfast."
+			}, {
+				"icon": "graph.svg",
+				"header": "41%",
+				"description": "Adopt different doors, you may find a you there that you never knew was yours. Anything can happen."
+			}
+		],
+		"resources": [
+			{
+				"title": "Gather ye adoption rosebuds",
+				"description": "No. Ding! Thank you for playing anyway. Because we are food for worms, lads. Because, believe it or not, each and every one of us in this room is one day going to stop breathing, turn cold and die.",
+				"link": "https://www.appcues.com"
+			}, {
+				"title": "while ye may adopt",
+				"description": "No. Ding! Thank you for playing anyway. Because we are food for worms, lads. Because, believe it or not, each and every one of us in this room is one day going to stop breathing, turn cold and die.",
+				"link": "https://www.appcues.com"
+			}
+		]
+	}, 
+	"adore": {
+		"gradient": {
+			"start": "#5c5cff",
+			"end": "#8960ff"
+		},
+		"header": "Adore",
+		"description": "Once a user adores your product, they may take it in directions you never expected. These users are passionate, and will push the limits of your product to try to unlock new solutions and further engrain your software into their workflows.",
+		"goals": [
+			{
+				"icon": "regulars.svg",
+				"text": "Regulars"
+			}, {
+				"icon": "champions.svg",
+				"text": "Champions"
+			}
+		],
+		"data": [
+			{
+				"icon": "graph.svg",
+				"header": "25%", 
+				"description": "Why, sometimes I’ve adored as many as six impossible things before breakfast."
+			}, {
+				"icon": "graph.svg",
+				"header": "50%",
+				"description": "Adore different doors, you may find a you there that you never knew was yours. Anything can happen."
+			}
+		],
+		"resources": [
+			{
+				"title": "Gather ye adoration rosebuds",
+				"description": "No. Ding! Thank you for playing anyway. Because we are food for worms, lads. Because, believe it or not, each and every one of us in this room is one day going to stop breathing, turn cold and die.",
+				"link": "https://www.appcues.com"
+			}, {
+				"title": "while ye may adore",
+				"description": "No. Ding! Thank you for playing anyway. Because we are food for worms, lads. Because, believe it or not, each and every one of us in this room is one day going to stop breathing, turn cold and die.",
+				"link": "https://www.appcues.com"
+			}
+		]
+	}, 
+	"advocate": {
+		"gradient": {
+			"start": "#5c5cff",
+			"end": "#8960ff"
+		},
+		"header": "Advocate",
+		"description": "It usually just takes a little nudge to get your champions to become advocates for your product. These folks love your product and want to see it succeed—but they might not take the next step toward advocacy on their own. They’re willing to participate in the future of your company, but they need to be invited to the party.",
+		"goals": [
+			{
+				"icon": "champions.svg",
+				"text": "Champions"
+			}, {
+				"icon": "evaluators.svg",
+				"text": "Evaluators"
+			}
+		],
+		"data": [
+			{
+				"icon": "graph.svg",
+				"header": "36%", 
+				"description": "Why, sometimes I’ve advocated as many as six impossible things before breakfast."
+			}, {
+				"icon": "graph.svg",
+				"header": "18%",
+				"description": "Advocate different doors, you may find a you there that you never knew was yours. Anything can happen."
+			}
+		],
+		"resources": [
+			{
+				"title": "Gather ye advocation rosebuds",
+				"description": "No. Ding! Thank you for playing anyway. Because we are food for worms, lads. Because, believe it or not, each and every one of us in this room is one day going to stop breathing, turn cold and die.",
+				"link": "https://www.appcues.com"
+			}, {
+				"title": "while ye may advocate",
+				"description": "No. Ding! Thank you for playing anyway. Because we are food for worms, lads. Because, believe it or not, each and every one of us in this room is one day going to stop breathing, turn cold and die.",
+				"link": "https://www.appcues.com"
+			}
+		]
+	}
+}

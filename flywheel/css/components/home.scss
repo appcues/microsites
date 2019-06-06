@@ -1,0 +1,19 @@
+#fw-home-content {
+	text-align: center;
+	margin: 50px auto;
+	width: 95%;
+	max-width: 800px;
+
+	h1 {
+		color: $dark-gray;
+		font-size: 50px;
+		margin: 0 0 20px 0;
+	}
+
+	h3 {
+		color: $medium-gray;
+		font-size: 20px;
+		margin: 0 0 10px 0;
+		line-height: 1.6;
+	}
+}
