@@ -1,16 +1,29 @@
 #fw-main-content {
 	text-align: center;
 	max-width: 1300px;
-	margin: 0 auto;
+	margin: 50px auto;
 
 	#flywheel-section-details {
 		display: none;
-		height: 500px;
-		padding: 10px;
+		padding: 30px;
 		width: 60%;
+		text-align: left;
 		background: $white;
 		border-radius: 15px;
 		box-shadow: 1px 18px 38px 11.27px rgba(42, 40, 55, 0.05);
+
+		#fw-section-header {
+			color: $dark-gray;
+			font-size: 24px;
+			margin: 0 0 15px 0;
+		}
+
+		#fw-section-description {
+			color: $medium-gray;
+			font-size: 14px;
+			line-height: 1.5;
+			margin: 0 0 20px 0;
+		}
 	}
 
 
@@ -26,8 +39,9 @@
 
 		.fw-subsection {
 			width: 100%;
-			padding: 20px 15px;
-			text-align: left;
+			padding: 10px 0;
+			text-align: left; 
+
 
 			h5 {
 				text-transform: uppercase;
@@ -38,26 +52,41 @@
 				font-size: 13px;
 				margin: 10px 0 15px 0;
 			}
+
+			.fw-subection-content {
+				display: flex;
+
+				.fw-stage-goal, .fw-stage-characteristic {
+					width: 33%;
+					vertical-align: middle;
+
+					.fw-stage-icon {
+						width: 25px;
+						margin-right: 10px;
+					}
+
+					span {
+						vertical-align: middle;
+					}
+				}	
+			}
+
+			
+			
+
+			.fw-data-section {
+
+			}
+
+			.fw-resource-section {
+
+			}
+			
 		}
 	}
 
 	#fw-stage-content.active, #fw-action-content.active {
 		display: block;
-	}
-
-	#fw-stage-content {
-		
-		#fw-stage-engage {
-			
-			.flow-section {
-
-			}
-
-		}
-	}
-	
-	#fw-action-content {
-
 	}
 
 	

@@ -1,4 +1,6 @@
 var appcuesFlywheel = {
+	engageFlows: [],
+	flowIndex: 0,
 	stages: {
 		"evaluators": {
 			"gradient": {
@@ -357,21 +359,28 @@ var appcuesFlywheel = {
 	//change highlighted section, remove active class, add to new one
 	createStageGoal: function(goal) {
 		var imageSrc = 'https://appcues-public.s3-us-west-2.amazonaws.com/microsites/flywheel/img/icons/' + goal.icon;
-		var htmlString = '<div class="fw-stage-goal"><img class="fw-goal-icon" src="' + imageSrc + 
+		var htmlString = '<div class="fw-stage-goal"><img class="fw-stage-icon" src="' + imageSrc + 
 		'" /><span>' + goal.text + '</span></div>';
 		return htmlString;
 	},
 
 	createStageCharacteristic: function(item) {
 		var imageSrc = 'https://appcues-public.s3-us-west-2.amazonaws.com/microsites/flywheel/img/icons/' + item.icon;
-		var htmlString = '<div class="fw-stage-characteristic"><img class="fw-characteristic-icon" src="' + imageSrc + 
+		var htmlString = '<div class="fw-stage-characteristic"><img class="fw-stage-icon" src="' + imageSrc + 
 		'" /><span>' + item.text + '</span></div>';
 		return htmlString;
 	},
 
-	createStageEngagement: function(item) {
+	createStageEngagement: function(item, index) {
 		var imageSrc = 'https://appcues-public.s3-us-west-2.amazonaws.com/microsites/flywheel/img/engage-flows/' + item.image;
-		var htmlString = '<div class="fw-engage-item"><div class="fw-engage-image-container"><img class="fw-engage-image" src="' + imageSrc + '" /></div><div class="fw-engage-content"><h6>' + item.header + '</h6><p>' + item.description + '</p></div><div class="fw-learn-how"><a target="_blank" href=' + item.link + '><span>Learn how</span><img src="https://appcues-public.s3-us-west-2.amazonaws.com/microsites/flywheel/img/arrow.svg"/></a></div>';
+
+		if(index === 0) {
+			var classString = "fw-engage-item active";
+		} else {
+			var classString = "fw-engage-item";
+		}
+
+		var htmlString = '<div class="' + classString + '" data-flow-position=' + index + '><div class="fw-engage-image-container"><img class="fw-engage-image" src="' + imageSrc + '" /></div><div class="fw-engage-content-holder"><div class="fw-engage-content"><h6>' + item.header + '</h6><p>' + item.description + '</p><div class="fw-learn-how"><a target="_blank" href=' + item.link + '><span>Learn how</span><img src="https://appcues-public.s3-us-west-2.amazonaws.com/microsites/flywheel/img/icons/arrow-dark.svg" alt="dark arrow"/></a></div></div></div></div>';
 		return htmlString;
 	},
 
@@ -382,16 +391,32 @@ var appcuesFlywheel = {
 	},
 
 	createActionResource: function(item) {
-		var htmlString = '<div class="fw-resource-section"><h6 class="fw-resource-header">' + item.title + '</h6><p class="fw-resource-description">' + item.description + '</p><div class="fw-learn-how"><a target="_blank" href=' + item.link + '><span>Read now</span><img src="https://appcues-public.s3-us-west-2.amazonaws.com/microsites/flywheel/img/arrow.svg"/></a></div></div>';
+		var htmlString = '<div class="fw-resource-section"><h6 class="fw-resource-header">' + item.title + '</h6><p class="fw-resource-description">' + item.description + '</p><div class="fw-learn-how"><a target="_blank" href=' + item.link + '><span>Read now</span><img src="https://appcues-public.s3-us-west-2.amazonaws.com/microsites/flywheel/img/iconsicons/arrow-dark.svg" alt="dark arrow""/></a></div></div>';
 		return htmlString;
 
-	},	
+	},
 
 	setEngageArrowListeners: function() {
+		$('#fw-engage-forward').click(function(){
+			appcuesFlywheel.toggleEngageFlows(1);
+		});
+
+		$('#fw-engage-back').click(function(){
+			appcuesFlywheel.toggleEngageFlows(-1);
+		});
 
 	},
 
 	toggleEngageFlows: function(direction) {
+
+		//make sure thing loops and only goes 0 to length of flows
+
+		$("#fw-engage-dots").children()[appcuesFlywheel.flowIndex].src = "https://appcues-public.s3-us-west-2.amazonaws.com/microsites/flywheel/img/icons/dot-inactive.svg";
+
+		//remove active class and add active class with transition
+
+		//update dots
+		$("#fw-engage-dots").children()[appcuesFlywheel.flowIndex].src = "https://appcues-public.s3-us-west-2.amazonaws.com/microsites/flywheel/img/icons/dot-active.svg";
 
 	},
 
@@ -401,6 +426,7 @@ var appcuesFlywheel = {
 		$('.fw-engage-item').remove();
 		$('.fw-data-section').remove();
 		$('.fw-resource-section').remove();
+		$('#fw-engage-dots').html("");
 		// $('#fw-stage-goals').html("");
 		// $('#fw-stage-characteristics').html("");
 		// $('#fw-stage-engage-content').html("");
@@ -412,12 +438,12 @@ var appcuesFlywheel = {
 		$('.flywheel-section').removeClass("active");
 		$(el).addClass("active");
 		appcuesFlywheel.clearContent();
+		appcuesFlywheel.flowIndex = 0;
 
 		if (isStage) {
 
 			var sectionData = appcuesFlywheel.stages[sectionName];
 
-			
 			//render goals content for stage
 			for (i = 0; i < sectionData.goals.length; i++) { 
 				var string = appcuesFlywheel.createStageGoal(sectionData.goals[i]);
@@ -430,12 +456,19 @@ var appcuesFlywheel = {
 				$('#fw-stage-characteristics').append(string);
 			}
 
-
-			//render engage flows content for stage
+			//render engage content for stage
 			for (k = 0; k < sectionData.engage.length; k++) { 
-				var string = appcuesFlywheel.createStageEngagement(sectionData.engage[k]);
-				$('#fw-stage-engage-content').append(string);
+				var string = appcuesFlywheel.createStageEngagement(sectionData.engage[k], k);
+				$('#fw-stage-engage').append(string);
+
+				//render engage dots
+				if(k === 0) {
+					$('#fw-engage-dots').append('<img src="https://appcues-public.s3-us-west-2.amazonaws.com/microsites/flywheel/img/icons/dot-active.svg" data-dot-position=' + k + 'alt="dark gray dot"/>')
+				} else {
+					$('#fw-engage-dots').append('<img src="https://appcues-public.s3-us-west-2.amazonaws.com/microsites/flywheel/img/icons/dot-inactive.svg" data-dot-position=' + k + ' alt="medium gray dot"/>');
+				}
 			}
+		
 
 			//set gradient for engage section
 			$('.fw-engage-image-container').css({
@@ -487,7 +520,7 @@ var appcuesFlywheel = {
 	},
 
 	startSite: function() {
-		
+		appcuesFlywheel.setEngageArrowListeners();
 	}
 };
 
