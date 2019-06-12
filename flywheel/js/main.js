@@ -4,8 +4,8 @@ var appcuesFlywheel = {
 	stages: {
 		"evaluators": {
 			"gradient": {
-				"start": "#5c5cff",
-				"end": "#8960ff"
+				"start": "#2DD2F3",
+				"end": "#20E0D6"
 			},
 			"header": "Evaluators",
 			"description": "Evaluators are nascent in your product and have likely provided you with minimal information, such as their email address, to learn more about your product. If you offer a free trial, they have signed up. If you do not, they have had a demo with an account executive and/or received access to a demo account.",
@@ -51,8 +51,8 @@ var appcuesFlywheel = {
 		}, 
 		"beginners": {
 			"gradient": {
-				"start": "#5c5cff",
-				"end": "#8960ff"
+				"start": "#2CB4FF",
+				"end": "#4980FF"
 			},
 			"header": "Beginners",
 			"description": "Beginners understand how your product can solve their needs and provide value—and they’re excited about it! This excitement is driving them spend more time with your product and to explore its features and functionality more deeply. These users may not be paying customers yet, but they’re mentally prepared to make that leap now that they’ve realized the value that your product provides.",
@@ -98,8 +98,8 @@ var appcuesFlywheel = {
 		}, 
 		"regulars": {
 			"gradient": {
-				"start": "#5c5cff",
-				"end": "#8960ff"
+				"start": "#8960FF",
+				"end": "#5C5CFF"
 			},
 			"header": "Regulars",
 			"description": "Regulars have mastered the core use cases for your product and are curious about the other problems your product can solve. They’re very familiar with your interface and are unlikely to need much help—however, changes to the product, both large and small, can cause friction disrupt their workflows.",
@@ -145,8 +145,8 @@ var appcuesFlywheel = {
 		}, 
 		"champions": {
 			"gradient": {
-				"start": "#5c5cff",
-				"end": "#8960ff"
+				"start": "#FF8389",
+				"end": "#FF5290"
 			},
 			"header": "Champions",
 			"description": "Champions are heavily invested in the future of your product, and have tied themselves to your success. If you were to shut the doors tomorrow, they would be devastated (shout out to Inbox fans). These are the people who recommend your product to their colleagues, friends, and social media followers. They have formed an emotional connection with your brand and your product—at this point in the relationship, you are providing value outside of the job to be done.",
@@ -198,8 +198,8 @@ var appcuesFlywheel = {
 	actions: {
 		"activate": {
 			"gradient": {
-				"start": "#5c5cff",
-				"end": "#8960ff"
+				"start": "#4489FF",
+				"end": "#1DE0D7"
 			},
 			"header": "Activate",
 			"description": "Activation looks different for every company. But at its core, activation is a feeling that the user experiences. It’s a moment of relief and excitement when a user discovers the solution to their problem.",
@@ -237,8 +237,8 @@ var appcuesFlywheel = {
 		}, 
 		"adopt": {
 			"gradient": {
-				"start": "#5c5cff",
-				"end": "#8960ff"
+				"start": "#2CB4FF",
+				"end": "#605CFF"
 			},
 			"header": "Adopt",
 			"description": "Adoption is about forming habits and getting people to associate your product with a specific task or solution. Users who have adopted your product don’t put a lot of thought into deciding to use your product, they just use it.",
@@ -276,8 +276,8 @@ var appcuesFlywheel = {
 		}, 
 		"adore": {
 			"gradient": {
-				"start": "#5c5cff",
-				"end": "#8960ff"
+				"start": "#FE5B8F",
+				"end": "#8860FF"
 			},
 			"header": "Adore",
 			"description": "Once a user adores your product, they may take it in directions you never expected. These users are passionate, and will push the limits of your product to try to unlock new solutions and further engrain your software into their workflows.",
@@ -315,8 +315,8 @@ var appcuesFlywheel = {
 		}, 
 		"advocate": {
 			"gradient": {
-				"start": "#5c5cff",
-				"end": "#8960ff"
+				"start": "#FF6297",
+				"end": "#2DD2F3f"
 			},
 			"header": "Advocate",
 			"description": "It usually just takes a little nudge to get your champions to become advocates for your product. These folks love your product and want to see it succeed—but they might not take the next step toward advocacy on their own. They’re willing to participate in the future of your company, but they need to be invited to the party.",
@@ -391,7 +391,7 @@ var appcuesFlywheel = {
 	},
 
 	createActionResource: function(item) {
-		var htmlString = '<div class="fw-resource-section"><h6 class="fw-resource-header">' + item.title + '</h6><p class="fw-resource-description">' + item.description + '</p><div class="fw-learn-how"><a target="_blank" href=' + item.link + '><span>Read now</span><img src="https://appcues-public.s3-us-west-2.amazonaws.com/microsites/flywheel/img/iconsicons/arrow-dark.svg" alt="dark arrow""/></a></div></div>';
+		var htmlString = '<div class="fw-resource-section"><h6 class="fw-resource-header">' + item.title + '</h6><p class="fw-resource-description">' + item.description + '</p><div class="fw-learn-how"><a target="_blank" href=' + item.link + '><span>Read now</span><img src="https://appcues-public.s3-us-west-2.amazonaws.com/microsites/flywheel/img/icons/arrow-dark.svg" alt="dark arrow""/></a></div></div>';
 		return htmlString;
 
 	},
@@ -409,14 +409,31 @@ var appcuesFlywheel = {
 
 	toggleEngageFlows: function(direction) {
 
-		//make sure thing loops and only goes 0 to length of flows
+		var oldIndex = appcuesFlywheel.flowIndex;
+		
+		if((appcuesFlywheel.flowIndex + direction) >= $('.fw-engage-item').length) {
+			appcuesFlywheel.flowIndex = 0;
+		} else if ((appcuesFlywheel.flowIndex + direction) < 0) {
+			appcuesFlywheel.flowIndex = ($('.fw-engage-item').length - 1);
+		} else {
+			appcuesFlywheel.flowIndex = appcuesFlywheel.flowIndex + direction;	
+		}
 
-		$("#fw-engage-dots").children()[appcuesFlywheel.flowIndex].src = "https://appcues-public.s3-us-west-2.amazonaws.com/microsites/flywheel/img/icons/dot-inactive.svg";
+		//debugger;
 
-		//remove active class and add active class with transition
+		var currentlyActiveFlow = '[data-flow-position="' + oldIndex + '"]';
+		var newActiveFlow = '[data-flow-position="' + appcuesFlywheel.flowIndex + '"]';
 
-		//update dots
-		$("#fw-engage-dots").children()[appcuesFlywheel.flowIndex].src = "https://appcues-public.s3-us-west-2.amazonaws.com/microsites/flywheel/img/icons/dot-active.svg";
+		var currentlyActiveDot = '[data-dot-position="' + oldIndex + '"]';
+		var newActiveDot = '[data-dot-position="' + appcuesFlywheel.flowIndex + '"]';
+
+
+
+		$('#fw-stage-engage').find(currentlyActiveFlow).removeClass("active");
+		$('#fw-stage-engage').find(newActiveFlow).addClass("active");
+
+		$("#fw-engage-dots").find(currentlyActiveDot)[0].src = "https://appcues-public.s3-us-west-2.amazonaws.com/microsites/flywheel/img/icons/dot-inactive.svg";
+		$("#fw-engage-dots").find(newActiveDot)[0].src = "https://appcues-public.s3-us-west-2.amazonaws.com/microsites/flywheel/img/icons/dot-active.svg";
 
 	},
 
@@ -427,11 +444,6 @@ var appcuesFlywheel = {
 		$('.fw-data-section').remove();
 		$('.fw-resource-section').remove();
 		$('#fw-engage-dots').html("");
-		// $('#fw-stage-goals').html("");
-		// $('#fw-stage-characteristics').html("");
-		// $('#fw-stage-engage-content').html("");
-		// $('#fw-action-data').html("");
-		// $('#fw-action-resources').html("");
 	},
 
 	changeSection: function(el, sectionName, isStage) {
@@ -463,7 +475,7 @@ var appcuesFlywheel = {
 
 				//render engage dots
 				if(k === 0) {
-					$('#fw-engage-dots').append('<img src="https://appcues-public.s3-us-west-2.amazonaws.com/microsites/flywheel/img/icons/dot-active.svg" data-dot-position=' + k + 'alt="dark gray dot"/>')
+					$('#fw-engage-dots').append('<img src="https://appcues-public.s3-us-west-2.amazonaws.com/microsites/flywheel/img/icons/dot-active.svg" data-dot-position=' + k + ' alt="dark gray dot"/>')
 				} else {
 					$('#fw-engage-dots').append('<img src="https://appcues-public.s3-us-west-2.amazonaws.com/microsites/flywheel/img/icons/dot-inactive.svg" data-dot-position=' + k + ' alt="medium gray dot"/>');
 				}
@@ -492,11 +504,7 @@ var appcuesFlywheel = {
 				var string = appcuesFlywheel.createActionResource(sectionData.resources[j]);
 				$('#fw-action-resources').append(string);
 			}
-
-
 		}
-
-
 
 		$("#fw-section-header").text(sectionData.header);
 		$("#fw-section-description").text(sectionData.description);

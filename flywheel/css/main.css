@@ -4421,11 +4421,15 @@ a.text-dark:focus, a.text-dark:hover {
   #fw-main-content #flywheel-section-details {
     display: none;
     padding: 30px;
-    width: 60%;
+    width: 95%;
+    margin: 0 auto;
     text-align: left;
     background: #FFFFFF;
     border-radius: 15px;
     box-shadow: 1px 18px 38px 11.27px rgba(42, 40, 55, 0.05); }
+    @media (min-width: 576px) {
+      #fw-main-content #flywheel-section-details {
+        width: 60%; } }
     #fw-main-content #flywheel-section-details #fw-section-header {
       color: #242a35;
       font-size: 24px;
@@ -4463,6 +4467,45 @@ a.text-dark:focus, a.text-dark:hover {
             margin-right: 10px; }
           #fw-main-content #fw-stage-content .fw-subsection .fw-subection-content .fw-stage-goal span, #fw-main-content #fw-stage-content .fw-subsection .fw-subection-content .fw-stage-characteristic span, #fw-main-content #fw-action-content .fw-subsection .fw-subection-content .fw-stage-goal span, #fw-main-content #fw-action-content .fw-subsection .fw-subection-content .fw-stage-characteristic span {
             vertical-align: middle; }
+      #fw-main-content #fw-stage-content .fw-subsection .fw-data-section, #fw-main-content #fw-stage-content .fw-subsection .fw-resource-section, #fw-main-content #fw-action-content .fw-subsection .fw-data-section, #fw-main-content #fw-action-content .fw-subsection .fw-resource-section {
+        width: 50%;
+        padding: 15px;
+        border-radius: 15px; }
+        #fw-main-content #fw-stage-content .fw-subsection .fw-data-section h6, #fw-main-content #fw-stage-content .fw-subsection .fw-resource-section h6, #fw-main-content #fw-action-content .fw-subsection .fw-data-section h6, #fw-main-content #fw-action-content .fw-subsection .fw-resource-section h6 {
+          color: #242a35; }
+        #fw-main-content #fw-stage-content .fw-subsection .fw-data-section p, #fw-main-content #fw-stage-content .fw-subsection .fw-resource-section p, #fw-main-content #fw-action-content .fw-subsection .fw-data-section p, #fw-main-content #fw-action-content .fw-subsection .fw-resource-section p {
+          color: #576784;
+          font-size: 12px;
+          margin: 15px 0; }
+        #fw-main-content #fw-stage-content .fw-subsection .fw-data-section:first-child, #fw-main-content #fw-stage-content .fw-subsection .fw-resource-section:first-child, #fw-main-content #fw-action-content .fw-subsection .fw-data-section:first-child, #fw-main-content #fw-action-content .fw-subsection .fw-resource-section:first-child {
+          margin-right: 15px; }
+        #fw-main-content #fw-stage-content .fw-subsection .fw-data-section:last-child, #fw-main-content #fw-stage-content .fw-subsection .fw-resource-section:last-child, #fw-main-content #fw-action-content .fw-subsection .fw-data-section:last-child, #fw-main-content #fw-action-content .fw-subsection .fw-resource-section:last-child {
+          margin-left: 15px; }
+      #fw-main-content #fw-stage-content .fw-subsection .fw-data-section, #fw-main-content #fw-action-content .fw-subsection .fw-data-section {
+        background: #F5F7FA;
+        position: relative; }
+        #fw-main-content #fw-stage-content .fw-subsection .fw-data-section h6, #fw-main-content #fw-action-content .fw-subsection .fw-data-section h6 {
+          font-size: 40px;
+          font-weight: 900;
+          line-height: 1; }
+        #fw-main-content #fw-stage-content .fw-subsection .fw-data-section img, #fw-main-content #fw-action-content .fw-subsection .fw-data-section img {
+          position: absolute;
+          width: 30px;
+          right: 15px;
+          top: 17.5px; }
+      #fw-main-content #fw-stage-content .fw-subsection .fw-resource-section, #fw-main-content #fw-action-content .fw-subsection .fw-resource-section {
+        border: 1px solid #979eb4; }
+        #fw-main-content #fw-stage-content .fw-subsection .fw-resource-section h6, #fw-main-content #fw-action-content .fw-subsection .fw-resource-section h6 {
+          font-size: 15px;
+          font-weight: 700; }
+        #fw-main-content #fw-stage-content .fw-subsection .fw-resource-section p, #fw-main-content #fw-action-content .fw-subsection .fw-resource-section p {
+          margin-bottom: 25px; }
+        #fw-main-content #fw-stage-content .fw-subsection .fw-resource-section a span, #fw-main-content #fw-action-content .fw-subsection .fw-resource-section a span {
+          color: #242a35; }
+        #fw-main-content #fw-stage-content .fw-subsection .fw-resource-section a img, #fw-main-content #fw-action-content .fw-subsection .fw-resource-section a img {
+          margin-top: -2.5px;
+          width: 20px;
+          margin-left: 10px; }
   #fw-main-content #fw-stage-content.active, #fw-main-content #fw-action-content.active {
     display: block; }
 
