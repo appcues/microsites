@@ -25,7 +25,11 @@
   </head>
 
   <body>
-
+    <div id="fw-background-gradient">
+        <img id="fw-appcues-logo" src="https://appcues-public.s3-us-west-2.amazonaws.com/microsites/logos/logo-white.svg" alt="Appcues logo"/>
+        <img id="fw-gradient-image" alt="background gradient" src="https://appcues-public.s3-us-west-2.amazonaws.com/microsites/flywheel/img/gradient/activate.svg"/>
+        <img id="fw-swirl-image" alt="white swirl image" src="https://appcues-public.s3-us-west-2.amazonaws.com/microsites/flywheel/img/gradient/white-swirl.png"/>
+    </div>
     <div class="container-fluid">
         <div id="dev-buffer"></div>
         <div id="fw-body-section">
@@ -34,48 +38,7 @@
                 <h3>Learn more about how to transform your company into a product-led organization and accelerate your company. Guaranteed to make your company a unicorn.</h3>
             </div>
             <div id="fw-main-content">
-                <div id="flywheel-section-details" class="active">
-                    <h2 id="fw-section-header"></h2>
-                    <p id="fw-section-description"></p>
-                    <div id="fw-action-content">
-                        <div class="fw-subsection" id="fw-action-goal">
-                            <div id="fw-starting-segment"></div>
-                            <div id="fw-action-goal"></div>
-                            <div id="fw-ending-segment"></div>
-                            <div id="fw-goal-gradient"></div>
-                        </div>
-                        <div class="fw-subsection">
-                            <h5>Data</h5>
-                            <div id="fw-action-data" class="fw-subection-content"></div>
-                        </div>
-                        <div class="fw-subsection">
-                            <h5>Resources</h5>
-                            <div id="fw-action-resources" class="fw-subection-content"></div>
-                        </div>
-                    </div>
-                    <div id="fw-stage-content">
-                        <div class="fw-subsection">
-                            <h5>Key Goals</h5>
-                            <div  id="fw-stage-goals" class="fw-subection-content"></div>
-                        </div>
-                        <div class="fw-subsection">
-                            <h5>Key Characteristics</h5>
-                            <div  id="fw-stage-characteristics" class="fw-subection-content"></div>
-                        </div>
-                        <div class="fw-subsection">
-                            <h5>Ways to engage</h5>
-                            <div id="fw-stage-engage" class="fw-subection-content"></div>
-                            <div id="fw-engage-navigation">
-                                <div id="fw-engage-dots"></div>
-                                <div id="fw-engage-arrows">
-                                    <img id="fw-engage-back" src="https://appcues-public.s3-us-west-2.amazonaws.com/microsites/flywheel/img/icons/arrow-dark.svg" alt="medium gray arrow"/>
-                                    <img id="fw-engage-forward" src="https://appcues-public.s3-us-west-2.amazonaws.com/microsites/flywheel/img/icons/arrow-dark.svg" alt="medium gray arrow"/>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div id="flywheel-section" class="active">
+                <div id="flywheel-section">
                     <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                     viewBox="0 0 2344 2341" style="enable-background:new 0 0 2344 2341;" xml:space="preserve">
                         <g class="flywheel-section" id="Activate-color" onClick="appcuesFlywheel.changeSection(this, 'activate', false)">
@@ -669,6 +632,61 @@
                         <div id="previous-btn" class="nav-btn"></div>
                     </div>
                 </div>  
+                <div id="flywheel-section-details">
+                    <h2 id="fw-section-header"></h2>
+                    <p id="fw-section-description"></p>
+                    <div id="fw-action-content">
+                        <div class="fw-subsection">
+                            <h5>Goal</h5>
+                            <div id="fw-action-goal" class="fw-subection-content">
+                                <div id="fw-starting-segment" class="fw-goal-segment">
+                                    <img src="https://appcues-public.s3-us-west-2.amazonaws.com/microsites/flywheel/img/stage-icons/evaluators.svg" alt="Icon for intial segment"/>
+                                    <span>Evaluators</span>
+                                </div>
+                                <img class="fw-goal-dotted-line" src="https://appcues-public.s3-us-west-2.amazonaws.com/microsites/flywheel/img/icons/action-goal-progress-line.svg" alt="dotted line with an arrow in the middle"/>
+                                <div id="fw-goal-middle-action">
+                                    <span>Action</span>
+                                </div>
+                                <img class="fw-goal-dotted-line" src="https://appcues-public.s3-us-west-2.amazonaws.com/microsites/flywheel/img/icons/action-goal-progress-line.svg" alt="dotted line with an arrow in the middle"/>
+                                <div id="fw-ending-segment" class="fw-goal-segment">
+                                    <span>Beginners</span>
+                                    <img src="https://appcues-public.s3-us-west-2.amazonaws.com/microsites/flywheel/img/stage-icons/beginners.svg" alt="Icon for intial segment"/>
+                                </div>
+                            </div>
+                            <div id="fw-goal-gradient"></div>
+                        </div>
+                        <div class="fw-subsection">
+                            <h5>Data</h5>
+                            <div id="fw-action-data" class="fw-subection-content"></div>
+                        </div>
+                        <div class="fw-subsection">
+                            <h5>Resources</h5>
+                            <div id="fw-action-resources" class="fw-subection-content"></div>
+                        </div>
+                    </div>
+                    <div id="fw-stage-content">
+                        <div class="fw-subsection">
+                            <h5>Key Goals</h5>
+                            <div  id="fw-stage-goals" class="fw-subection-content"></div>
+                        </div>
+                        <div class="fw-subsection">
+                            <h5>Key Characteristics</h5>
+                            <div  id="fw-stage-characteristics" class="fw-subection-content"></div>
+                        </div>
+                        <div class="fw-subsection">
+                            <h5>Ways to engage</h5>
+                            <div id="fw-stage-engage" class="fw-subection-content"></div>
+                            <div id="fw-engage-navigation">
+                                <div id="fw-engage-dots"></div>
+                                <div id="fw-engage-arrows">
+                                    <img id="fw-engage-back" src="https://appcues-public.s3-us-west-2.amazonaws.com/microsites/flywheel/img/icons/arrow-dark.svg" alt="medium gray arrow"/>
+                                    <img id="fw-engage-forward" src="https://appcues-public.s3-us-west-2.amazonaws.com/microsites/flywheel/img/icons/arrow-dark.svg" alt="medium gray arrow"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="clear-div"></div>
             </div>
         </div>
     </div>

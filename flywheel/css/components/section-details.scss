@@ -1,160 +1,153 @@
-#fw-main-content {
-	text-align: center;
-	max-width: 1300px;
-	margin: 50px auto;
+#flywheel-section-details {
+	display: none;
+	padding: 30px;
+	width: 95%;
+	margin: 0 auto;
+	text-align: left;
+	background: $white;
+	border-radius: 15px;
+	box-shadow: 1px 18px 38px 11.27px rgba(42, 40, 55, 0.05);
 
-	#flywheel-section-details {
-		display: none;
-		padding: 30px;
-		width: 95%;
-		margin: 0 auto;
-		text-align: left;
-		background: $white;
-		border-radius: 15px;
-		box-shadow: 1px 18px 38px 11.27px rgba(42, 40, 55, 0.05);
-
-		@include media-breakpoint-up(sm) {
-			width: 60%;
-		}
-
-		#fw-section-header {
-			color: $dark-gray;
-			font-size: 24px;
-			margin: 0 0 15px 0;
-		}
-
-		#fw-section-description {
-			color: $medium-gray;
-			font-size: 14px;
-			line-height: 1.5;
-			margin: 0 0 20px 0;
-		}
+	@include media-breakpoint-up(lg) {
+		width: 55%;
+		float: left;
 	}
 
+	#fw-section-header {
+		color: $dark-gray;
+		font-size: 24px;
+		margin: 0 0 15px 0;
+	}
 
-	#flywheel-section-details.active {
-		display: inline-block;
-		max-width: 600px;
-		vertical-align: top;
-	}	
+	#fw-section-description {
+		color: $medium-gray;
+		font-size: 14px;
+		line-height: 1.5;
+		margin: 0 0 20px 0;
+	}
+}
 
 
-	#fw-stage-content, #fw-action-content {
-		display: none;
+#flywheel-section-details.active {
+	display: inline-block;
+	max-width: 600px;
+	vertical-align: top;
+}	
 
-		.fw-subsection {
+
+#fw-stage-content, #fw-action-content {
+	display: none;
+
+	.fw-subsection {
+		width: 100%;
+		padding: 10px 0;
+		text-align: left; 
+
+
+		h5 {
+			text-transform: uppercase;
+			font-weight: 800;
+			color: $dark-gray;
+			display: block;
 			width: 100%;
-			padding: 10px 0;
-			text-align: left; 
+			font-size: 13px;
+			margin: 10px 0 15px 0;
+		}
 
+		.fw-subection-content {
+			display: flex;
 
-			h5 {
-				text-transform: uppercase;
-				font-weight: 800;
-				color: $dark-gray;
-				display: block;
-				width: 100%;
-				font-size: 13px;
-				margin: 10px 0 15px 0;
-			}
+			.fw-stage-goal, .fw-stage-characteristic {
+				width: 33%;
+				vertical-align: middle;
 
-			.fw-subection-content {
-				display: flex;
+				.fw-stage-icon {
+					width: 25px;
+					margin-right: 10px;
+				}
 
-				.fw-stage-goal, .fw-stage-characteristic {
-					width: 33%;
+				span {
 					vertical-align: middle;
+				}
+			}	
+		}
 
-					.fw-stage-icon {
-						width: 25px;
-						margin-right: 10px;
-					}
+		
+		.fw-data-section, .fw-resource-section {	
+			width: 50%;
+			padding: 15px;
+			border-radius: 15px;
 
-					span {
-						vertical-align: middle;
-					}
-				}	
+			h6 {
+				color: $dark-gray;
 			}
 
-			
-			.fw-data-section, .fw-resource-section {	
-				width: 50%;
-				padding: 15px;
-				border-radius: 15px;
+			p {
+				color: $medium-gray;
+				font-size: 12px;
+				margin: 15px 0;
+			}
 
-				h6 {
+			&:first-child {
+				margin-right: 15px;
+			}
+
+			&:last-child {
+				margin-left: 15px;
+			}
+
+		}		
+
+		.fw-data-section {
+			background: $bg-gray;
+			position: relative;
+
+			h6 {
+				font-size: 40px;
+				font-weight: 900;
+				line-height: 1;
+			}
+			
+			img {
+				position: absolute;
+				width: 30px;
+			    right: 15px;
+			    top: 17.5px;
+			}
+		}
+
+		.fw-resource-section {
+			border: 1px solid $light-gray;
+			
+			h6 {
+				font-size: 15px;
+				font-weight: 700;
+			}				
+
+			p {
+				margin-bottom: 25px;
+			}
+
+			a {
+				span {
 					color: $dark-gray;
 				}
 
-				p {
-					color: $medium-gray;
-					font-size: 12px;
-    				margin: 15px 0;
-				}
-
-				&:first-child {
-					margin-right: 15px;
-				}
-
-				&:last-child {
-					margin-left: 15px;
-				}
-
-			}		
-
-			.fw-data-section {
-				background: $bg-gray;
-				position: relative;
-
-				h6 {
-					font-size: 40px;
-    				font-weight: 900;
-    				line-height: 1;
-				}
-				
 				img {
-					position: absolute;
-					width: 30px;
-				    right: 15px;
-				    top: 17.5px;
+					margin-top: -2.5px;
+					width: 20px;
+					margin-left: 10px;
 				}
-			}
-
-			.fw-resource-section {
-				border: 1px solid $light-gray;
-				
-				h6 {
-					font-size: 15px;
-					font-weight: 700;
-				}				
-
-				p {
-					margin-bottom: 25px;
-				}
-
-				a {
-					span {
-						color: $dark-gray;
-					}
-
-					img {
-						margin-top: -2.5px;
-						width: 20px;
-						margin-left: 10px;
-					}
-				}
-				
-
 			}
 			
+
 		}
+		
 	}
+}
 
-	#fw-stage-content.active, #fw-action-content.active {
-		display: block;
-	}
-
-	
+#fw-stage-content.active, #fw-action-content.active {
+	display: block;
 }
 
 

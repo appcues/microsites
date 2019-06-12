@@ -316,7 +316,7 @@ var appcuesFlywheel = {
 		"advocate": {
 			"gradient": {
 				"start": "#FF6297",
-				"end": "#2DD2F3f"
+				"end": "#2DD2F3"
 			},
 			"header": "Advocate",
 			"description": "It usually just takes a little nudge to get your champions to become advocates for your product. These folks love your product and want to see it succeed—but they might not take the next step toward advocacy on their own. They’re willing to participate in the future of your company, but they need to be invited to the party.",
@@ -447,6 +447,11 @@ var appcuesFlywheel = {
 	},
 
 	changeSection: function(el, sectionName, isStage) {
+
+		$('#flywheel-section-details').addClass("active");
+		$('#flywheel-section').addClass("active");
+
+
 		$('.flywheel-section').removeClass("active");
 		$(el).addClass("active");
 		appcuesFlywheel.clearContent();
@@ -484,6 +489,7 @@ var appcuesFlywheel = {
 
 			//set gradient for engage section
 			$('.fw-engage-image-container').css({
+				'background': sectionData.gradient.start + ";",
 				'background': '-moz-linear-gradient(left, ' + sectionData.gradient.start + ' 0%, '+ sectionData.gradient.end + ' 100%);',
 			    'background': '-webkit-linear-gradient(left,' + sectionData.gradient.start + ' 0%, '+ sectionData.gradient.end + ' 100%)',
 			    'background': 'linear-gradient(to right, ' + sectionData.gradient.start + ' 0%, '+ sectionData.gradient.end + ' 100%)',
@@ -492,6 +498,27 @@ var appcuesFlywheel = {
 
 		} else {
 			var sectionData = appcuesFlywheel.actions[sectionName];
+
+			//render goal data
+			//set goal gradient colors
+			$("#fw-goal-gradient").css({
+				'background': sectionData.gradient.start + ";",
+				'background': '-moz-linear-gradient(left, ' + sectionData.gradient.start + ' 0%, '+ sectionData.gradient.end + ' 100%);',
+			    'background': '-webkit-linear-gradient(left,' + sectionData.gradient.start + ' 0%, '+ sectionData.gradient.end + ' 100%)',
+			    'background': 'linear-gradient(to right, ' + sectionData.gradient.start + ' 0%, '+ sectionData.gradient.end + ' 100%)',
+			    'filter': 'progid:DXImageTransform.Microsoft.gradient( startColorstr=' + sectionData.gradient.start + ', endColorstr='+ sectionData.gradient.end + ',GradientType=1 );'
+			});
+
+
+			//update text and icons for data goal
+			$("#fw-starting-segment").find('img').src = "https://appcues-public.s3-us-west-2.amazonaws.com/microsites/flywheel/img/stage-icons/" + sectionData.goals[0].icon;
+			$("#fw-starting-segment").find('span').text(sectionData.goals[0].text);
+
+			$("#fw-ending-segment").find('img').src = "https://appcues-public.s3-us-west-2.amazonaws.com/microsites/flywheel/img/stage-icons/" + sectionData.goals[1].icon;
+			$("#fw-ending-segment").find('span').text(sectionData.goals[1].text);
+
+			$("#fw-goal-middle-action").find('span').text(sectionData.header);
+			
 
 			//render data content for action
 			for (i = 0; i < sectionData.data.length; i++) { 

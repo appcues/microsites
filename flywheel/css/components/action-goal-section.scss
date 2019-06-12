@@ -1,0 +1,68 @@
+#fw-action-goal {
+	span {
+		font-size: 12px;
+		font-weight: 600;
+	}
+
+	.fw-goal-segment {
+		width: 32.5%;
+		text-align: center;
+		img {
+			width: 15px;
+			margin-top: -5px;	
+		}
+
+		&:first-child {
+
+			img {
+				margin-right: 5px;	
+			}
+			
+		}
+
+		&:last-child {
+
+			img {
+				margin-left: 5px;
+			}
+		}
+
+
+	}
+
+	#fw-goal-middle-action {
+		width: 20%;
+		text-align: center;
+		background: $white;
+
+		span {
+			margin-top: 5px;
+		}
+	}
+
+	.fw-goal-dotted-line {
+		width: 17.5%;
+	}
+
+	@include media-breakpoint-up(sm) {
+		.fw-goal-segment {
+			width: 22.5%;
+		}
+
+		#fw-goal-middle-action {
+			width: 15%;
+		}
+		.fw-goal-dotted-line {
+			width: 20%;
+		}
+	}
+
+}
+
+#fw-goal-gradient {
+	border-radius: 15px;
+	height: 10px;
+	pointer-events: none;
+	margin: 10px auto;
+	width: 95%;
+}
