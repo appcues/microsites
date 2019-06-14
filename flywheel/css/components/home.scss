@@ -35,7 +35,7 @@
 #fw-background-gradient {
 	position: absolute;
 	z-index: 100;
-	width: 25%;
+	width: 35%;
 	max-width: 750px;
 	top: 0;
 	left: 0;
@@ -66,6 +66,8 @@
 }
 
 #fw-swirl-image {
+	display: none;
+	//hide swirl on mobile
 	position: absolute;
 	z-index: 105;
 	top: 15vw;

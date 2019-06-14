@@ -448,6 +448,8 @@ var appcuesFlywheel = {
 
 	changeSection: function(el, sectionName, isStage) {
 
+		$("#fw-home-content").hide();
+
 		$('#flywheel-section-details').addClass("active");
 		$('#flywheel-section').addClass("active");
 
@@ -511,10 +513,10 @@ var appcuesFlywheel = {
 
 
 			//update text and icons for data goal
-			$("#fw-starting-segment").find('img').src = "https://appcues-public.s3-us-west-2.amazonaws.com/microsites/flywheel/img/stage-icons/" + sectionData.goals[0].icon;
+			$("#fw-starting-segment").find('img').attr("src", "https://appcues-public.s3-us-west-2.amazonaws.com/microsites/flywheel/img/stage-icons/" + sectionData.goals[0].icon);
 			$("#fw-starting-segment").find('span').text(sectionData.goals[0].text);
 
-			$("#fw-ending-segment").find('img').src = "https://appcues-public.s3-us-west-2.amazonaws.com/microsites/flywheel/img/stage-icons/" + sectionData.goals[1].icon;
+			$("#fw-ending-segment").find('img').attr("src", "https://appcues-public.s3-us-west-2.amazonaws.com/microsites/flywheel/img/stage-icons/" + sectionData.goals[1].icon);
 			$("#fw-ending-segment").find('span').text(sectionData.goals[1].text);
 
 			$("#fw-goal-middle-action").find('span').text(sectionData.header);
@@ -535,6 +537,7 @@ var appcuesFlywheel = {
 
 		$("#fw-section-header").text(sectionData.header);
 		$("#fw-section-description").text(sectionData.description);
+		$("#fw-gradient-image").attr("src", "https://appcues-public.s3-us-west-2.amazonaws.com/microsites/flywheel/img/gradient/" + sectionName + ".svg");
 
 		if (isStage) {
 			//make stage section active

@@ -129,8 +129,14 @@
 			}
 
 			a {
+				text-decoration: none !important;
+
+				&:hover {
+					text-decoration: none !important;
+				}
 				span {
 					color: $dark-gray;
+
 				}
 
 				img {

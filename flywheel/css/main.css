@@ -4376,7 +4376,7 @@ a.text-dark:focus, a.text-dark:hover {
 #fw-background-gradient {
   position: absolute;
   z-index: 100;
-  width: 25%;
+  width: 35%;
   max-width: 750px;
   top: 0;
   left: 0; }
@@ -4402,6 +4402,7 @@ a.text-dark:focus, a.text-dark:hover {
   width: 100%; }
 
 #fw-swirl-image {
+  display: none;
   position: absolute;
   z-index: 105;
   top: 15vw;
@@ -4422,13 +4423,14 @@ a.text-dark:focus, a.text-dark:hover {
   #flywheel-section .flywheel-section {
     cursor: pointer;
     transition: opacity 300ms ease; }
-  #flywheel-section .flywheel-section.inactive-section:hover {
+  #flywheel-section .flywheel-section.inactive:hover {
     opacity: 0; }
   #flywheel-section .flywheel-section.active {
     opacity: 0; }
 
 #flywheel-section.active {
   width: 90%;
+  max-width: 600px;
   margin: 0 auto;
   display: inline-block;
   vertical-align: top; }
@@ -4555,12 +4557,16 @@ a.text-dark:focus, a.text-dark:hover {
         font-weight: 700; }
       #fw-stage-content .fw-subsection .fw-resource-section p, #fw-action-content .fw-subsection .fw-resource-section p {
         margin-bottom: 25px; }
-      #fw-stage-content .fw-subsection .fw-resource-section a span, #fw-action-content .fw-subsection .fw-resource-section a span {
-        color: #242a35; }
-      #fw-stage-content .fw-subsection .fw-resource-section a img, #fw-action-content .fw-subsection .fw-resource-section a img {
-        margin-top: -2.5px;
-        width: 20px;
-        margin-left: 10px; }
+      #fw-stage-content .fw-subsection .fw-resource-section a, #fw-action-content .fw-subsection .fw-resource-section a {
+        text-decoration: none !important; }
+        #fw-stage-content .fw-subsection .fw-resource-section a:hover, #fw-action-content .fw-subsection .fw-resource-section a:hover {
+          text-decoration: none !important; }
+        #fw-stage-content .fw-subsection .fw-resource-section a span, #fw-action-content .fw-subsection .fw-resource-section a span {
+          color: #242a35; }
+        #fw-stage-content .fw-subsection .fw-resource-section a img, #fw-action-content .fw-subsection .fw-resource-section a img {
+          margin-top: -2.5px;
+          width: 20px;
+          margin-left: 10px; }
 
 #fw-stage-content.active, #fw-action-content.active {
   display: block; }
@@ -4573,6 +4579,7 @@ a.text-dark:focus, a.text-dark:hover {
     display: none;
     background: #FFFFFF; }
     #fw-stage-engage .fw-engage-item .fw-engage-image-container {
+      display: flex;
       width: 50%;
       border-top-left-radius: 15px;
       border-bottom-left-radius: 15px; }
@@ -4601,9 +4608,10 @@ a.text-dark:focus, a.text-dark:hover {
         margin-bottom: 15px; }
       #fw-stage-engage .fw-engage-item .fw-engage-content-holder .fw-engage-content .fw-learn-how a, #fw-stage-engage .fw-engage-item .fw-engage-content-holder .fw-engage-content .fw-learn-how span {
         color: #242a35;
-        font-size: 13px; }
+        font-size: 13px;
+        text-decoration: none !important; }
         #fw-stage-engage .fw-engage-item .fw-engage-content-holder .fw-engage-content .fw-learn-how a:hover, #fw-stage-engage .fw-engage-item .fw-engage-content-holder .fw-engage-content .fw-learn-how span:hover {
-          text-decoration: none; }
+          text-decoration: none !important; }
       #fw-stage-engage .fw-engage-item .fw-engage-content-holder .fw-engage-content .fw-learn-how img {
         margin-top: -2.5px;
         width: 20px;

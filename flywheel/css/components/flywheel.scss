@@ -11,7 +11,7 @@
 		transition: opacity 300ms ease;
 	}
 
-	.flywheel-section.inactive-section {
+	.flywheel-section.inactive {
 		&:hover {
 			opacity: 0;		
 		}
@@ -24,6 +24,7 @@
 
 #flywheel-section.active {
 	width: 90%;
+	max-width: 600px;
 	margin: 0 auto;
 	display: inline-block;
 	vertical-align: top;

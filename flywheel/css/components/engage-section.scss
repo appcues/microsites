@@ -8,6 +8,7 @@
 		background: $white;
 		
 		.fw-engage-image-container {
+			display: flex;
 			width: 50%;
 			border-top-left-radius: 15px;
 			border-bottom-left-radius: 15px;
@@ -50,9 +51,10 @@
 					a, span {
 						color: $dark-gray;
 						font-size: 13px;
+						text-decoration: none !important;
 
 						&:hover {
-							text-decoration: none;
+							text-decoration: none !important;
 						}
 					}
 
