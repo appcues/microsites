@@ -588,9 +588,13 @@ var appcuesFlywheel = {
 $(function() {
 	appcuesFlywheel.startSite();
 
-	$('.flywheel-section').click(function(){
-			appcuesFlywheel.changeSection(this)
-	});
+	setTimeout(function(){
+		$('.flywheel-section').click(function(){
+				appcuesFlywheel.changeSection(this)
+		}); 
+	}, 1000);
+
+
 });
 
 
