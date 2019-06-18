@@ -1,6 +1,24 @@
 var appcuesFlywheel = {
 	engageFlows: [],
 	flowIndex: 0,
+	stagesSectionNameMap: {
+		"Champions-color--inject-1": ["champions", true],
+		"Regulars-color--inject-1": ["regulars", true],
+		"Beginners-color--inject-1": ["beginners", true],
+		"Evaluators-color--inject-1": ["evaluators", true],
+		"Adore-color--inject-1": ["adore", false],
+		"Adopt-color--inject-1": ["adopt", false],
+		"Advocate-color--inject-1": ["advocate", false],
+		"Activate-color--inject-1": ["activate", false],
+		"Champions-grey--inject-1": ["champions", true],
+		"Regulars-grey--inject-1": ["regulars", true],
+		"Beginners-grey--inject-1": ["beginners", true],
+		"Evaluators-grey--inject-1": ["evaluators", true],
+		"Adore-grey--inject-1": ["adore", false],
+		"Adopt-grey--inject-1": ["adopt", false],
+		"Advocate-grey--inject-1": ["advocate", false],
+		"Activate-grey--inject-1": ["activate", false]
+	},
 	stages: {
 		"evaluators": {
 			"gradient": {
@@ -446,8 +464,10 @@ var appcuesFlywheel = {
 		$('#fw-engage-dots').html("");
 	},
 
-	changeSection: function(el, sectionName, isStage) {
-
+	changeSection: function(el) {
+		var sectionName = appcuesFlywheel.stagesSectionNameMap[el.id][0];
+		var isStage = appcuesFlywheel.stagesSectionNameMap[el.id][1];
+		
 		$("#fw-home-content").hide();
 
 		$('#flywheel-section-details').addClass("active");
@@ -559,6 +579,7 @@ var appcuesFlywheel = {
 
 	startSite: function() {
 		appcuesFlywheel.setEngageArrowListeners();
+
 	}
 };
 
@@ -566,6 +587,10 @@ var appcuesFlywheel = {
 
 $(function() {
 	appcuesFlywheel.startSite();
+
+	$('.flywheel-section').click(function(){
+			appcuesFlywheel.changeSection(this)
+	});
 });
 
 
