@@ -1,7 +1,17 @@
 var appcuesFlywheel = {
 	engageFlows: [],
 	flowIndex: 0,
-	stagesSectionNameMap: {
+	sectionStageMap: {
+		"champions": [true, "Champions-grey--inject-1"],
+		"regulars": [true, "Regulars-grey--inject-1"],
+		"beginners": [true, "Beginners-grey--inject-1"],
+		"evaluators": [true, "Evaluators-grey--inject-1"],
+		"adore": [false, "Adore-grey--inject-1"],
+		"adopt": [false, "Adopt-grey--inject-1"],
+		"advocate": [false, "Advocate-grey--inject-1"],
+		"activate": [false, "Activate-grey--inject-1"]
+	},
+	elementStagesSectionNameMap: {
 		"Champions-color--inject-1": ["champions", true],
 		"Regulars-color--inject-1": ["regulars", true],
 		"Beginners-color--inject-1": ["beginners", true],
@@ -25,6 +35,7 @@ var appcuesFlywheel = {
 				"start": "#2DD2F3",
 				"end": "#20E0D6"
 			},
+			"buttons": ["beginners", "champions"],
 			"header": "Evaluators",
 			"description": "Evaluators are nascent in your product and have likely provided you with minimal information, such as their email address, to learn more about your product. If you offer a free trial, they have signed up. If you do not, they have had a demo with an account executive and/or received access to a demo account.",
 			"goals": [
@@ -72,6 +83,7 @@ var appcuesFlywheel = {
 				"start": "#2CB4FF",
 				"end": "#4980FF"
 			},
+			"buttons": ["regulars", "evaluators"],
 			"header": "Beginners",
 			"description": "Beginners understand how your product can solve their needs and provide value—and they’re excited about it! This excitement is driving them spend more time with your product and to explore its features and functionality more deeply. These users may not be paying customers yet, but they’re mentally prepared to make that leap now that they’ve realized the value that your product provides.",
 			"goals": [
@@ -119,6 +131,7 @@ var appcuesFlywheel = {
 				"start": "#8960FF",
 				"end": "#5C5CFF"
 			},
+			"buttons": ["champions", "beginners"],
 			"header": "Regulars",
 			"description": "Regulars have mastered the core use cases for your product and are curious about the other problems your product can solve. They’re very familiar with your interface and are unlikely to need much help—however, changes to the product, both large and small, can cause friction disrupt their workflows.",
 			"goals": [
@@ -166,6 +179,7 @@ var appcuesFlywheel = {
 				"start": "#FF8389",
 				"end": "#FF5290"
 			},
+			"buttons": ["evaluators", "regulars"],
 			"header": "Champions",
 			"description": "Champions are heavily invested in the future of your product, and have tied themselves to your success. If you were to shut the doors tomorrow, they would be devastated (shout out to Inbox fans). These are the people who recommend your product to their colleagues, friends, and social media followers. They have formed an emotional connection with your brand and your product—at this point in the relationship, you are providing value outside of the job to be done.",
 			"goals": [
@@ -219,6 +233,7 @@ var appcuesFlywheel = {
 				"start": "#4489FF",
 				"end": "#1DE0D7"
 			},
+			"buttons": ["adopt", "advocate"],
 			"header": "Activate",
 			"description": "Activation looks different for every company. But at its core, activation is a feeling that the user experiences. It’s a moment of relief and excitement when a user discovers the solution to their problem.",
 			"goals": [
@@ -258,6 +273,7 @@ var appcuesFlywheel = {
 				"start": "#2CB4FF",
 				"end": "#605CFF"
 			},
+			"buttons": ["adore", "activate"],
 			"header": "Adopt",
 			"description": "Adoption is about forming habits and getting people to associate your product with a specific task or solution. Users who have adopted your product don’t put a lot of thought into deciding to use your product, they just use it.",
 			"goals": [
@@ -297,6 +313,7 @@ var appcuesFlywheel = {
 				"start": "#FE5B8F",
 				"end": "#8860FF"
 			},
+			"buttons": ["advocate", "adopt"],
 			"header": "Adore",
 			"description": "Once a user adores your product, they may take it in directions you never expected. These users are passionate, and will push the limits of your product to try to unlock new solutions and further engrain your software into their workflows.",
 			"goals": [
@@ -336,6 +353,7 @@ var appcuesFlywheel = {
 				"start": "#FF6297",
 				"end": "#2DD2F3"
 			},
+			"buttons": ["activate", "adore"],
 			"header": "Advocate",
 			"description": "It usually just takes a little nudge to get your champions to become advocates for your product. These folks love your product and want to see it succeed—but they might not take the next step toward advocacy on their own. They’re willing to participate in the future of your company, but they need to be invited to the party.",
 			"goals": [
@@ -376,21 +394,21 @@ var appcuesFlywheel = {
 	//needs to change section
 	//change highlighted section, remove active class, add to new one
 	createStageGoal: function(goal) {
-		var imageSrc = 'https://appcues-public.s3-us-west-2.amazonaws.com/microsites/flywheel/img/icons/' + goal.icon;
+		var imageSrc = 'https://public.appcues.com/microsites/flywheel/img/icons/' + goal.icon;
 		var htmlString = '<div class="fw-stage-goal"><img class="fw-stage-icon" src="' + imageSrc + 
 		'" /><span>' + goal.text + '</span></div>';
 		return htmlString;
 	},
 
 	createStageCharacteristic: function(item) {
-		var imageSrc = 'https://appcues-public.s3-us-west-2.amazonaws.com/microsites/flywheel/img/icons/' + item.icon;
+		var imageSrc = 'https://public.appcues.com/microsites/flywheel/img/icons/' + item.icon;
 		var htmlString = '<div class="fw-stage-characteristic"><img class="fw-stage-icon" src="' + imageSrc + 
 		'" /><span>' + item.text + '</span></div>';
 		return htmlString;
 	},
 
 	createStageEngagement: function(item, index) {
-		var imageSrc = 'https://appcues-public.s3-us-west-2.amazonaws.com/microsites/flywheel/img/engage-flows/' + item.image;
+		var imageSrc = 'https://public.appcues.com/microsites/flywheel/img/engage-flows/' + item.image;
 
 		if(index === 0) {
 			var classString = "fw-engage-item active";
@@ -398,18 +416,18 @@ var appcuesFlywheel = {
 			var classString = "fw-engage-item";
 		}
 
-		var htmlString = '<div class="' + classString + '" data-flow-position=' + index + '><div class="fw-engage-image-container"><img class="fw-engage-image" src="' + imageSrc + '" /></div><div class="fw-engage-content-holder"><div class="fw-engage-content"><h6>' + item.header + '</h6><p>' + item.description + '</p><div class="fw-learn-how"><a target="_blank" href=' + item.link + '><span>Learn how</span><img src="https://appcues-public.s3-us-west-2.amazonaws.com/microsites/flywheel/img/icons/arrow-dark.svg" alt="dark arrow"/></a></div></div></div></div>';
+		var htmlString = '<div class="' + classString + '" data-flow-position=' + index + '><div class="fw-engage-image-container"><img class="fw-engage-image" src="' + imageSrc + '" /></div><div class="fw-engage-content-holder"><div class="fw-engage-content"><h6>' + item.header + '</h6><p>' + item.description + '</p><div class="fw-learn-how"><a target="_blank" href=' + item.link + '><span>Learn how</span><img src="https://public.appcues.com/microsites/flywheel/img/icons/arrow-dark.svg" alt="dark arrow"/></a></div></div></div></div>';
 		return htmlString;
 	},
 
 	createActionData: function(item) {
-		var iconSrc = 'https://appcues-public.s3-us-west-2.amazonaws.com/microsites/flywheel/img/icons/' + item.icon;
+		var iconSrc = 'https://public.appcues.com/microsites/flywheel/img/icons/' + item.icon;
 		var htmlString = '<div class="fw-data-section"><div class="fw-data-header"><h6>' + item.header + '</h6><img src="' + iconSrc + '"/></div><p class="fw-data-description">' + item.description + '</p></div>';
 		return htmlString;
 	},
 
 	createActionResource: function(item) {
-		var htmlString = '<div class="fw-resource-section"><h6 class="fw-resource-header">' + item.title + '</h6><p class="fw-resource-description">' + item.description + '</p><div class="fw-learn-how"><a target="_blank" href=' + item.link + '><span>Read now</span><img src="https://appcues-public.s3-us-west-2.amazonaws.com/microsites/flywheel/img/icons/arrow-dark.svg" alt="dark arrow""/></a></div></div>';
+		var htmlString = '<div class="fw-resource-section"><h6 class="fw-resource-header">' + item.title + '</h6><p class="fw-resource-description">' + item.description + '</p><div class="fw-learn-how"><a target="_blank" href=' + item.link + '><span>Read now</span><img src="https://public.appcues.com/microsites/flywheel/img/icons/arrow-dark.svg" alt="dark arrow""/></a></div></div>';
 		return htmlString;
 
 	},
@@ -450,8 +468,8 @@ var appcuesFlywheel = {
 		$('#fw-stage-engage').find(currentlyActiveFlow).removeClass("active");
 		$('#fw-stage-engage').find(newActiveFlow).addClass("active");
 
-		$("#fw-engage-dots").find(currentlyActiveDot)[0].src = "https://appcues-public.s3-us-west-2.amazonaws.com/microsites/flywheel/img/icons/dot-inactive.svg";
-		$("#fw-engage-dots").find(newActiveDot)[0].src = "https://appcues-public.s3-us-west-2.amazonaws.com/microsites/flywheel/img/icons/dot-active.svg";
+		$("#fw-engage-dots").find(currentlyActiveDot)[0].src = "https://public.appcues.com/microsites/flywheel/img/icons/dot-inactive.svg";
+		$("#fw-engage-dots").find(newActiveDot)[0].src = "https://public.appcues.com/microsites/flywheel/img/icons/dot-active.svg";
 
 	},
 
@@ -464,18 +482,29 @@ var appcuesFlywheel = {
 		$('#fw-engage-dots').html("");
 	},
 
-	changeSection: function(el) {
-		var sectionName = appcuesFlywheel.stagesSectionNameMap[el.id][0];
-		var isStage = appcuesFlywheel.stagesSectionNameMap[el.id][1];
+	changeSection: function(el, isButton) {
+		if (isButton) {
+			var sectionName = el;
+			var isStage = appcuesFlywheel.sectionStageMap[el][0];	
+		} else {
+			var sectionName = appcuesFlywheel.elementStagesSectionNameMap[el.id][0];
+			var isStage = appcuesFlywheel.elementStagesSectionNameMap[el.id][1];	
+		}
 		
 		$("#fw-home-content").hide();
-
+		$("#fw-background-gradient").addClass("active");
 		$('#flywheel-section-details').addClass("active");
 		$('#flywheel-section').addClass("active");
 
-
 		$('.flywheel-section').removeClass("active");
-		$(el).addClass("active");
+		
+		if (isButton) {
+			$("#" + appcuesFlywheel.sectionStageMap[el][1]).addClass("active");
+		} else {
+			$(el).addClass("active");
+		}
+
+
 		appcuesFlywheel.clearContent();
 		appcuesFlywheel.flowIndex = 0;
 
@@ -502,9 +531,9 @@ var appcuesFlywheel = {
 
 				//render engage dots
 				if(k === 0) {
-					$('#fw-engage-dots').append('<img src="https://appcues-public.s3-us-west-2.amazonaws.com/microsites/flywheel/img/icons/dot-active.svg" data-dot-position=' + k + ' alt="dark gray dot"/>')
+					$('#fw-engage-dots').append('<img src="https://public.appcues.com/microsites/flywheel/img/icons/dot-active.svg" data-dot-position=' + k + ' alt="dark gray dot"/>')
 				} else {
-					$('#fw-engage-dots').append('<img src="https://appcues-public.s3-us-west-2.amazonaws.com/microsites/flywheel/img/icons/dot-inactive.svg" data-dot-position=' + k + ' alt="medium gray dot"/>');
+					$('#fw-engage-dots').append('<img src="https://public.appcues.com/microsites/flywheel/img/icons/dot-inactive.svg" data-dot-position=' + k + ' alt="medium gray dot"/>');
 				}
 			}
 		
@@ -533,10 +562,10 @@ var appcuesFlywheel = {
 
 
 			//update text and icons for data goal
-			$("#fw-starting-segment").find('img').attr("src", "https://appcues-public.s3-us-west-2.amazonaws.com/microsites/flywheel/img/stage-icons/" + sectionData.goals[0].icon);
+			$("#fw-starting-segment").find('img').attr("src", "https://public.appcues.com/microsites/flywheel/img/stage-icons/" + sectionData.goals[0].icon);
 			$("#fw-starting-segment").find('span').text(sectionData.goals[0].text);
 
-			$("#fw-ending-segment").find('img').attr("src", "https://appcues-public.s3-us-west-2.amazonaws.com/microsites/flywheel/img/stage-icons/" + sectionData.goals[1].icon);
+			$("#fw-ending-segment").find('img').attr("src", "https://public.appcues.com/microsites/flywheel/img/stage-icons/" + sectionData.goals[1].icon);
 			$("#fw-ending-segment").find('span').text(sectionData.goals[1].text);
 
 			$("#fw-goal-middle-action").find('span').text(sectionData.header);
@@ -557,7 +586,19 @@ var appcuesFlywheel = {
 
 		$("#fw-section-header").text(sectionData.header);
 		$("#fw-section-description").text(sectionData.description);
-		$("#fw-gradient-image").attr("src", "https://appcues-public.s3-us-west-2.amazonaws.com/microsites/flywheel/img/gradient/" + sectionName + ".svg");
+		$("#fw-gradient-image").attr("src", "https://public.appcues.com/microsites/flywheel/img/gradient/" + sectionName + ".svg");
+
+		//set back and next buttons
+		$(".nav-btn").addClass('active');
+		$("#fw-next-btn").find('span').text(sectionData.buttons[0]);
+		$("#fw-next-btn").find('.segment-icon').attr("src", "https://public.appcues.com/microsites/flywheel/img/flywheel-icons/" + sectionData.buttons[0] + ".svg");
+		$("#fw-next-btn").attr("onclick","appcuesFlywheel.changeSection('" + sectionData.buttons[0] + "', true)");
+
+		$("#fw-previous-btn").find('span').text(sectionData.buttons[1]);
+		$("#fw-previous-btn").find('.segment-icon').attr("src", "https://public.appcues.com/microsites/flywheel/img/flywheel-icons/" + sectionData.buttons[1] + ".svg");
+		$("#fw-previous-btn").attr("onclick","appcuesFlywheel.changeSection('" + sectionData.buttons[1] + "', true)");
+
+	
 
 		if (isStage) {
 			//make stage section active
@@ -590,7 +631,7 @@ $(function() {
 
 	setTimeout(function(){
 		$('.flywheel-section').click(function(){
-				appcuesFlywheel.changeSection(this)
+			appcuesFlywheel.changeSection(this, false);
 		}); 
 	}, 1000);
 

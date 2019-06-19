@@ -4375,26 +4375,34 @@ a.text-dark:focus, a.text-dark:hover {
 
 #fw-background-gradient {
   position: absolute;
-  z-index: 100;
+  z-index: 1001;
   width: 35%;
   max-width: 750px;
   top: 0;
-  left: 0; }
+  left: 0;
+  opacity: 0; }
   @media (min-width: 992px) {
     #fw-background-gradient {
-      width: 25%; } }
+      width: 20%;
+      min-width: 215px; } }
+
+#fw-background-gradient.active {
+  opacity: 1; }
 
 #fw-appcues-logo {
   position: absolute;
   z-index: 105;
   width: 110px;
   left: 20px;
-  top: 30px; }
-  @media (min-width: 900px) {
+  top: 20px; }
+  @media (min-width: 992px) {
     #fw-appcues-logo {
       width: 150px;
-      left: 40px;
-      top: 40px; } }
+      left: 20px;
+      top: 15px; } }
+  @media (min-width: 1250px) {
+    #fw-appcues-logo {
+      left: 40px; } }
 
 #fw-gradient-image {
   position: absolute;
@@ -4408,7 +4416,7 @@ a.text-dark:focus, a.text-dark:hover {
   top: 15vw;
   left: 10px;
   width: 100px; }
-  @media (min-width: 900px) {
+  @media (min-width: 992px) {
     #fw-swirl-image {
       left: 20px;
       top: 20vw;
@@ -4436,8 +4444,44 @@ a.text-dark:focus, a.text-dark:hover {
   vertical-align: top; }
   @media (min-width: 992px) {
     #flywheel-section.active {
-      width: 40%;
+      width: 45%;
       margin-left: 5%; } }
+
+.nav-btn {
+  display: none;
+  border-radius: 5px;
+  border: 1px solid #979eb4;
+  padding: 20px;
+  width: 250px;
+  position: relative;
+  text-align: center;
+  cursor: pointer;
+  margin: 20px auto; }
+  .nav-btn span {
+    font-size: 14px;
+    color: #242a35;
+    font-weight: 600;
+    text-transform: capitalize;
+    line-height: 1; }
+  .nav-btn img {
+    vertical-align: middle;
+    width: 25px;
+    position: absolute; }
+    .nav-btn img:first-child {
+      left: 20px; }
+    .nav-btn img:last-child {
+      right: 20px; }
+  .nav-btn .segment-icon {
+    top: 16.5px; }
+  .nav-btn .arrow-icon {
+    top: 22px; }
+
+@media (min-width: 992px) {
+  .nav-btn.active {
+    display: block; } }
+
+#fw-previous-btn .arrow-icon {
+  transform: rotate(180deg); }
 
 .st0 {
   fill: url(#SVGID_1_); }
@@ -4516,7 +4560,7 @@ a.text-dark:focus, a.text-dark:hover {
   box-shadow: 1px 18px 38px 11.27px rgba(42, 40, 55, 0.05); }
   @media (min-width: 992px) {
     #flywheel-section-details {
-      width: 55%;
+      width: 50%;
       float: left; } }
   #flywheel-section-details #fw-section-header {
     color: #242a35;
