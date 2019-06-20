@@ -9,9 +9,15 @@
 		
 		.fw-engage-image-container {
 			display: flex;
-			width: 50%;
+			width: 100%;
 			border-top-left-radius: 15px;
-			border-bottom-left-radius: 15px;
+			border-top-right-radius: 15px;
+
+			@include media-breakpoint-up(sm) {
+				width: 50%;
+				border-bottom-left-radius: 15px;
+				border-top-right-radius: 0;
+			}
 			
 			img {
 				width: 80%;
@@ -21,15 +27,23 @@
 
 
 		.fw-engage-content-holder {
-			width: 50%;
-			border-top-right-radius: 15px;
+			width: 100%;
+			border-bottom-left-radius: 15px;
 			border-bottom-right-radius: 15px;
 			border: 1px solid $medium-gray;
-			border-left: none;
+			border-top: none;
 		    padding: 20px;
 		    display: flex;
 			justify-content: center;
 			flex-direction: column;
+
+			@include media-breakpoint-up(sm) {
+				border-left: none;
+				border-top: 1px solid $medium-gray;
+				width: 50%;
+				border-top-right-radius: 15px;
+				border-bottom-left-radius: 0;
+			}
 
 			.fw-engage-content {
 
@@ -69,7 +83,11 @@
 	}
 
 	.fw-engage-item.active {
-		display: flex;
+		display: block;
+
+		@include media-breakpoint-up(sm) {
+			display: flex;
+		}
 	}
 
 }

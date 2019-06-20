@@ -540,11 +540,11 @@ var appcuesFlywheel = {
 
 			//set gradient for engage section
 			$('.fw-engage-image-container').css({
-				'background': sectionData.gradient.start + ";",
-				'background': '-moz-linear-gradient(left, ' + sectionData.gradient.start + ' 0%, '+ sectionData.gradient.end + ' 100%);',
+				'background': sectionData.gradient.start + "",
+				'background': '-moz-linear-gradient(left, ' + sectionData.gradient.start + ' 0%, '+ sectionData.gradient.end + ' 100%)',
 			    'background': '-webkit-linear-gradient(left,' + sectionData.gradient.start + ' 0%, '+ sectionData.gradient.end + ' 100%)',
 			    'background': 'linear-gradient(to right, ' + sectionData.gradient.start + ' 0%, '+ sectionData.gradient.end + ' 100%)',
-			    'filter': 'progid:DXImageTransform.Microsoft.gradient( startColorstr=' + sectionData.gradient.start + ', endColorstr='+ sectionData.gradient.end + ',GradientType=1 );'
+			    'filter': 'progid:DXImageTransform.Microsoft.gradient( startColorstr=' + sectionData.gradient.start + ', endColorstr='+ sectionData.gradient.end + ',GradientType=1 )'
 			});
 
 		} else {
@@ -553,11 +553,11 @@ var appcuesFlywheel = {
 			//render goal data
 			//set goal gradient colors
 			$("#fw-goal-gradient").css({
-				'background': sectionData.gradient.start + ";",
-				'background': '-moz-linear-gradient(left, ' + sectionData.gradient.start + ' 0%, '+ sectionData.gradient.end + ' 100%);',
+				'background': sectionData.gradient.start + "",
+				'background': '-moz-linear-gradient(left, ' + sectionData.gradient.start + ' 0%, '+ sectionData.gradient.end + ' 100%)',
 			    'background': '-webkit-linear-gradient(left,' + sectionData.gradient.start + ' 0%, '+ sectionData.gradient.end + ' 100%)',
 			    'background': 'linear-gradient(to right, ' + sectionData.gradient.start + ' 0%, '+ sectionData.gradient.end + ' 100%)',
-			    'filter': 'progid:DXImageTransform.Microsoft.gradient( startColorstr=' + sectionData.gradient.start + ', endColorstr='+ sectionData.gradient.end + ',GradientType=1 );'
+			    'filter': 'progid:DXImageTransform.Microsoft.gradient( startColorstr=' + sectionData.gradient.start + ', endColorstr='+ sectionData.gradient.end + ',GradientType=1 )'
 			});
 
 
@@ -597,7 +597,16 @@ var appcuesFlywheel = {
 		$("#fw-previous-btn").find('span').text(sectionData.buttons[1]);
 		$("#fw-previous-btn").find('.segment-icon').attr("src", "https://public.appcues.com/microsites/flywheel/img/flywheel-icons/" + sectionData.buttons[1] + ".svg");
 		$("#fw-previous-btn").attr("onclick","appcuesFlywheel.changeSection('" + sectionData.buttons[1] + "', true)");
+		
 
+		$("#2019-cta-block-light").css({
+			'background': sectionData.gradient.start + "",
+			'background': '-moz-linear-gradient(left, ' + sectionData.gradient.start + ' 0%, '+ sectionData.gradient.end + ' 100%)',
+		    'background': '-webkit-linear-gradient(left,' + sectionData.gradient.start + ' 0%, '+ sectionData.gradient.end + ' 100%)',
+		    'background': 'linear-gradient(to right, ' + sectionData.gradient.start + ' 0%, '+ sectionData.gradient.end + ' 100%)',
+		    'filter': 'progid:DXImageTransform.Microsoft.gradient( startColorstr=' + sectionData.gradient.start + ', endColorstr='+ sectionData.gradient.end + ',GradientType=1 )'
+		});
+		
 	
 
 		if (isStage) {
@@ -629,13 +638,18 @@ var appcuesFlywheel = {
 $(function() {
 	appcuesFlywheel.startSite();
 
+	
 	setTimeout(function(){
 		$('.flywheel-section').click(function(){
 			appcuesFlywheel.changeSection(this, false);
 		}); 
 	}, 1000);
 
-
 });
+
+
+
+
+
 
 
