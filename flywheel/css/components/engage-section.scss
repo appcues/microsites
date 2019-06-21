@@ -12,6 +12,7 @@
 			width: 100%;
 			border-top-left-radius: 15px;
 			border-top-right-radius: 15px;
+			max-height: 250px;
 
 			@include media-breakpoint-up(sm) {
 				width: 50%;
@@ -65,6 +66,7 @@
 					a, span {
 						color: $dark-gray;
 						font-size: 13px;
+						font-weight: 700;
 						text-decoration: none !important;
 
 						&:hover {
@@ -74,7 +76,7 @@
 
 					img {
 						margin-top: -2.5px;
-						width: 20px;
+						width: 15px;
 						margin-left: 10px;
 					}
 				}

@@ -1,20 +1,28 @@
 #fw-home-content {
 	text-align: center;
-	margin: 50px auto;
+	margin: 100px auto 50px auto;
 	width: 90%;
 	max-width: 800px;
 
 	h1 {
 		color: $dark-gray;
-		font-size: 50px;
+		font-size: 30px;
 		margin: 0 0 20px 0;
+
+		@include media-breakpoint-up(md) {
+			font-size: 50px;
+		}
 	}
 
 	h3 {
 		color: $medium-gray;
-		font-size: 20px;
+		font-size: 14px;
 		margin: 0 0 10px 0;
-		line-height: 1.6;
+		line-height: 1.8;
+
+		@include media-breakpoint-up(md) {
+			font-size: 16px;
+		}
 	}
 }
 

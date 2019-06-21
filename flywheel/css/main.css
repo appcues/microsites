@@ -4349,24 +4349,18 @@ a.text-dark:focus, a.text-dark:hover {
 
 #fw-home-content {
   text-align: center;
-  margin: 100px auto 50px auto;
+  margin: 50px auto;
   width: 90%;
   max-width: 800px; }
   #fw-home-content h1 {
     color: #242a35;
-    font-size: 30px;
+    font-size: 50px;
     margin: 0 0 20px 0; }
-    @media (min-width: 900px) {
-      #fw-home-content h1 {
-        font-size: 50px; } }
   #fw-home-content h3 {
     color: #576784;
-    font-size: 14px;
+    font-size: 20px;
     margin: 0 0 10px 0;
-    line-height: 1.8; }
-    @media (min-width: 900px) {
-      #fw-home-content h3 {
-        font-size: 16px; } }
+    line-height: 1.6; }
 
 #fw-main-content {
   text-align: center;
@@ -4453,41 +4447,41 @@ a.text-dark:focus, a.text-dark:hover {
       width: 45%;
       margin-left: 5%; } }
 
-#navigation-btns {
-  margin-top: 30px; }
-  #navigation-btns .nav-btn {
-    display: none;
-    border-radius: 5px;
-    border: 1px solid #979eb4;
-    padding: 20px;
-    width: 250px;
-    position: relative;
-    text-align: center;
-    cursor: pointer;
-    margin: 20px auto; }
-    #navigation-btns .nav-btn span {
-      font-size: 14px;
-      color: #242a35;
-      font-weight: 600;
-      text-transform: capitalize;
-      line-height: 1; }
-    #navigation-btns .nav-btn img {
-      vertical-align: middle;
-      width: 25px;
-      position: absolute; }
-      #navigation-btns .nav-btn img:first-child {
-        left: 20px; }
-      #navigation-btns .nav-btn img:last-child {
-        right: 20px; }
-    #navigation-btns .nav-btn .segment-icon {
-      top: 16.5px; }
-    #navigation-btns .nav-btn .arrow-icon {
-      top: 22px; }
-  @media (min-width: 992px) {
-    #navigation-btns .nav-btn.active {
-      display: block; } }
-  #navigation-btns #fw-previous-btn .arrow-icon {
-    transform: rotate(180deg); }
+.nav-btn {
+  display: none;
+  border-radius: 5px;
+  border: 1px solid #979eb4;
+  padding: 20px;
+  width: 250px;
+  position: relative;
+  text-align: center;
+  cursor: pointer;
+  margin: 20px auto; }
+  .nav-btn span {
+    font-size: 14px;
+    color: #242a35;
+    font-weight: 600;
+    text-transform: capitalize;
+    line-height: 1; }
+  .nav-btn img {
+    vertical-align: middle;
+    width: 25px;
+    position: absolute; }
+    .nav-btn img:first-child {
+      left: 20px; }
+    .nav-btn img:last-child {
+      right: 20px; }
+  .nav-btn .segment-icon {
+    top: 16.5px; }
+  .nav-btn .arrow-icon {
+    top: 22px; }
+
+@media (min-width: 992px) {
+  .nav-btn.active {
+    display: block; } }
+
+#fw-previous-btn .arrow-icon {
+  transform: rotate(180deg); }
 
 .st0 {
   fill: url(#SVGID_1_); }
@@ -4557,16 +4551,13 @@ a.text-dark:focus, a.text-dark:hover {
 
 #flywheel-section-details {
   display: none;
-  padding: 30px 15px;
+  padding: 30px;
   width: 95%;
   margin: 0 auto;
   text-align: left;
   background: #FFFFFF;
   border-radius: 15px;
   box-shadow: 1px 18px 38px 11.27px rgba(42, 40, 55, 0.05); }
-  @media (min-width: 576px) {
-    #flywheel-section-details {
-      padding: 30px; } }
   @media (min-width: 992px) {
     #flywheel-section-details {
       width: 50%;
@@ -4639,7 +4630,7 @@ a.text-dark:focus, a.text-dark:hover {
       position: relative; }
       #fw-stage-content .fw-subsection .fw-data-section h6, #fw-action-content .fw-subsection .fw-data-section h6 {
         font-size: 40px;
-        font-weight: 700;
+        font-weight: 900;
         line-height: 1; }
       #fw-stage-content .fw-subsection .fw-data-section img, #fw-action-content .fw-subsection .fw-data-section img {
         position: absolute;
@@ -4718,13 +4709,12 @@ a.text-dark:focus, a.text-dark:hover {
       #fw-stage-engage .fw-engage-item .fw-engage-content-holder .fw-engage-content .fw-learn-how a, #fw-stage-engage .fw-engage-item .fw-engage-content-holder .fw-engage-content .fw-learn-how span {
         color: #242a35;
         font-size: 13px;
-        font-weight: 700;
         text-decoration: none !important; }
         #fw-stage-engage .fw-engage-item .fw-engage-content-holder .fw-engage-content .fw-learn-how a:hover, #fw-stage-engage .fw-engage-item .fw-engage-content-holder .fw-engage-content .fw-learn-how span:hover {
           text-decoration: none !important; }
       #fw-stage-engage .fw-engage-item .fw-engage-content-holder .fw-engage-content .fw-learn-how img {
         margin-top: -2.5px;
-        width: 15px;
+        width: 20px;
         margin-left: 10px; }
   #fw-stage-engage .fw-engage-item.active {
     display: block; }
@@ -4752,42 +4742,34 @@ a.text-dark:focus, a.text-dark:hover {
     #fw-engage-navigation #fw-engage-arrows #fw-engage-back {
       transform: rotate(180deg); }
 
-#fw-action-goal {
-  align-items: center;
-  justify-content: center; }
-  #fw-action-goal span {
-    font-size: 12px;
-    font-weight: 600; }
+#fw-action-goal span {
+  font-size: 12px;
+  font-weight: 600; }
+#fw-action-goal .fw-goal-segment {
+  width: 32.5%;
+  text-align: center; }
+  #fw-action-goal .fw-goal-segment img {
+    width: 15px;
+    margin-top: -5px;
+    margin-right: 5px; }
+#fw-action-goal #fw-goal-middle-action {
+  width: 25%;
+  text-align: center;
+  background: #FFFFFF; }
+  #fw-action-goal #fw-goal-middle-action span {
+    margin-top: 10px;
+    display: block;
+    margin-top: 5px;
+    display: inline; }
+#fw-action-goal .fw-goal-dotted-line {
+  width: 15%; }
+@media (min-width: 576px) {
   #fw-action-goal .fw-goal-segment {
-    width: 30%;
-    text-align: center; }
-    #fw-action-goal .fw-goal-segment img {
-      width: 15px;
-      margin-top: -5px;
-      margin-right: 5px; }
+    width: 22.5%; }
   #fw-action-goal #fw-goal-middle-action {
-    width: 25%;
-    text-align: center;
-    background: #FFFFFF; }
-  #fw-action-goal .fw-goal-dotted-line {
     width: 15%; }
-  #fw-action-goal .fw-goal-dotted-line.desktop {
-    display: none; }
-    @media (min-width: 576px) {
-      #fw-action-goal .fw-goal-dotted-line.desktop {
-        display: block; } }
-  #fw-action-goal .fw-goal-dotted-line.mobile {
-    display: block; }
-    @media (min-width: 576px) {
-      #fw-action-goal .fw-goal-dotted-line.mobile {
-        display: none; } }
-  @media (min-width: 576px) {
-    #fw-action-goal .fw-goal-segment {
-      width: 22.5%; }
-    #fw-action-goal #fw-goal-middle-action {
-      width: 15%; }
-    #fw-action-goal .fw-goal-dotted-line {
-      width: 20%; } }
+  #fw-action-goal .fw-goal-dotted-line {
+    width: 20%; } }
 
 #fw-goal-gradient {
   border-radius: 15px;
@@ -4796,4 +4778,4 @@ a.text-dark:focus, a.text-dark:hover {
   margin: 10px auto;
   width: 95%; }
 
-/*# sourceMappingURL=main-v2.css.map */
+/*# sourceMappingURL=main.css.map */

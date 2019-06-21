@@ -4,7 +4,7 @@ Designer: Tanya Higgins
 
 
 To bundle CSS
-sass --watch css/application.scss:css/main.css
+sass --watch css/application.scss:css/main-v2.css
 
 To start development server
 python -m SimpleHTTPServer 8035

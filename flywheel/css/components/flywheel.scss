@@ -36,62 +36,63 @@
 }
 
 
+#navigation-btns {
+	margin-top: 30px;
+	.nav-btn {
+		display: none;
+		border-radius: 5px;
+		border: 1px solid $light-gray;
+		padding: 20px;
+		width: 250px;
+		position: relative;
+		text-align: center;
+		cursor: pointer;
+		margin: 20px auto;
 
-.nav-btn {
-	display: none;
-	border-radius: 5px;
-	border: 1px solid $light-gray;
-	padding: 20px;
-	width: 250px;
-	position: relative;
-	text-align: center;
-	cursor: pointer;
-	margin: 20px auto;
-
-	span {
-		font-size: 14px;
-		color: $dark-gray;
-		font-weight: 600;
-		text-transform: capitalize;
-		line-height: 1;
-	}
-
-	img {
-		vertical-align: middle;
-		width: 25px;
-		position: absolute;
-
-
-		&:first-child {
-			left: 20px;
+		span {
+			font-size: 14px;
+			color: $dark-gray;
+			font-weight: 600;
+			text-transform: capitalize;
+			line-height: 1;
 		}
 
-		&:last-child {
-			right: 20px;
+		img {
+			vertical-align: middle;
+			width: 25px;
+			position: absolute;
+
+
+			&:first-child {
+				left: 20px;
+			}
+
+			&:last-child {
+				right: 20px;
+			}
+		}
+
+		.segment-icon {
+			top: 16.5px;
+		}
+
+		.arrow-icon {
+			top: 22px;
 		}
 	}
 
-	.segment-icon {
-		top: 16.5px;
+	.nav-btn.active {
+		@include media-breakpoint-up(lg) {
+			display: block;
+		}
 	}
 
-	.arrow-icon {
-		top: 22px;
-	}
-}
-
-.nav-btn.active {
-	@include media-breakpoint-up(lg) {
-		display: block;
+	#fw-previous-btn {
+		.arrow-icon {
+			transform: rotate(180deg);
+		}
 	}
 }
-
-#fw-previous-btn {
-	.arrow-icon {
-		transform: rotate(180deg);
-	}
-}
-
 
 
 
