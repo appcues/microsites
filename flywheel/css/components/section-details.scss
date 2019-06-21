@@ -15,18 +15,20 @@
 	@include media-breakpoint-up(lg) {
 		width: 50%;
 		float: left;
+		padding: 40px 60px;
 	}
 
 	#fw-section-header {
 		color: $dark-gray;
 		font-size: 24px;
 		margin: 0 0 15px 0;
+		font-weight: 600;
 	}
 
 	#fw-section-description {
 		color: $medium-gray;
 		font-size: 14px;
-		line-height: 1.5;
+		line-height: 1.8;
 		margin: 0 0 20px 0;
 	}
 }
@@ -44,7 +46,7 @@
 
 	.fw-subsection {
 		width: 100%;
-		padding: 10px 0;
+		padding: 30px 0 10px 0;
 		text-align: left; 
 
 
@@ -54,7 +56,8 @@
 			color: $dark-gray;
 			display: block;
 			width: 100%;
-			font-size: 13px;
+			font-size: 11px;
+			letter-spacing: 1px;
 			margin: 10px 0 15px 0;
 		}
 
@@ -64,14 +67,31 @@
 			.fw-stage-goal, .fw-stage-characteristic {
 				width: 33%;
 				vertical-align: middle;
+				text-align: center;
+				padding: 0 5px;
+
+				@include media-breakpoint-up(sm) {
+					text-align: left;
+					padding: 0;
+				}
 
 				.fw-stage-icon {
-					width: 25px;
-					margin-right: 10px;
+					width: 22px;
+					display: block;
+					margin: 0 auto 10px auto;
+
+					@include media-breakpoint-up(sm) {
+						margin: 0 10px 0 0;
+						display: inline-block;
+					}
 				}
 
 				span {
 					vertical-align: middle;
+					font-size: 13px;
+					color: $medium-gray;
+					font-weight: 300;
+					line-height: 1.5;
 				}
 			}	
 		}

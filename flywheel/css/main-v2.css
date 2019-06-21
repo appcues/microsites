@@ -4371,7 +4371,7 @@ a.text-dark:focus, a.text-dark:hover {
 #fw-main-content {
   text-align: center;
   max-width: 1300px;
-  margin: 50px auto;
+  margin: 50px auto 0 auto;
   padding: 0 15px;
   position: relative;
   z-index: 100000; }
@@ -4384,6 +4384,7 @@ a.text-dark:focus, a.text-dark:hover {
   z-index: 1001;
   width: 35%;
   max-width: 750px;
+  min-width: 150px;
   top: 0;
   left: 0;
   opacity: 0; }
@@ -4429,7 +4430,7 @@ a.text-dark:focus, a.text-dark:hover {
       width: 150px; } }
 
 #flywheel-section {
-  width: 90%;
+  width: 100%;
   max-width: 800px;
   margin: 20px auto;
   display: block;
@@ -4443,7 +4444,6 @@ a.text-dark:focus, a.text-dark:hover {
     opacity: 0; }
 
 #flywheel-section.active {
-  width: 90%;
   max-width: 600px;
   margin: 0 auto;
   display: inline-block;
@@ -4464,7 +4464,10 @@ a.text-dark:focus, a.text-dark:hover {
     position: relative;
     text-align: center;
     cursor: pointer;
-    margin: 20px auto; }
+    margin: 20px auto;
+    transition: border-color 400ms; }
+    #navigation-btns .nav-btn:hover {
+      border-color: #242a35; }
     #navigation-btns .nav-btn span {
       font-size: 14px;
       color: #242a35;
@@ -4570,15 +4573,17 @@ a.text-dark:focus, a.text-dark:hover {
   @media (min-width: 992px) {
     #flywheel-section-details {
       width: 50%;
-      float: left; } }
+      float: left;
+      padding: 40px 60px; } }
   #flywheel-section-details #fw-section-header {
     color: #242a35;
     font-size: 24px;
-    margin: 0 0 15px 0; }
+    margin: 0 0 15px 0;
+    font-weight: 600; }
   #flywheel-section-details #fw-section-description {
     color: #576784;
     font-size: 14px;
-    line-height: 1.5;
+    line-height: 1.8;
     margin: 0 0 20px 0; }
 
 #flywheel-section-details.active {
@@ -4590,7 +4595,7 @@ a.text-dark:focus, a.text-dark:hover {
   display: none; }
   #fw-stage-content .fw-subsection, #fw-action-content .fw-subsection {
     width: 100%;
-    padding: 10px 0;
+    padding: 30px 0 10px 0;
     text-align: left; }
     #fw-stage-content .fw-subsection h5, #fw-action-content .fw-subsection h5 {
       text-transform: uppercase;
@@ -4598,18 +4603,34 @@ a.text-dark:focus, a.text-dark:hover {
       color: #242a35;
       display: block;
       width: 100%;
-      font-size: 13px;
+      font-size: 11px;
+      letter-spacing: 1px;
       margin: 10px 0 15px 0; }
     #fw-stage-content .fw-subsection .fw-subection-content, #fw-action-content .fw-subsection .fw-subection-content {
       display: flex; }
       #fw-stage-content .fw-subsection .fw-subection-content .fw-stage-goal, #fw-stage-content .fw-subsection .fw-subection-content .fw-stage-characteristic, #fw-action-content .fw-subsection .fw-subection-content .fw-stage-goal, #fw-action-content .fw-subsection .fw-subection-content .fw-stage-characteristic {
         width: 33%;
-        vertical-align: middle; }
+        vertical-align: middle;
+        text-align: center;
+        padding: 0 5px; }
+        @media (min-width: 576px) {
+          #fw-stage-content .fw-subsection .fw-subection-content .fw-stage-goal, #fw-stage-content .fw-subsection .fw-subection-content .fw-stage-characteristic, #fw-action-content .fw-subsection .fw-subection-content .fw-stage-goal, #fw-action-content .fw-subsection .fw-subection-content .fw-stage-characteristic {
+            text-align: left;
+            padding: 0; } }
         #fw-stage-content .fw-subsection .fw-subection-content .fw-stage-goal .fw-stage-icon, #fw-stage-content .fw-subsection .fw-subection-content .fw-stage-characteristic .fw-stage-icon, #fw-action-content .fw-subsection .fw-subection-content .fw-stage-goal .fw-stage-icon, #fw-action-content .fw-subsection .fw-subection-content .fw-stage-characteristic .fw-stage-icon {
-          width: 25px;
-          margin-right: 10px; }
+          width: 22px;
+          display: block;
+          margin: 0 auto 10px auto; }
+          @media (min-width: 576px) {
+            #fw-stage-content .fw-subsection .fw-subection-content .fw-stage-goal .fw-stage-icon, #fw-stage-content .fw-subsection .fw-subection-content .fw-stage-characteristic .fw-stage-icon, #fw-action-content .fw-subsection .fw-subection-content .fw-stage-goal .fw-stage-icon, #fw-action-content .fw-subsection .fw-subection-content .fw-stage-characteristic .fw-stage-icon {
+              margin: 0 10px 0 0;
+              display: inline-block; } }
         #fw-stage-content .fw-subsection .fw-subection-content .fw-stage-goal span, #fw-stage-content .fw-subsection .fw-subection-content .fw-stage-characteristic span, #fw-action-content .fw-subsection .fw-subection-content .fw-stage-goal span, #fw-action-content .fw-subsection .fw-subection-content .fw-stage-characteristic span {
-          vertical-align: middle; }
+          vertical-align: middle;
+          font-size: 13px;
+          color: #576784;
+          font-weight: 300;
+          line-height: 1.5; }
     #fw-stage-content .fw-subsection #fw-action-data, #fw-stage-content .fw-subsection #fw-action-resources, #fw-action-content .fw-subsection #fw-action-data, #fw-action-content .fw-subsection #fw-action-resources {
       display: block; }
       @media (min-width: 576px) {
@@ -4692,7 +4713,7 @@ a.text-dark:focus, a.text-dark:hover {
       width: 100%;
       border-bottom-left-radius: 15px;
       border-bottom-right-radius: 15px;
-      border: 1px solid #576784;
+      border: 1px solid #C0C6D9;
       border-top: none;
       padding: 20px;
       display: flex;
@@ -4701,7 +4722,7 @@ a.text-dark:focus, a.text-dark:hover {
       @media (min-width: 576px) {
         #fw-stage-engage .fw-engage-item .fw-engage-content-holder {
           border-left: none;
-          border-top: 1px solid #576784;
+          border-top: 1px solid #C0C6D9;
           width: 50%;
           border-top-right-radius: 15px;
           border-bottom-left-radius: 0; } }
@@ -4735,7 +4756,7 @@ a.text-dark:focus, a.text-dark:hover {
 #fw-engage-navigation {
   display: flex;
   height: 40px;
-  padding: 10px 0; }
+  padding: 20px 0 10px 0; }
   #fw-engage-navigation #fw-engage-dots {
     width: 50%;
     text-align: left; }

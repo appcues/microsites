@@ -606,6 +606,10 @@ var appcuesFlywheel = {
 		    'background': 'linear-gradient(to right, ' + sectionData.gradient.start + ' 0%, '+ sectionData.gradient.end + ' 100%)',
 		    'filter': 'progid:DXImageTransform.Microsoft.gradient( startColorstr=' + sectionData.gradient.start + ', endColorstr='+ sectionData.gradient.end + ',GradientType=1 )'
 		});
+
+		$("#2019-cta-block-light").find('.trial-reg-btn').css('color', sectionData.gradient.end);
+		
+
 		
 	
 
@@ -620,10 +624,6 @@ var appcuesFlywheel = {
 
 		}
 
-
-		//set gradient for background corner
-		//set next and back buttons
-		//add to json file
 
 	},
 

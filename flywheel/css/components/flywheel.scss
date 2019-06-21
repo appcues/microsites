@@ -1,5 +1,5 @@
 #flywheel-section {
-	width: 90%;
+	width: 100%;
 	max-width: 800px;
 	margin: 20px auto;	
 	display: block;
@@ -23,7 +23,6 @@
 }
 
 #flywheel-section.active {
-	width: 90%;
 	max-width: 600px;
 	margin: 0 auto;
 	display: inline-block;
@@ -48,6 +47,11 @@
 		text-align: center;
 		cursor: pointer;
 		margin: 20px auto;
+		transition: border-color 400ms;
+
+		&:hover {
+			border-color: $dark-gray;
+		}
 
 		span {
 			font-size: 14px;

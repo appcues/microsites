@@ -31,7 +31,7 @@
 			width: 100%;
 			border-bottom-left-radius: 15px;
 			border-bottom-right-radius: 15px;
-			border: 1px solid $medium-gray;
+			border: 1px solid $gray-100;
 			border-top: none;
 		    padding: 20px;
 		    display: flex;
@@ -40,7 +40,7 @@
 
 			@include media-breakpoint-up(sm) {
 				border-left: none;
-				border-top: 1px solid $medium-gray;
+				border-top: 1px solid $gray-100;
 				width: 50%;
 				border-top-right-radius: 15px;
 				border-bottom-left-radius: 0;
@@ -98,7 +98,7 @@
 #fw-engage-navigation {
 	display: flex;
 	height: 40px;
-	padding: 10px 0;
+	padding: 20px 0 10px 0;
 
 	#fw-engage-dots {
 		width: 50%;
