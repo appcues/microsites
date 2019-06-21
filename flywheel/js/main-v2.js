@@ -12,22 +12,22 @@ var appcuesFlywheel = {
 		"activate": [false, "Activate-grey--inject-1"]
 	},
 	elementStagesSectionNameMap: {
-		"Champions-color--inject-1": ["champions", true],
-		"Regulars-color--inject-1": ["regulars", true],
-		"Beginners-color--inject-1": ["beginners", true],
-		"Evaluators-color--inject-1": ["evaluators", true],
-		"Adore-color--inject-1": ["adore", false],
-		"Adopt-color--inject-1": ["adopt", false],
-		"Advocate-color--inject-1": ["advocate", false],
-		"Activate-color--inject-1": ["activate", false],
-		"Champions-grey--inject-1": ["champions", true],
-		"Regulars-grey--inject-1": ["regulars", true],
-		"Beginners-grey--inject-1": ["beginners", true],
-		"Evaluators-grey--inject-1": ["evaluators", true],
-		"Adore-grey--inject-1": ["adore", false],
-		"Adopt-grey--inject-1": ["adopt", false],
-		"Advocate-grey--inject-1": ["advocate", false],
-		"Activate-grey--inject-1": ["activate", false]
+		"Champions-color": ["champions", true],
+		"Regulars-color": ["regulars", true],
+		"Beginners-color": ["beginners", true],
+		"Evaluators-color": ["evaluators", true],
+		"Adore-color": ["adore", false],
+		"Adopt-color": ["adopt", false],
+		"Advocate-color": ["advocate", false],
+		"Activate-color": ["activate", false],
+		"Champions-grey": ["champions", true],
+		"Regulars-grey": ["regulars", true],
+		"Beginners-grey": ["beginners", true],
+		"Evaluators-grey": ["evaluators", true],
+		"Adore-grey": ["adore", false],
+		"Adopt-grey": ["adopt", false],
+		"Advocate-grey": ["advocate", false],
+		"Activate-grey": ["activate", false]
 	},
 	stages: {
 		"evaluators": {
@@ -638,12 +638,27 @@ var appcuesFlywheel = {
 $(function() {
 	appcuesFlywheel.startSite();
 
+
+	window.onload=function() {
+		var a = document.getElementById("flywheel-image");
+		// Get the SVG document inside the Object tag
+		var svgDoc = a.contentDocument;
+
+		// Get one of the SVG items by ID;
+		var fwSections = svgDoc.getElementsByClassName("flywheel-section");
+
+		for (var f = 0; f < fwSections.length; f++) {
+		    fwSections[f].addEventListener("click", function(){
+				appcuesFlywheel.changeSection(this, false);
+			});
+		};
+	};
 	
-	setTimeout(function(){
-		$('.flywheel-section').click(function(){
-			appcuesFlywheel.changeSection(this, false);
-		}); 
-	}, 1000);
+	// setTimeout(function(){
+	// 	$('.flywheel-section').click(function(){
+	// 		appcuesFlywheel.changeSection(this, false);
+	// 	}); 
+	// }, 1000);
 
 });
 

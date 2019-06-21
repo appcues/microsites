@@ -1,4 +1,31 @@
 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 2171 2171" style="enable-background:new 0 0 2171 2171;" xml:space="preserve">
+    <style>
+        .st0{fill:url(#SVGID_1_);}
+        .st1{fill:#FFFFFF;}
+        .st2{fill:url(#SVGID_2_);}
+        .st3{fill:url(#SVGID_3_);}
+        .st4{fill:url(#SVGID_4_);}
+        .st5{fill:url(#SVGID_5_);}
+        .st6{fill:url(#SVGID_6_);}
+        .st7{fill:url(#SVGID_7_);}
+        .st8{fill:url(#SVGID_8_);}
+        .st9{fill:#DCE4F4;}
+        .st10{fill:#242A35;}
+
+        .flywheel-section {
+            cursor: pointer;
+            transition: opacity 300ms ease;
+        }
+
+        .flywheel-section.inactive:hover {
+            opacity: 0;     
+        }
+
+        .flywheel-section.active {
+            opacity: 0;     
+        }
+        
+    </style>
     <g class="flywheel-section" id="Champions-color">
         <g>
             <linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="397.9622" y1="472.7747" x2="397.9622" y2="1765.6715">
