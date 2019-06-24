@@ -85,3 +85,28 @@
 	}
 }
 
+
+.st0{fill:url(#SVGID_1_);}
+.st1{fill:#FFFFFF;}
+.st2{fill:url(#SVGID_2_);}
+.st3{fill:url(#SVGID_3_);}
+.st4{fill:url(#SVGID_4_);}
+.st5{fill:url(#SVGID_5_);}
+.st6{fill:url(#SVGID_6_);}
+.st7{fill:url(#SVGID_7_);}
+.st8{fill:url(#SVGID_8_);}
+.st9{fill:#DCE4F4;}
+.st10{fill:#242A35;}
+
+.flywheel-section {
+    cursor: pointer;
+    transition: opacity 300ms ease;
+}
+
+.flywheel-section.inactive:hover {
+    opacity: 0;     
+}
+
+.flywheel-section.active {
+    opacity: 0;     
+}
