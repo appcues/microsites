@@ -4568,6 +4568,9 @@ a:hover, a:focus {
     #flywheel-section-details {
       width: 50%;
       float: left;
+      padding: 40px; } }
+  @media (min-width: 1250px) {
+    #flywheel-section-details {
       padding: 40px 60px; } }
   #flywheel-section-details #fw-section-header {
     color: #242a35;
@@ -4706,6 +4709,7 @@ a:hover, a:focus {
     #fw-stage-engage .fw-engage-item .fw-resource-image-container, #fw-stage-engage .fw-resource-item .fw-resource-image-container, #fw-action-resources .fw-engage-item .fw-resource-image-container, #fw-action-resources .fw-resource-item .fw-resource-image-container {
       background-size: cover;
       background-position: 50% 50%;
+      min-height: 100%;
       background-repeat: no-repeat; }
     #fw-stage-engage .fw-engage-item .fw-engage-content-holder, #fw-stage-engage .fw-engage-item .fw-resource-content-holder, #fw-stage-engage .fw-resource-item .fw-engage-content-holder, #fw-stage-engage .fw-resource-item .fw-resource-content-holder, #fw-action-resources .fw-engage-item .fw-engage-content-holder, #fw-action-resources .fw-engage-item .fw-resource-content-holder, #fw-action-resources .fw-resource-item .fw-engage-content-holder, #fw-action-resources .fw-resource-item .fw-resource-content-holder {
       width: 100%;

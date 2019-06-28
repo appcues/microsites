@@ -268,13 +268,13 @@ var appcuesFlywheel = {
 			],
 			"resources": [
 				{
-					"header": "The ultimate guide to getting your users to their aha moment",
-					"description": "The ultimate guide to defining, finding, personalizing, and optimizing your product's aha moment. Learn how to shorten time to value, increase activation, and improve retention.",
+					"header": "The ultimate guide to getting users to their aha moment",
+					"description": "Your guide to defining, personalizing, and optimizing your product’s aha moment. Learn how to shorten TTV, increase activation, and improve retention.",
 					"image": "aha-moment.jpg",
 					"link": "https://www.appcues.com/blog/aha-moment-guide"
 				}, {
 					"header": "Why activation is the most important pirate metric for SaaS growth",
-					"description": "Learn how a lift on each one of the pirate metrics affects business growth with the Pirate Metrics Calculator. Find out the real impact of activation your MRR.",
+					"description": "Learn how a lift on each of the pirate metrics affects business growth. Find out the real impact of activation your MRR.",
 					"image": "pirate.jpg",
 					"link": "https://www.appcues.com/blog/pirate-metric-saas-growth"
 				}
@@ -311,12 +311,12 @@ var appcuesFlywheel = {
 			"resources": [
 				{
 					"header": "6 highly effective ways to drive feature adoption using tooltips",
-					"description": "Unused features can become a burden overtime. Learn how you can use tooltips to boost feature adoption rates by providing  contextual information and drawing attention to overlooked features.",
+					"description": "Learn how you can use tooltips to boost feature adoption rates by providing contextual information and drawing attention to overlooked features.",
 					"image": "tooltips.jpg",
 					"link": "https://www.appcues.com/blog/feature-adoption-tooltips"
 				}, {
-					"header": "How Yotpo used in-app experiences to improve feature adoption ",
-					"description": "Yotpo's growth team increased new user engagement (42%), new feature adoption (300%), and retention rates (50%) with in-app user onboarding flows. Learn how they did it.",
+					"header": "How Yotpo used in-app experiences to improve feature adoption",
+					"description": "Yotpo’s growth team increased their new user engagement (42%), new feature adoption (300%), and retention (50%). Find out how they did it.",
 					"image": "yotpo.jpg",
 					"link": "https://www.appcues.com/blog/how-yotpo-drives-product-adoption"
 				}
@@ -358,7 +358,7 @@ var appcuesFlywheel = {
 					"link": "https://www.appcues.com/blog/sitemate-engagement-rate-case-study"
 				}, {
 					"header": "10 customer and user engagement strategies",
-					"description": "Your power users are looking for convenient ways to interact with your brand and your product. Learn how to consistently engage your users through different channels.",
+					"description": "Learn how to consistently engage your power users through different channels and give them opportunities to interact with your brand and product.",
 					"image": "engagement-strategies.jpg",
 					"link": "https://www.appcues.com/blog/user-customer-engagement-strategies"
 				}
@@ -395,12 +395,12 @@ var appcuesFlywheel = {
 			"resources": [
 				{
 					"header": "How Toast created engagement opportunities for their advocates",
-					"description": "In-app announcements offer an avenue for advocates to engage with your company. Find out how Toast generated 50% of their event responses through in-app promotional campaigns.",
+					"description": "In-app announcements offer advocates another way to engage with you. Find out how Toast generated 50% of their event responses with in-app campaigns.",
 					"image": "toast.jpg",
 					"link": "https://www.appcues.com/blog/toast-personalized-user-experiences"
 				}, {
 					"header": "What product managers forget about user feedback",
-					"description": "Gathering feedback from the right customers at the right time is easier said than done—learn how to create sustainable feedback loops to make more informed product decisions.",
+					"description": "Gathering feedback is easier said than done—learn how to create sustainable feedback loops to make more informed product decisions.",
 					"image": "userfeedback.jpg",
 					"link": "https://www.appcues.com/blog/what-product-managers-forget-about-user-feedback"
 				}
