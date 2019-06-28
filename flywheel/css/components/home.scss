@@ -1,6 +1,12 @@
+a {
+	&:hover, &:focus {
+		text-decoration: none !important;
+	}
+}
+
 #fw-home-content {
 	text-align: center;
-	margin: 100px auto 50px auto;
+	margin: 8vh auto 50px auto;
 	width: 90%;
 	max-width: 800px;
 
@@ -42,7 +48,7 @@
 
 #fw-background-gradient {
 	position: absolute;
-	z-index: 1001;
+	z-index: 100;
 	width: 35%;
 	max-width: 750px;
 	min-width: 150px;

@@ -1,13 +1,13 @@
-#fw-stage-engage {
+#fw-stage-engage, #fw-action-resources {
 	position: relative;
 	width: 100%;
 
-	.fw-engage-item {
+	.fw-engage-item, .fw-resource-item {
 		width: 100%;
 		display: none;
 		background: $white;
 		
-		.fw-engage-image-container {
+		.fw-engage-image-container, .fw-resource-image-container {
 			display: flex;
 			width: 100%;
 			border-top-left-radius: 15px;
@@ -26,8 +26,14 @@
 			}
 		}
 
+		.fw-resource-image-container {
+			background-size: cover;
+			background-position: 50% 50%;
+			background-repeat: no-repeat;
+		}
 
-		.fw-engage-content-holder {
+
+		.fw-engage-content-holder, .fw-resource-content-holder {
 			width: 100%;
 			border-bottom-left-radius: 15px;
 			border-bottom-right-radius: 15px;
@@ -46,7 +52,7 @@
 				border-bottom-left-radius: 0;
 			}
 
-			.fw-engage-content {
+			.fw-engage-content, .fw-resource-content {
 
 				h6 {
 					color: $dark-gray;
@@ -84,7 +90,7 @@
 		}
 	}
 
-	.fw-engage-item.active {
+	.fw-engage-item.active, .fw-resource-item.active {
 		display: block;
 
 		@include media-breakpoint-up(sm) {
@@ -95,12 +101,12 @@
 }
 
 
-#fw-engage-navigation {
+#fw-engage-navigation, #fw-resource-navigation {
 	display: flex;
 	height: 40px;
 	padding: 20px 0 10px 0;
 
-	#fw-engage-dots {
+	#fw-engage-dots, #fw-resource-dots {
 		width: 50%;
 		text-align: left;
 
@@ -110,17 +116,17 @@
 		}
 	}
 
-	#fw-engage-arrows {
+	#fw-engage-arrows, #fw-resource-arrows {
 		text-align: right;
 		width: 50%;
 
-		#fw-engage-back, #fw-engage-forward {
+		#fw-engage-back, #fw-engage-forward, #fw-resource-back, #fw-resource-forward {
 			height: 10px;
 			margin: 0 10px;
 			cursor: pointer;
 		}
 
-		#fw-engage-back {
+		#fw-engage-back, #fw-resource-back {
 			transform: rotate(180deg);
 		}
 	}

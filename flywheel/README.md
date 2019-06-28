@@ -1,4 +1,4 @@
-Appcues Pirate Metrics Calculator
+Appcues Product Led Growth Flywheel 
 Authors: Ben Winter
 Designer: Tanya Higgins
 

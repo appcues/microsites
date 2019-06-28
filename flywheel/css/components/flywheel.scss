@@ -3,10 +3,7 @@
 	max-width: 800px;
 	margin: 20px auto;	
 	display: block;
-	padding: 30px 10px;
-
-
-	
+	padding: 30px 10px;	
 }
 
 #flywheel-section.active {
@@ -19,6 +16,35 @@
 		width: 45%;
 		margin-left: 5%;
 	}
+}
+
+#flywheel-image-container {
+	position: relative;
+	pointer-events: none;
+
+	h5 {
+		line-height: 1.4;
+		position: absolute;
+		display: none;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		text-align: center;
+		width: 50%;
+		font-size: 16px;
+		margin: 0 auto;		
+	}
+	
+}
+
+#flywheel-image-container.active {
+	h5 {
+		display: none;
+	}
+}
+
+#flywheel-image {
+	max-height: 50vh;
 }
 
 

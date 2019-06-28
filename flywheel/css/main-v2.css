@@ -4347,9 +4347,12 @@ a.text-dark:focus, a.text-dark:hover {
     .footer-link {
       font-size: 14px !important; } }
 
+a:hover, a:focus {
+  text-decoration: none !important; }
+
 #fw-home-content {
   text-align: center;
-  margin: 100px auto 50px auto;
+  margin: 8vh auto 50px auto;
   width: 90%;
   max-width: 800px; }
   #fw-home-content h1 {
@@ -4381,7 +4384,7 @@ a.text-dark:focus, a.text-dark:hover {
 
 #fw-background-gradient {
   position: absolute;
-  z-index: 1001;
+  z-index: 100;
   width: 35%;
   max-width: 750px;
   min-width: 150px;
@@ -4445,6 +4448,27 @@ a.text-dark:focus, a.text-dark:hover {
     #flywheel-section.active {
       width: 45%;
       margin-left: 5%; } }
+
+#flywheel-image-container {
+  position: relative;
+  pointer-events: none; }
+  #flywheel-image-container h5 {
+    line-height: 1.4;
+    position: absolute;
+    display: none;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 50%;
+    font-size: 16px;
+    margin: 0 auto; }
+
+#flywheel-image-container.active h5 {
+  display: none; }
+
+#flywheel-image {
+  max-height: 50vh; }
 
 #navigation-btns {
   margin-top: 30px; }
@@ -4579,7 +4603,7 @@ a.text-dark:focus, a.text-dark:hover {
     #fw-stage-content .fw-subsection .fw-subection-content, #fw-action-content .fw-subsection .fw-subection-content {
       display: flex; }
       #fw-stage-content .fw-subsection .fw-subection-content .fw-stage-goal, #fw-stage-content .fw-subsection .fw-subection-content .fw-stage-characteristic, #fw-action-content .fw-subsection .fw-subection-content .fw-stage-goal, #fw-action-content .fw-subsection .fw-subection-content .fw-stage-characteristic {
-        width: 33%;
+        margin-right: 15px;
         vertical-align: middle;
         text-align: center;
         padding: 0 5px; }
@@ -4593,7 +4617,7 @@ a.text-dark:focus, a.text-dark:hover {
           margin: 0 auto 10px auto; }
           @media (min-width: 576px) {
             #fw-stage-content .fw-subsection .fw-subection-content .fw-stage-goal .fw-stage-icon, #fw-stage-content .fw-subsection .fw-subection-content .fw-stage-characteristic .fw-stage-icon, #fw-action-content .fw-subsection .fw-subection-content .fw-stage-goal .fw-stage-icon, #fw-action-content .fw-subsection .fw-subection-content .fw-stage-characteristic .fw-stage-icon {
-              margin: 0 10px 0 0;
+              margin: 0 5px 0 0;
               display: inline-block; } }
         #fw-stage-content .fw-subsection .fw-subection-content .fw-stage-goal span, #fw-stage-content .fw-subsection .fw-subection-content .fw-stage-characteristic span, #fw-action-content .fw-subsection .fw-subection-content .fw-stage-goal span, #fw-action-content .fw-subsection .fw-subection-content .fw-stage-characteristic span {
           vertical-align: middle;
@@ -4630,7 +4654,7 @@ a.text-dark:focus, a.text-dark:hover {
       position: relative; }
       #fw-stage-content .fw-subsection .fw-data-section h6, #fw-action-content .fw-subsection .fw-data-section h6 {
         font-size: 40px;
-        font-weight: 700;
+        font-weight: 400;
         line-height: 1; }
       #fw-stage-content .fw-subsection .fw-data-section img, #fw-action-content .fw-subsection .fw-data-section img {
         position: absolute;
@@ -4658,28 +4682,32 @@ a.text-dark:focus, a.text-dark:hover {
 #fw-stage-content.active, #fw-action-content.active {
   display: block; }
 
-#fw-stage-engage {
+#fw-stage-engage, #fw-action-resources {
   position: relative;
   width: 100%; }
-  #fw-stage-engage .fw-engage-item {
+  #fw-stage-engage .fw-engage-item, #fw-stage-engage .fw-resource-item, #fw-action-resources .fw-engage-item, #fw-action-resources .fw-resource-item {
     width: 100%;
     display: none;
     background: #FFFFFF; }
-    #fw-stage-engage .fw-engage-item .fw-engage-image-container {
+    #fw-stage-engage .fw-engage-item .fw-engage-image-container, #fw-stage-engage .fw-engage-item .fw-resource-image-container, #fw-stage-engage .fw-resource-item .fw-engage-image-container, #fw-stage-engage .fw-resource-item .fw-resource-image-container, #fw-action-resources .fw-engage-item .fw-engage-image-container, #fw-action-resources .fw-engage-item .fw-resource-image-container, #fw-action-resources .fw-resource-item .fw-engage-image-container, #fw-action-resources .fw-resource-item .fw-resource-image-container {
       display: flex;
       width: 100%;
       border-top-left-radius: 15px;
       border-top-right-radius: 15px;
       max-height: 250px; }
       @media (min-width: 576px) {
-        #fw-stage-engage .fw-engage-item .fw-engage-image-container {
+        #fw-stage-engage .fw-engage-item .fw-engage-image-container, #fw-stage-engage .fw-engage-item .fw-resource-image-container, #fw-stage-engage .fw-resource-item .fw-engage-image-container, #fw-stage-engage .fw-resource-item .fw-resource-image-container, #fw-action-resources .fw-engage-item .fw-engage-image-container, #fw-action-resources .fw-engage-item .fw-resource-image-container, #fw-action-resources .fw-resource-item .fw-engage-image-container, #fw-action-resources .fw-resource-item .fw-resource-image-container {
           width: 50%;
           border-bottom-left-radius: 15px;
           border-top-right-radius: 0; } }
-      #fw-stage-engage .fw-engage-item .fw-engage-image-container img {
+      #fw-stage-engage .fw-engage-item .fw-engage-image-container img, #fw-stage-engage .fw-engage-item .fw-resource-image-container img, #fw-stage-engage .fw-resource-item .fw-engage-image-container img, #fw-stage-engage .fw-resource-item .fw-resource-image-container img, #fw-action-resources .fw-engage-item .fw-engage-image-container img, #fw-action-resources .fw-engage-item .fw-resource-image-container img, #fw-action-resources .fw-resource-item .fw-engage-image-container img, #fw-action-resources .fw-resource-item .fw-resource-image-container img {
         width: 80%;
         margin: 10%; }
-    #fw-stage-engage .fw-engage-item .fw-engage-content-holder {
+    #fw-stage-engage .fw-engage-item .fw-resource-image-container, #fw-stage-engage .fw-resource-item .fw-resource-image-container, #fw-action-resources .fw-engage-item .fw-resource-image-container, #fw-action-resources .fw-resource-item .fw-resource-image-container {
+      background-size: cover;
+      background-position: 50% 50%;
+      background-repeat: no-repeat; }
+    #fw-stage-engage .fw-engage-item .fw-engage-content-holder, #fw-stage-engage .fw-engage-item .fw-resource-content-holder, #fw-stage-engage .fw-resource-item .fw-engage-content-holder, #fw-stage-engage .fw-resource-item .fw-resource-content-holder, #fw-action-resources .fw-engage-item .fw-engage-content-holder, #fw-action-resources .fw-engage-item .fw-resource-content-holder, #fw-action-resources .fw-resource-item .fw-engage-content-holder, #fw-action-resources .fw-resource-item .fw-resource-content-holder {
       width: 100%;
       border-bottom-left-radius: 15px;
       border-bottom-right-radius: 15px;
@@ -4690,57 +4718,57 @@ a.text-dark:focus, a.text-dark:hover {
       justify-content: center;
       flex-direction: column; }
       @media (min-width: 576px) {
-        #fw-stage-engage .fw-engage-item .fw-engage-content-holder {
+        #fw-stage-engage .fw-engage-item .fw-engage-content-holder, #fw-stage-engage .fw-engage-item .fw-resource-content-holder, #fw-stage-engage .fw-resource-item .fw-engage-content-holder, #fw-stage-engage .fw-resource-item .fw-resource-content-holder, #fw-action-resources .fw-engage-item .fw-engage-content-holder, #fw-action-resources .fw-engage-item .fw-resource-content-holder, #fw-action-resources .fw-resource-item .fw-engage-content-holder, #fw-action-resources .fw-resource-item .fw-resource-content-holder {
           border-left: none;
           border-top: 1px solid #C0C6D9;
           width: 50%;
           border-top-right-radius: 15px;
           border-bottom-left-radius: 0; } }
-      #fw-stage-engage .fw-engage-item .fw-engage-content-holder .fw-engage-content h6 {
+      #fw-stage-engage .fw-engage-item .fw-engage-content-holder .fw-engage-content h6, #fw-stage-engage .fw-engage-item .fw-engage-content-holder .fw-resource-content h6, #fw-stage-engage .fw-engage-item .fw-resource-content-holder .fw-engage-content h6, #fw-stage-engage .fw-engage-item .fw-resource-content-holder .fw-resource-content h6, #fw-stage-engage .fw-resource-item .fw-engage-content-holder .fw-engage-content h6, #fw-stage-engage .fw-resource-item .fw-engage-content-holder .fw-resource-content h6, #fw-stage-engage .fw-resource-item .fw-resource-content-holder .fw-engage-content h6, #fw-stage-engage .fw-resource-item .fw-resource-content-holder .fw-resource-content h6, #fw-action-resources .fw-engage-item .fw-engage-content-holder .fw-engage-content h6, #fw-action-resources .fw-engage-item .fw-engage-content-holder .fw-resource-content h6, #fw-action-resources .fw-engage-item .fw-resource-content-holder .fw-engage-content h6, #fw-action-resources .fw-engage-item .fw-resource-content-holder .fw-resource-content h6, #fw-action-resources .fw-resource-item .fw-engage-content-holder .fw-engage-content h6, #fw-action-resources .fw-resource-item .fw-engage-content-holder .fw-resource-content h6, #fw-action-resources .fw-resource-item .fw-resource-content-holder .fw-engage-content h6, #fw-action-resources .fw-resource-item .fw-resource-content-holder .fw-resource-content h6 {
         color: #242a35;
         font-size: 14px;
         font-weight: 700;
         margin-bottom: 15px; }
-      #fw-stage-engage .fw-engage-item .fw-engage-content-holder .fw-engage-content p {
+      #fw-stage-engage .fw-engage-item .fw-engage-content-holder .fw-engage-content p, #fw-stage-engage .fw-engage-item .fw-engage-content-holder .fw-resource-content p, #fw-stage-engage .fw-engage-item .fw-resource-content-holder .fw-engage-content p, #fw-stage-engage .fw-engage-item .fw-resource-content-holder .fw-resource-content p, #fw-stage-engage .fw-resource-item .fw-engage-content-holder .fw-engage-content p, #fw-stage-engage .fw-resource-item .fw-engage-content-holder .fw-resource-content p, #fw-stage-engage .fw-resource-item .fw-resource-content-holder .fw-engage-content p, #fw-stage-engage .fw-resource-item .fw-resource-content-holder .fw-resource-content p, #fw-action-resources .fw-engage-item .fw-engage-content-holder .fw-engage-content p, #fw-action-resources .fw-engage-item .fw-engage-content-holder .fw-resource-content p, #fw-action-resources .fw-engage-item .fw-resource-content-holder .fw-engage-content p, #fw-action-resources .fw-engage-item .fw-resource-content-holder .fw-resource-content p, #fw-action-resources .fw-resource-item .fw-engage-content-holder .fw-engage-content p, #fw-action-resources .fw-resource-item .fw-engage-content-holder .fw-resource-content p, #fw-action-resources .fw-resource-item .fw-resource-content-holder .fw-engage-content p, #fw-action-resources .fw-resource-item .fw-resource-content-holder .fw-resource-content p {
         color: #576784;
         font-size: 14px;
         line-height: 1.5;
         margin-bottom: 15px; }
-      #fw-stage-engage .fw-engage-item .fw-engage-content-holder .fw-engage-content .fw-learn-how a, #fw-stage-engage .fw-engage-item .fw-engage-content-holder .fw-engage-content .fw-learn-how span {
+      #fw-stage-engage .fw-engage-item .fw-engage-content-holder .fw-engage-content .fw-learn-how a, #fw-stage-engage .fw-engage-item .fw-engage-content-holder .fw-engage-content .fw-learn-how span, #fw-stage-engage .fw-engage-item .fw-engage-content-holder .fw-resource-content .fw-learn-how a, #fw-stage-engage .fw-engage-item .fw-engage-content-holder .fw-resource-content .fw-learn-how span, #fw-stage-engage .fw-engage-item .fw-resource-content-holder .fw-engage-content .fw-learn-how a, #fw-stage-engage .fw-engage-item .fw-resource-content-holder .fw-engage-content .fw-learn-how span, #fw-stage-engage .fw-engage-item .fw-resource-content-holder .fw-resource-content .fw-learn-how a, #fw-stage-engage .fw-engage-item .fw-resource-content-holder .fw-resource-content .fw-learn-how span, #fw-stage-engage .fw-resource-item .fw-engage-content-holder .fw-engage-content .fw-learn-how a, #fw-stage-engage .fw-resource-item .fw-engage-content-holder .fw-engage-content .fw-learn-how span, #fw-stage-engage .fw-resource-item .fw-engage-content-holder .fw-resource-content .fw-learn-how a, #fw-stage-engage .fw-resource-item .fw-engage-content-holder .fw-resource-content .fw-learn-how span, #fw-stage-engage .fw-resource-item .fw-resource-content-holder .fw-engage-content .fw-learn-how a, #fw-stage-engage .fw-resource-item .fw-resource-content-holder .fw-engage-content .fw-learn-how span, #fw-stage-engage .fw-resource-item .fw-resource-content-holder .fw-resource-content .fw-learn-how a, #fw-stage-engage .fw-resource-item .fw-resource-content-holder .fw-resource-content .fw-learn-how span, #fw-action-resources .fw-engage-item .fw-engage-content-holder .fw-engage-content .fw-learn-how a, #fw-action-resources .fw-engage-item .fw-engage-content-holder .fw-engage-content .fw-learn-how span, #fw-action-resources .fw-engage-item .fw-engage-content-holder .fw-resource-content .fw-learn-how a, #fw-action-resources .fw-engage-item .fw-engage-content-holder .fw-resource-content .fw-learn-how span, #fw-action-resources .fw-engage-item .fw-resource-content-holder .fw-engage-content .fw-learn-how a, #fw-action-resources .fw-engage-item .fw-resource-content-holder .fw-engage-content .fw-learn-how span, #fw-action-resources .fw-engage-item .fw-resource-content-holder .fw-resource-content .fw-learn-how a, #fw-action-resources .fw-engage-item .fw-resource-content-holder .fw-resource-content .fw-learn-how span, #fw-action-resources .fw-resource-item .fw-engage-content-holder .fw-engage-content .fw-learn-how a, #fw-action-resources .fw-resource-item .fw-engage-content-holder .fw-engage-content .fw-learn-how span, #fw-action-resources .fw-resource-item .fw-engage-content-holder .fw-resource-content .fw-learn-how a, #fw-action-resources .fw-resource-item .fw-engage-content-holder .fw-resource-content .fw-learn-how span, #fw-action-resources .fw-resource-item .fw-resource-content-holder .fw-engage-content .fw-learn-how a, #fw-action-resources .fw-resource-item .fw-resource-content-holder .fw-engage-content .fw-learn-how span, #fw-action-resources .fw-resource-item .fw-resource-content-holder .fw-resource-content .fw-learn-how a, #fw-action-resources .fw-resource-item .fw-resource-content-holder .fw-resource-content .fw-learn-how span {
         color: #242a35;
         font-size: 13px;
         font-weight: 700;
         text-decoration: none !important; }
-        #fw-stage-engage .fw-engage-item .fw-engage-content-holder .fw-engage-content .fw-learn-how a:hover, #fw-stage-engage .fw-engage-item .fw-engage-content-holder .fw-engage-content .fw-learn-how span:hover {
+        #fw-stage-engage .fw-engage-item .fw-engage-content-holder .fw-engage-content .fw-learn-how a:hover, #fw-stage-engage .fw-engage-item .fw-engage-content-holder .fw-engage-content .fw-learn-how span:hover, #fw-stage-engage .fw-engage-item .fw-engage-content-holder .fw-resource-content .fw-learn-how a:hover, #fw-stage-engage .fw-engage-item .fw-engage-content-holder .fw-resource-content .fw-learn-how span:hover, #fw-stage-engage .fw-engage-item .fw-resource-content-holder .fw-engage-content .fw-learn-how a:hover, #fw-stage-engage .fw-engage-item .fw-resource-content-holder .fw-engage-content .fw-learn-how span:hover, #fw-stage-engage .fw-engage-item .fw-resource-content-holder .fw-resource-content .fw-learn-how a:hover, #fw-stage-engage .fw-engage-item .fw-resource-content-holder .fw-resource-content .fw-learn-how span:hover, #fw-stage-engage .fw-resource-item .fw-engage-content-holder .fw-engage-content .fw-learn-how a:hover, #fw-stage-engage .fw-resource-item .fw-engage-content-holder .fw-engage-content .fw-learn-how span:hover, #fw-stage-engage .fw-resource-item .fw-engage-content-holder .fw-resource-content .fw-learn-how a:hover, #fw-stage-engage .fw-resource-item .fw-engage-content-holder .fw-resource-content .fw-learn-how span:hover, #fw-stage-engage .fw-resource-item .fw-resource-content-holder .fw-engage-content .fw-learn-how a:hover, #fw-stage-engage .fw-resource-item .fw-resource-content-holder .fw-engage-content .fw-learn-how span:hover, #fw-stage-engage .fw-resource-item .fw-resource-content-holder .fw-resource-content .fw-learn-how a:hover, #fw-stage-engage .fw-resource-item .fw-resource-content-holder .fw-resource-content .fw-learn-how span:hover, #fw-action-resources .fw-engage-item .fw-engage-content-holder .fw-engage-content .fw-learn-how a:hover, #fw-action-resources .fw-engage-item .fw-engage-content-holder .fw-engage-content .fw-learn-how span:hover, #fw-action-resources .fw-engage-item .fw-engage-content-holder .fw-resource-content .fw-learn-how a:hover, #fw-action-resources .fw-engage-item .fw-engage-content-holder .fw-resource-content .fw-learn-how span:hover, #fw-action-resources .fw-engage-item .fw-resource-content-holder .fw-engage-content .fw-learn-how a:hover, #fw-action-resources .fw-engage-item .fw-resource-content-holder .fw-engage-content .fw-learn-how span:hover, #fw-action-resources .fw-engage-item .fw-resource-content-holder .fw-resource-content .fw-learn-how a:hover, #fw-action-resources .fw-engage-item .fw-resource-content-holder .fw-resource-content .fw-learn-how span:hover, #fw-action-resources .fw-resource-item .fw-engage-content-holder .fw-engage-content .fw-learn-how a:hover, #fw-action-resources .fw-resource-item .fw-engage-content-holder .fw-engage-content .fw-learn-how span:hover, #fw-action-resources .fw-resource-item .fw-engage-content-holder .fw-resource-content .fw-learn-how a:hover, #fw-action-resources .fw-resource-item .fw-engage-content-holder .fw-resource-content .fw-learn-how span:hover, #fw-action-resources .fw-resource-item .fw-resource-content-holder .fw-engage-content .fw-learn-how a:hover, #fw-action-resources .fw-resource-item .fw-resource-content-holder .fw-engage-content .fw-learn-how span:hover, #fw-action-resources .fw-resource-item .fw-resource-content-holder .fw-resource-content .fw-learn-how a:hover, #fw-action-resources .fw-resource-item .fw-resource-content-holder .fw-resource-content .fw-learn-how span:hover {
           text-decoration: none !important; }
-      #fw-stage-engage .fw-engage-item .fw-engage-content-holder .fw-engage-content .fw-learn-how img {
+      #fw-stage-engage .fw-engage-item .fw-engage-content-holder .fw-engage-content .fw-learn-how img, #fw-stage-engage .fw-engage-item .fw-engage-content-holder .fw-resource-content .fw-learn-how img, #fw-stage-engage .fw-engage-item .fw-resource-content-holder .fw-engage-content .fw-learn-how img, #fw-stage-engage .fw-engage-item .fw-resource-content-holder .fw-resource-content .fw-learn-how img, #fw-stage-engage .fw-resource-item .fw-engage-content-holder .fw-engage-content .fw-learn-how img, #fw-stage-engage .fw-resource-item .fw-engage-content-holder .fw-resource-content .fw-learn-how img, #fw-stage-engage .fw-resource-item .fw-resource-content-holder .fw-engage-content .fw-learn-how img, #fw-stage-engage .fw-resource-item .fw-resource-content-holder .fw-resource-content .fw-learn-how img, #fw-action-resources .fw-engage-item .fw-engage-content-holder .fw-engage-content .fw-learn-how img, #fw-action-resources .fw-engage-item .fw-engage-content-holder .fw-resource-content .fw-learn-how img, #fw-action-resources .fw-engage-item .fw-resource-content-holder .fw-engage-content .fw-learn-how img, #fw-action-resources .fw-engage-item .fw-resource-content-holder .fw-resource-content .fw-learn-how img, #fw-action-resources .fw-resource-item .fw-engage-content-holder .fw-engage-content .fw-learn-how img, #fw-action-resources .fw-resource-item .fw-engage-content-holder .fw-resource-content .fw-learn-how img, #fw-action-resources .fw-resource-item .fw-resource-content-holder .fw-engage-content .fw-learn-how img, #fw-action-resources .fw-resource-item .fw-resource-content-holder .fw-resource-content .fw-learn-how img {
         margin-top: -2.5px;
         width: 15px;
         margin-left: 10px; }
-  #fw-stage-engage .fw-engage-item.active {
+  #fw-stage-engage .fw-engage-item.active, #fw-stage-engage .fw-resource-item.active, #fw-action-resources .fw-engage-item.active, #fw-action-resources .fw-resource-item.active {
     display: block; }
     @media (min-width: 576px) {
-      #fw-stage-engage .fw-engage-item.active {
+      #fw-stage-engage .fw-engage-item.active, #fw-stage-engage .fw-resource-item.active, #fw-action-resources .fw-engage-item.active, #fw-action-resources .fw-resource-item.active {
         display: flex; } }
 
-#fw-engage-navigation {
+#fw-engage-navigation, #fw-resource-navigation {
   display: flex;
   height: 40px;
   padding: 20px 0 10px 0; }
-  #fw-engage-navigation #fw-engage-dots {
+  #fw-engage-navigation #fw-engage-dots, #fw-engage-navigation #fw-resource-dots, #fw-resource-navigation #fw-engage-dots, #fw-resource-navigation #fw-resource-dots {
     width: 50%;
     text-align: left; }
-    #fw-engage-navigation #fw-engage-dots img {
+    #fw-engage-navigation #fw-engage-dots img, #fw-engage-navigation #fw-resource-dots img, #fw-resource-navigation #fw-engage-dots img, #fw-resource-navigation #fw-resource-dots img {
       height: 10px;
       margin-left: 5px; }
-  #fw-engage-navigation #fw-engage-arrows {
+  #fw-engage-navigation #fw-engage-arrows, #fw-engage-navigation #fw-resource-arrows, #fw-resource-navigation #fw-engage-arrows, #fw-resource-navigation #fw-resource-arrows {
     text-align: right;
     width: 50%; }
-    #fw-engage-navigation #fw-engage-arrows #fw-engage-back, #fw-engage-navigation #fw-engage-arrows #fw-engage-forward {
+    #fw-engage-navigation #fw-engage-arrows #fw-engage-back, #fw-engage-navigation #fw-engage-arrows #fw-engage-forward, #fw-engage-navigation #fw-engage-arrows #fw-resource-back, #fw-engage-navigation #fw-engage-arrows #fw-resource-forward, #fw-engage-navigation #fw-resource-arrows #fw-engage-back, #fw-engage-navigation #fw-resource-arrows #fw-engage-forward, #fw-engage-navigation #fw-resource-arrows #fw-resource-back, #fw-engage-navigation #fw-resource-arrows #fw-resource-forward, #fw-resource-navigation #fw-engage-arrows #fw-engage-back, #fw-resource-navigation #fw-engage-arrows #fw-engage-forward, #fw-resource-navigation #fw-engage-arrows #fw-resource-back, #fw-resource-navigation #fw-engage-arrows #fw-resource-forward, #fw-resource-navigation #fw-resource-arrows #fw-engage-back, #fw-resource-navigation #fw-resource-arrows #fw-engage-forward, #fw-resource-navigation #fw-resource-arrows #fw-resource-back, #fw-resource-navigation #fw-resource-arrows #fw-resource-forward {
       height: 10px;
       margin: 0 10px;
       cursor: pointer; }
-    #fw-engage-navigation #fw-engage-arrows #fw-engage-back {
+    #fw-engage-navigation #fw-engage-arrows #fw-engage-back, #fw-engage-navigation #fw-engage-arrows #fw-resource-back, #fw-engage-navigation #fw-resource-arrows #fw-engage-back, #fw-engage-navigation #fw-resource-arrows #fw-resource-back, #fw-resource-navigation #fw-engage-arrows #fw-engage-back, #fw-resource-navigation #fw-engage-arrows #fw-resource-back, #fw-resource-navigation #fw-resource-arrows #fw-engage-back, #fw-resource-navigation #fw-resource-arrows #fw-resource-back {
       transform: rotate(180deg); }
 
 #fw-action-goal {
