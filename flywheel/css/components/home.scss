@@ -14,9 +14,12 @@ a {
 		color: $dark-gray;
 		font-size: 30px;
 		margin: 0 0 20px 0;
+		line-height: 1.4em;
+		font-weight: 600;
 
 		@include media-breakpoint-up(md) {
-			font-size: 50px;
+			font-size: 42px;
+    		
 		}
 	}
 
@@ -24,12 +27,16 @@ a {
 		color: $medium-gray;
 		font-size: 14px;
 		margin: 0 0 10px 0;
-		line-height: 1.8;
+		line-height: 1.75em;
 
 		@include media-breakpoint-up(md) {
 			font-size: 16px;
 		}
 	}
+}
+
+#fw-body-section {
+	padding-top: 5vh;
 }
 
 #fw-main-content {
@@ -105,4 +112,21 @@ a {
 		top: 20vw;
 		width: 150px;
 	}
+}
+
+
+.fw-background-lines {
+	position: absolute;
+	display: none;
+	width: 20%;
+}
+
+.fw-background-lines.right {
+	top: 0;
+	right: 0;
+}
+
+.fw-background-lines.left {
+	bottom: 0;
+	left: 0;
 }

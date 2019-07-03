@@ -31,8 +31,16 @@
 		transform: translate(-50%, -50%);
 		text-align: center;
 		width: 50%;
-		font-size: 16px;
+		font-size: 14px;
+		color: $medium-gray;
 		margin: 0 auto;		
+
+		&:before {
+			content: url('https://appcues-public.s3-us-west-2.amazonaws.com/microsites/flywheel/img/icons/info.svg');
+			width: 15px;
+			display: block;
+    		margin: 0 auto 5px auto;
+		}
 	}
 	
 }
@@ -49,7 +57,8 @@
 
 
 #navigation-btns {
-	margin-top: 30px;
+	margin-top: 75px;
+
 	.nav-btn {
 		display: none;
 		border-radius: 5px;

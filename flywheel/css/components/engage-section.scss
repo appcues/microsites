@@ -6,6 +6,7 @@
 		width: 100%;
 		display: none;
 		background: $white;
+
 		
 		.fw-engage-image-container, .fw-resource-image-container {
 			display: flex;
@@ -13,26 +14,18 @@
 			border-top-left-radius: 15px;
 			border-top-right-radius: 15px;
 			max-height: 250px;
+			background-size: cover;
+			background-position: 50% 50%;
+			background-repeat: no-repeat;
+			min-height: 200px;
 
 			@include media-breakpoint-up(sm) {
+				min-height: 100%;
 				width: 50%;
 				border-bottom-left-radius: 15px;
 				border-top-right-radius: 0;
 			}
-			
-			img {
-				width: 80%;
-				margin: 10%;
-			}
 		}
-
-		.fw-resource-image-container {
-			background-size: cover;
-			background-position: 50% 50%;
-    		min-height: 100%;
-			background-repeat: no-repeat;
-		}
-
 
 		.fw-engage-content-holder, .fw-resource-content-holder {
 			width: 100%;
@@ -96,6 +89,31 @@
 
 		@include media-breakpoint-up(sm) {
 			display: flex;
+		}
+	}
+
+	.fw-engage-item {
+		min-height: 250px;
+
+		@include media-breakpoint-up(md) {
+			min-height: 270px;
+		}
+
+		@include media-breakpoint-up(lg) {
+			min-height: 250px;
+		}
+
+	}
+
+	.fw-resource-item {
+		min-height: 270px;
+
+		@include media-breakpoint-up(md) {
+			min-height: 300px;
+		}
+
+		@include media-breakpoint-up(lg) {
+			min-height: 270px;
 		}
 	}
 

@@ -67,19 +67,19 @@ var appcuesFlywheel = {
 			],
 			"engage": [
 				{
-					"image": "test.svg",
-					"header": "The seaweed is always greener",
-					"description": "In somebody else's lake. You dream about going up there. But that is a big mistake. Just look at the world around you. Right here on the ocean floor",
+					"image": "evaluators/modal.svg",
+					"header": "Create personalized onboarding experiences",
+					"description": "First impressions matter. Wow your users with personalized onboarding tours that delight, educate, and guide them to value faster.",
 					"link": "https://www.appcues.com"
 				}, {
-					"image": "test.svg",
-					"header": "Darling it's better",
-					"description": "Down where it's wetter Take it from me Up on the shore they work all day. Out in the sun they slave away. While we devotin'. Full time to floatin' Under the sea",
+					"image": "evaluators/checklist.svg",
+					"header": "Improve activation with user onboarding checklists",
+					"description": "Eliminate guesswork and drive users to activate faster by prescribing the first 3-5 key actions they should take in your product.",
 					"link": "https://www.appcues.com"
 				}, {
-					"image": "test.svg",
-					"header": "Down here all the fish is happy",
-					"description": "As off through the waves they roll The fish on the land ain't happy They sad 'cause they in their bowl But fish in the bowl is lucky",
+					"image": "evaluators/journey.svg",
+					"header": "Let users choose their own path to success",
+					"description": "Create a more personalized experience and guide users to their aha moments faster by letting them choose their own onboarding path.",
 					"link": "https://www.appcues.com"
 				}
 			]
@@ -116,19 +116,19 @@ var appcuesFlywheel = {
 			],
 			"engage": [
 				{
-					"image": "test.svg",
-					"header": "The beginner seaweed is greener",
-					"description": "In somebody else's lake. You dream about going up there. But that is a big mistake. Just look at the world around you. Right here on the ocean floor",
+					"image": "beginners/modal.svg",
+					"header": "Reduce friction with feature tours",
+					"description": "Learning doesn’t end after onboarding. Introduce users to additional features and functionality with product tours.",
 					"link": "https://www.appcues.com"
 				}, {
-					"image": "test.svg",
-					"header": "Darling beginner is better",
-					"description": "Down where it's wetter Take it from me Up on the shore they work all day. Out in the sun they slave away. While we devotin'. Full time to floatin' Under the sea",
+					"image": "beginners/tooltip.svg",
+					"header": "Draw attention to new or overlooked features",
+					"description": "Highlight new or underutilized features to improve adoption and increase your product’s stickiness. ",
 					"link": "https://www.appcues.com"
 				}, {
-					"image": "test.svg",
-					"header": "Down here all the beginners are happy",
-					"description": "As off through the waves they roll The fish on the land ain't happy They sad 'cause they in their bowl But fish in the bowl is lucky",
+					"image": "beginners/webinar.svg",
+					"header": "Promote educational content",
+					"description": "Use in-product announcements to increase engagement with educational content like webinars and best practices docs.",
 					"link": "https://www.appcues.com"
 				}
 			]
@@ -165,19 +165,19 @@ var appcuesFlywheel = {
 			],
 			"engage": [
 				{
-					"image": "test.svg",
-					"header": "The regular seaweed is greener",
-					"description": "In somebody else's lake. You dream about going up there. But that is a big mistake. Just look at the world around you. Right here on the ocean floor",
+					"image": "regulars/modal.svg",
+					"header": "Build the right features",
+					"description": "Make informed product decisions by asking users what features they want to see in your product.",
 					"link": "https://www.appcues.com"
 				}, {
-					"image": "test.svg",
-					"header": "Darling regular is better",
-					"description": "Down where it's wetter Take it from me Up on the shore they work all day. Out in the sun they slave away. While we devotin'. Full time to floatin' Under the sea",
+					"image": "regulars/slideout.svg",
+					"header": "Create upsell opportunities ",
+					"description": "Grow your expansion revenue. Encourage users to upgrade their plan by highlighting the value of premium features. ",
 					"link": "https://www.appcues.com"
 				}, {
-					"image": "test.svg",
-					"header": "Down here all the regulars are happy",
-					"description": "As off through the waves they roll The fish on the land ain't happy They sad 'cause they in their bowl But fish in the bowl is lucky",
+					"image": "regulars/nps.svg",
+					"header": "Gather quantifiable feedback ",
+					"description": "Collect actionable, quantifiable feedback with NPS surveys to keep a pulse on your users’ sentiments.",
 					"link": "https://www.appcues.com"
 				}
 			]
@@ -218,19 +218,14 @@ var appcuesFlywheel = {
 			],
 			"engage": [
 				{
-					"image": "test.svg",
-					"header": "The champion seaweed is greener",
-					"description": "In somebody else's lake. You dream about going up there. But that is a big mistake. Just look at the world around you. Right here on the ocean floor",
+					"image": "champions/reviews.svg",
+					"header": "Encourage users to submit reviews",
+					"description": "Ask your happy users to submit their reviews on platforms like G2 crowd and Capterra.",
 					"link": "https://www.appcues.com"
 				}, {
-					"image": "test.svg",
-					"header": "Darling champion is better",
-					"description": "Down where it's wetter Take it from me Up on the shore they work all day. Out in the sun they slave away. While we devotin'. Full time to floatin' Under the sea",
-					"link": "https://www.appcues.com"
-				}, {
-					"image": "test.svg",
-					"header": "Down here all the champions are happy",
-					"description": "As off through the waves they roll The fish on the land ain't happy They sad 'cause they in their bowl But fish in the bowl is lucky",
+					"image": "champions/referral.svg",
+					"header": "Help your champions spread the word",
+					"description": "Incentivize champion users to promote your product by offering them gift cards and discounts.",
 					"link": "https://www.appcues.com"
 				}
 			]
@@ -434,7 +429,7 @@ var appcuesFlywheel = {
 			var classString = "fw-engage-item";
 		}
 
-		var htmlString = '<div class="' + classString + '" data-flow-position=' + index + '><div class="fw-engage-image-container"><img class="fw-engage-image" src="' + imageSrc + '" /></div><div class="fw-engage-content-holder"><div class="fw-engage-content"><h6>' + item.header + '</h6><p>' + item.description + '</p><div class="fw-learn-how"><a target="_blank" href=' + item.link + '><span>Learn how</span><img src="https://public.appcues.com/microsites/flywheel/img/icons/arrow-dark.svg" alt="dark arrow"/></a></div></div></div></div>';
+		var htmlString = '<div class="' + classString + '" data-flow-position=' + index + '><div class="fw-engage-image-container"></div><div class="fw-engage-content-holder"><div class="fw-engage-content"><h6>' + item.header + '</h6><p>' + item.description + '</p></div></div></div>';
 		return htmlString;
 	},
 
@@ -556,6 +551,7 @@ var appcuesFlywheel = {
 		$("#fw-background-gradient").addClass("active");
 		$("#flywheel-image-container").addClass("active");
 		$("#flywheel-image-container").find('h5').fadeOut();
+		$(".fw-background-lines").fadeOut();
 		$('#flywheel-section-details').addClass("active");
 		$('#flywheel-section').addClass("active");
 
@@ -594,6 +590,10 @@ var appcuesFlywheel = {
 				var string = appcuesFlywheel.createStageEngagement(sectionData.engage[k], k);
 				$('#fw-stage-engage').append(string);
 
+				//set background image for the most recent action resource
+				var imageSrc = 'https://public.appcues.com/microsites/flywheel/img/engage-flows/' + sectionData.engage[k].image;
+				$('#fw-stage-engage').children('.fw-engage-item').last().find('.fw-engage-image-container').css('background-image', 'url(' + imageSrc + ')');
+
 				//render dots for engage section
 				if(k === 0) {
 					$('#fw-engage-dots').append('<img src="https://public.appcues.com/microsites/flywheel/img/icons/dot-active.svg" data-dot-position=' + k + ' alt="dark gray dot"/>')
@@ -603,14 +603,6 @@ var appcuesFlywheel = {
 			}
 		
 
-			//set gradient for engage section
-			$('.fw-engage-image-container').css({
-				'background': sectionData.gradient.start + "",
-				'background': '-moz-linear-gradient(left, ' + sectionData.gradient.start + ' 0%, '+ sectionData.gradient.end + ' 100%)',
-			    'background': '-webkit-linear-gradient(left,' + sectionData.gradient.start + ' 0%, '+ sectionData.gradient.end + ' 100%)',
-			    'background': 'linear-gradient(to right, ' + sectionData.gradient.start + ' 0%, '+ sectionData.gradient.end + ' 100%)',
-			    'filter': 'progid:DXImageTransform.Microsoft.gradient( startColorstr=' + sectionData.gradient.start + ', endColorstr='+ sectionData.gradient.end + ',GradientType=1 )'
-			});
 
 		} else {
 			var sectionData = appcuesFlywheel.actions[sectionName];
@@ -649,7 +641,6 @@ var appcuesFlywheel = {
 				
 				//set background image for the most recent action resource
 				var imageSrc = 'https://public.appcues.com/microsites/flywheel/img/resources/' + sectionData.resources[j].image;
-				// debugger;
 				$('#fw-action-resources').children('.fw-resource-item').last().find('.fw-resource-image-container').css('background-image', 'url(' + imageSrc + ')');
 
 				//render dots for resource section
@@ -703,6 +694,7 @@ var appcuesFlywheel = {
 	startSite: function() {
 		appcuesFlywheel.setArrowListeners();
 		$('#flywheel-image-container').append(appcuesFlywheel.svgHTML);
+		$(".fw-background-lines").fadeIn(100);
 
 		setTimeout(function(){
 			$('.flywheel-section').click(function(){
