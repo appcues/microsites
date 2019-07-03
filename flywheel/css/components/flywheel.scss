@@ -34,6 +34,7 @@
 		font-size: 14px;
 		color: $medium-gray;
 		margin: 0 auto;		
+		z-index: 1;
 
 		&:before {
 			content: url('https://appcues-public.s3-us-west-2.amazonaws.com/microsites/flywheel/img/icons/info.svg');
@@ -53,6 +54,8 @@
 
 #flywheel-image {
 	max-height: 50vh;
+	z-index: 100;
+    position: relative;
 }
 
 

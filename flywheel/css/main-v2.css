@@ -4481,7 +4481,8 @@ a:hover, a:focus {
     width: 50%;
     font-size: 14px;
     color: #576784;
-    margin: 0 auto; }
+    margin: 0 auto;
+    z-index: 1; }
     #flywheel-image-container h5:before {
       content: url("https://appcues-public.s3-us-west-2.amazonaws.com/microsites/flywheel/img/icons/info.svg");
       width: 15px;
@@ -4492,7 +4493,9 @@ a:hover, a:focus {
   display: none; }
 
 #flywheel-image {
-  max-height: 50vh; }
+  max-height: 50vh;
+  z-index: 100;
+  position: relative; }
 
 #navigation-btns {
   margin-top: 75px; }
