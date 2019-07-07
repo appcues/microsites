@@ -51,7 +51,7 @@ var appcuesFlywheel = {
 				}, {
 					"icon": "understand-basics.svg",
 					"alt": "icon of a pair of eyeglasses",
-					"text": "Understand basics"
+					"text": "Understand the basics"
 				}
 			],
 			"characteristics": [
@@ -100,7 +100,7 @@ var appcuesFlywheel = {
 				}, {
 					"icon": "solve-problems.svg",
 					"alt": "icon of a checkbox in a square",
-					"text": "Solve problem"
+					"text": "Solve a problem"
 				}
 			],
 			"characteristics": [
@@ -172,7 +172,7 @@ var appcuesFlywheel = {
 				}, {
 					"image": "regulars/slideout.svg",
 					"header": "Create upsell opportunities ",
-					"description": "Grow your expansion revenue. Encourage users to upgrade their plan by highlighting the value of premium features. ",
+					"description": "Grow your expansion revenue. Encourage users to upgrade their plan by highlighting the value of premium features.",
 					"link": "https://www.appcues.com"
 				}, {
 					"image": "regulars/nps.svg",
@@ -240,7 +240,7 @@ var appcuesFlywheel = {
 			},
 			"buttons": ["adopt", "advocate"],
 			"header": "Activate",
-			"description": "While activation looks different for every business, it’s generally understood as the moment in which a new user realizes value (eg. for an email marketing solution, it may be the first time a user sends an email). This is possibly the single most important moment in the user lifecycle.",
+			"description": "While activation looks different for every business, it’s generally understood as the moment in which a new user realizes value (e.g. for an email marketing solution, it may be the first time a user sends an email). This is possibly the single most important moment in the user lifecycle.",
 			"goals": [
 				{
 					"icon": "evaluators.svg",
@@ -253,12 +253,12 @@ var appcuesFlywheel = {
 			"data": [
 				{
 					"icon": "data-1.svg",
-					"header": "44.3%", 
-					"description": "Only 44.3% of SaaS businesses measure activation"
+					"header": "44%", 
+					"description": "Only 44.3% of SaaS businesses measure activation."
 				}, {
 					"icon": "data-2.svg",
 					"header": "30%",
-					"description": "Most SaaS businesses (52.8%) report an activation rate of less than 30%"
+					"description": "Most SaaS businesses (52.8%) report an activation rate of less than 30%."
 				}
 			],
 			"resources": [
@@ -295,7 +295,7 @@ var appcuesFlywheel = {
 			"data": [
 				{
 					"icon": "data-1.svg",
-					"header": "9.4%", 
+					"header": "9%", 
 					"description": "SaaS products have a median “stickiness” of 9.4%—or only 2.8 days of activity per user per month."
 				}, {
 					"icon": "data-2.svg",
@@ -342,7 +342,7 @@ var appcuesFlywheel = {
 				}, {
 					"icon": "data-2.svg",
 					"header": "8X",
-					"description": "It’s almost 8X cheaper to retain an existing account than it is to acquire a net new customer. "
+					"description": "It’s almost 8X cheaper to retain an existing account than it is to acquire a net new customer."
 				}
 			],
 			"resources": [
@@ -380,16 +380,16 @@ var appcuesFlywheel = {
 				{
 					"icon": "data-1.svg",
 					"header": "<10%", 
-					"description": "Majority of SaaS businesses report that <10% of their customers leave positive reviews on public platforms"
+					"description": "Majority of SaaS businesses report that <10% of their customers leave positive reviews on public platforms."
 				}, {
 					"icon": "data-2.svg",
 					"header": "92%",
-					"description": "92% of B2B buyers are more likely to purchase after reading a trusted review"
+					"description": "92% of B2B buyers are more likely to purchase after reading a trusted review."
 				}
 			],
 			"resources": [
 				{
-					"header": "How Toast created engagement opportunities for their advocates",
+					"header": "How Toast engaged their advocates",
 					"description": "In-app announcements offer advocates another way to engage with you. Find out how Toast generated 50% of their event responses with in-app campaigns.",
 					"image": "toast.jpg",
 					"link": "https://www.appcues.com/blog/toast-personalized-user-experiences"
@@ -436,7 +436,7 @@ var appcuesFlywheel = {
 	createActionData: function(item) {
 		var iconSrc = 'https://public.appcues.com/microsites/flywheel/img/icons/' + item.icon;
 		//<img src="' + iconSrc + '"/> old action data
-		var htmlString = '<div class="fw-data-section"><div class="fw-data-header"><h6>' + item.header + '</h6></div><p class="fw-data-description">' + item.description + '</p></div>';
+		var htmlString = '<a href="https://www.productled.org/data-and-trends/state-of-product-led-growth" target="_blank"><div class="fw-data-section"><div class="fw-data-header"><h6>' + item.header + '</h6></div><p class="fw-data-description">' + item.description + '</p></div></a>';
 		return htmlString;
 	},
 
@@ -447,7 +447,7 @@ var appcuesFlywheel = {
 			var classString = "fw-resource-item";
 		}
 
-		var htmlString = '<div class="' + classString + '" data-resource-position=' + index + '><div class="fw-resource-image-container"></div><div class="fw-resource-content-holder"><div class="fw-resource-content"><h6>' + item.header + '</h6><p>' + item.description + '</p><div class="fw-learn-how"><a target="_blank" href=' + item.link + '><span>Learn how</span><img src="https://public.appcues.com/microsites/flywheel/img/icons/arrow-dark.svg" alt="dark arrow"/></a></div></div></div></div>';
+		var htmlString = '<div class="' + classString + '" data-resource-position=' + index + '><div class="fw-resource-image-container"></div><div class="fw-resource-content-holder"><div class="fw-resource-content"><h6>' + item.header + '</h6><p>' + item.description + '</p><div class="fw-learn-how"><a target="_blank" href=' + item.link + '><span>Read more</span><img src="https://public.appcues.com/microsites/flywheel/img/icons/arrow-dark.svg" alt="dark arrow"/></a></div></div></div></div>';
 		return htmlString;
 	},
 
