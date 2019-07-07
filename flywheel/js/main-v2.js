@@ -436,7 +436,7 @@ var appcuesFlywheel = {
 	createActionData: function(item) {
 		var iconSrc = 'https://public.appcues.com/microsites/flywheel/img/icons/' + item.icon;
 		//<img src="' + iconSrc + '"/> old action data
-		var htmlString = '<a href="https://www.productled.org/data-and-trends/state-of-product-led-growth" target="_blank"><div class="fw-data-section"><div class="fw-data-header"><h6>' + item.header + '</h6></div><p class="fw-data-description">' + item.description + '</p></div></a>';
+		var htmlString = '<div class="fw-data-section"><a class="fw-data-link" href="https://www.productled.org/data-and-trends/state-of-product-led-growth" target="_blank"><div class="fw-data-header"><h6>' + item.header + '</h6></div><p class="fw-data-description">' + item.description + '</p></a></div>';
 		return htmlString;
 	},
 
