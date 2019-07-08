@@ -569,6 +569,8 @@ var appcuesFlywheel = {
 		appcuesFlywheel.resourceIndex = 0;
 		window.location.hash = "#" + sectionName;
 
+
+
 		if (isStage) {
 
 			var sectionData = appcuesFlywheel.stages[sectionName];
