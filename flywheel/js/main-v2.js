@@ -1,3 +1,7 @@
+// There was some funky things, like having the SVG as a appcuesFlywheel variable because we had to inject it in becuase of Webflow's limitations.
+// This is why all of the content lives in the appcuesFlywheel namespace as well
+//The majority of the imagery lives on AWS in the appcues-public folder under microsites/flywheel
+
 var appcuesFlywheel = {
 	engageFlows: [],
 	flowIndex: 0,
@@ -491,7 +495,6 @@ var appcuesFlywheel = {
 		var newActiveDot = '[data-dot-position="' + appcuesFlywheel.flowIndex + '"]';
 
 
-
 		$('#fw-stage-engage').find(currentlyActiveFlow).removeClass("active");
 		$('#fw-stage-engage').find(newActiveFlow).addClass("active");
 
@@ -609,7 +612,6 @@ var appcuesFlywheel = {
 		} else {
 			var sectionData = appcuesFlywheel.actions[sectionName];
 
-			//render goal data
 			//set goal gradient colors
 			$("#fw-goal-gradient").css({
 				'background': sectionData.gradient.start + "",
@@ -668,7 +670,7 @@ var appcuesFlywheel = {
 		$("#fw-previous-btn").find('.segment-icon').attr("src", "https://public.appcues.com/microsites/flywheel/img/flywheel-icons/" + sectionData.buttons[1] + ".svg");
 		$("#fw-previous-btn").attr("onclick","appcuesFlywheel.changeSection('" + sectionData.buttons[1] + "', true)");
 		
-
+		//set cta div color and button color
 		$("#2019-cta-block-light").css({
 			'background': sectionData.gradient.start + "",
 			'background': '-moz-linear-gradient(left, ' + sectionData.gradient.start + ' 0%, '+ sectionData.gradient.end + ' 100%)',
@@ -705,19 +707,19 @@ var appcuesFlywheel = {
 		}, 500);
 	}, 
 
-	animationLoop: function() {           //  create a loop function
-		
-		setTimeout(function () {    //  call a 3s setTimeout when the loop is called
+	animationLoop: function() {          
+		//this is the function that does the loading state to start the page when it is loaded from root
+		setTimeout(function () {    
 
 		    $(appcuesFlywheel.sections[appcuesFlywheel.loadingCounter]).addClass('active');
-		    appcuesFlywheel.loadingCounter++;                     //  increment the counter
-		    if (appcuesFlywheel.loadingCounter < appcuesFlywheel.sections.length) {            //  if the counter < 10, call the loop function
-		       	appcuesFlywheel.animationLoop();             //  ..  again which will trigger another 
-		    }                        //  ..  setTimeout()
+		    appcuesFlywheel.loadingCounter++;                     
+		    if (appcuesFlywheel.loadingCounter < appcuesFlywheel.sections.length) {            
+		       	appcuesFlywheel.animationLoop();             
+		    }                        
 	    }, 100)
 
 		if (appcuesFlywheel.loadingCounter === 7) {
-			setTimeout(function () {    //  call a 3s setTimeout when the loop is called
+			setTimeout(function () {    
 				$('#flywheel-image-container').find('h5').fadeIn(500);
 			}, 1000);
 		}
@@ -729,6 +731,7 @@ var appcuesFlywheel = {
 $(function() {
 	appcuesFlywheel.startSite();	
 
+	//if there is a hash location that is accepted, the flywheel opens to that page instead of doing the loading animation
 	if(window.location.hash) {
 		if(appcuesFlywheel.acceptedHash.indexOf(window.location.hash) !== -1) {
 			appcuesFlywheel.changeSection(window.location.href.split('#')[1], true);
